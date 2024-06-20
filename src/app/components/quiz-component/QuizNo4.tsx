@@ -1,40 +1,49 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
+import ButtonForQ4 from "./ButtonForQ4";
 
 const QuizNo3 = () => {
+  const [counter,setCounter]=useState<number>(0);
   const dispatch = useAppDispatch();
   const handleClickOnArms = () => {
+    setCounter(1);
     radioValues[2] = "slender";
   };
   const handleClickOnPecs = () => {
     radioValues[2] = "athletic";
+    setCounter(1);
   };
   const handleClickOnBelly = () => {
     radioValues[2] = "shredded";
+    setCounter(1);
   };
   const handleClickOnLegs = () => {
     radioValues[2] = "swole";
+    setCounter(1);
   };
-  const handleClickOnBack= () => {
+  const handleClickOnBack = () => {
     radioValues[2] = "swole";
+    setCounter(1);
   };
   return (
     <div className="flex-col justify-center items-center">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
-        What are your target <br />zones?
+          What are your target <br />
+          zones?
         </h1>
       </div>
       <div className="flex justify-evenly items-center text-center mt-5">
         <div>
           <Label
-            onClick={handleClickOnArms}
+            onSelect={handleClickOnArms}
+            
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
           >
@@ -105,10 +114,12 @@ const QuizNo3 = () => {
             <h1 className="pr-[175px] font-semibold text-base">Back</h1>
             <Checkbox className="mr-5" value="swole" id="r5" />
           </Label>
-          
         </div>
       </div>
       <Footer />
+      <div className="p-[50px]"></div>
+
+      <ButtonForQ4 num={counter} />
     </div>
   );
 };
