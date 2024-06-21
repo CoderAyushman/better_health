@@ -146,7 +146,7 @@ const QuizNo3 = () => {
           </Label>
         </div>
       </div>
-      <Footer />
+      
       <div className="p-[50px]"></div>
 
       <ButtonForQ4 num={count} />
