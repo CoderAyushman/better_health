@@ -11,19 +11,19 @@ import radioValues from "../RadioValues";
 const QuizNo2 = () => {
   const dispatch = useAppDispatch();
   const onClickSlender = () => {
-    radioValues[1]="slender";
+    radioValues[2]="slender";
     dispatch(increse());
   };
   const onClickMediumBuild = () => {
-    radioValues[1]="medium build";
+    radioValues[2]="medium build";
     dispatch(increse());
   };
   const onClickStocky = () => {
-    radioValues[1]="stocky";
+    radioValues[2]="stocky";
     dispatch(increse());
   };
   const onClickObese = () => {
-    radioValues[1]="obese";
+    radioValues[2]="obese";
     dispatch(increse());
   };
   return (
@@ -35,7 +35,7 @@ const QuizNo2 = () => {
         </h1>
       </div>
       <div className="flex justify-evenly items-center text-center mt-5">
-        <RadioGroup defaultValue={radioValues[1]}>
+        <RadioGroup defaultValue={radioValues[2]}>
           <Label
             onClick={onClickSlender}
             htmlFor="r1"

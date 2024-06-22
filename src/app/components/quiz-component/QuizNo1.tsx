@@ -16,13 +16,13 @@ const QuizNo1 = () => {
   const dispatch=useAppDispatch();
   
   const handleClickOnLoseWeight=()=>{
-      radioValues[0]="loseweight";
+      radioValues[1]="loseweight";
       setRadioGroupDefaultValue("loseweight");
     
     dispatch(increse());
     }
   const handleClickOnGainMuscle=()=>{
-    radioValues[0]="gainmuscle";
+    radioValues[1]="gainmuscle";
     dispatch(increse());
   }
   return (
@@ -34,7 +34,7 @@ const QuizNo1 = () => {
         <p className="mt-5 opacity-75">Please select your first priority</p>
       </div>
       <div className="flex justify-evenly items-center text-center mt-5">
-        <RadioGroup defaultValue={radioValues[0]}>
+        <RadioGroup defaultValue={radioValues[1]}>
         <Label
         onClick={handleClickOnLoseWeight}
           htmlFor="r1"

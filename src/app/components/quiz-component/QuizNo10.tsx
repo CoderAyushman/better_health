@@ -6,26 +6,26 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
 
-const QuizNo6 = () => {
+const QuizNo10 = () => {
   const dispatch = useAppDispatch();
-  const onClick0to6month = () => {
-    radioValues[6] = "0-6month";
+  const onClickTeaAndCoffee = () => {
+    radioValues[10] = "tea&coffee";
     dispatch(increse());
   };
-  const onClicke7to12month = () => {
-    radioValues[6] = "7-12month";
+  const onClickeFewerThan2GlassesOfWater = () => {
+    radioValues[10] = "Fewer than 2 glasses of water";
     dispatch(increse());
   };
-  const onClick1to3year = () => {
-    radioValues[6] = "1-3year";
+  const onClick2to6GlassesOfWater = () => {
+    radioValues[10] = "2-6 glasses of water (16-48 oz)";
     dispatch(increse());
   };
-  const onClickMoreThen3 = () => {
-    radioValues[6] = "morethen3";
+  const onClick7to10GlassesOfWater = () => {
+    radioValues[10] = "7-10 glasses of water";
     dispatch(increse());
   };
-  const onClickNever = () => {
-    radioValues[6] = "never";
+  const onClickMoreThan10GlassesOfWater = () => {
+    radioValues[10] = " More than 10 glasses of water";
     dispatch(increse());
   };
 
@@ -33,63 +33,63 @@ const QuizNo6 = () => {
     <div className="flex-col justify-center items-center">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
-        How long ago were you in <br /> the best shape of your <br /> life?
+        How much water do you <br /> drink throughout the day?
         </h1>
       </div>
       <div className="flex justify-evenly items-center  mt-5">
-        <RadioGroup defaultValue={radioValues[6]}>
+        <RadioGroup defaultValue={radioValues[10]}>
           <Label
-            onClick={onClick0to6month}
+            onClick={onClickTeaAndCoffee}
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base ">
-            0 - 6 months ago
+            I only drink tea or coffee
             </h1>
-            <RadioGroupItem className="mr-5 " value="0-6month" id="r1" />
+            <RadioGroupItem className="mr-5 " value="tea&coffee" id="r1" />
           </Label>
 
           <Label
-            onClick={onClicke7to12month}
+            onClick={onClickeFewerThan2GlassesOfWater}
             htmlFor="r2"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            7 - 12 months ago
+            Fewer than 2 glasses of water
             </h1>
-            <RadioGroupItem className="mr-5" value="7-12month" id="r2" />
+            <RadioGroupItem className="mr-5" value="Fewer than 2 glasses of water" id="r2" />
           </Label>
           <Label
-            onClick={onClick1to3year}
+            onClick={onClick2to6GlassesOfWater}
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
            
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            1 - 3 years ago
+            2-6 glasses of water (16-48 oz)
             </h1>
-            <RadioGroupItem className="mr-5" value="1-3year" id="r3" />
+            <RadioGroupItem className="mr-5" value="2-6 glasses of water (16-48 oz)" id="r3" />
           </Label>
           <Label
-            onClick={onClickMoreThen3}
+            onClick={onClick7to10GlassesOfWater}
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
            
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            More than 3 years ago
+            7-10 glasses of water (56-80 oz)
             </h1>
-            <RadioGroupItem className="mr-5" value="morethen3" id="r3" />
+            <RadioGroupItem className="mr-5" value="7-10 glasses of water" id="r3" />
           </Label>
           <Label
-            onClick={onClickNever}
+            onClick={onClickMoreThan10GlassesOfWater}
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            Never
+            More than 10 glasses of water
             </h1>
-            <RadioGroupItem className="mr-5" value="never" id="r3" />
+            <RadioGroupItem className="mr-5" value=" More than 10 glasses of water" id="r3" />
           </Label>
         </RadioGroup>
       </div>
@@ -98,4 +98,4 @@ const QuizNo6 = () => {
   );
 };
 
-export default QuizNo6;
+export default QuizNo10;

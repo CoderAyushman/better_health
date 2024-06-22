@@ -9,7 +9,7 @@ import radioValues from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
-const QuizNo3 = () => {
+const QuizNo = () => {
   // const [counter, setCounter] = useState<number>(0);
   const [isCheckedForQ1, setIsCheckedForQ1] = useState(false);
   const [isCheckedForQ2, setIsCheckedForQ2] = useState(false);
@@ -18,32 +18,24 @@ const QuizNo3 = () => {
   const [isCheckedForQ5, setIsCheckedForQ5] = useState(false);
   let count=isCheckedForQ1 || isCheckedForQ2 || isCheckedForQ3 || isCheckedForQ4 || isCheckedForQ5;
   const dispatch = useAppDispatch();
-  const handleClickOnArms = () => {
+  const handleClickOnSensitiveBack = () => {
     setIsCheckedForQ1(!isCheckedForQ1);
-    radioValues[4] = "slender";
+    radioValues[18] = "back";
   };
-  const handleClickOnPecs = () => {
+  const handleClickOnSensitiveKnees = () => {
     setIsCheckedForQ2(!isCheckedForQ2);
-    radioValues[4] = "athletic";
+    radioValues[18] = "knees";
   };
-  const handleClickOnBelly = () => {
+  const handleClickNeither = () => {
     setIsCheckedForQ3(!isCheckedForQ3);
-    radioValues[4] = "shredded";
+    radioValues[18] = "neither";
   };
-  const handleClickOnLegs = () => {
-    setIsCheckedForQ4(!isCheckedForQ4);
-    radioValues[4] = "swole";
-  };
-  const handleClickOnBack = () => {
-    setIsCheckedForQ5(!isCheckedForQ5);
-    radioValues[4] = "swole";
-  };
+  
   return (
     <div className="flex-col justify-center items-center">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
-          What are your target <br />
-          zones?
+        Do you struggle with any of <br /> the following?
         </h1>
       </div>
       <div className="flex justify-evenly items-center text-center mt-5">
@@ -54,16 +46,16 @@ const QuizNo3 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-4th/arms-img.png"
-              alt="lose-weight-img"
+              src="imageOfMale/quiz-18th/sensetive-back-img.png"
+              alt="sensetive-back-img"
             />
-            <h1 className="pr-[175px] font-semibold text-base ">Arms</h1>
+            <h1 className="pr-[175px] font-semibold text-base ">Sensitive Back</h1>
             <Checkbox
               className="mr-5 "
               id="r1"
-              value="arms"
+              value="Sensitive Back"
               checked={isCheckedForQ1}
-              onCheckedChange={handleClickOnArms}
+              onCheckedChange={handleClickOnSensitiveBack}
             />
           </Label>
 
@@ -73,16 +65,16 @@ const QuizNo3 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-4th/pecs-img.png"
-              alt="gain-muscle-img"
+              src="imageOfMale/quiz-18th/sensetive-knee-img.png"
+              alt="Sensitive Knees"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Pecs</h1>
+            <h1 className="pr-[175px] font-semibold text-base">Sensitive Knees</h1>
             <Checkbox
               className="mr-5"
-              value="pecs"
+              value="Sensitive Knees"
               id="r2"
-              onCheckedChange={handleClickOnPecs}
+              onCheckedChange={handleClickOnSensitiveKnees}
             />
           </Label>
 
@@ -92,58 +84,19 @@ const QuizNo3 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-4th/belly-img.png"
+              src="imageOfMale/quiz-18th/neither-img.png"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Belly</h1>
+            <h1 className="pr-[175px] font-semibold text-base">Neither</h1>
             <Checkbox
               className="mr-5"
-              value="belly"
+              value="Neither"
               id="r3"
-              onCheckedChange={handleClickOnBelly}
+              onCheckedChange={handleClickNeither}
             />
           </Label>
 
-          <Label
-            htmlFor="r4"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
-          >
-            <img
-              className="w-[104px]"
-              src="imageOfMale/quiz-4th/legs-img.png"
-              alt="gain-muscle-img"
-              cursor-pointer
-            />
-
-            <h1 className="pr-[175px] font-semibold text-base">Legs</h1>
-            <Checkbox
-              className="mr-5"
-              value="legs"
-              id="r4"
-              onCheckedChange={handleClickOnLegs}
-            />
-          </Label>
-
-          <Label
-            htmlFor="r5"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
-          >
-            <img
-              className="w-[104px]"
-              src="imageOfMale/quiz-4th/back-img.png"
-              alt="gain-muscle-img"
-              cursor-pointer
-            />
-
-            <h1 className="pr-[175px] font-semibold text-base">Back</h1>
-            <Checkbox
-              className="mr-5"
-              value="back"
-              id="r5"
-              onCheckedChange={handleClickOnBack}
-            />
-          </Label>
         </div>
       </div>
       
@@ -154,4 +107,4 @@ const QuizNo3 = () => {
   );
 };
 
-export default QuizNo3;
+export default QuizNo;

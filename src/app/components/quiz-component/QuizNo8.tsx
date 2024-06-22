@@ -6,18 +6,18 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
 
-const QuizNo5 = () => {
+const QuizNo8 = () => {
     const dispatch=useAppDispatch();
-    const onClickHardGain = () => {
-        radioValues[5]="hardgain";
+    const onClickSitting = () => {
+        radioValues[8]="sitting";
         dispatch(increse());
       };
-      const onClickeEasyLoss = () => {
-        radioValues[5]="easyloss";
+      const onClickeActive = () => {
+        radioValues[8]="active";
         dispatch(increse());
       };
-      const onClickEasyGainHardLoss = () => {
-        radioValues[5]="easygainhardloss";
+      const onClickEasyFullActive = () => {
+        radioValues[8]="fullactive";
         dispatch(increse());
       };
       
@@ -29,48 +29,48 @@ const QuizNo5 = () => {
       </h1>
     </div>
     <div className="flex justify-evenly items-center  mt-5">
-      <RadioGroup defaultValue={radioValues[5]}>
+      <RadioGroup defaultValue={radioValues[8]}>
         <Label
-          onClick={onClickHardGain}
+          onClick={onClickSitting}
           htmlFor="r1"
           className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
         >
           <img
             className="w-[104px]"
-            src="imageOfMale/quiz-5th/upper-eyes-emoji.png"
-            alt="lose-weight-img"
+            src="imageOfMale/quiz-8th/sitting-img.png"
+            alt="sitting-img"
           />
-          <h1 className="pr-[40px] font-semibold text-base ">I have trouble gaining muscle or body fat</h1>
-          <RadioGroupItem className="mr-5 " value="hardgain" id="r1" />
+          <h1 className="pr-[40px] font-semibold text-base ">I spend most of the day sitting</h1>
+          <RadioGroupItem className="mr-5 " value="sitting" id="r1" />
         </Label>
 
         <Label
-          onClick={onClickeEasyLoss}
+          onClick={onClickeActive}
           htmlFor="r2"
           className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
         >
           <img
             className="w-[104px]"
-           src="imageOfMale/quiz-5th/biceps-emoji.png"
-            alt="gain-muscle-img"
+           src="imageOfMale/quiz-8th/active-img.png"
+            alt="active-img"
           />
 
-          <h1 className="pr-[40px] font-semibold text-base">I gain and lose weight without effort</h1>
-          <RadioGroupItem className="mr-5" value="easyloss" id="r2" />
+          <h1 className="pr-[40px] font-semibold text-base">I take active breaks</h1>
+          <RadioGroupItem className="mr-5" value="active" id="r2" />
         </Label>
         <Label
-          onClick={onClickEasyGainHardLoss}
+          onClick={onClickEasyFullActive}
           htmlFor="r3"
           className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
         >
           <img
             className="w-[104px]"
-            src="imageOfMale/quiz-5th/fear-emoji.png"
-            alt="gain-muscle-img"
+            src="imageOfMale/quiz-8th/fit-img.png"
+            alt="fit-img"
           />
 
-          <h1 className="pr-[40px] font-semibold text-base">I gain weight easily but find it hard to lose</h1>
-          <RadioGroupItem className="mr-5" value="easygainhardloss" id="r3" />
+          <h1 className="pr-[40px] font-semibold text-base">I'm on my feet all day long</h1>
+          <RadioGroupItem className="mr-5" value="fullactive" id="r3" />
         </Label>
         
       </RadioGroup>
@@ -80,5 +80,5 @@ const QuizNo5 = () => {
   )
 }
 
-export default QuizNo5
+export default QuizNo8;
 
