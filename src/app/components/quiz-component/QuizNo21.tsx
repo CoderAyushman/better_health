@@ -96,7 +96,7 @@ const QuizNo21 = () => {
             </h1>
             <RadioGroupItem className="mr-5" value="i dont know" id="r4" />
           </Label>
-      </RadioGroup>
+      </RadioGroup> 
     </div>
     <Footer />
   </div>

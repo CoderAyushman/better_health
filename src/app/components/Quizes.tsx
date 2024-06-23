@@ -25,6 +25,7 @@ import QuizNo22 from "./quiz-component/QuizNo22";
 import QuizNo23 from "./quiz-component/QuizNo23";
 import QuizNo24 from "./quiz-component/QuizNo24";
 import QuizNo25 from "./quiz-component/QuizNo25";
+import AboutSurroundings from "./quiz-component/AboutSurroundings";
 
 const quizes = [
   <Intromale />,
@@ -49,6 +50,7 @@ const quizes = [
   <QuizNo19 />,
   <QuizNo20 />,
   <QuizNo21 />,
+  <AboutSurroundings />,
   <QuizNo22 />,
   <QuizNo23 />,
   <QuizNo24 />,
