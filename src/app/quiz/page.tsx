@@ -8,10 +8,14 @@ import AboutSurroundings from "../components/quiz-component/AboutSurroundings";
 
 const page = () => {
   const quizCounter = useAppSelector((state) => state.counter.items);
-  console.log(quizes[quizCounter]!=quizes[22])
+  console.log(quizes[quizCounter] != quizes[22]);
   return (
     <div>
-      {quizCounter >= 1 && quizes[quizCounter]!=quizes[22] ? <Progressbar /> : <></>}
+      {quizCounter >= 1 && quizes[quizCounter] != quizes[22] ? (
+        <Progressbar />
+      ) : (
+        <></>
+      )}
       {quizes[quizCounter]}
     </div>
   );

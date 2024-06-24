@@ -33,7 +33,7 @@ const QuizNo6 = () => {
     <div className="flex-col justify-center items-center">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
-        How long ago were you in <br /> the best shape of your <br /> life?
+          How long ago were you in <br /> the best shape of your <br /> life?
         </h1>
       </div>
       <div className="flex justify-evenly items-center  mt-5">
@@ -44,7 +44,7 @@ const QuizNo6 = () => {
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base ">
-            0 - 6 months ago
+              0 - 6 months ago
             </h1>
             <RadioGroupItem className="mr-5 " value="0-6month" id="r1" />
           </Label>
@@ -55,7 +55,7 @@ const QuizNo6 = () => {
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            7 - 12 months ago
+              7 - 12 months ago
             </h1>
             <RadioGroupItem className="mr-5" value="7-12month" id="r2" />
           </Label>
@@ -64,9 +64,8 @@ const QuizNo6 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
-           
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            1 - 3 years ago
+              1 - 3 years ago
             </h1>
             <RadioGroupItem className="mr-5" value="1-3year" id="r3" />
           </Label>
@@ -75,9 +74,8 @@ const QuizNo6 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
-           
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            More than 3 years ago
+              More than 3 years ago
             </h1>
             <RadioGroupItem className="mr-5" value="morethen3" id="r3" />
           </Label>
@@ -87,7 +85,7 @@ const QuizNo6 = () => {
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            Never
+              Never
             </h1>
             <RadioGroupItem className="mr-5" value="never" id="r3" />
           </Label>

@@ -1,4 +1,3 @@
-
 "use client";
 import React from "react";
 import { Label } from "@/components/ui/label";
@@ -9,43 +8,42 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 
 const QuizNo21 = () => {
-  const dispatch=useAppDispatch();
-  const handleClickOn10to15min=()=>{
-    radioValues[21]="10to15min";
-  dispatch(increse());
-  }
-  const handleClickOn15to25min=()=>{
-    radioValues[21]="15-25 min";
+  const dispatch = useAppDispatch();
+  const handleClickOn10to15min = () => {
+    radioValues[21] = "10to15min";
+    dispatch(increse());
+  };
+  const handleClickOn15to25min = () => {
+    radioValues[21] = "15-25 min";
 
     dispatch(increse());
-  }
-  const handleClickOn25minPlus=()=>{
-    radioValues[21]="25+ min";
+  };
+  const handleClickOn25minPlus = () => {
+    radioValues[21] = "25+ min";
 
     dispatch(increse());
-  }
-  const handleClickOnIDontKnow=()=>{
-    radioValues[21]="i dont know";
+  };
+  const handleClickOnIDontKnow = () => {
+    radioValues[21] = "i dont know";
 
     dispatch(increse());
-  }
+  };
   return (
     <div className="flex-col justify-center items-center">
-    <div className="flex-col justify-center items-center text-center ">
-      <h1 className="text-4xl font-bold tracking-wide mt-7">
-      How much time do you <br /> want to work out?
-      </h1>
-    </div>
-    <div className="flex justify-evenly items-center  mt-5">
-      <RadioGroup defaultValue={radioValues[21]}>
-        <Label
+      <div className="flex-col justify-center items-center text-center ">
+        <h1 className="text-4xl font-bold tracking-wide mt-7">
+          How much time do you <br /> want to work out?
+        </h1>
+      </div>
+      <div className="flex justify-evenly items-center  mt-5">
+        <RadioGroup defaultValue={radioValues[21]}>
+          <Label
             onClick={handleClickOn10to15min}
             htmlFor="r1"
             className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <img
               className="w-[104px]"
-              
               src="imageOfMale/quiz-21st/low-img.png"
               alt="lose-weight-img"
             />
@@ -54,7 +52,7 @@ const QuizNo21 = () => {
           </Label>
 
           <Label
-          onClick={handleClickOn15to25min}
+            onClick={handleClickOn15to25min}
             htmlFor="r2"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
@@ -68,13 +66,13 @@ const QuizNo21 = () => {
             <RadioGroupItem className="mr-5" value="15-25 min" id="r2" />
           </Label>
           <Label
-          onClick={handleClickOn25minPlus}
+            onClick={handleClickOn25minPlus}
             htmlFor="r3"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <img
               className="w-[104px]"
-             src="imageOfMale/quiz-21st/fire-img.png"
+              src="imageOfMale/quiz-21st/fire-img.png"
               alt="gain-muscle-img"
             />
 
@@ -82,24 +80,24 @@ const QuizNo21 = () => {
             <RadioGroupItem className="mr-5" value="25+ min" id="r3" />
           </Label>
           <Label
-          onClick={handleClickOnIDontKnow}
+            onClick={handleClickOnIDontKnow}
             htmlFor="r4"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <img
               className="w-[104px]"
               src="imageOfMale/quiz-21st/confuse-img.png"
-              alt="gain-muscle-img"cursor-pointer
+              alt="gain-muscle-img"
+              cursor-pointer
             />
 
-            <h1 className="pr-[140px] font-semibold text-base">i don't know
-            </h1>
+            <h1 className="pr-[140px] font-semibold text-base">i don't know</h1>
             <RadioGroupItem className="mr-5" value="i dont know" id="r4" />
           </Label>
-      </RadioGroup> 
+        </RadioGroup>
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
-  )
-}
+  );
+};
 export default QuizNo21;

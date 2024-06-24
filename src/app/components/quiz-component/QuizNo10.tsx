@@ -33,7 +33,7 @@ const QuizNo10 = () => {
     <div className="flex-col justify-center items-center">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
-        How much water do you <br /> drink throughout the day?
+          How much water do you <br /> drink throughout the day?
         </h1>
       </div>
       <div className="flex justify-evenly items-center  mt-5">
@@ -44,7 +44,7 @@ const QuizNo10 = () => {
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base ">
-            I only drink tea or coffee
+              I only drink tea or coffee
             </h1>
             <RadioGroupItem className="mr-5 " value="tea&coffee" id="r1" />
           </Label>
@@ -55,31 +55,41 @@ const QuizNo10 = () => {
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            Fewer than 2 glasses of water
+              Fewer than 2 glasses of water
             </h1>
-            <RadioGroupItem className="mr-5" value="Fewer than 2 glasses of water" id="r2" />
+            <RadioGroupItem
+              className="mr-5"
+              value="Fewer than 2 glasses of water"
+              id="r2"
+            />
           </Label>
           <Label
             onClick={onClick2to6GlassesOfWater}
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
-           
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            2-6 glasses of water (16-48 oz)
+              2-6 glasses of water (16-48 oz)
             </h1>
-            <RadioGroupItem className="mr-5" value="2-6 glasses of water (16-48 oz)" id="r3" />
+            <RadioGroupItem
+              className="mr-5"
+              value="2-6 glasses of water (16-48 oz)"
+              id="r3"
+            />
           </Label>
           <Label
             onClick={onClick7to10GlassesOfWater}
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
-           
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            7-10 glasses of water (56-80 oz)
+              7-10 glasses of water (56-80 oz)
             </h1>
-            <RadioGroupItem className="mr-5" value="7-10 glasses of water" id="r3" />
+            <RadioGroupItem
+              className="mr-5"
+              value="7-10 glasses of water"
+              id="r3"
+            />
           </Label>
           <Label
             onClick={onClickMoreThan10GlassesOfWater}
@@ -87,9 +97,13 @@ const QuizNo10 = () => {
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            More than 10 glasses of water
+              More than 10 glasses of water
             </h1>
-            <RadioGroupItem className="mr-5" value=" More than 10 glasses of water" id="r3" />
+            <RadioGroupItem
+              className="mr-5"
+              value=" More than 10 glasses of water"
+              id="r3"
+            />
           </Label>
         </RadioGroup>
       </div>

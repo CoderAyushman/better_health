@@ -16,7 +16,12 @@ const QuizNo3 = () => {
   const [isCheckedForQ3, setIsCheckedForQ3] = useState(false);
   const [isCheckedForQ4, setIsCheckedForQ4] = useState(false);
   const [isCheckedForQ5, setIsCheckedForQ5] = useState(false);
-  let count=isCheckedForQ1 || isCheckedForQ2 || isCheckedForQ3 || isCheckedForQ4 || isCheckedForQ5;
+  let count =
+    isCheckedForQ1 ||
+    isCheckedForQ2 ||
+    isCheckedForQ3 ||
+    isCheckedForQ4 ||
+    isCheckedForQ5;
   const dispatch = useAppDispatch();
   const handleClickOnArms = () => {
     setIsCheckedForQ1(!isCheckedForQ1);
@@ -146,7 +151,7 @@ const QuizNo3 = () => {
           </Label>
         </div>
       </div>
-      
+
       <div className="p-[50px]"></div>
 
       <ButtonForQ4 num={count} />

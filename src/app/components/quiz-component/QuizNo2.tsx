@@ -7,23 +7,22 @@ import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 
-
 const QuizNo2 = () => {
   const dispatch = useAppDispatch();
   const onClickSlender = () => {
-    radioValues[2]="slender";
+    radioValues[2] = "slender";
     dispatch(increse());
   };
   const onClickMediumBuild = () => {
-    radioValues[2]="medium build";
+    radioValues[2] = "medium build";
     dispatch(increse());
   };
   const onClickStocky = () => {
-    radioValues[2]="stocky";
+    radioValues[2] = "stocky";
     dispatch(increse());
   };
   const onClickObese = () => {
-    radioValues[2]="obese";
+    radioValues[2] = "obese";
     dispatch(increse());
   };
   return (

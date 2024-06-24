@@ -1,4 +1,3 @@
-
 "use client";
 import React from "react";
 import { Label } from "@/components/ui/label";
@@ -10,43 +9,42 @@ import radioValues from "../RadioValues";
 import Link from "next/link";
 
 const QuizNo17 = () => {
-  const dispatch=useAppDispatch();
-  const handleClickOnSquats=()=>{
-    radioValues[17]="squats";
-  dispatch(increse());
-  }
-  const handleClickLunges=()=>{
-    radioValues[17]="lunges";
+  const dispatch = useAppDispatch();
+  const handleClickOnSquats = () => {
+    radioValues[17] = "squats";
+    dispatch(increse());
+  };
+  const handleClickLunges = () => {
+    radioValues[17] = "lunges";
 
     dispatch(increse());
-  }
-  const handleClickOnPlank=()=>{
-    radioValues[17]="plank";
+  };
+  const handleClickOnPlank = () => {
+    radioValues[17] = "plank";
 
     dispatch(increse());
-  }
-  const handleClickBurpees=()=>{
-    radioValues[17]="Burpees";
+  };
+  const handleClickBurpees = () => {
+    radioValues[17] = "Burpees";
 
     dispatch(increse());
-  }
+  };
   return (
     <div className="flex-col justify-center items-center">
-    <div className="flex-col justify-center items-center text-center ">
-      <h1 className="text-4xl font-bold tracking-wide mt-7">
-      Which exercise is your <br /> least favorite?
-      </h1>
-    </div>
-    <div className="flex justify-evenly items-center  mt-5">
-      <RadioGroup defaultValue={radioValues[17]}>
-        <Label
+      <div className="flex-col justify-center items-center text-center ">
+        <h1 className="text-4xl font-bold tracking-wide mt-7">
+          Which exercise is your <br /> least favorite?
+        </h1>
+      </div>
+      <div className="flex justify-evenly items-center  mt-5">
+        <RadioGroup defaultValue={radioValues[17]}>
+          <Label
             onClick={handleClickOnSquats}
             htmlFor="r1"
             className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <img
               className="w-[104px] mr-7"
-              
               src="imageOfMale/quiz-17th/squats-img.png"
               alt="squats-img"
             />
@@ -55,7 +53,7 @@ const QuizNo17 = () => {
           </Label>
 
           <Label
-          onClick={handleClickLunges}
+            onClick={handleClickLunges}
             htmlFor="r2"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
@@ -69,13 +67,13 @@ const QuizNo17 = () => {
             <RadioGroupItem className="mr-5" value="lunges" id="r2" />
           </Label>
           <Label
-          onClick={handleClickOnPlank}
+            onClick={handleClickOnPlank}
             htmlFor="r3"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <img
               className="w-[104px] mr-7"
-             src="imageOfMale/quiz-17th/planks-img.png"
+              src="imageOfMale/quiz-17th/planks-img.png"
               alt="normal-img"
             />
 
@@ -83,24 +81,25 @@ const QuizNo17 = () => {
             <RadioGroupItem className="mr-5" value="plank" id="r3" />
           </Label>
           <Label
-          onClick={handleClickBurpees}
+            onClick={handleClickBurpees}
             htmlFor="r4"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <img
               className="w-[104px] mr-7"
               src="imageOfMale/quiz-17th/burpees-img.png"
-              alt="like-img"cursor-pointer
+              alt="like-img"
+              cursor-pointer
             />
 
             <h1 className="pr-[100px]  font-semibold text-base">Burpees</h1>
             <RadioGroupItem className="mr-5" value="Burpees" id="r4" />
           </Label>
-      </RadioGroup>
+        </RadioGroup>
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
-  )
-}
+  );
+};
 
 export default QuizNo17;

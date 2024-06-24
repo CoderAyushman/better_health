@@ -25,12 +25,11 @@ const QuizNo9 = () => {
     dispatch(increse());
   };
 
-
   return (
     <div className="flex-col justify-center items-center">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
-        How much sleep do you <br /> usually get?
+          How much sleep do you <br /> usually get?
         </h1>
       </div>
       <div className="flex justify-evenly items-center  mt-5">
@@ -41,7 +40,7 @@ const QuizNo9 = () => {
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base ">
-            Minimal rest (less than 5 hours)
+              Minimal rest (less than 5 hours)
             </h1>
             <RadioGroupItem className="mr-5 " value="minimalrest" id="r1" />
           </Label>
@@ -52,7 +51,7 @@ const QuizNo9 = () => {
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            I get some shut-eye (5-6 hours)
+              I get some shut-eye (5-6 hours)
             </h1>
             <RadioGroupItem className="mr-5" value="5to6hours" id="r2" />
           </Label>
@@ -61,9 +60,8 @@ const QuizNo9 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
-           
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            I sleep long and well (7-8 hours)
+              I sleep long and well (7-8 hours)
             </h1>
             <RadioGroupItem className="mr-5" value="7to8hours" id="r3" />
           </Label>
@@ -72,9 +70,8 @@ const QuizNo9 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
-           
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
-            I like to sleep in (more than 8 hours)
+              I like to sleep in (more than 8 hours)
             </h1>
             <RadioGroupItem className="mr-5" value="morethen8hours" id="r3" />
           </Label>

@@ -6,10 +6,10 @@ import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 
 const intromale = () => {
-  const dispatch=useAppDispatch();
-  const handleOnclick=()=>{
-  dispatch(increse());
-  }
+  const dispatch = useAppDispatch();
+  const handleOnclick = () => {
+    dispatch(increse());
+  };
   return (
     <div className="mt-32 flex-col justify-center text-center items-center">
       <p className="pb-10">

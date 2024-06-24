@@ -8,23 +8,24 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 
 const QuizNo1 = () => {
-  const [radioGroupDefaultValue,setRadioGroupDefaultValue]=useState<string>("gainmuscle");
-  useEffect(()=>{
-    console.log(radioGroupDefaultValue)
-  },[])
- 
-  const dispatch=useAppDispatch();
-  
-  const handleClickOnLoseWeight=()=>{
-      radioValues[1]="loseweight";
-      setRadioGroupDefaultValue("loseweight");
-    
+  const [radioGroupDefaultValue, setRadioGroupDefaultValue] =
+    useState<string>("gainmuscle");
+  useEffect(() => {
+    console.log(radioGroupDefaultValue);
+  }, []);
+
+  const dispatch = useAppDispatch();
+
+  const handleClickOnLoseWeight = () => {
+    radioValues[1] = "loseweight";
+    setRadioGroupDefaultValue("loseweight");
+
     dispatch(increse());
-    }
-  const handleClickOnGainMuscle=()=>{
-    radioValues[1]="gainmuscle";
+  };
+  const handleClickOnGainMuscle = () => {
+    radioValues[1] = "gainmuscle";
     dispatch(increse());
-  }
+  };
   return (
     <div className="flex-col justify-center items-center">
       <div className="flex-col justify-center items-center text-center ">
@@ -35,34 +36,34 @@ const QuizNo1 = () => {
       </div>
       <div className="flex justify-evenly items-center text-center mt-5">
         <RadioGroup defaultValue={radioValues[1]}>
-        <Label
-        onClick={handleClickOnLoseWeight}
-          htmlFor="r1"
-          className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
-        >
-          <img
-            className="w-[104px]"
-            src="imageOfMale/quiz-1st/lose-weight-img.png"
-            alt="lose-weight-img"
-          />
-          <h1 className="pr-[175px] font-semibold text-base ">Lose Weight</h1>
-          <RadioGroupItem className="mr-5 " value="loseweight" id="r1" />
-        </Label>
+          <Label
+            onClick={handleClickOnLoseWeight}
+            htmlFor="r1"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+          >
+            <img
+              className="w-[104px]"
+              src="imageOfMale/quiz-1st/lose-weight-img.png"
+              alt="lose-weight-img"
+            />
+            <h1 className="pr-[175px] font-semibold text-base ">Lose Weight</h1>
+            <RadioGroupItem className="mr-5 " value="loseweight" id="r1" />
+          </Label>
 
-        <Label
-          onClick={handleClickOnGainMuscle}
-          htmlFor="r2"
-          className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
-        >
-          <img
-            className="w-[104px]"
-            src="imageOfMale/quiz-1st/gain-muscle-img.png"
-            alt="gain-muscle-img"
-          />
+          <Label
+            onClick={handleClickOnGainMuscle}
+            htmlFor="r2"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+          >
+            <img
+              className="w-[104px]"
+              src="imageOfMale/quiz-1st/gain-muscle-img.png"
+              alt="gain-muscle-img"
+            />
 
-          <h1 className="pr-[175px] font-semibold text-base">Gain Muscle</h1>
-          <RadioGroupItem className="mr-5" value="gainmuscle" id="r2" />
-        </Label>
+            <h1 className="pr-[175px] font-semibold text-base">Gain Muscle</h1>
+            <RadioGroupItem className="mr-5" value="gainmuscle" id="r2" />
+          </Label>
         </RadioGroup>
       </div>
       <Footer />
