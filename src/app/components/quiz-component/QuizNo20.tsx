@@ -29,7 +29,7 @@ const QuizNo20 = () => {
         </h1>
       </div>
       <div className="flex justify-evenly items-center  mt-5">
-        <RadioGroup defaultValue={radioValues[10]}>
+        <RadioGroup defaultValue={radioValues[20]}>
           <Label
             onClick={onClick1to2Times}
             htmlFor="r1"

@@ -1,6 +1,61 @@
-import React from "react";
+import React, {useState } from "react";
+import radioValues from "../RadioValues";
+import { useAppDispatch } from "@/lib/hooks";
+import { increse } from "@/lib/features/counter/counterSlice";
 
 const QuizNo23 = () => {
+  const dispatch=useAppDispatch();
+
+  const [isOne, setIsOne] = useState<boolean>(false);
+  const [isTwo, setIsTwo] = useState<boolean>(false);
+  const [isThree, setIsThree] = useState<boolean>(false);
+  const [isFour, setIsFour] = useState<boolean>(false);
+  const [isFive, setIsFive] = useState<boolean>(false);
+  const handleOnclick1 = () => {
+    radioValues[23] = "1";
+    setIsOne(true);
+    setIsFour(false);
+    setIsFive(false);
+    setIsThree(false);
+    setIsTwo(false);
+    dispatch(increse())
+  };
+  const handleOnclick2 = () => {
+    radioValues[23] = "2";
+    setIsTwo(true);
+    setIsFour(false);
+    setIsFive(false);
+    setIsThree(false);
+    setIsOne(false);
+    dispatch(increse())
+  };
+  const handleOnclick3 = () => {
+    radioValues[23] = "3";
+    setIsThree(true);
+    setIsFour(false);
+    setIsFive(false);
+    setIsTwo(false);
+    setIsOne(false);
+    dispatch(increse())
+  };
+  const handleOnclick4 = () => {
+    radioValues[23] = "4";
+    setIsFour(true);
+    setIsFive(false);
+    setIsThree(false);
+    setIsTwo(false);
+    setIsOne(false);
+    dispatch(increse())
+  };
+  const handleOnclick5 = () => {
+    radioValues[23] = "5";
+    setIsFive(true);
+    setIsFour(false);
+    setIsThree(false);
+    setIsTwo(false);
+    setIsOne(false);
+    dispatch(increse())
+  };
   return (
     <div className="flex justify-center items-center">
       <div className="flex-col">
@@ -15,46 +70,86 @@ const QuizNo23 = () => {
         </p>
         <div className="flex mt-5">
           <div className="flex-col cursor-pointer">
-          <div className="max-w-[150px]  mr-7 bg-gray-100 rounded-md">
-            <h1 className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]">
-              1
-            </h1>
-          </div>
-          <span className="text-sm text-center">Not at all</span>
-          </div>
-          <div>
-
-          <div className="max-w-[150px]  mr-7 bg-gray-100 rounded-md cursor-pointer">
-            <h1 className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]">
-              2
-            </h1>
-          </div>
-          </div>
-          <div>
-          <div className="max-w-[150px]  mr-7 bg-gray-100 rounded-md cursor-pointer">
-            <h1 className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]">
-              3
-            </h1>
-          </div>
-
+            <div
+              className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
+                radioValues[23] == "1" || isOne
+                  ? "bg-customGreen text-white"
+                  : "bg-gray-100"
+              }`}
+            >
+              <h1
+                className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]"
+                onClick={handleOnclick1}
+              >
+                1
+              </h1>
+            </div>
+            <span className="text-sm text-center">Not at all</span>
           </div>
           <div>
-          <div className="max-w-[150px]  mr-7 bg-gray-100 rounded-md cursor-pointer">
-            <h1 className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]">
-              4
-            </h1>
+            <div
+              className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
+                radioValues[23] == "2" || isTwo
+                  ? "bg-customGreen text-white"
+                  : "bg-gray-100"
+              }`}
+            >
+              <h1
+                className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]"
+                onClick={handleOnclick2}
+              >
+                2
+              </h1>
+            </div>
           </div>
-
+          <div>
+            <div
+              className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
+                radioValues[23] == "3" || isThree
+                  ? "bg-customGreen text-white"
+                  : "bg-gray-100"
+              }`}
+            >
+              <h1
+                className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]"
+                onClick={handleOnclick3}
+              >
+                3
+              </h1>
+            </div>
+          </div>
+          <div>
+            <div
+              className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
+                radioValues[23] == "4" || isFour
+                  ? "bg-customGreen text-white"
+                  : "bg-gray-100"
+              }`}
+            >
+              <h1
+                className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]"
+                onClick={handleOnclick4}
+              >
+                4
+              </h1>
+            </div>
           </div>
           <div className="flex-col cursor-pointer">
-
-          <div className="max-w-[150px]  mr-7 bg-gray-100 rounded-md">
-            <h1 className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]">
-              5
-            </h1>
-          </div>
-          <span className="text-sm text-center ml-1">Strongly</span>
-          
+            <div
+              className={`max-w-[150px]  mr-7  rounded-md ${
+                radioValues[23] == "5" || isFive
+                  ? "bg-customGreen text-white"
+                  : "bg-gray-100"
+              }`}
+            >
+              <h1
+                className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]"
+                onClick={handleOnclick5}
+              >
+                5
+              </h1>
+            </div>
+            <span className="text-sm text-center ml-1">Strongly</span>
           </div>
         </div>
       </div>

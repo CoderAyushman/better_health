@@ -3,7 +3,7 @@ import radioValues from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 
-const QuizNo24 = () => {
+const QuizNo26 = () => {
   const dispatch=useAppDispatch();
 
   const [isOne, setIsOne] = useState<boolean>(false);
@@ -12,7 +12,7 @@ const QuizNo24 = () => {
   const [isFour, setIsFour] = useState<boolean>(false);
   const [isFive, setIsFive] = useState<boolean>(false);
   const handleOnclick1 = () => {
-    radioValues[24] = "1";
+    radioValues[26] = "1";
     setIsOne(true);
     setIsFour(false);
     setIsFive(false); 
@@ -21,7 +21,7 @@ const QuizNo24 = () => {
     dispatch(increse())
   };
   const handleOnclick2 = () => {
-    radioValues[24] = "2";
+    radioValues[26] = "2";
     setIsTwo(true);
     setIsFour(false);
     setIsFive(false);
@@ -30,7 +30,7 @@ const QuizNo24 = () => {
     dispatch(increse())
   };
   const handleOnclick3 = () => {
-    radioValues[24] = "3";
+    radioValues[26] = "3";
     setIsThree(true);
     setIsFour(false);
     setIsFive(false);
@@ -39,7 +39,7 @@ const QuizNo24 = () => {
     dispatch(increse())
   };
   const handleOnclick4 = () => {
-    radioValues[24] = "4";
+    radioValues[26] = "4";
     setIsFour(true);
     setIsFive(false);
     setIsThree(false);
@@ -48,7 +48,7 @@ const QuizNo24 = () => {
     dispatch(increse())
   };
   const handleOnclick5 = () => {
-    radioValues[24] = "5";
+    radioValues[26] = "5";
     setIsFive(true);
     setIsFour(false);
     setIsThree(false);
@@ -60,7 +60,7 @@ const QuizNo24 = () => {
     <div className="flex justify-center items-center">
       <div className="flex-col">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
-        I tend to eat while <br /> distracted (watch TV,  scroll <br /> feed, text someone, etc.)
+        I manage to keep up a <br /> healthy routine for a few <br /> weeks before slipping back <br /> into my old habits.
         </h1>
         <p className="text-black-300 mt-2">
           {" "}
@@ -70,7 +70,7 @@ const QuizNo24 = () => {
           <div className="flex-col cursor-pointer">
             <div
               className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
-                radioValues[24] == "1" || isOne
+                radioValues[26] == "1" || isOne
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
               }`}
@@ -87,7 +87,7 @@ const QuizNo24 = () => {
           <div>
             <div
               className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
-                radioValues[24] == "2" || isTwo
+                radioValues[26] == "2" || isTwo
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
               }`}
@@ -103,7 +103,7 @@ const QuizNo24 = () => {
           <div>
             <div
               className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
-                radioValues[24] == "3" || isThree
+                radioValues[26] == "3" || isThree
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
               }`}
@@ -119,7 +119,7 @@ const QuizNo24 = () => {
           <div>
             <div
               className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
-                radioValues[24] == "4" || isFour
+                radioValues[26] == "4" || isFour
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
               }`}
@@ -135,7 +135,7 @@ const QuizNo24 = () => {
           <div className="flex-col cursor-pointer">
             <div
               className={`max-w-[150px]  mr-7  rounded-md ${
-                radioValues[24] == "5" || isFive
+                radioValues[26] == "5" || isFive
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
               }`}
@@ -155,4 +155,4 @@ const QuizNo24 = () => {
   );
 };
 
-export default QuizNo24;
+export default QuizNo26;
