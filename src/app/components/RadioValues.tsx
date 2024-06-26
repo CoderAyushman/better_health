@@ -1,4 +1,4 @@
-let radioValues = [
+let radioValues:any = [
   "0",
   "1",
   "2",
@@ -26,7 +26,15 @@ let radioValues = [
   "24",
   "25",
   "26",
-  "27",
+  {"one":false,
+    "two":false,
+    "three":false,
+    "four":false,
+    "five":false,
+    "six":false,
+    "seven":false,
+    "eight":false,
+  },
   "28",
   "29",
   "30",

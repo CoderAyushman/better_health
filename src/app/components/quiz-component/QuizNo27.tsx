@@ -11,50 +11,55 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 const QuizNo27 = () => {
   // const [counter, setCounter] = useState<number>(0);
-  const [isCheckedForQ1, setIsCheckedForQ1] = useState(false);
-  const [isCheckedForQ2, setIsCheckedForQ2] = useState(false);
-  const [isCheckedForQ3, setIsCheckedForQ3] = useState(false);
-  const [isCheckedForQ4, setIsCheckedForQ4] = useState(false);
-  const [isCheckedForQ5, setIsCheckedForQ5] = useState(false);
+  const [isCheckedForQ1, setIsCheckedForQ1] = useState<boolean>(false);
+  const [isCheckedForQ2, setIsCheckedForQ2] = useState<boolean>(false);
+  const [isCheckedForQ3, setIsCheckedForQ3] = useState<boolean>(false);
+  const [isCheckedForQ4, setIsCheckedForQ4] = useState<boolean>(false);
+  const [isCheckedForQ5, setIsCheckedForQ5] = useState<boolean>(false);
+  const [isCheckedForQ6, setIsCheckedForQ6] = useState<boolean>(false);
+  const [isCheckedForQ7, setIsCheckedForQ7] = useState<boolean>(false);
+  const [isCheckedForQ8, setIsCheckedForQ8] = useState<boolean>(false);
+  
   let count =
-    isCheckedForQ1 ||
-    isCheckedForQ2 ||
-    isCheckedForQ3 ||
-    isCheckedForQ4 ||
-    isCheckedForQ5;
+  radioValues[27].one ||
+  radioValues[27].two ||
+  radioValues[27].three ||
+  radioValues[27].four ||
+  radioValues[27].five || radioValues[27].six || radioValues[27].seven || radioValues[27].eight;
   const dispatch = useAppDispatch();
-  const handleClickOnArms = () => {
+  const handleClickOnMarriage = () => {
     setIsCheckedForQ1(!isCheckedForQ1);
-    radioValues[27] = "slender";
+    radioValues[27].one =!isCheckedForQ1;
   };
-  const handleClickOnPecs = () => {
+  const handleClickOnBusyWork = () => {
     setIsCheckedForQ2(!isCheckedForQ2);
-    radioValues[27] = "athletic";
+    radioValues[27].two = !isCheckedForQ2;
   };
-  const handleClickOnBelly = () => {
+  const handleClickOnFinancialStruggles = () => {
     setIsCheckedForQ3(!isCheckedForQ3);
-    radioValues[27] = "shredded";
+    radioValues[27].three = !isCheckedForQ3;
   };
-  const handleClickOnLegs = () => {
+  const handleClickOnInjury = () => {
     setIsCheckedForQ4(!isCheckedForQ4);
-    radioValues[27] = "swole";
+    radioValues[27].four = !isCheckedForQ4;
   };
-   const handleClickOnBack = () => {
+   const handleClickOnStress = () => {
      setIsCheckedForQ5(!isCheckedForQ5);
-     radioValues[27] = "swole";
+     radioValues[27].five = !isCheckedForQ5;
    };
-//   const handleClickOnBack = () => {
-//     setIsCheckedForQ5(!isCheckedForQ5);
-//     radioValues[27] = "swole";
-//   };
-//   const handleClickOnBack = () => {
-//     setIsCheckedForQ5(!isCheckedForQ5);
-//     radioValues[27] = "swole";
-//   };
-//   const handleClickOnBack = () => {
-//     setIsCheckedForQ5(!isCheckedForQ5);
-//     radioValues[27] = "swole";
-//   };
+  const handleClickOnOld = () => {
+    setIsCheckedForQ6(!isCheckedForQ6);
+    radioValues[27].six =!isCheckedForQ6;
+  };
+  const handleClickOnTreatment = () => {
+    setIsCheckedForQ7(!isCheckedForQ7);
+    radioValues[27].seven = !isCheckedForQ7;
+  };
+  const handleClickOnNone = () => {
+    setIsCheckedForQ8(!isCheckedForQ8);
+    console.log(!isCheckedForQ8)
+    radioValues[27].eight = !isCheckedForQ8;
+  };
   return (
     <div className="flex-col justify-center items-center">
       <div className="flex-col justify-center items-center text-center ">
@@ -71,16 +76,16 @@ const QuizNo27 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-4th/arms-img.png"
+              src="imageOfMale/quiz-27th/marriage-img.png"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[175px] font-semibold text-base ">Arms</h1>
+            <h1 className="pr-[100px] font-semibold text-base ">Marriage or relationship</h1>
             <Checkbox
               className="mr-5 "
               id="r1"
-              value="arms"
-              checked={isCheckedForQ1}
-              onCheckedChange={handleClickOnArms}
+              value="marriage"
+              checked={radioValues[27].one}
+              onCheckedChange={handleClickOnMarriage}
             />
           </Label>
 
@@ -90,16 +95,17 @@ const QuizNo27 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-4th/pecs-img.png"
+              src="imageOfMale/quiz-27th/busy-img.png"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Pecs</h1>
+            <h1 className="pr-[100px] font-semibold text-base">Busy work or family life</h1>
             <Checkbox
               className="mr-5"
-              value="pecs"
+              value="busy"
               id="r2"
-              onCheckedChange={handleClickOnPecs}
+              checked={radioValues[27].two}
+              onCheckedChange={handleClickOnBusyWork}
             />
           </Label>
 
@@ -109,16 +115,17 @@ const QuizNo27 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-4th/belly-img.png"
+              src="imageOfMale/quiz-27th/financial-img.png"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Belly</h1>
+            <h1 className="pr-[140px] font-semibold text-base">Financial struggles</h1>
             <Checkbox
               className="mr-5"
-              value="belly"
+              value="financial"
               id="r3"
-              onCheckedChange={handleClickOnBelly}
+              checked={radioValues[27].three}
+              onCheckedChange={handleClickOnFinancialStruggles}
             />
           </Label>
 
@@ -128,17 +135,18 @@ const QuizNo27 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-4th/legs-img.png"
+              src="imageOfMale/quiz-27th/injuries-img.png"
               alt="gain-muscle-img"
-              cursor-pointer
+              
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Legs</h1>
+            <h1 className="pr-[140px] font-semibold text-base">Injury or disability</h1>
             <Checkbox
               className="mr-5"
-              value="legs"
+              value="injury"
               id="r4"
-              onCheckedChange={handleClickOnLegs}
+              checked={radioValues[27].four}
+              onCheckedChange={handleClickOnInjury}
             />
           </Label>
 
@@ -148,23 +156,84 @@ const QuizNo27 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-4th/back-img.png"
+              src="imageOfMale/quiz-27th/stress-img.png"
               alt="gain-muscle-img"
-              cursor-pointer
+              
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Back</h1>
+            <h1 className="pr-[40px] font-semibold text-base">Stress or mental health issues</h1>
             <Checkbox
               className="mr-5"
-              value="back"
+              value="stress"
               id="r5"
-              onCheckedChange={handleClickOnBack}
+              checked={radioValues[27].five}
+              onCheckedChange={handleClickOnStress}
+            />
+          </Label>
+          <Label
+            htmlFor="r6"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+          >
+            <img
+              className="w-[104px]"
+              src="imageOfMale/quiz-27th/old-img.png"
+              alt="gain-muscle-img"
+              
+            />
+
+            <h1 className="pr-[40px] font-semibold text-base">Slower metabolism due to aging</h1>
+            <Checkbox
+              className="mr-5"
+              value="old"
+              id="r6"
+              checked={radioValues[27].six}
+              onCheckedChange={handleClickOnOld}
+            />
+          </Label>
+          <Label
+            htmlFor="r7"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+          >
+            <img
+              className="w-[104px]"
+              src="imageOfMale/quiz-27th/treatment-img.png"
+              alt="gain-muscle-img"
+              
+            />
+
+            <h1 className="pr-[40px] font-semibold text-base">Post-treatment complications</h1>
+            <Checkbox
+              className="mr-5"
+              value="treatment"
+              id="r7"
+              checked={radioValues[27].seven}
+              onCheckedChange={handleClickOnTreatment}
+            />
+          </Label>
+          <Label
+            htmlFor="r8"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+          >
+            <img
+              className="w-[104px]"
+              src="imageOfMale/quiz-27th/none-img.png"
+              alt="gain-muscle-img"
+              
+            />
+
+            <h1 className="pr-[140px] font-semibold text-base">None of the above</h1>
+            <Checkbox
+              className="mr-5"
+              value="none"
+              id="r8"
+              checked={radioValues[27].eight}
+              onCheckedChange={handleClickOnNone}
             />
           </Label>
         </div>
       </div>
 
-      <div className="p-[50px]"></div>
+      <div className="p-[60px]"></div>
 
       <ButtonForQ4 num={count} />
     </div>

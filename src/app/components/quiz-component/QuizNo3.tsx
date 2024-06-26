@@ -90,7 +90,7 @@ const QuizNo3 = () => {
               className="w-[104px]"
               src="imageOfMale/quiz-3rd/swole-img.png"
               alt="gain-muscle-img"
-              cursor-pointer
+              
             />
 
             <h1 className="pr-[175px] font-semibold text-base">Swole</h1>
