@@ -14,26 +14,22 @@ const QuizNo = () => {
   const [isCheckedForQ1, setIsCheckedForQ1] = useState(false);
   const [isCheckedForQ2, setIsCheckedForQ2] = useState(false);
   const [isCheckedForQ3, setIsCheckedForQ3] = useState(false);
-  const [isCheckedForQ4, setIsCheckedForQ4] = useState(false);
-  const [isCheckedForQ5, setIsCheckedForQ5] = useState(false);
+
   let count =
-    isCheckedForQ1 ||
-    isCheckedForQ2 ||
-    isCheckedForQ3 ||
-    isCheckedForQ4 ||
-    isCheckedForQ5;
+    radioValues[18].one || radioValues[18].two || radioValues[18].three;
+
   const dispatch = useAppDispatch();
   const handleClickOnSensitiveBack = () => {
     setIsCheckedForQ1(!isCheckedForQ1);
-    radioValues[18] = "back";
+    radioValues[18].one = !isCheckedForQ1;
   };
   const handleClickOnSensitiveKnees = () => {
     setIsCheckedForQ2(!isCheckedForQ2);
-    radioValues[18] = "knees";
+    radioValues[18].two = !isCheckedForQ2;
   };
   const handleClickNeither = () => {
     setIsCheckedForQ3(!isCheckedForQ3);
-    radioValues[18] = "neither";
+    radioValues[18].three = !isCheckedForQ3;
   };
 
   return (
@@ -61,7 +57,7 @@ const QuizNo = () => {
               className="mr-5 "
               id="r1"
               value="Sensitive Back"
-              checked={isCheckedForQ1}
+              checked={radioValues[18].one}
               onCheckedChange={handleClickOnSensitiveBack}
             />
           </Label>
@@ -83,6 +79,7 @@ const QuizNo = () => {
               className="mr-5"
               value="Sensitive Knees"
               id="r2"
+              checked={radioValues[18].two}
               onCheckedChange={handleClickOnSensitiveKnees}
             />
           </Label>
@@ -102,6 +99,7 @@ const QuizNo = () => {
               className="mr-5"
               value="Neither"
               id="r3"
+              checked={radioValues[18].three}
               onCheckedChange={handleClickNeither}
             />
           </Label>

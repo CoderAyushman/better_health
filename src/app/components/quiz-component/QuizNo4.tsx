@@ -17,31 +17,31 @@ const QuizNo3 = () => {
   const [isCheckedForQ4, setIsCheckedForQ4] = useState(false);
   const [isCheckedForQ5, setIsCheckedForQ5] = useState(false);
   let count =
-    isCheckedForQ1 ||
-    isCheckedForQ2 ||
-    isCheckedForQ3 ||
-    isCheckedForQ4 ||
-    isCheckedForQ5;
+    radioValues[4].one ||
+    radioValues[4].two ||
+    radioValues[4].three ||
+    radioValues[4].four ||
+    radioValues[4].five;
   const dispatch = useAppDispatch();
   const handleClickOnArms = () => {
     setIsCheckedForQ1(!isCheckedForQ1);
-    radioValues[4] = "slender";
+    radioValues[4].one = !isCheckedForQ1;
   };
   const handleClickOnPecs = () => {
     setIsCheckedForQ2(!isCheckedForQ2);
-    radioValues[4] = "athletic";
+    radioValues[4].two = !isCheckedForQ2;
   };
   const handleClickOnBelly = () => {
     setIsCheckedForQ3(!isCheckedForQ3);
-    radioValues[4] = "shredded";
+    radioValues[4].three = !isCheckedForQ3;
   };
   const handleClickOnLegs = () => {
     setIsCheckedForQ4(!isCheckedForQ4);
-    radioValues[4] = "swole";
+    radioValues[4].four = !isCheckedForQ4;
   };
   const handleClickOnBack = () => {
     setIsCheckedForQ5(!isCheckedForQ5);
-    radioValues[4] = "swole";
+    radioValues[4].five = isCheckedForQ5;
   };
   return (
     <div className="flex-col justify-center items-center">
@@ -67,7 +67,7 @@ const QuizNo3 = () => {
               className="mr-5 "
               id="r1"
               value="arms"
-              checked={isCheckedForQ1}
+              checked={radioValues[4].one}
               onCheckedChange={handleClickOnArms}
             />
           </Label>
@@ -87,6 +87,7 @@ const QuizNo3 = () => {
               className="mr-5"
               value="pecs"
               id="r2"
+              checked={radioValues[4].two}
               onCheckedChange={handleClickOnPecs}
             />
           </Label>
@@ -106,6 +107,7 @@ const QuizNo3 = () => {
               className="mr-5"
               value="belly"
               id="r3"
+              checked={radioValues[4].three}
               onCheckedChange={handleClickOnBelly}
             />
           </Label>
@@ -118,7 +120,6 @@ const QuizNo3 = () => {
               className="w-[104px]"
               src="imageOfMale/quiz-4th/legs-img.png"
               alt="gain-muscle-img"
-              cursor-pointer
             />
 
             <h1 className="pr-[175px] font-semibold text-base">Legs</h1>
@@ -126,6 +127,7 @@ const QuizNo3 = () => {
               className="mr-5"
               value="legs"
               id="r4"
+              checked={radioValues[4].four}
               onCheckedChange={handleClickOnLegs}
             />
           </Label>
@@ -138,7 +140,6 @@ const QuizNo3 = () => {
               className="w-[104px]"
               src="imageOfMale/quiz-4th/back-img.png"
               alt="gain-muscle-img"
-              cursor-pointer
             />
 
             <h1 className="pr-[175px] font-semibold text-base">Back</h1>
@@ -146,6 +147,7 @@ const QuizNo3 = () => {
               className="mr-5"
               value="back"
               id="r5"
+              checked={radioValues[4].five}
               onCheckedChange={handleClickOnBack}
             />
           </Label>
