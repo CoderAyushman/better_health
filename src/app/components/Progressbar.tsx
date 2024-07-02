@@ -4,12 +4,24 @@ import { Progress } from "@/components/ui/progress";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { decrease } from "@/lib/features/counter/counterSlice";
 const Progressbar = () => {
-  // const [quizCounter,setQuizCounter]=useState<number>(1);
   const quizCounter = useAppSelector((state) => state.counter.items);
+ 
   const dispatch = useAppDispatch();
   const handleBackArrowButton = () => {
     dispatch(decrease());
   };
+  let displayQuizCounter=quizCounter;
+  if(quizCounter >= 23 ){
+    displayQuizCounter=displayQuizCounter-1
+    console.log(quizCounter)
+  }
+
+  // if(quizCounter >= 29 ){
+  //   console.log(quizCounter)
+  //   displayQuizCounter=displayQuizCounter-1
+  // }
+  
+  
   return (
     <>
       <div className="mt-32 flex justify-center items-center">
@@ -29,7 +41,7 @@ const Progressbar = () => {
         </button>
         <span>
           <b className="text-customGreen">
-            {quizCounter >= 22 ? quizCounter - 1 : quizCounter}
+            {displayQuizCounter >=29?displayQuizCounter-1:displayQuizCounter}
           </b>
           <b>/33</b>
         </span>

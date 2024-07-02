@@ -8,23 +8,16 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 
 const QuizNo1 = () => {
-  const [radioGroupDefaultValue, setRadioGroupDefaultValue] =
-    useState<string>("gainmuscle");
-  useEffect(() => {
-    console.log(radioGroupDefaultValue);
-  }, []);
 
   const dispatch = useAppDispatch();
 
   const handleClickOnLoseWeight = () => {
     radioValues[1] = "loseweight";
-    setRadioGroupDefaultValue("loseweight");
-
     dispatch(increse());
   };
   const handleClickOnGainMuscle = () => {
     radioValues[1] = "gainmuscle";
-    dispatch(increse());
+    dispatch(increse()); 
   };
   return (
     <div className="flex-col justify-center items-center">
