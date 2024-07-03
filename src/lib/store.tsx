@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import counterReducer from './features/counter/counterSlice';
+import kgtolbsReducer from './features/counter/KgToLbsSlice';
 // store variable is a global variable.
 export const makeStore = () => {
     return configureStore({
         reducer: {
           counter:counterReducer,
+          kgtolbs:kgtolbsReducer,
         },
     });
 };
