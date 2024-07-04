@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
+import radioValues from "../RadioValues";
 
 const QuizNo28 = () => {
   const [isTrue, setIsTrue] = useState(false);
   const [isRequireCM, setIsRequireCM] = useState(true);
   const [isRequireFT, setIsRequireFT] = useState(true);
+  const [ft, setFt] = useState<number>(radioValues[28].ft);
+  const [cm, setCm] = useState<number>(radioValues[28].cm);
+
+  useEffect(()=>{
+  if(radioValues[28].ft!=null){
+    setIsRequireFT(false);
+  }
+  },[]);
   const dispatch = useAppDispatch();
   const handleClick = () => {
     dispatch(increse());
@@ -18,17 +27,27 @@ const QuizNo28 = () => {
     setIsTrue(true);
   };
   const handleOnChangeCM = (event: any) => {
-    const e = event.target.value;
-    if (e >= 90 && e <= 243) {
+    const CM = event.target.value;
+    if (CM >= 90 && CM <= 243) {
+
+      radioValues[28].cm=CM;
+      radioValues[28].ft=parseFloat((CM * 0.0328084).toFixed(1));
+      console.log(radioValues[28].cm)
+      console.log(radioValues[28].ft)
+      setFt(parseFloat((CM * 0.0328084).toFixed(1)));
+      setCm(radioValues[28].cm);
       setIsRequireCM(false);
     } else {
       setIsRequireCM(true);
     }
   };
-  const handleOnChangeFT = (ft: any) => {
-    const FT = ft.target.value;
-
+  const handleOnChangeFT = (event: any) => {
+    const FT = event.target.value;
     if (FT >= 3 && FT <= 7) {
+      radioValues[28].ft=FT;
+      radioValues[28].cm=Math.round(FT * 30.48);
+      setCm(Math.round(FT * 30.48));
+      setFt(radioValues[28].ft);
       setIsRequireFT(false);
     } else {
       setIsRequireFT(true);
@@ -89,6 +108,7 @@ const QuizNo28 = () => {
                     maxLength={3}
                     minLength={1}
                     autoFocus
+                    defaultValue={cm}
                     onChange={(e) => {
                       handleOnChangeCM(e);
                     }}
@@ -108,20 +128,23 @@ const QuizNo28 = () => {
             <div className="flex-col">
               <div className="flex gap-3">
                 <div className="max-w-[200px] overflow-hidden   font-bold">
-                  <Input
-                    className="w-[230px] text-5xl "
-                    type="number"
-                    id="ft"
-                    max={7}
-                    min={3}
-                    maxLength={1}
-                    autoFocus
-                    onChange={(e) => {
-                      handleOnChangeFT(e);
-                    }}
-                  />
+                  <div>
+                    <Input
+                      className="w-[230px] text-5xl "
+                      type="number"
+                      id="ft"
+                      max={7}
+                      min={3}
+                      maxLength={1}
+                      autoFocus
+                      defaultValue={ft}
+                      onChange={(e) => {
+                        handleOnChangeFT(e);
+                      }}
+                    />
+                  </div>
                 </div>
-                <div className="max-w-[200px] overflow-hidden   font-bold">
+                {/* <div className="max-w-[200px] overflow-hidden   font-bold">
                   <Input
                     className="w-[230px] text-5xl"
                     type="number"
@@ -130,7 +153,7 @@ const QuizNo28 = () => {
                     min={1}
                     maxLength={1}
                   />
-                </div>
+                </div> */}
                 <h1 className="font-bold text-2xl ">ft</h1>
               </div>
               {isRequireFT ? (

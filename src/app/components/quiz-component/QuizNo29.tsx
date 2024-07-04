@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { kgtolbs, lbstokg } from "@/lib/features/counter/KgToLbsSlice";
+import radioValues from "../RadioValues";
 
 const QuizNo29 = () => {
   const [isTrue, setIsTrue] = useState(false);
   const [isRequireKG, setIsRequireKG] = useState(true);
   const [isRequireLBS, setIsRequireLBS] = useState(true);
-  const [kg, setIskg] = useState<number>();
-  const [Lbs, setIsLbs] = useState<number>();
-
+  const [kg, setIskg] = useState<number>(radioValues[29].kg);
+  const [Lbs, setIsLbs] = useState<number>(radioValues[29].lbs);
+  const [bmi,setBmi]=useState<number>()
+  
+  useEffect(()=>{
+  if(radioValues[29].kg!=null){
+    setIsRequireKG(false);
+  }
+  },[]);
   const dispatch = useAppDispatch();
   // const KgOrLbs = useAppSelector((state) => state.kgtolbs.items);
 
@@ -32,8 +39,12 @@ const QuizNo29 = () => {
     const e = event.target.value;
     if (e >= 25 && e <= 300) {
       try {
+        radioValues[29].kg=e;
+        radioValues[29].lbs=Math.round(e * 2.20462);
         setIsLbs(Math.round(e * 2.20462));
+        setIskg(e);
         setIsRequireKG(false);
+        setBmi(Math.round(kg/(Math.pow(radioValues[28].cm/100,2))));
       } catch (error) {
         console.error(error);
       }
@@ -46,8 +57,13 @@ const QuizNo29 = () => {
 
     if (LBS >= 55 && LBS <= 662) {
       //  dispatch(lbstokg(LBS));
+      radioValues[29].kg=LBS;
+      radioValues[29].lbs=Math.round(LBS / 2.20462);
       setIskg(Math.round(LBS/2.20462));
+      setIsLbs(LBS);
       setIsRequireLBS(false);
+      setBmi(Math.round((LBS/2.20462)/(Math.pow(radioValues[28].cm/100,2))));
+      
     } else {
       setIsRequireLBS(true);
     }
@@ -159,19 +175,17 @@ const QuizNo29 = () => {
         </div>
         {!isRequireKG || !isRequireLBS ? (
           <div className="flex justify-center items-center text-left mt-4">
-            <div className="flex-col max-w-[335px] pb-2 pl-5 pr-5 pt-2 rounded-md border border-gray-200">
+            <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md border border-gray-200">
               <div className="flex justify-start items-center">
                 <img
-                  src="calculating-bmi-img.png"
+                  src="imageOfMale/quiz-28th/under-img.png"
                   alt="bmi"
                   className="max-w-[50px] p-2 pl-0"
                 />
-                <h2 className="font-semibold">Calculating your BMI</h2>
+                <h2 className="font-semibold">Your BMI is {bmi} which is considered underweight</h2>
               </div>
               <p className="text-gray-400 text-base">
-                Body mass index (BMI) is a metric of body fat percentage
-                commonly used to estimate risk levels of potential health
-                problems.
+              You have some work ahead of you, but it’s great that you’re taking this first step. We’ll use your BMI to create a program just for you.
               </p>
             </div>
           </div>

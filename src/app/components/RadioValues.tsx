@@ -36,8 +36,14 @@ let radioValues: any = [
     seven: false,
     eight: false,
   },
-  "28",
-  "29",
+  {
+   ft:null,
+   cm:null,
+  },
+  {
+    kg:null,
+    lbs:null,
+   },
   "30",
   "31",
   "32",
