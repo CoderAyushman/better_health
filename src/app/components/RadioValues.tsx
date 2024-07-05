@@ -43,8 +43,12 @@ let radioValues: any = [
   {
     kg:null,
     lbs:null,
+    bmi:null
    },
-  "30",
+   {
+    kg:null,
+    lbs:null,
+   },
   "31",
   "32",
   "33",

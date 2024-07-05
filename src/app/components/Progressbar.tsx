@@ -16,17 +16,14 @@ const Progressbar = () => {
     console.log(quizCounter)
   }
 
-  // if(quizCounter >= 29 ){
-  //   console.log(quizCounter)
-  //   displayQuizCounter=displayQuizCounter-1
-  // }
+
   
   
   return (
     <>
       <div className="mt-32 flex justify-center items-center">
         <Progress
-          value={quizCounter * 3.03}
+          value={quizCounter * 2.94}
           className="w-[463px] h-1 max-[450px]:w-[372px]"
         />
       </div>

@@ -43,7 +43,7 @@ const QuizNo28 = () => {
   };
   const handleOnChangeFT = (event: any) => {
     const FT = event.target.value;
-    if (FT >= 3 && FT <= 7) {
+    if (FT >= 3 && FT <= 7.11) {
       radioValues[28].ft=FT;
       radioValues[28].cm=Math.round(FT * 30.48);
       setCm(Math.round(FT * 30.48));
@@ -133,9 +133,9 @@ const QuizNo28 = () => {
                       className="w-[230px] text-5xl "
                       type="number"
                       id="ft"
-                      max={7}
+                      max={7.11}
                       min={3}
-                      maxLength={1}
+                      maxLength={4}
                       autoFocus
                       defaultValue={ft}
                       onChange={(e) => {

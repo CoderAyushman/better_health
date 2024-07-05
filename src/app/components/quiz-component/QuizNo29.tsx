@@ -11,21 +11,116 @@ const QuizNo29 = () => {
   const [isRequireLBS, setIsRequireLBS] = useState(true);
   const [kg, setIskg] = useState<number>(radioValues[29].kg);
   const [Lbs, setIsLbs] = useState<number>(radioValues[29].lbs);
-  const [bmi,setBmi]=useState<number>()
-  
-  useEffect(()=>{
-  if(radioValues[29].kg!=null){
-    setIsRequireKG(false);
-  }
-  },[]);
-  const dispatch = useAppDispatch();
-  // const KgOrLbs = useAppSelector((state) => state.kgtolbs.items);
+  const [bmi, setBmi] = useState<any>();
+  const [displayBmi, setDisplayBmi] = useState<any>();
 
-  //  if(KgOrLbs[0]!=0){
-  //   console.log(KgOrLbs)
-  //   setIskg(KgOrLbs[0]);
-  //   setIsLbs(KgOrLbs[1])
-  //  }
+  useEffect(() => {
+    if (radioValues[29].kg != null) {
+      setIsRequireKG(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (kg != null) {
+      setBmi(Math.round(kg / Math.pow(radioValues[28].cm / 100, 2)));
+      radioValues[29].bmi=bmi;
+    } else {
+      setBmi(Math.round(Lbs / 2.20462 / Math.pow(radioValues[28].cm / 100, 2)));
+      radioValues[29].bmi=bmi;
+    }
+  }, [kg, Lbs]);
+
+  useEffect(() => {
+    if (bmi <= 18) {
+      setDisplayBmi(
+        <div className="flex justify-center items-center text-left mt-4">
+          <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md border-2 border-sky-300">
+            <div className="flex justify-start items-center">
+              <img
+                src="imageOfMale/quiz-28th/under-img.png"
+                alt="bmi"
+                className="max-w-[50px] p-2 pl-0"
+              />
+              <h2 className="font-semibold">
+                Your BMI is {bmi} which is considered underweight
+              </h2>
+            </div>
+            <p className="text-gray-400 text-base">
+              You have some work ahead of you, but it’s great that you’re taking
+              this first step. We’ll use your BMI to create a program just for
+              you.
+            </p>
+          </div>
+        </div>
+      );
+    } else if (bmi >= 19 && bmi <= 25) {
+      setDisplayBmi(
+        <div className="flex justify-center items-center text-left mt-4">
+          <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-green-300">
+            <div className="flex justify-start items-center">
+              <img
+                src="imageOfMale/quiz-28th/normal-weight-img.png"
+                alt="bmi"
+                className="max-w-[50px] p-2 pl-0"
+              />
+              <h2 className="font-semibold">
+                Your BMI is {bmi} which is considered normal
+              </h2>
+            </div>
+            <p className="text-gray-400 text-base">
+              You’re starting from a great place! Now we’ll use your BMI to
+              create a program tailored to your needs.
+            </p>
+          </div>
+        </div>
+      );
+    } else if (bmi >= 26 && bmi <= 30) {
+      setDisplayBmi(
+        <div className="flex justify-center items-center text-left mt-4">
+          <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-yellow-300">
+            <div className="flex justify-start items-center">
+              <img
+                src="imageOfMale/quiz-28th/over-weight-img.png"
+                alt="bmi"
+                className="max-w-[50px] p-2 pl-0"
+              />
+              <h2 className="font-semibold">
+                Your BMI is {bmi} which is considered overweight
+              </h2>
+            </div>
+            <p className="text-gray-400 text-base">
+              You have some work ahead of you, but it’s great that you’re taking
+              this first step. We’ll use your BMI to create a weight loss
+              program just for you.
+            </p>
+          </div>
+        </div>
+      );
+    } else {
+      setDisplayBmi(
+        <div className="flex justify-center items-center text-left mt-4">
+          <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-red-300">
+            <div className="flex justify-start items-center">
+              <img
+                src="imageOfMale/quiz-28th/obese-img.png"
+                alt="bmi"
+                className="max-w-[50px] p-2 pl-0"
+              />
+              <h2 className="font-semibold">
+                Your BMI is {bmi} which is considered obese
+              </h2>
+            </div>
+            <p className="text-gray-400 text-base">
+              There's a lot you could gain by losing a little weight. We’ll use
+              your BMI to create the weight loss program you need.
+            </p>
+          </div>
+        </div>
+      );
+    }
+  }, [bmi]);
+  const dispatch = useAppDispatch();
+
   const handleClick = () => {
     dispatch(increse());
   };
@@ -39,12 +134,11 @@ const QuizNo29 = () => {
     const e = event.target.value;
     if (e >= 25 && e <= 300) {
       try {
-        radioValues[29].kg=e;
-        radioValues[29].lbs=Math.round(e * 2.20462);
+        radioValues[29].kg = e;
+        radioValues[29].lbs = Math.round(e * 2.20462);
         setIsLbs(Math.round(e * 2.20462));
         setIskg(e);
         setIsRequireKG(false);
-        setBmi(Math.round(kg/(Math.pow(radioValues[28].cm/100,2))));
       } catch (error) {
         console.error(error);
       }
@@ -56,14 +150,11 @@ const QuizNo29 = () => {
     const LBS = ft.target.value;
 
     if (LBS >= 55 && LBS <= 662) {
-      //  dispatch(lbstokg(LBS));
-      radioValues[29].kg=LBS;
-      radioValues[29].lbs=Math.round(LBS / 2.20462);
-      setIskg(Math.round(LBS/2.20462));
+      radioValues[29].kg = LBS;
+      radioValues[29].lbs = Math.round(LBS / 2.20462);
+      setIskg(Math.round(LBS / 2.20462));
       setIsLbs(LBS);
       setIsRequireLBS(false);
-      setBmi(Math.round((LBS/2.20462)/(Math.pow(radioValues[28].cm/100,2))));
-      
     } else {
       setIsRequireLBS(true);
     }
@@ -173,25 +264,7 @@ const QuizNo29 = () => {
             </div>
           )}
         </div>
-        {!isRequireKG || !isRequireLBS ? (
-          <div className="flex justify-center items-center text-left mt-4">
-            <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md border border-gray-200">
-              <div className="flex justify-start items-center">
-                <img
-                  src="imageOfMale/quiz-28th/under-img.png"
-                  alt="bmi"
-                  className="max-w-[50px] p-2 pl-0"
-                />
-                <h2 className="font-semibold">Your BMI is {bmi} which is considered underweight</h2>
-              </div>
-              <p className="text-gray-400 text-base">
-              You have some work ahead of you, but it’s great that you’re taking this first step. We’ll use your BMI to create a program just for you.
-              </p>
-            </div>
-          </div>
-        ) : (
-          <></>
-        )}
+        {!isRequireKG || !isRequireLBS ? <>{displayBmi}</> : <></>}
         <div className="mb-5 mt-5">
           {!isRequireKG || !isRequireLBS ? (
             <button

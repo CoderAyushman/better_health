@@ -32,6 +32,9 @@ import QuizNo28 from "./quiz-component/QuizNo28";
 import QuizNo29 from "./quiz-component/QuizNo29";
 import QuizNo30 from "./quiz-component/QuizNo30";
 import AboutBody from "./quiz-component/AboutBody";
+import QuizNo31 from "./quiz-component/QuizNo31";
+import QuizNo32 from "./quiz-component/QuizNo32";
+import QuizNo33 from "./quiz-component/QuizNo33";
 
 const quizes = [
   <Intromale />,
@@ -67,6 +70,9 @@ const quizes = [
   <QuizNo28 />,
   <QuizNo29 />,
   <QuizNo30 />,
+  <QuizNo31 />,
+  <QuizNo32 />,
+  <QuizNo33 />,
 ];
 
 export default quizes;
