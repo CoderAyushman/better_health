@@ -15,15 +15,19 @@ const Progressbar = () => {
     displayQuizCounter=displayQuizCounter-1
     console.log(quizCounter)
   }
-
-
-  
-  
+  if(displayQuizCounter >=29){
+    displayQuizCounter=displayQuizCounter-1
+    console.log(quizCounter)
+  }
+  if(displayQuizCounter >=34){
+    displayQuizCounter=displayQuizCounter-1
+    console.log(quizCounter)
+  }
   return (
     <>
       <div className="mt-32 flex justify-center items-center">
         <Progress
-          value={quizCounter * 2.94}
+          value={quizCounter * 2.77}
           className="w-[463px] h-1 max-[450px]:w-[372px]"
         />
       </div>
@@ -31,14 +35,14 @@ const Progressbar = () => {
         <button>
           <img
             onClick={handleBackArrowButton}
-            className="w-[18px]  "
+            className="w-[18px] "
             src="arrow.png"
             alt="arrow png"
           />
         </button>
         <span>
           <b className="text-customGreen">
-            {displayQuizCounter >=29?displayQuizCounter-1:displayQuizCounter}
+            {displayQuizCounter}
           </b>
           <b>/33</b>
         </span>

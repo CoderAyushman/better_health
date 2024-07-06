@@ -22,14 +22,22 @@ const QuizNo = () => {
   const handleClickOnSensitiveBack = () => {
     setIsCheckedForQ1(!isCheckedForQ1);
     radioValues[18].one = !isCheckedForQ1;
+    setIsCheckedForQ3(false);
+    radioValues[18].three = false;
   };
   const handleClickOnSensitiveKnees = () => {
     setIsCheckedForQ2(!isCheckedForQ2);
     radioValues[18].two = !isCheckedForQ2;
+    setIsCheckedForQ3(false);
+    radioValues[18].three = false;
   };
   const handleClickNeither = () => {
     setIsCheckedForQ3(!isCheckedForQ3);
     radioValues[18].three = !isCheckedForQ3;
+    setIsCheckedForQ1(false);
+    radioValues[18].one = false;
+    setIsCheckedForQ2(false);
+    radioValues[18].two = false;
   };
 
   return (

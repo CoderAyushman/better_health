@@ -23,10 +23,10 @@ const QuizNo29 = () => {
   useEffect(() => {
     if (kg != null) {
       setBmi(Math.round(kg / Math.pow(radioValues[28].cm / 100, 2)));
-      radioValues[29].bmi=bmi;
+      radioValues[29].bmi=Math.round(kg / Math.pow(radioValues[28].cm / 100, 2));
     } else {
       setBmi(Math.round(Lbs / 2.20462 / Math.pow(radioValues[28].cm / 100, 2)));
-      radioValues[29].bmi=bmi;
+      radioValues[29].bmi=Math.round(Lbs / 2.20462 / Math.pow(radioValues[28].cm / 100, 2));
     }
   }, [kg, Lbs]);
 

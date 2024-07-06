@@ -13,9 +13,11 @@ const page = () => {
   console.log(quizCounter)
   if (quizCounter == 0) {
     quizCompaireCounter = false;
-  } else if (
+  } 
+  // || quizes[quizCounter] == quizes[34]
+  else if (
     quizes[quizCounter] == quizes[22] ||
-    quizes[quizCounter] == quizes[29]
+    quizes[quizCounter] == quizes[29] 
   ) {
     quizCompaireCounter = false;
   }

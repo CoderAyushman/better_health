@@ -18,8 +18,12 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(90deg, #96d9ff, #b7f5a8 31.77%, #f9eb7c 66.15%, #fc806e)',
+      },
       colors: {
         customGreen: '#2FDEB3',
+        customGradient: 'linear-gradient(90deg, #96d9ff, #b7f5a8 31.77%, #f9eb7c 66.15%, #fc806e)',
       },
       keyframes: {
         "accordion-down": {
