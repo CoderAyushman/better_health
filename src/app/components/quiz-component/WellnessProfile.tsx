@@ -62,7 +62,7 @@ const WellnessProfile = () => {
             </div>
           </div>
           {/* overweight */}
-          {/* Body type
+          {/* Body Type
               Ectomorph
               Slender, less fat percentage and muscle mass
 
