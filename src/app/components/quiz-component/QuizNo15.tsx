@@ -110,7 +110,7 @@ const QuizNo15 = () => {
           </Label>
         </RadioGroup>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 
 const QuizNo31 = () => {
-  const [isRequireYear, setIsRequireYear] = useState(false);
+  const [isRequireYear, setIsRequireYear] = useState(radioValues[31].isRequireYear);
   const [year, setIsyear] = useState<number>(radioValues[31].year);
 
   const dispatch = useAppDispatch();
@@ -17,17 +17,20 @@ const QuizNo31 = () => {
   const handleOnChangeYear = (event: any) => {
     const e = event.target.value;
     if (e == null) {
+      radioValues[31].isRequireYear=false
       setIsRequireYear(false);
     } else if (e >= 16 && e <= 99) {
       try {
         radioValues[31].year = e;
         setIsyear(e);
-        setIsRequireYear(false);
+        radioValues[31].isRequireYear=true
+        setIsRequireYear(true);
       } catch (error) {
         console.error(error);
       }
     } else {
-      setIsRequireYear(true);
+      radioValues[31].isRequireYear=false
+      setIsRequireYear(false);
     }
   };
 
@@ -59,7 +62,8 @@ const QuizNo31 = () => {
               </div>
               <h1 className="font-bold text-2xl ">year</h1>
             </div>
-            {isRequireYear && year != null ? (
+
+            {!isRequireYear ? (
               <p className="text-xs mt-2">
                 You are not eligible to use this application
               </p>
@@ -88,7 +92,7 @@ const QuizNo31 = () => {
           </div>
         </div>
         <div className="mb-5 mt-5">
-          {!isRequireYear ? (
+          {isRequireYear ? (
             <button
               onClick={handleClick}
               className="cursor-pointer bg-customGreen pl-[130px] pr-[130px] pt-[15px] pb-[15px] rounded-full text-white  "
@@ -111,4 +115,3 @@ const QuizNo31 = () => {
 };
 
 export default QuizNo31;
-

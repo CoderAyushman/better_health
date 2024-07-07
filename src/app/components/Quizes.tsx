@@ -33,8 +33,8 @@ import QuizNo29 from "./quiz-component/QuizNo29";
 import QuizNo30 from "./quiz-component/QuizNo30";
 import AboutBody from "./quiz-component/AboutBody";
 import QuizNo31 from "./quiz-component/QuizNo31";
-import QuizNo32 from "./quiz-component/QuizNo32";
 import QuizNo33 from "./quiz-component/QuizNo33";
+import WellnessProfile from "./quiz-component/WellnessProfile";
 
 const quizes = [
   <Intromale />,
@@ -71,7 +71,7 @@ const quizes = [
   <QuizNo29 />,
   <QuizNo30 />,
   <QuizNo31 />,
-  <QuizNo32 />,
+  <WellnessProfile />,
   <QuizNo33 />,
 ];
 

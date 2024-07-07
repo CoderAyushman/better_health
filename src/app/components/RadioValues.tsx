@@ -50,7 +50,8 @@ let radioValues: any = [
     lbs:null,
    },
   {
-    year:null
+    year:null,
+    isRequireYear:false
   },
   "32",
   "33",
