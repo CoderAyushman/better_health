@@ -5,24 +5,31 @@ import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { decrease } from "@/lib/features/counter/counterSlice";
 import radioValues from "./RadioValues";
 import { decreaseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import quizes from "./Quizes";
 // var dubQuizCounter=quizCounter;
 
 const Progressbar = () => {
-  const quizCounter: number = useAppSelector((state) => state.diplayCounter.items);
-  
-  const [displayQuizCounter, setDisplayQuizCounter] = useState<any>(quizCounter);
+  const quizCounter: number = useAppSelector(
+    (state) => state.diplayCounter.items
+  );
+
+  const [displayQuizCounter, setDisplayQuizCounter] =
+    useState<any>(quizCounter);
   const dispatch = useAppDispatch();
   const handleBackArrowButton = () => {
-    
     dispatch(decrease());
-    if(quizCounter!=1){
-
+    if (
+      quizCounter != 1 ||
+      quizes[quizCounter] != quizes[22] ||
+      quizes[quizCounter] != quizes[29] ||
+      quizes[quizCounter] != quizes[34] ||
+      quizes[quizCounter] != quizes[36]
+    ) {
       dispatch(decreaseDisplayCounter());
     }
   };
 
   // useEffect(() => {
-
 
   //   if(quizCounter>=23){
   //     setDisplayQuizCounter(quizCounter-1);

@@ -25,7 +25,7 @@ const intromale = () => {
       <Link
         onClick={handleOnclick}
         href="quiz"
-        className="bg-customGreen rounded-full overflow-visible  text-white pt-5 mt-[-10px] pb-5  pl-28 pr-28"
+        className="bg-customGreen rounded-full overflow-visible  text-white pt-5 mt-[-10px] pb-5  pl-28 pr-28 "
       >
         <b>CONTINUE</b>
       </Link>

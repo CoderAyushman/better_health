@@ -53,19 +53,7 @@ let radioValues: any = [
     year:null,
     isRequireYear:false
   },
-  {
-    one: false,
-    two: false,
-    three: false,
-    four: false,
-    five: false,
-    six: false,
-    seven: false,
-    eight: false,
-    nine: false,
-    ten: false,
-    eleven: false,
-  },
+  "32",
   "33",
   
 ];

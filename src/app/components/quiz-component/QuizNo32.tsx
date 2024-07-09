@@ -1,84 +1,88 @@
 "use client";
 import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
+// import { RadioGroupItem } from "@/components/ui/checkbox";
 import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { RadioGroup } from "@radix-ui/react-radio-group";
+import { RadioGroupItem } from "@/components/ui/radio-group";
 
 const QuizNo32 = () => {
   // const [counter, setCounter] = useState<number>(0);
-  const [isCheckedForQ1, setIsCheckedForQ1] = useState<boolean>(false);
-  const [isCheckedForQ2, setIsCheckedForQ2] = useState<boolean>(false);
-  const [isCheckedForQ3, setIsCheckedForQ3] = useState<boolean>(false);
-  const [isCheckedForQ4, setIsCheckedForQ4] = useState<boolean>(false);
-  const [isCheckedForQ5, setIsCheckedForQ5] = useState<boolean>(false);
-  const [isCheckedForQ6, setIsCheckedForQ6] = useState<boolean>(false);
-  const [isCheckedForQ7, setIsCheckedForQ7] = useState<boolean>(false);
-  const [isCheckedForQ8, setIsCheckedForQ8] = useState<boolean>(false);
-  const [isCheckedForQ9, setIsCheckedForQ9] = useState<boolean>(false);
-  const [isCheckedForQ10, setIsCheckedForQ10] = useState<boolean>(false);
-  const [isCheckedForQ11, setIsCheckedForQ11] = useState<boolean>(false);
-  
-  let count =
-  radioValues[32].one ||
-  radioValues[32].two ||
-  radioValues[32].three ||
-  radioValues[32].four ||
-  radioValues[32].five || radioValues[32].six || radioValues[32].seven || radioValues[32].eight || radioValues[32].nine || radioValues[32].ten || radioValues[32].eleven ;
+
   const dispatch = useAppDispatch();
   const handleClickOnMarriage = () => {
-    setIsCheckedForQ1(!isCheckedForQ1);
-    radioValues[32].one =!isCheckedForQ1;
+    radioValues[32]="Vacation"
+    dispatch(increse());
+    dispatch(increseDisplayCounter());
+
   };
   const handleClickOnBusyWork = () => {
-    setIsCheckedForQ2(!isCheckedForQ2);
-    radioValues[32].two = !isCheckedForQ2;
+    radioValues[32]="Competition"
+    dispatch(increse());
+    dispatch(increseDisplayCounter());
+
   };
   const handleClickOnFinancialStruggles = () => {
-    setIsCheckedForQ3(!isCheckedForQ3);
-    radioValues[32].three = !isCheckedForQ3;
+    radioValues[32]="Important date"
+    dispatch(increse());
+    dispatch(increseDisplayCounter());
+
   };
   const handleClickOnInjury = () => {
-    setIsCheckedForQ4(!isCheckedForQ4);
-    radioValues[32].four = !isCheckedForQ4;
+    radioValues[32]="Outdoor adventure"
+    dispatch(increse());
+    dispatch(increseDisplayCounter());
+
   };
    const handleClickOnStress = () => {
-     setIsCheckedForQ5(!isCheckedForQ5);
-     radioValues[32].five = !isCheckedForQ5;
+    radioValues[32]="Birthday"
+    dispatch(increse());
+     dispatch(increseDisplayCounter());
+
    };
   const handleClickOnOld = () => {
-    setIsCheckedForQ6(!isCheckedForQ6);
-    radioValues[32].six =!isCheckedForQ6;
+    radioValues[32]="holiday"
+    dispatch(increse());
+    dispatch(increseDisplayCounter());
+
   };
   const handleClickOnTreatment = () => {
-    setIsCheckedForQ7(!isCheckedForQ7);
-    radioValues[32].seven = !isCheckedForQ7;
+    radioValues[32]="reuniun"
+    dispatch(increse());
+    dispatch(increseDisplayCounter());
+
   };
   
   const handleClickOnFamily = () => {
-    setIsCheckedForQ8(!isCheckedForQ8);
-    console.log(!isCheckedForQ8)
-    radioValues[32].eight = !isCheckedForQ8;
+  radioValues[32]="family"
+    dispatch(increse());
+  dispatch(increseDisplayCounter());
+
   };
   const handleClickOnWedding = () => {
-    setIsCheckedForQ8(!isCheckedForQ9);
-    console.log(!isCheckedForQ9)
-    radioValues[32].nine = !isCheckedForQ9;
+    radioValues[32]="wedding"
+    dispatch(increse());
+    dispatch(increseDisplayCounter());
+
   };
   const handleClickOnOther = () => {
-    setIsCheckedForQ8(!isCheckedForQ10);
-    console.log(!isCheckedForQ10)
-    radioValues[32].ten = !isCheckedForQ10;
+   radioValues[32]="other"
+    dispatch(increse());
+   dispatch(increseDisplayCounter());
+
   };
  
   const handleClickOnNone = () => {
-    setIsCheckedForQ11(!isCheckedForQ11);
-    console.log(!isCheckedForQ8)
-    radioValues[32].eleven = !isCheckedForQ11;
+    radioValues[32]="none"
+    dispatch(increse());
+    dispatch(increseDisplayCounter());
+
   };
   return (
     <div className="flex-col justify-center items-center mb-5">
@@ -90,7 +94,9 @@ const QuizNo32 = () => {
       </div>
       <div className="flex justify-evenly items-center text-center mt-5">
         <div>
+          <RadioGroup defaultValue={radioValues[32]}>
           <Label
+            onClick={handleClickOnMarriage}
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
           >
@@ -100,17 +106,16 @@ const QuizNo32 = () => {
               alt="lose-weight-img"
             />
             <h1 className="text-center font-semibold text-base ">Vacation</h1>
-            <Checkbox
+            <RadioGroupItem
               className="mr-5 "
               id="r1"
               value="Vacation"
-              checked={radioValues[32].one}
-              onCheckedChange={handleClickOnMarriage}
-            />
+                        />
           </Label>
 
           <Label
             htmlFor="r2"
+            onClick={handleClickOnBusyWork}
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
           >
             <img
@@ -120,17 +125,16 @@ const QuizNo32 = () => {
             />
 
             <h1 className="text-center font-semibold text-base">Competition</h1>
-            <Checkbox
+            <RadioGroupItem
               className="mr-5"
               value="Competition"
               id="r2"
-              checked={radioValues[32].two}
-              onCheckedChange={handleClickOnBusyWork}
-            />
+                        />
           </Label>
 
           <Label
             htmlFor="r3"
+            onClick={handleClickOnFinancialStruggles}
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
           >
             <img
@@ -140,18 +144,17 @@ const QuizNo32 = () => {
             />
 
             <h1 className="text-center font-semibold text-base">Important date</h1>
-            <Checkbox
+            <RadioGroupItem
               className="mr-5"
               value="Important date"
               id="r3"
-              checked={radioValues[32].three}
-              onCheckedChange={handleClickOnFinancialStruggles}
-            />
+                          />
           </Label>
 
           <Label
             htmlFor="r4"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            onClick={handleClickOnInjury}
           >
             <img
               className="w-[104px]"
@@ -161,18 +164,17 @@ const QuizNo32 = () => {
             />
 
             <h1 className="text-center font-semibold text-base">Outdoor adventure</h1>
-            <Checkbox
+            <RadioGroupItem
               className="mr-5"
               value="Outdoor adventure"
               id="r4"
-              checked={radioValues[32].four}
-              onCheckedChange={handleClickOnInjury}
-            />
+                         />
           </Label>
 
           <Label
             htmlFor="r5"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            onClick={handleClickOnStress}
           >
             <img
               className="w-[104px]"
@@ -182,17 +184,16 @@ const QuizNo32 = () => {
             />
 
             <h1 className="text-center font-semibold text-base">Birthday</h1>
-            <Checkbox
+            <RadioGroupItem
               className="mr-5"
               value="Birthday"
               id="r5"
-              checked={radioValues[32].five}
-              onCheckedChange={handleClickOnStress}
-            />
+                         />
           </Label>
           <Label
             htmlFor="r6"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            onClick={handleClickOnOld}
           >
             <img
               className="w-[104px]"
@@ -202,17 +203,16 @@ const QuizNo32 = () => {
             />
 
             <h1 className="text-center font-semibold text-base">Holiday</h1>
-            <Checkbox
+            <RadioGroupItem
               className="mr-5"
               value="holiday"
               id="r6"
-              checked={radioValues[32].six}
-              onCheckedChange={handleClickOnOld}
-            />
+                        />
           </Label>
           <Label
             htmlFor="r7"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            onClick={handleClickOnTreatment}
           >
             <img
               className="w-[104px]"
@@ -222,17 +222,16 @@ const QuizNo32 = () => {
             />
 
             <h1 className="text-center font-semibold text-base">Reuniun</h1>
-            <Checkbox
+            <RadioGroupItem
               className="mr-5"
               value="reuniun"
               id="r7"
-              checked={radioValues[32].seven}
-              onCheckedChange={handleClickOnTreatment}
-            />
+                          />
           </Label>
           <Label
             htmlFor="r8"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            onClick={handleClickOnFamily}
           >
             <img
               className="w-[104px]"
@@ -242,17 +241,16 @@ const QuizNo32 = () => {
             />
 
             <h1 className="text-center font-semibold text-base">Family Occasion</h1>
-            <Checkbox
+            <RadioGroupItem
               className="mr-5"
               value="family"
               id="r8"
-              checked={radioValues[32].eight}
-              onCheckedChange={handleClickOnFamily}
-            />
+                          />
           </Label>
           <Label
             htmlFor="r9"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            onClick={handleClickOnWedding}
           >
             <img
               className="w-[104px]"
@@ -262,17 +260,16 @@ const QuizNo32 = () => {
             />
 
             <h1 className="text-center font-semibold text-base">Wedding</h1>
-            <Checkbox
+            <RadioGroupItem
               className="mr-5"
               value="wedding"
               id="r9"
-              checked={radioValues[32].nine}
-              onCheckedChange={handleClickOnWedding}
-            />
+                         />
           </Label>
           <Label
             htmlFor="r10"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            onClick={handleClickOnOther}
           >
             <img
               className="w-[104px]"
@@ -282,17 +279,16 @@ const QuizNo32 = () => {
             />
 
             <h1 className="text-center font-semibold text-base">Other</h1>
-            <Checkbox
+            <RadioGroupItem
               className="mr-5"
               value="other"
               id="r10"
-              checked={radioValues[32].ten}
-              onCheckedChange={handleClickOnOther}
-            />
+                        />
           </Label>
           <Label
             htmlFor="r11"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            onClick={handleClickOnNone}
           >
             <img
               className="w-[104px]"
@@ -302,20 +298,20 @@ const QuizNo32 = () => {
             />
 
             <h1 className="text-center font-semibold text-base">No special events any time soon</h1>
-            <Checkbox
+            <RadioGroupItem
               className="mr-5"
               value="none"
               id="r11"
-              checked={radioValues[32].eleven}
-              onCheckedChange={handleClickOnNone}
+              
             />
           </Label>
+          </RadioGroup>
         </div>
       </div>
 
-      <div className="p-[60px]"></div>
+      
 
-      <ButtonForQ4 num={count} />
+      
     </div>
   );
 };

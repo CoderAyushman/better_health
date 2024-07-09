@@ -36,6 +36,7 @@ import QuizNo31 from "./quiz-component/QuizNo31";
 import QuizNo33 from "./quiz-component/QuizNo33";
 import WellnessProfile from "./quiz-component/WellnessProfile";
 import QuizNo32 from "./quiz-component/QuizNo32";
+import Chart from "./quiz-component/Chart";
 
 const quizes = [
   <Intromale />,
@@ -74,6 +75,7 @@ const quizes = [
   <QuizNo31 />,
   <WellnessProfile />,
   <QuizNo32/>,
+  <Chart/>,
   <QuizNo33 />,
 ];
 
