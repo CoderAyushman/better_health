@@ -1,28 +1,41 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Progress } from "@/components/ui/progress";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { decrease } from "@/lib/features/counter/counterSlice";
+import radioValues from "./RadioValues";
+import { decreaseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+// var dubQuizCounter=quizCounter;
+
 const Progressbar = () => {
-  const quizCounter = useAppSelector((state) => state.counter.items);
- 
+  const quizCounter: number = useAppSelector((state) => state.diplayCounter.items);
+  
+  const [displayQuizCounter, setDisplayQuizCounter] = useState<any>(quizCounter);
   const dispatch = useAppDispatch();
   const handleBackArrowButton = () => {
+    
     dispatch(decrease());
+    if(quizCounter!=1){
+
+      dispatch(decreaseDisplayCounter());
+    }
   };
-  let displayQuizCounter=quizCounter;
-  if(quizCounter >= 23 ){
-    displayQuizCounter=displayQuizCounter-1
-    console.log(quizCounter)
-  }
-  if(displayQuizCounter >=29){
-    displayQuizCounter=displayQuizCounter-1
-    console.log(quizCounter)
-  }
-  if(displayQuizCounter >=34){
-    displayQuizCounter=displayQuizCounter-1
-    console.log(quizCounter)
-  }
+
+  // useEffect(() => {
+
+
+  //   if(quizCounter>=23){
+  //     setDisplayQuizCounter(quizCounter-1);
+  //     if(quizCounter>=29){
+  //       setDisplayQuizCounter(displayQuizCounter-1);
+  //     }
+  //   }
+  //   else{
+  //     setDisplayQuizCounter(quizCounter);
+  //   }
+  //   console.log(quizCounter, displayQuizCounter);
+  // }, [quizCounter]);
+
   return (
     <>
       <div className="mt-32 flex justify-center items-center">
@@ -41,9 +54,7 @@ const Progressbar = () => {
           />
         </button>
         <span>
-          <b className="text-customGreen">
-            {displayQuizCounter}
-          </b>
+          <b className="text-customGreen">{quizCounter}</b>
           <b>/33</b>
         </span>
       </div>

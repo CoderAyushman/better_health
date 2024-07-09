@@ -2,6 +2,7 @@ import React, {useState } from "react";
 import radioValues from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo25 = () => {
   const dispatch=useAppDispatch();
@@ -19,6 +20,7 @@ const QuizNo25 = () => {
     setIsThree(false);
     setIsTwo(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick2 = () => {
     radioValues[25] = "2";
@@ -28,6 +30,7 @@ const QuizNo25 = () => {
     setIsThree(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick3 = () => {
     radioValues[25] = "3";
@@ -37,6 +40,7 @@ const QuizNo25 = () => {
     setIsTwo(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick4 = () => {
     radioValues[25] = "4";
@@ -46,6 +50,7 @@ const QuizNo25 = () => {
     setIsTwo(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick5 = () => {
     radioValues[25] = "5";
@@ -55,9 +60,10 @@ const QuizNo25 = () => {
     setIsTwo(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center mb-5">
       <div className="flex-col">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
         I’m quick to fall off my plan <br /> whenever I’m around <br /> people who aren’t on the <br /> same journey as me.

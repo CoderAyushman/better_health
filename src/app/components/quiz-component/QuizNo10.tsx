@@ -5,32 +5,38 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo10 = () => {
   const dispatch = useAppDispatch();
   const onClickTeaAndCoffee = () => {
     radioValues[10] = "tea&coffee";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickeFewerThan2GlassesOfWater = () => {
     radioValues[10] = "Fewer than 2 glasses of water";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClick2to6GlassesOfWater = () => {
     radioValues[10] = "2-6 glasses of water (16-48 oz)";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClick7to10GlassesOfWater = () => {
     radioValues[10] = "7-10 glasses of water";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickMoreThan10GlassesOfWater = () => {
     radioValues[10] = " More than 10 glasses of water";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
 
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How much water do you <br /> drink throughout the day?

@@ -5,24 +5,28 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo8 = () => {
   const dispatch = useAppDispatch();
   const onClickSitting = () => {
     radioValues[8] = "sitting";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickeActive = () => {
     radioValues[8] = "active";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickEasyFullActive = () => {
     radioValues[8] = "fullactive";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
 
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How does your weight <br /> typically change?

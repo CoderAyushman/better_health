@@ -7,30 +7,35 @@ import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 import Link from "next/link";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo16 = () => {
   const dispatch = useAppDispatch();
   const handleClickOnFewerThan12 = () => {
     radioValues[16] = "Fewer than 12";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOn13to20 = () => {
     radioValues[16] = "13to20";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnMoreThan21 = () => {
     radioValues[16] = "More than 21";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickDontKnow = () => {
     radioValues[16] = "I dont know";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How many push-ups could <br /> you do?

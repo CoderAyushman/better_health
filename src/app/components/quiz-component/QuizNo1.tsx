@@ -6,6 +6,7 @@ import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo1 = () => {
 
@@ -14,13 +15,15 @@ const QuizNo1 = () => {
   const handleClickOnLoseWeight = () => {
     radioValues[1] = "loseweight";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnGainMuscle = () => {
     radioValues[1] = "gainmuscle";
     dispatch(increse()); 
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           What is your goal?

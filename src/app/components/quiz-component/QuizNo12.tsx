@@ -5,28 +5,33 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo12 = () => {
   const dispatch = useAppDispatch();
   const onClickAlmostEveryDay = () => {
     radioValues[12] = " Almost every day";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickeSeveralTimesPerWeek = () => {
     radioValues[12] = "Several times per week";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickSeveralTimesPerMonth = () => {
     radioValues[12] = "Several times per month";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickNever = () => {
     radioValues[12] = "Never";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
 
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How often do you <br /> workout?

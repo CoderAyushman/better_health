@@ -6,30 +6,35 @@ import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo14 = () => {
   const dispatch = useAppDispatch();
   const handleClickOnsoOutOfBreath = () => {
     radioValues[14] = "I'm so out of breath I can't talk";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnoutOfBreathButCanTalk = () => {
     radioValues[14] = "I'm somewhat out of breath but can talk";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnOKAfterOneFlightOfStairs = () => {
     radioValues[14] = "I'm OK after one flight of stairs";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickEasilyWalkUp = () => {
     radioValues[14] = "I can easily walk up a few flights of stairs";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           Are you out of breath after <br /> walking up a flight of <br />{" "}

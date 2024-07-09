@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo28 = () => {
   const [isTrue, setIsTrue] = useState(false);
@@ -19,6 +20,7 @@ const QuizNo28 = () => {
   const dispatch = useAppDispatch();
   const handleClick = () => {
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleCM = () => {
     setIsTrue(false);
@@ -55,7 +57,7 @@ const QuizNo28 = () => {
   };
   return (
     <>
-      <div className="flex-col justify-center items-center text-center">
+      <div className="flex-col justify-center items-center text-center mb-5">
         <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-full">
           What is your <br />
           height?

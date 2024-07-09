@@ -14,11 +14,11 @@ const page = () => {
   if (quizCounter == 0) {
     quizCompaireCounter = false;
   } 
-  // || quizes[quizCounter] == quizes[34]
   else if (
     quizes[quizCounter] == quizes[22] ||
     quizes[quizCounter] == quizes[29] 
   ) {
+    // || quizes[quizCounter] == quizes[34]
     quizCompaireCounter = false;
   }
   return (

@@ -7,21 +7,24 @@ import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 import Link from "next/link";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo19 = () => {
   const dispatch = useAppDispatch();
   const handleClickOnGym = () => {
     radioValues[19] = "gym";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickHome = () => {
     radioValues[19] = "home";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
 
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           Select your preferred <br /> place for working out

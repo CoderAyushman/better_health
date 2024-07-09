@@ -6,30 +6,35 @@ import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo13 = () => {
   const dispatch = useAppDispatch();
   const handleClickOnAlmostEveryDay = () => {
     radioValues[13] = "Almost Every Day";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOn3to4TimesPerWeek = () => {
     radioValues[13] = "3-4 times per week";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOn1to2TimesPerWeek = () => {
     radioValues[13] = "1-2 times per week";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickMoreLikeOnceAMonth = () => {
     radioValues[13] = "More like once a month";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How often do you go for <br /> walks?

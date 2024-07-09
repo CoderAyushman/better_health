@@ -6,27 +6,32 @@ import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo2 = () => {
   const dispatch = useAppDispatch();
   const onClickSlender = () => {
     radioValues[2] = "slender";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickMediumBuild = () => {
     radioValues[2] = "medium build";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickStocky = () => {
     radioValues[2] = "stocky";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickObese = () => {
     radioValues[2] = "obese";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How would you describe <br />

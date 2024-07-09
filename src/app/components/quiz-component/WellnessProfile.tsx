@@ -50,7 +50,7 @@ const WellnessProfile = () => {
           alt=""
         />
       );
-    } else if (bmi >= 19 && bmi < 25) {
+    } else if (bmi >= 19 && bmi <=25) {
       setBmiValue(bmi - 2);
       setBmiDisplay(
         <div className="flex justify-center items-center text-left mt-7">
@@ -130,7 +130,7 @@ const WellnessProfile = () => {
           alt=""
         />
       );
-    } else if (bmi >= 50) {
+    } else if (bmi >= 40) {
       setBmiValue(50);
       setBmiDisplay(
         <div className="flex justify-center items-center text-left mt-7">

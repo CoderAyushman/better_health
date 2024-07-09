@@ -6,6 +6,7 @@ import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo22 = () => {
   const dispatch = useAppDispatch();
@@ -13,54 +14,64 @@ const QuizNo22 = () => {
   const handleClickOnTraditionalFood = () => {
     radioValues[22] = "TraditionalFood";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnKeto = () => {
     radioValues[22] = "keto food";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnVegeterian = () => {
     radioValues[22] = "vegetarian";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnVegan = () => {
     radioValues[22] = "vegan plantdiet";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnKetoVegan = () => {
     radioValues[22] = "KetoVegan";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnPescatarian = () => {
     radioValues[22] = "Pescatarian";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnLactoseFree = () => {
     radioValues[22] = "Lactose Free";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnGlutenFree = () => {
     radioValues[22] = "Gluten Free";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnPaleo = () => {
     radioValues[22] = "Paleo";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnMediterranean = () => {
     radioValues[22] = "Mediterranean";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           What type of diet do you <br /> prefer?

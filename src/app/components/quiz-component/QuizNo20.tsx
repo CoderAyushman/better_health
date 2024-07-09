@@ -5,24 +5,28 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo20 = () => {
   const dispatch = useAppDispatch();
   const onClick1to2Times = () => {
     radioValues[20] = "1 to 2 times";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClick3to4Times = () => {
     radioValues[20] = "3 to 4 times";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickMoreThen5times = () => {
     radioValues[20] = "more then 5 times";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
 
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How many times per <br /> week would you like to <br /> train?

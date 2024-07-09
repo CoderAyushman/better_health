@@ -6,30 +6,35 @@ import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo11 = () => {
   const dispatch = useAppDispatch();
   const handleClickOnHighAndSteady = () => {
     radioValues[11] = "HighAndSteady";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnDraggingBeforeMeals = () => {
     radioValues[11] = "Dragging before meals";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnPostLunchSlump = () => {
     radioValues[11] = "Post lunch slump";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnIFeelTired = () => {
     radioValues[11] = "Low, I feel tired throughout the day";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How are your energy <br /> levels during the day?

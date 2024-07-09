@@ -5,32 +5,38 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo6 = () => {
   const dispatch = useAppDispatch();
   const onClick0to6month = () => {
     radioValues[6] = "0-6month";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClicke7to12month = () => {
     radioValues[6] = "7-12month";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClick1to3year = () => {
     radioValues[6] = "1-3year";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickMoreThen3 = () => {
     radioValues[6] = "morethen3";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickNever = () => {
     radioValues[6] = "never";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
 
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How long ago were you in <br /> the best shape of your <br /> life?

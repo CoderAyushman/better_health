@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo31 = () => {
   const [isRequireYear, setIsRequireYear] = useState(radioValues[31].isRequireYear);
@@ -12,6 +13,7 @@ const QuizNo31 = () => {
 
   const handleClick = () => {
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
 
   const handleOnChangeYear = (event: any) => {
@@ -36,7 +38,7 @@ const QuizNo31 = () => {
 
   return (
     <>
-      <div className="flex-col justify-center items-center text-center">
+      <div className="flex-col justify-center items-center text-center mb-5">
         <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-full">
           What is your age?
         </h1>

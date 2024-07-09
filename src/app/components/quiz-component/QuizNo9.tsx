@@ -5,28 +5,33 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo9 = () => {
   const dispatch = useAppDispatch();
   const onClickMinimalRest = () => {
     radioValues[9] = "minimalrest";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClicke5toghours = () => {
     radioValues[9] = "5to6hours";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClick7to8hours = () => {
     radioValues[9] = "7to8hours";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const onClickMoreThen8hours = () => {
     radioValues[9] = "morethen8hours";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
 
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How much sleep do you <br /> usually get?

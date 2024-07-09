@@ -61,7 +61,7 @@ const QuizNo27 = () => {
     radioValues[27].eight = !isCheckedForQ8;
   };
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
         Have any of the following <br /> life events led to weight <br /> gain in the last few years?

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import { kgtolbs, lbstokg } from "@/lib/features/counter/KgToLbsSlice";
 import radioValues from "../RadioValues";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo30 = () => {
   const [isTrue, setIsTrue] = useState(false);
@@ -184,6 +184,7 @@ const QuizNo30 = () => {
 
   const handleClick = () => {
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleKG = () => {
     setIsTrue(false);
@@ -222,7 +223,7 @@ const QuizNo30 = () => {
   };
   return (
     <>
-      <div className="flex-col justify-center items-center text-center">
+      <div className="flex-col justify-center items-center text-center mb-5">
         <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-full">
           What is your goal <br /> weight?
         </h1>

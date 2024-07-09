@@ -6,30 +6,35 @@ import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo21 = () => {
   const dispatch = useAppDispatch();
   const handleClickOn10to15min = () => {
     radioValues[21] = "10to15min";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOn15to25min = () => {
     radioValues[21] = "15-25 min";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOn25minPlus = () => {
     radioValues[21] = "25+ min";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnIDontKnow = () => {
     radioValues[21] = "i dont know";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How much time do you <br /> want to work out?
@@ -88,7 +93,6 @@ const QuizNo21 = () => {
               className="w-[104px]"
               src="imageOfMale/quiz-21st/confuse-img.png"
               alt="gain-muscle-img"
-              cursor-pointer
             />
 
             <h1 className="pr-[140px] font-semibold text-base">i don't know</h1>

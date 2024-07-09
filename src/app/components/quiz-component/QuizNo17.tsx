@@ -7,30 +7,35 @@ import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 import Link from "next/link";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo17 = () => {
   const dispatch = useAppDispatch();
   const handleClickOnSquats = () => {
     radioValues[17] = "squats";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickLunges = () => {
     radioValues[17] = "lunges";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnPlank = () => {
     radioValues[17] = "plank";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickBurpees = () => {
     radioValues[17] = "Burpees";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           Which exercise is your <br /> least favorite?

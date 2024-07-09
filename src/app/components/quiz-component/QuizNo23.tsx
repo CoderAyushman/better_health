@@ -2,6 +2,7 @@ import React, {useState } from "react";
 import radioValues from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo23 = () => {
   const dispatch=useAppDispatch();
@@ -19,6 +20,7 @@ const QuizNo23 = () => {
     setIsThree(false);
     setIsTwo(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick2 = () => {
     radioValues[23] = "2";
@@ -28,6 +30,7 @@ const QuizNo23 = () => {
     setIsThree(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick3 = () => {
     radioValues[23] = "3";
@@ -37,6 +40,7 @@ const QuizNo23 = () => {
     setIsTwo(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick4 = () => {
     radioValues[23] = "4";
@@ -46,6 +50,7 @@ const QuizNo23 = () => {
     setIsTwo(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick5 = () => {
     radioValues[23] = "5";
@@ -55,9 +60,10 @@ const QuizNo23 = () => {
     setIsTwo(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center mb-5">
       <div className="flex-col">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
           I don’t usually leave my

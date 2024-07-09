@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import { kgtolbs, lbstokg } from "@/lib/features/counter/KgToLbsSlice";
 import radioValues from "../RadioValues";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo29 = () => {
   const [isTrue, setIsTrue] = useState(false);
@@ -23,10 +23,14 @@ const QuizNo29 = () => {
   useEffect(() => {
     if (kg != null) {
       setBmi(Math.round(kg / Math.pow(radioValues[28].cm / 100, 2)));
-      radioValues[29].bmi=Math.round(kg / Math.pow(radioValues[28].cm / 100, 2));
+      radioValues[29].bmi = Math.round(
+        kg / Math.pow(radioValues[28].cm / 100, 2)
+      );
     } else {
       setBmi(Math.round(Lbs / 2.20462 / Math.pow(radioValues[28].cm / 100, 2)));
-      radioValues[29].bmi=Math.round(Lbs / 2.20462 / Math.pow(radioValues[28].cm / 100, 2));
+      radioValues[29].bmi = Math.round(
+        Lbs / 2.20462 / Math.pow(radioValues[28].cm / 100, 2)
+      );
     }
   }, [kg, Lbs]);
 
@@ -123,6 +127,7 @@ const QuizNo29 = () => {
 
   const handleClick = () => {
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleKG = () => {
     setIsTrue(false);
@@ -161,7 +166,7 @@ const QuizNo29 = () => {
   };
   return (
     <>
-      <div className="flex-col justify-center items-center text-center">
+      <div className="flex-col justify-center items-center text-center mb-5">
         <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-full">
           What is your <br />
           current weight?

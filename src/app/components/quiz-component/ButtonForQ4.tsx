@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 interface MyComponentProps {
   num: boolean;
 }
@@ -10,6 +11,7 @@ const ButtunForQ4: React.FC<MyComponentProps> = ({ num }) => {
   const dispatch = useAppDispatch();
   const handleClick = () => {
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   return (
     <div className="text-center bg-white pt-[10px] fixed w-full  bottom-0 ">

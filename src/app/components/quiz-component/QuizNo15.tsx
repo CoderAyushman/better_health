@@ -7,30 +7,35 @@ import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 import Link from "next/link";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo15 = () => {
   const dispatch = useAppDispatch();
   const handleClickOnFewerThan20 = () => {
     radioValues[15] = "Fewer than 20";
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOn20to35 = () => {
     radioValues[15] = "20to35";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnMoreThan35 = () => {
     radioValues[15] = "More than 35";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   const handleClickDontKnow = () => {
     radioValues[15] = "I don’t know";
 
     dispatch(increse());
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           How many{" "}

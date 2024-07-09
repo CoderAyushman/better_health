@@ -2,6 +2,7 @@ import React, {useState } from "react";
 import radioValues from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo26 = () => {
   const dispatch=useAppDispatch();
@@ -19,6 +20,7 @@ const QuizNo26 = () => {
     setIsThree(false);
     setIsTwo(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick2 = () => {
     radioValues[26] = "2";
@@ -28,6 +30,7 @@ const QuizNo26 = () => {
     setIsThree(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick3 = () => {
     radioValues[26] = "3";
@@ -37,6 +40,7 @@ const QuizNo26 = () => {
     setIsTwo(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick4 = () => {
     radioValues[26] = "4";
@@ -46,6 +50,7 @@ const QuizNo26 = () => {
     setIsTwo(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   const handleOnclick5 = () => {
     radioValues[26] = "5";
@@ -55,9 +60,10 @@ const QuizNo26 = () => {
     setIsTwo(false);
     setIsOne(false);
     dispatch(increse())
+    dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center mb-5">
       <div className="flex-col">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
         I manage to keep up a <br /> healthy routine for a few <br /> weeks before slipping back <br /> into my old habits.
