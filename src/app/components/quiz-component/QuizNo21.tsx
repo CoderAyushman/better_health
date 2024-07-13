@@ -3,35 +3,48 @@ import React from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
-import { useAppDispatch } from "@/lib/hooks";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo21 = () => {
+  const quizCounter=useAppSelector(state=>state.diplayCounter.items)
   const dispatch = useAppDispatch();
   const handleClickOn10to15min = () => {
     radioValues[21] = "10to15min";
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(quizCounter==21){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOn15to25min = () => {
     radioValues[21] = "15-25 min";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(quizCounter==21){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOn25minPlus = () => {
     radioValues[21] = "25+ min";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(quizCounter==21){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOnIDontKnow = () => {
     radioValues[21] = "i dont know";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(quizCounter==21){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   return (
     <div className="flex-col justify-center items-center mb-5">

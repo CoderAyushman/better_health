@@ -1,14 +1,24 @@
 import { decrease, increse } from "@/lib/features/counter/counterSlice";
-import { useAppDispatch } from "@/lib/hooks";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import React from "react";
 
 const AboutSurroundings = () => {
+  const displayCounter=useAppSelector(state=>state.diplayCounter.items)
   const dispatch = useAppDispatch();
   const handleBackArrowButton = () => {
-    dispatch(decrease());
+   
+
+     dispatch(decrease());
+   
   };
   const handleOnclickButton = () => {
-    dispatch(increse());
+   
+
+      dispatch(increse());
+    
+    
+   
   };
   return (
     <div className="flex  mt-32 justify-center items-center ">

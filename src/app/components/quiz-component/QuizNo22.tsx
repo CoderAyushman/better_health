@@ -3,72 +3,102 @@ import React from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
-import { useAppDispatch } from "@/lib/hooks";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo22 = () => {
   const dispatch = useAppDispatch();
-
+  const displayCounter=useAppSelector(state=>state.diplayCounter.items)
   const handleClickOnTraditionalFood = () => {
     radioValues[22] = "TraditionalFood";
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(displayCounter==22){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOnKeto = () => {
     radioValues[22] = "keto food";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(displayCounter==22){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOnVegeterian = () => {
     radioValues[22] = "vegetarian";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(displayCounter==22){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOnVegan = () => {
     radioValues[22] = "vegan plantdiet";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(displayCounter==22){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOnKetoVegan = () => {
     radioValues[22] = "KetoVegan";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(displayCounter==22){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOnPescatarian = () => {
     radioValues[22] = "Pescatarian";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(displayCounter==22){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOnLactoseFree = () => {
     radioValues[22] = "Lactose Free";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(displayCounter==22){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOnGlutenFree = () => {
     radioValues[22] = "Gluten Free";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(displayCounter==22){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOnPaleo = () => {
     radioValues[22] = "Paleo";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(displayCounter==22){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   const handleClickOnMediterranean = () => {
     radioValues[22] = "Mediterranean";
 
     dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if(displayCounter==22){
+
+      dispatch(increseDisplayCounter());
+    }
   };
   return (
     <div className="flex-col justify-center items-center mb-5">
