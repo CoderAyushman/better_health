@@ -1,13 +1,21 @@
 import { decrease, increse } from "@/lib/features/counter/counterSlice";
-import { useAppDispatch } from "@/lib/hooks";
+import { decreaseDisplayCounter, increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import React from "react";
 
 const AboutBody = () => {
   const dispatch = useAppDispatch();
+  const displayCounter=useAppSelector(state=>state.diplayCounter.items)
   const handleBackArrowButton = () => {
+    if(displayCounter > 27){
+      dispatch(decreaseDisplayCounter())
+    }
     dispatch(decrease());
   };
   const handleOnclickButton = () => {
+    if(displayCounter != 28){
+      dispatch(increseDisplayCounter())
+    }
     dispatch(increse());
   };
   return (

@@ -14,37 +14,37 @@ const QuizNo21 = () => {
   const handleClickOn10to15min = () => {
     radioValues[21] = "10to15min";
     dispatch(increse());
-    if(quizCounter==21){
+    // if(quizCounter==21){
 
-      dispatch(increseDisplayCounter());
-    }
+    // }
+    dispatch(increseDisplayCounter());
   };
   const handleClickOn15to25min = () => {
     radioValues[21] = "15-25 min";
 
     dispatch(increse());
-    if(quizCounter==21){
+    // if(quizCounter==21){
 
-      dispatch(increseDisplayCounter());
-    }
+    // }
+    dispatch(increseDisplayCounter());
   };
   const handleClickOn25minPlus = () => {
     radioValues[21] = "25+ min";
 
     dispatch(increse());
-    if(quizCounter==21){
+    // if(quizCounter==21){
 
-      dispatch(increseDisplayCounter());
-    }
+    // }
+    dispatch(increseDisplayCounter());
   };
   const handleClickOnIDontKnow = () => {
     radioValues[21] = "i dont know";
 
     dispatch(increse());
-    if(quizCounter==21){
+    // if(quizCounter==21){
 
-      dispatch(increseDisplayCounter());
-    }
+    // }
+    dispatch(increseDisplayCounter());
   };
   return (
     <div className="flex-col justify-center items-center mb-5">

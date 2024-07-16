@@ -3,9 +3,15 @@ import ReactDOM from 'react-dom';
 import LineChart from '@/utils/Data';
 import { useDispatch } from 'react-redux';
 import { increse } from '@/lib/features/counter/counterSlice';
+import { useAppSelector } from '@/lib/hooks';
+import { increseDisplayCounter } from '@/lib/features/counter/displayCounterSlice';
 const Chart: React.FC = () => {
     const dispatch=useDispatch();
+    const displayCounter=useAppSelector(state=>state.diplayCounter.items);
     const handleOnclickButton = () => {
+        if(displayCounter !=33){
+          dispatch(increseDisplayCounter());
+        }
         dispatch(increse());
       };
     return (

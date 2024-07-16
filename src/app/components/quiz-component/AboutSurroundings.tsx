@@ -1,5 +1,5 @@
 import { decrease, increse } from "@/lib/features/counter/counterSlice";
-import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { decreaseDisplayCounter, increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import React from "react";
 
@@ -8,14 +8,21 @@ const AboutSurroundings = () => {
   const dispatch = useAppDispatch();
   const handleBackArrowButton = () => {
    
+    if(displayCounter>21){
 
+      dispatch(decreaseDisplayCounter())
+    }
      dispatch(decrease());
-   
-  };
-  const handleOnclickButton = () => {
-   
-
+     
+    };
+    const handleOnclickButton = () => {
+      
+      
       dispatch(increse());
+      if(displayCounter!=22){
+
+        dispatch(increseDisplayCounter())
+      }
     
     
    

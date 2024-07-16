@@ -23,6 +23,7 @@ const LineChart: React.FC = () => {
     datasets: [
       {
         label: 'Weight',
+        // data: [ ],
         data: [ 100,90,85,70,65,60],
         fill: true,
         borderColor: 'rgba(75, 192, 192, 1)',
