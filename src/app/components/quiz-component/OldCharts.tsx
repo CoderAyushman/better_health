@@ -1,47 +1,6 @@
-"use client"
-
-import { TrendingUp } from "lucide-react"
-import { CartesianGrid, LabelList, Line, LineChart, XAxis } from "recharts"
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart"
-const chartData = [
-  { month: "January",desktop:100 },
-  { month: "February",desktop:90 },
-  { month: "March", desktop:56},
-  { month: "April",desktop:40 },
-  { month: "May",desktop:35 },
-  { month: "June",desktop:10 },
-]
-
-const chartConfig = {
-  desktop: {
-    label: "Weight",
-    color: "hsl(var(--chart-1))",
-  },
-  mobile: {
-    label: "Weight",
-    color: "hsl(var(--chart-2))",
-  },
-} satisfies ChartConfig
-
-
-
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-// import LineChart from "@/utils/Data";
+import LineChart from "@/utils/Data";
 import { useDispatch } from "react-redux";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { useAppSelector } from "@/lib/hooks";
@@ -83,59 +42,7 @@ const Chart: React.FC = () => {
           {radioValues[30].lbs ? radioValues[30].lbs : 130} lbs by *{date}
         </h1>
         <div className="max-w-[530px]">
-          {/* <LineChart /> */}
-          <Card>
-      <CardHeader>
-        {/* <CardTitle>Line Chart - Label</CardTitle>
-        <CardDescription>January - June 2024</CardDescription> */}
-      </CardHeader>
-      <CardContent>
-        <ChartContainer config={chartConfig}>
-          <LineChart
-            accessibilityLayer
-            data={chartData}
-            margin={{
-              top: 20,
-              left: 12,
-              right: 12,
-            }}
-          >
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="month"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent indicator="line" />}
-            />
-            <Line
-              dataKey="desktop"
-              type="natural"
-              stroke="var(--color-desktop)"
-              strokeWidth={2}
-              dot={{
-                fill: "var(--color-desktop)",
-              }}
-              activeDot={{
-                r: 6,
-              }}
-            >
-              <LabelList
-                position="top"
-                offset={12}
-                className="fill-foreground"
-                fontSize={12}
-              />
-            </Line>
-          </LineChart>
-        </ChartContainer>
-      </CardContent>
-      
-    </Card>
+          <LineChart />
         </div>
         <div className="flex justify-center items-center mt-5 max-w-[410px] mb-5">
           <button
@@ -153,8 +60,3 @@ const Chart: React.FC = () => {
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 export default Chart;
-
-
-
-
-

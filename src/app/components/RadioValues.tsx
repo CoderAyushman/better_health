@@ -49,7 +49,7 @@ let radioValues: any = [
     kg:null,
     lbs:null,
    },
-  {
+  { 
     year:null,
     isRequireYear:false
   },

@@ -78,6 +78,8 @@ const LineChart: React.FC = () => {
         beginAtZero: false,
         min: 60,
         max: 100,
+        // min: 60,
+        // max: 100,
       },
     },
   };
