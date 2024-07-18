@@ -50,7 +50,7 @@ const Progressbar = () => {
     <>
       <div className="mt-32 flex justify-center items-center">
         <Progress
-          value={quizCounter * 2.77}
+          value={quizCounter * 3.125}
           className="w-[463px] h-1 max-[450px]:w-[372px]"
         />
       </div>
@@ -65,7 +65,7 @@ const Progressbar = () => {
         </button>
         <span>
           <b className="text-customGreen">{quizCounter}</b>
-          <b>/33</b>
+          <b>/32</b>
         </span>
       </div>
     </>
