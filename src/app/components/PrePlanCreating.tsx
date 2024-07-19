@@ -12,9 +12,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import useEmblaCarousel from "embla-carousel-react";
+import { useAppDispatch } from "@/lib/hooks";
+import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { increse } from "@/lib/features/counter/counterSlice";
 // import { plugin } from "postcss";
 
 const PrePlanCreating = () => {
+  const dispatch=useAppDispatch();
   const users = [
     {
       name: "Aaron Klein",
@@ -46,11 +50,17 @@ const PrePlanCreating = () => {
       const updater = () => {
         setCounter(counter + 1);
       };
-      const timeObj = setInterval(updater, 100);
+      const timeObj = setInterval(updater, 50);
 
       return () => {
         clearInterval(timeObj);
       };
+    }
+    else{
+      setTimeout(()=>{
+
+        dispatch(increse());
+      },400)
     }
   }, [counter]);
   console.log(counter);

@@ -38,6 +38,7 @@ import WellnessProfile from "./quiz-component/WellnessProfile";
 import QuizNo32 from "./quiz-component/QuizNo32";
 import Chart from "./quiz-component/Chart";
 import PrePlanCreating from "./PrePlanCreating";
+import TakingEmail from "./TakingEmail";
 
 const quizes = [
   <Intromale />,
@@ -78,7 +79,7 @@ const quizes = [
   <QuizNo32/>,
   <Chart/>,
   <PrePlanCreating/>,
-  <QuizNo33 />,
+  <TakingEmail/>
 ];
 
 export default quizes;

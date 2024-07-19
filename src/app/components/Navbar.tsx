@@ -8,9 +8,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 
 const Navbar = () => {
+  const quizCounter=useAppSelector(state=>state.counter.items);
+
   return (
+    <>
+    {quizCounter==38?<></>:
     <div className="flex justify-between items-center backdrop-blur-sm fixed top-0 w-full pl-7 pr-7 h-20 ">
       <img className="w-32" src="better-me.webp" />
       <Sheet>
@@ -28,6 +33,8 @@ const Navbar = () => {
         </SheetContent>
       </Sheet>
     </div>
+}
+    </>
   );
 };
 

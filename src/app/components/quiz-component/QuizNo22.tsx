@@ -9,6 +9,7 @@ import radioValues from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo22 = () => {
+
   const dispatch = useAppDispatch();
   const displayCounter=useAppSelector(state=>state.diplayCounter.items)
   const handleClickOnTraditionalFood = () => {
