@@ -2,14 +2,16 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import counterReducer from './features/counter/counterSlice';
 import displayCounterReducer from './features/counter/displayCounterSlice';
-// import kgtolbsReducer from './features/counter/KgToLbsSlice';
-// store variable is a global variable.
+import { loadState } from '@/app/components/localStorage';
+
 export const makeStore = () => {
-    return configureStore({
+  const preloadedState = loadState();
+  return configureStore({
         reducer: {
           counter:counterReducer,
-          diplayCounter:displayCounterReducer
+          diplayCounter:displayCounterReducer,
         },
+        
     });
 };
 

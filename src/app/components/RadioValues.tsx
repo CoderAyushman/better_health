@@ -1,3 +1,6 @@
+import { useAppSelector } from "@/lib/hooks";
+import { useEffect } from "react";
+
 let radioValues: any = [
   "0",
   "1",
@@ -57,5 +60,18 @@ let radioValues: any = [
   "33",
   
 ];
+
+ 
+export const Rad = () => {
+    const quizCounter=useAppSelector(state=>state.counter.items);
+    useEffect(()=>{
+    console.log(radioValues)
+    },[quizCounter])
+ 
+  return (
+    <div>Rad</div>
+  )
+}
+
 
 export default radioValues;

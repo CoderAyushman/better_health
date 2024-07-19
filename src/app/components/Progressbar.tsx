@@ -4,47 +4,53 @@ import { Progress } from "@/components/ui/progress";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { decrease } from "@/lib/features/counter/counterSlice";
 import radioValues from "./RadioValues";
-import { decreaseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import {
+  addDisplayCounter,
+  decreaseDisplayCounter,
+} from "@/lib/features/counter/displayCounterSlice";
 import quizes from "./Quizes";
 // var dubQuizCounter=quizCounter;
 
 const Progressbar = () => {
+  const [displayCounter, setDisplayCounter] = useState<number>(1);
   const quizCounter: number = useAppSelector(
     (state) => state.diplayCounter.items
   );
 
-  const [displayQuizCounter, setDisplayQuizCounter] =
-    useState<any>(quizCounter);
+  // const [displayQuizCounter, setDisplayQuizCounter] =
+  //   useState<any>(quizCounter);
   const dispatch = useAppDispatch();
   const handleBackArrowButton = () => {
     dispatch(decrease());
-    
-      dispatch(decreaseDisplayCounter());
-    
-    // if (
-      
-      // quizes[quizCounter] != quizes[23] ||
-      // quizes[quizCounter] != quizes[29] ||
-      // quizes[quizCounter] != quizes[34] ||
-      // quizes[quizCounter] != quizes[36]
-    // ) {
-    //   dispatch(decreaseDisplayCounter());
-    // }
+
+    dispatch(decreaseDisplayCounter());
   };
+  useEffect(() => {
+    if (quizCounter != 0) {
+      
 
-  // useEffect(() => {
-
-  //   if(quizCounter>=23){
-  //     setDisplayQuizCounter(quizCounter-1);
-  //     if(quizCounter>=29){
-  //       setDisplayQuizCounter(displayQuizCounter-1);
-  //     }
-  //   }
-  //   else{
-  //     setDisplayQuizCounter(quizCounter);
-  //   }
-  //   console.log(quizCounter, displayQuizCounter);
-  // }, [quizCounter]);
+        localStorage.setItem("displayCounter", JSON.stringify(quizCounter));
+      
+    }
+  }, [quizCounter]);
+  useEffect(() => {
+    if (quizCounter == 0) {
+      setDisplayCounter(1);
+    }
+    // else if(quizCounter==1){
+    //   setDisplayCounter(1);
+    // }
+    else{
+      setDisplayCounter(quizCounter+1);
+    }
+    // setDisplayCounter(quizCounter+1);
+  }, [quizCounter]);
+  useEffect(() => {
+    const localStore = localStorage.getItem("displayCounter");
+    if (localStore) {
+      dispatch(addDisplayCounter(parseInt(JSON.parse(localStore))));
+    }
+  }, []);
 
   return (
     <>
@@ -64,7 +70,7 @@ const Progressbar = () => {
           />
         </button>
         <span>
-          <b className="text-customGreen">{quizCounter}</b>
+          <b className="text-customGreen">{displayCounter}</b>
           <b>/32</b>
         </span>
       </div>

@@ -2,22 +2,25 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface counterState {
-    items: number;
+    items: any
+
 }
 
 const initialState: counterState = {
-    items: 0,
+    items: 0
+   
 };
 
 export const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers: {
-        // add: (state, action) => {
-        //     // Magic
-        //     // Immer will handle the mutation
-        //     state.items(action.payload);
-        // },
+        add: (state, action) => {
+            // Magic
+            // Immer will handle the mutation
+            state.items=action.payload;
+        },
+        
         increse:(state)=>{
             state.items +=1;
         },
@@ -28,6 +31,6 @@ export const counterSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { increse,decrease } = counterSlice.actions;
+export const { increse,decrease,add } = counterSlice.actions;
 
 export default counterSlice.reducer;

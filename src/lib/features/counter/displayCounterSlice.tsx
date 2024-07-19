@@ -7,18 +7,18 @@ export interface displayCounterState {
 }
 
 const initialState: displayCounterState = {
-  items: 1,
+  items: 0,
 };
 
 export const displayCounterSlice = createSlice({
   name: "displayCounter",
   initialState,
   reducers: {
-    // add: (state, action) => {
-    //     // Magic
-    //     // Immer will handle the mutation
-    //     state.items(action.payload);
-    // },
+    addDisplayCounter: (state, action) => {
+        // Magic
+        // Immer will handle the mutation
+        state.items=action.payload;
+    },
     increseDisplayCounter: (state) => {
       
 
@@ -36,7 +36,7 @@ export const displayCounterSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { increseDisplayCounter, decreaseDisplayCounter } =
+export const { increseDisplayCounter, decreaseDisplayCounter,addDisplayCounter } =
   displayCounterSlice.actions;
 
 export default displayCounterSlice.reducer;
