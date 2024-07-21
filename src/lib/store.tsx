@@ -3,13 +3,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from './features/counter/counterSlice';
 import displayCounterReducer from './features/counter/displayCounterSlice';
 import { loadState } from '@/app/components/localStorage';
+// import dataReducer from './features/dataSlice';
 
 export const makeStore = () => {
-  const preloadedState = loadState();
   return configureStore({
         reducer: {
           counter:counterReducer,
           diplayCounter:displayCounterReducer,
+          
         },
         
     });

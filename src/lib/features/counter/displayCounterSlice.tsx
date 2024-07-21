@@ -7,7 +7,7 @@ export interface displayCounterState {
 }
 
 const initialState: displayCounterState = {
-  items: 0,
+  items: 1,
 };
 
 export const displayCounterSlice = createSlice({

@@ -3,23 +3,25 @@ import React, { useEffect, useState } from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
-import { useAppDispatch } from "@/lib/hooks";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import radioValues from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { update } from "@/lib/features/dataSlice";
 
 const QuizNo1 = () => {
-
   const dispatch = useAppDispatch();
+  // let data = useAppSelector(state=>state.data.items);
 
   const handleClickOnLoseWeight = () => {
     radioValues[1] = "loseweight";
+
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOnGainMuscle = () => {
     radioValues[1] = "gainmuscle";
-    dispatch(increse()); 
+    dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   return (

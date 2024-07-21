@@ -40,38 +40,29 @@ let radioValues: any = [
     eight: false,
   },
   {
-   ft:null,
-   cm:null,
+    ft: null,
+    cm: null,
   },
   {
-    kg:null,
-    lbs:null,
-    bmi:null
-   },
-   {
-    kg:null,
-    lbs:null,
-   },
-  { 
-    year:null,
-    isRequireYear:false
+    kg: null,
+    lbs: null,
+    bmi: null,
+  },
+  {
+    kg: null,
+    lbs: null,
+  },
+  {
+    year: null,
+    isRequireYear: false,
   },
   "32",
   "33",
-  
 ];
 
- 
-export const Rad = () => {
-    const quizCounter=useAppSelector(state=>state.counter.items);
-    useEffect(()=>{
-    console.log(radioValues)
-    },[quizCounter])
- 
-  return (
-    <div>Rad</div>
-  )
-}
-
-
 export default radioValues;
+
+export function setRadioValues(newValues:any) {
+  radioValues = newValues;
+  console.log("radio values are set",newValues)
+}
