@@ -4,40 +4,39 @@ import Progressbar from "../components/Progressbar";
 import quizes from "../components/Quizes";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { add } from "@/lib/features/counter/counterSlice";
-import radioValues, { setRadioValues } from "../components/RadioValues";
+import {radioValues, setRadioValues } from "../components/RadioValues";
 import { update } from "@/lib/features/dataSlice";
 // import Intromale from "../intromale/page";
 // import AboutSurroundings from "../components/quiz-component/AboutSurroundings";
 // import { json } from "stream/consumers";
 
 const page = () => {
-  const dispatch=useAppDispatch();
+  const dispatch = useAppDispatch();
   let quizCounter: any = useAppSelector((state) => state.counter.items);
-  useEffect(()=>{
-    if(quizCounter!=0 ){
-      localStorage.setItem('counter',JSON.stringify(quizCounter));
-      localStorage.setItem('data',JSON.stringify(radioValues))
+  useEffect(() => {
+    if (quizCounter != 0) {
+      localStorage.setItem("counter", JSON.stringify(quizCounter));
+      
 
-     
       // console.log(radioValues)
     }
-    
-  },[quizCounter])
-  useEffect(()=>{
-    const localStore=localStorage.getItem('counter')
-    const localDataStore:any=localStorage.getItem('data')
-    if(localDataStore){
-     
-      setRadioValues(JSON.parse(localDataStore))
-      console.log(JSON.parse(localDataStore))
+    if(radioValues[1]!='1'){
+      localStorage.setItem("data", JSON.stringify(radioValues));
     }
-    if(localStore){
+  }, [quizCounter]);
+  useEffect(() => {
+    const localStore = localStorage.getItem("counter");
+    const localDataStore: any = localStorage.getItem("data");
+    if (localDataStore) {
+      setRadioValues(JSON.parse(localDataStore));
+      console.log(JSON.parse(localDataStore));
+    }
+    if (localStore) {
       dispatch(add(parseInt(JSON.parse(localStore))));
-     
-      console.log(JSON.parse(localDataStore))
+      // console.log(JSON.parse(localDataStore));
     }
-    console.log(radioValues)
-  },[])
+    // console.log(radioValues);
+  }, []);
   let quizCompaireCounter = true;
   console.log(quizCounter);
   if (quizCounter == 0) {

@@ -5,14 +5,16 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import radioValues from "../RadioValues";
+
+
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { update } from "@/lib/features/dataSlice";
+import { radioValues } from "../RadioValues";
 
+console.log("radioValues[1]=",radioValues[1])
 const QuizNo1 = () => {
   const dispatch = useAppDispatch();
   // let data = useAppSelector(state=>state.data.items);
-
   const handleClickOnLoseWeight = () => {
     radioValues[1] = "loseweight";
 

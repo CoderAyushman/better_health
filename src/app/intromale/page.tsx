@@ -22,13 +22,13 @@ const intromale = () => {
       <div className="flex justify-center items-center ">
         <img className="w-96 " src="male-intro-img.png" alt="intro image" />
       </div>
-      <Link
+      <button
         onClick={handleOnclick}
-        href="quiz"
+        
         className="bg-customGreen rounded-full overflow-visible  text-white pt-5 mt-[-10px] pb-5  pl-28 pr-28 "
       >
         <b>CONTINUE</b>
-      </Link>
+      </button>
       <Footer />
     </div>
   );

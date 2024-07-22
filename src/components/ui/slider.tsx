@@ -2,7 +2,7 @@
 import * as React from "react";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import { cn } from "@/lib/utils";
-import radioValues from "@/app/components/RadioValues";
+import {radioValues} from "@/app/components/RadioValues";
 
 
 const Slider = React.forwardRef<

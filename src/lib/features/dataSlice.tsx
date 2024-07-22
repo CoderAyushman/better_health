@@ -1,4 +1,4 @@
-import radioValues from '@/app/components/RadioValues';
+import {radioValues} from '@/app/components/RadioValues';
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 

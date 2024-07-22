@@ -5,7 +5,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import radioValues from "../RadioValues";
+import {radioValues} from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo7 = () => {
@@ -95,7 +95,6 @@ const QuizNo7 = () => {
               className="w-[104px]"
               src="imageOfMale/quiz-7th/retired-emoji.png"
               alt="gain-muscle-img"
-              cursor-pointer
             />
 
             <h1 className="pr-[175px] font-semibold text-base">I’m retired</h1>

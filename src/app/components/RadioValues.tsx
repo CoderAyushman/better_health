@@ -1,7 +1,8 @@
-import { useAppSelector } from "@/lib/hooks";
-import { useEffect } from "react";
+"use client";
 
-let radioValues: any = [
+console.log("on reload radiovalue is effect");
+
+export let radioValues:any = [
   "0",
   "1",
   "2",
@@ -60,9 +61,9 @@ let radioValues: any = [
   "33",
 ];
 
-export default radioValues;
 
-export function setRadioValues(newValues:any) {
+export function setRadioValues(newValues: any) {
   radioValues = newValues;
-  console.log("radio values are set",newValues)
+  console.log("radio values are set", radioValues);
 }
+

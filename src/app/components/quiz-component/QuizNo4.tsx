@@ -5,7 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import radioValues from "../RadioValues";
+import {radioValues} from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 

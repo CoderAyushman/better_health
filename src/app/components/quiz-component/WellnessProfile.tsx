@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Slider } from "@/components/ui/slider";
-import radioValues from "../RadioValues";
+import {radioValues} from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Progress } from "@/components/ui/progress";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { decrease } from "@/lib/features/counter/counterSlice";
-import radioValues, { setRadioValues } from "./RadioValues";
+import {radioValues,  setRadioValues } from "./RadioValues";
 import {
   addDisplayCounter,
   decreaseDisplayCounter,

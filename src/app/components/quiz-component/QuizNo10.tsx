@@ -1,5 +1,5 @@
 import React from "react";
-import radioValues from "../RadioValues";
+import {radioValues} from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
