@@ -63,7 +63,7 @@ const PrePlanCreating = () => {
       },400)
     }
   }, [counter]);
-  console.log(counter);
+  
 
   return (
     <div className="flex-col justify-center items-center mt-32">
