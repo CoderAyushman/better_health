@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const TakingEmail = () => {
   const [mail,setMail]=useState<string>();
-  const handleOnSubmit = (e:any) => {
+  const handleOnSubmit = (e: any) => {
     e.preventDefault();
     console.log(mail);  
   };
