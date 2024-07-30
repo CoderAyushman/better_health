@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { radioValues } from "./RadioValues";
 
 const TakingEmail = () => {
-  const [mail,setMail]=useState<string>();
+  const [mail,setMail]=useState<string>(radioValues[33].mail);
   const handleOnSubmit = (e: any) => {
     e.preventDefault();
-    console.log(mail);  
+    radioValues[33]=mail
   };
   return (
     <div className="w-full min-h-[100vh] flex justify-center items-center bg-[#6C7988] font-sans">
@@ -24,6 +25,7 @@ const TakingEmail = () => {
               type="email"
               name="email"
               id=""
+              defaultValue={radioValues[33]}
               placeholder="Enter your email to get your plan"
               className="w-[300px] text-base border-[1px] border-black p-2 rounded-lg"
               required
