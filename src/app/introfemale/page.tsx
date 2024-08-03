@@ -9,6 +9,7 @@ const introfemale = () => {
   const dispatch = useAppDispatch();
   const handleOnclick = () => {
     dispatch(increse());
+    
   };
   return (
     <div className="mt-32 flex-col justify-center text-center items-center">

@@ -30,7 +30,7 @@ const First = () => {
             onClick={onClickHandleMale}
           />
         </Link>
-        <Link href="/introfemale">
+        <Link href="/quiz-female">
           <img
             className="max-w-96 max-[440px]:max-w-40 h-full  lg:hover:transition transform duration-500 hover:scale-90 hover:opacity-75   cursor-pointer"
             src="female_img.png"

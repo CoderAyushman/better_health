@@ -70,9 +70,10 @@ const QuizNo27 = () => {
     radioValues[27].eight = false;
   };
   const handleClickOnNone = () => {
-    setIsCheckedForQ8(!isCheckedForQ8);
     console.log(!isCheckedForQ8)
+    setIsCheckedForQ8(!isCheckedForQ8);
     radioValues[27].eight = !isCheckedForQ8;
+
     setIsCheckedForQ1(false);
     radioValues[27].one =false;
 
@@ -97,6 +98,7 @@ const QuizNo27 = () => {
     setIsCheckedForQ7(false);
     radioValues[27].seven = false;
 
+
   };
   return (
     <div className="flex-col justify-center items-center mb-5">
@@ -114,7 +116,7 @@ const QuizNo27 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/marriage-img.png"
+              src="imageOfFemale/quiz-27th/marriage.webp"
               alt="lose-weight-img"
             />
             <h1 className="pr-[100px] font-semibold text-base ">Marriage or relationship</h1>
@@ -214,7 +216,7 @@ const QuizNo27 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/old-img.png"
+              src="imageOfFemale/quiz-27th/old-img.webp"
               alt="gain-muscle-img"
               
             />

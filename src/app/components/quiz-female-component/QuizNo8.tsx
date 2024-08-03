@@ -41,7 +41,7 @@ const QuizNo8 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-8th/sitting-img.png"
+              src="imageOfFemale/quiz-8th/sitting.webp"
               alt="sitting-img"
             />
             <h1 className="pr-[40px] font-semibold text-base ">
@@ -57,7 +57,7 @@ const QuizNo8 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-8th/active-img.png"
+              src="imageOfFemale/quiz-8th/active-breaks.webp"
               alt="active-img"
             />
 
@@ -73,7 +73,7 @@ const QuizNo8 = () => {
           >
             <img
               className="w-[104px]"
-              src="imageOfMale/quiz-8th/fit-img.png"
+              src="imageOfFemale/quiz-8th/day-feet.webp"
               alt="fit-img"
             />
 

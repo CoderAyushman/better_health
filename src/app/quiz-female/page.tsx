@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Progressbar from "../components/Progressbar";
-import quizes from "../components/Quizes";
+import quizes from "../components/QuizesFemale";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { add } from "@/lib/features/counter/counterSlice";
 import { radioValues, setRadioValues } from "../components/RadioValues";
