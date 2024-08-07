@@ -4,6 +4,7 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "@/components/ui/card";
+
 import {
   Carousel,
   CarouselContent,
@@ -15,10 +16,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useAppDispatch } from "@/lib/hooks";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { increse } from "@/lib/features/counter/counterSlice";
+import { radioValues } from "./RadioValues";
 // import { plugin } from "postcss";
 
 const PrePlanCreating = () => {
-  const dispatch=useAppDispatch();
+  // message template
+  const message = `I'm want to ${radioValues[1]}`;
+  const dispatch = useAppDispatch();
   const users = [
     {
       name: "Aaron Klein",
@@ -40,7 +44,7 @@ const PrePlanCreating = () => {
     },
   ];
   const plugin = React.useRef(
-    Autoplay({active:true})
+    Autoplay({ active: true })
     // useEmblaCarousel({ loop: true })
   );
   const percentage = 0;
@@ -55,15 +59,12 @@ const PrePlanCreating = () => {
       return () => {
         clearInterval(timeObj);
       };
-    }
-    else{
-      setTimeout(()=>{
-
+    } else {
+      setTimeout(() => {
         dispatch(increse());
-      },400)
+      }, 400);
     }
   }, [counter]);
-  
 
   return (
     <div className="flex-col justify-center items-center mt-32">
@@ -88,7 +89,7 @@ const PrePlanCreating = () => {
               ? "Your personalized Weight loss plan is ready!"
               : "Creating your personalized Weight loss  plan"}
           </p>
-      <hr />
+          <hr />
         </div>
       </div>
       <div className="flex justify-center items-center mt-4">
@@ -107,29 +108,53 @@ const PrePlanCreating = () => {
           onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
-            {Array.from({ length: 3}).map((_, index) => (
+            {Array.from({ length: 3 }).map((_, index) => (
               <CarouselItem key={index}>
                 <div className="p-1">
                   <Card>
                     <CardContent className="flex-col  max-w-[300px] min-h-[200px] items-center justify-center ">
-                     <div className="flex gap-1 justify-start items-center mt-5">
-                      <img src="white-star-img.jpg" alt="white-star-img" className="w-[20px]"/>
-                      <img src="white-star-img.jpg" alt="white-star-img" className="w-[20px]"/>
-                      <img src="white-star-img.jpg" alt="white-star-img" className="w-[20px]"/>
-                      <img src="white-star-img.jpg" alt="white-star-img" className="w-[20px]"/>
-                      <img src="white-star-img.jpg" alt="white-star-img" className="w-[20px]"/>
-                     </div>
-                     <div className="flex  justify-between items-center mt-5">
-                      <h1 className="font-bold text-sm">{users[index].word}</h1>
-                      <span className="text-sm font-light">{users[index].name}</span>
-                     </div>
-                     <div className="mt-3">
-                      <p className="text-sm font-medium">
-                      {users[index].description}
-                      </p>
-                     </div>
+                      <div className="flex gap-1 justify-start items-center mt-5">
+                        <img
+                          src="white-star-img.jpg"
+                          alt="white-star-img"
+                          className="w-[20px]"
+                        />
+                        <img
+                          src="white-star-img.jpg"
+                          alt="white-star-img"
+                          className="w-[20px]"
+                        />
+                        <img
+                          src="white-star-img.jpg"
+                          alt="white-star-img"
+                          className="w-[20px]"
+                        />
+                        <img
+                          src="white-star-img.jpg"
+                          alt="white-star-img"
+                          className="w-[20px]"
+                        />
+                        <img
+                          src="white-star-img.jpg"
+                          alt="white-star-img"
+                          className="w-[20px]"
+                        />
+                      </div>
+                      <div className="flex  justify-between items-center mt-5">
+                        <h1 className="font-bold text-sm">
+                          {users[index].word}
+                        </h1>
+                        <span className="text-sm font-light">
+                          {users[index].name}
+                        </span>
+                      </div>
+                      <div className="mt-3">
+                        <p className="text-sm font-medium">
+                          {users[index].description}
+                        </p>
+                      </div>
                     </CardContent>
-                  </Card> 
+                  </Card>
                 </div>
               </CarouselItem>
             ))}
