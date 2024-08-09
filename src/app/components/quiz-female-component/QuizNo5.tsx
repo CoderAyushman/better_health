@@ -1,5 +1,5 @@
 import React from "react";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
@@ -10,17 +10,17 @@ import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlic
 const QuizNo5 = () => {
   const dispatch = useAppDispatch();
   const onClickHardGain = () => {
-    radioValues[5] = "hardgain";
+    radioValues[5] = "I have trouble gaining muscle or body fat";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClickeEasyLoss = () => {
-    radioValues[5] = "easyloss";
+    radioValues[5] = "I gain and lose weight without effort";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClickEasyGainHardLoss = () => {
-    radioValues[5] = "easygainhardloss";
+    radioValues[5] = "I gain weight easily but find it hard to lose";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };

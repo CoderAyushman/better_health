@@ -1,5 +1,5 @@
 import React from "react";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
@@ -10,17 +10,17 @@ import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlic
 const QuizNo8 = () => {
   const dispatch = useAppDispatch();
   const onClickSitting = () => {
-    radioValues[8] = "sitting";
+    radioValues[8] = "I spend most of the day sitting";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClickeActive = () => {
-    radioValues[8] = "active";
+    radioValues[8] = "I take active breaks";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClickEasyFullActive = () => {
-    radioValues[8] = "fullactive";
+    radioValues[8] = "I'm on my feet all day long";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
@@ -29,7 +29,7 @@ const QuizNo8 = () => {
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
-        How would you describe <br /> your typical day?
+          How would you describe <br /> your typical day?
         </h1>
       </div>
       <div className="flex justify-evenly items-center  mt-5">

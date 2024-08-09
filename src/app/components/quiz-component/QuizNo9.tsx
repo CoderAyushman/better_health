@@ -1,5 +1,5 @@
 import React from "react";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
@@ -10,7 +10,7 @@ import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlic
 const QuizNo9 = () => {
   const dispatch = useAppDispatch();
   const onClickMinimalRest = () => {
-    radioValues[9] = "minimalrest";
+    radioValues[9] = "less than 5 hours";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
@@ -25,7 +25,7 @@ const QuizNo9 = () => {
     dispatch(increseDisplayCounter());
   };
   const onClickMoreThen8hours = () => {
-    radioValues[9] = "morethen8hours";
+    radioValues[9] = "more then 8 hours";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };

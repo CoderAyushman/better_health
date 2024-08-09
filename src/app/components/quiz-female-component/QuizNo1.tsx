@@ -6,12 +6,11 @@ import Footer from "../Footer";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 
-
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { update } from "@/lib/features/dataSlice";
 import { radioValues } from "../RadioValues";
 
-console.log("radioValues[1]=",radioValues[1])
+console.log("radioValues[1]=", radioValues[1]);
 const QuizNo1 = () => {
   const dispatch = useAppDispatch();
   // let data = useAppSelector(state=>state.data.items);
@@ -27,7 +26,7 @@ const QuizNo1 = () => {
     dispatch(increseDisplayCounter());
   };
   const handleClickOnPreg = () => {
-    radioValues[1] = "preg";
+    radioValues[1] = "recover after having a baby";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
@@ -66,7 +65,9 @@ const QuizNo1 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Get a bikini body</h1>
+            <h1 className="pr-[175px] font-semibold text-base">
+              Get a bikini body
+            </h1>
             <RadioGroupItem className="mr-5" value="gainmuscle" id="r2" />
           </Label>
           <Label
@@ -80,7 +81,9 @@ const QuizNo1 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[40px] font-semibold text-base">Recover after having a baby</h1>
+            <h1 className="pr-[40px] font-semibold text-base">
+              Recover after having a baby
+            </h1>
             <RadioGroupItem className="mr-5" value="preg" id="r3" />
           </Label>
         </RadioGroup>

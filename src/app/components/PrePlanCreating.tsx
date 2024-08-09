@@ -21,7 +21,7 @@ import { radioValues } from "./RadioValues";
 
 const PrePlanCreating = () => {
   // message template
-  const message = `I'm want to ${radioValues[1]}`;
+  const message = `I'm want to ${radioValues[1]} , my physical build is  ${radioValues[2]} , my body goal is  ${radioValues[3]} , my target zones are (Arms:  ${radioValues[4].one} , Pecs: ${radioValues[4].two} ,Belly: ${radioValues[4].three} , Legs: ${radioValues[4].four} , Back : ${radioValues[4].five}) ,  ${radioValues[5]} ,  Im ${radioValues[5]} in my best shape , ${radioValues[6]} , ${radioValues[7]} , ${radioValues[8]} , I sleep ${radioValues[9]} ,`;
   const dispatch = useAppDispatch();
   const users = [
     {

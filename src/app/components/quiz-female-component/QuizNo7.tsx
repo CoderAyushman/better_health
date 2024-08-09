@@ -5,30 +5,30 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo7 = () => {
   const dispatch = useAppDispatch();
   const handleClickOn9to5 = () => {
-    radioValues[7] = "9to5";
+    radioValues[7] = "My work schedule is 9am to 5pm";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOnNightShift = () => {
-    radioValues[7] = "nightshift";
+    radioValues[7] = "My work schedule is nightshift";
 
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOnFlexibleHours = () => {
-    radioValues[7] = "flexiblehours";
+    radioValues[7] = "Im having flexiblehours for works";
 
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOnFullTime = () => {
-    radioValues[7] = "fulltime";
+    radioValues[7] = "Im retired";
 
     dispatch(increse());
     dispatch(increseDisplayCounter());
