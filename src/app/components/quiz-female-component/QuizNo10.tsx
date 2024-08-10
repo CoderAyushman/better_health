@@ -1,5 +1,5 @@
 import React from "react";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
@@ -10,27 +10,27 @@ import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlic
 const QuizNo10 = () => {
   const dispatch = useAppDispatch();
   const onClickTeaAndCoffee = () => {
-    radioValues[10] = "tea&coffee";
+    radioValues[10] = "I drink only coffee or tea ";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClickeFewerThan2GlassesOfWater = () => {
-    radioValues[10] = "Fewer than 2 glasses of water";
+    radioValues[10] = "I drink fewer than 2 glasses of water";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClick2to6GlassesOfWater = () => {
-    radioValues[10] = "2-6 glasses of water (16-48 oz)";
+    radioValues[10] = "I drink 2-6 glasses of water (16-48 oz)";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClick7to10GlassesOfWater = () => {
-    radioValues[10] = "7-10 glasses of water";
+    radioValues[10] = "I drink 7-10 glasses of water";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClickMoreThan10GlassesOfWater = () => {
-    radioValues[10] = " More than 10 glasses of water";
+    radioValues[10] = "I drink more than 10 glasses of water";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
@@ -52,7 +52,11 @@ const QuizNo10 = () => {
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base ">
               I only drink tea or coffee
             </h1>
-            <RadioGroupItem className="mr-5 " value="tea&coffee" id="r1" />
+            <RadioGroupItem
+              className="mr-5 "
+              value="I drink only coffee or tea"
+              id="r1"
+            />
           </Label>
 
           <Label
@@ -65,7 +69,7 @@ const QuizNo10 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="Fewer than 2 glasses of water"
+              value="I drink fewer than 2 glasses of water"
               id="r2"
             />
           </Label>
@@ -79,7 +83,7 @@ const QuizNo10 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="2-6 glasses of water (16-48 oz)"
+              value="I drink 2-6 glasses of water (16-48 oz)"
               id="r3"
             />
           </Label>
@@ -93,7 +97,7 @@ const QuizNo10 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="7-10 glasses of water"
+              value="I drink 7-10 glasses of water"
               id="r3"
             />
           </Label>
@@ -107,7 +111,7 @@ const QuizNo10 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value=" More than 10 glasses of water"
+              value="I drink more than 10 glasses of water"
               id="r3"
             />
           </Label>

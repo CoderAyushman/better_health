@@ -47,7 +47,11 @@ const QuizNo8 = () => {
             <h1 className="pr-[40px] font-semibold text-base ">
               I spend most of the day sitting
             </h1>
-            <RadioGroupItem className="mr-5 " value="sitting" id="r1" />
+            <RadioGroupItem
+              className="mr-5 "
+              value="I spend most of the day sitting"
+              id="r1"
+            />
           </Label>
 
           <Label
@@ -64,7 +68,11 @@ const QuizNo8 = () => {
             <h1 className="pr-[40px] font-semibold text-base">
               I take active breaks
             </h1>
-            <RadioGroupItem className="mr-5" value="active" id="r2" />
+            <RadioGroupItem
+              className="mr-5"
+              value="I take active breaks"
+              id="r2"
+            />
           </Label>
           <Label
             onClick={onClickEasyFullActive}
@@ -80,7 +88,11 @@ const QuizNo8 = () => {
             <h1 className="pr-[40px] font-semibold text-base">
               I'm on my feet all day long
             </h1>
-            <RadioGroupItem className="mr-5" value="fullactive" id="r3" />
+            <RadioGroupItem
+              className="mr-5"
+              value="I'm on my feet all day long"
+              id="r3"
+            />
           </Label>
         </RadioGroup>
       </div>

@@ -84,7 +84,11 @@ const QuizNo1 = () => {
             <h1 className="pr-[40px] font-semibold text-base">
               Recover after having a baby
             </h1>
-            <RadioGroupItem className="mr-5" value="preg" id="r3" />
+            <RadioGroupItem
+              className="mr-5"
+              value="recover after having a baby"
+              id="r3"
+            />
           </Label>
         </RadioGroup>
       </div>

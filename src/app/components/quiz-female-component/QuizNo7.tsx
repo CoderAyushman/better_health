@@ -53,7 +53,11 @@ const QuizNo7 = () => {
               alt="lose-weight-img"
             />
             <h1 className="pr-[175px] font-semibold text-base ">9 to 5</h1>
-            <RadioGroupItem className="mr-5 " value="9to5" id="r1" />
+            <RadioGroupItem
+              className="mr-5 "
+              value="My work schedule is 9am to 5pm"
+              id="r1"
+            />
           </Label>
 
           <Label
@@ -68,7 +72,11 @@ const QuizNo7 = () => {
             />
 
             <h1 className="pr-[175px] font-semibold text-base">Night shifts</h1>
-            <RadioGroupItem className="mr-5" value="nightshift" id="r2" />
+            <RadioGroupItem
+              className="mr-5"
+              value="My work schedule is nightshift"
+              id="r2"
+            />
           </Label>
           <Label
             onClick={handleClickOnFlexibleHours}
@@ -84,7 +92,11 @@ const QuizNo7 = () => {
             <h1 className="pr-[140px] font-semibold text-base">
               My hours are flexible
             </h1>
-            <RadioGroupItem className="mr-5" value="flexiblehours" id="r3" />
+            <RadioGroupItem
+              className="mr-5"
+              value="Im having flexiblehours for works"
+              id="r3"
+            />
           </Label>
           <Label
             onClick={handleClickOnFullTime}
@@ -98,7 +110,7 @@ const QuizNo7 = () => {
             />
 
             <h1 className="pr-[175px] font-semibold text-base">I’m retired</h1>
-            <RadioGroupItem className="mr-5" value="fulltime" id="r4" />
+            <RadioGroupItem className="mr-5" value="Im retired" id="r4" />
           </Label>
         </RadioGroup>
       </div>

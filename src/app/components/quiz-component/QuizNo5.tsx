@@ -47,7 +47,11 @@ const QuizNo5 = () => {
             <h1 className="pr-[40px] font-semibold text-base ">
               I have trouble gaining muscle or body fat
             </h1>
-            <RadioGroupItem className="mr-5 " value="hardgain" id="r1" />
+            <RadioGroupItem
+              className="mr-5 "
+              value="I have trouble gaining muscle or body fat"
+              id="r1"
+            />
           </Label>
 
           <Label
@@ -64,7 +68,11 @@ const QuizNo5 = () => {
             <h1 className="pr-[40px] font-semibold text-base">
               I gain and lose weight without effort
             </h1>
-            <RadioGroupItem className="mr-5" value="easyloss" id="r2" />
+            <RadioGroupItem
+              className="mr-5"
+              value="I gain and lose weight without effort"
+              id="r2"
+            />
           </Label>
           <Label
             onClick={onClickEasyGainHardLoss}
@@ -80,7 +88,11 @@ const QuizNo5 = () => {
             <h1 className="pr-[40px] font-semibold text-base">
               I gain weight easily but find it hard to lose
             </h1>
-            <RadioGroupItem className="mr-5" value="easygainhardloss" id="r3" />
+            <RadioGroupItem
+              className="mr-5"
+              value="I gain weight easily but find it hard to lose"
+              id="r3"
+            />
           </Label>
         </RadioGroup>
       </div>

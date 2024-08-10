@@ -5,30 +5,30 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo13 = () => {
   const dispatch = useAppDispatch();
   const handleClickOnAlmostEveryDay = () => {
-    radioValues[13] = "Almost Every Day";
+    radioValues[13] = "I go for walk almost Every Day";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOn3to4TimesPerWeek = () => {
-    radioValues[13] = "3-4 times per week";
+    radioValues[13] = "I go for walk 3-4 times per week";
 
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOn1to2TimesPerWeek = () => {
-    radioValues[13] = "1-2 times per week";
+    radioValues[13] = "I go for walk 1-2 times per week";
 
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickMoreLikeOnceAMonth = () => {
-    radioValues[13] = "More like once a month";
+    radioValues[13] = "I go for walk more like once a month";
 
     dispatch(increse());
     dispatch(increseDisplayCounter());
@@ -57,7 +57,7 @@ const QuizNo13 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5 "
-              value="Almost Every Day"
+              value="I go for walk almost Every Day"
               id="r1"
             />
           </Label>
@@ -78,7 +78,7 @@ const QuizNo13 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="3-4 times per week"
+              value="I go for walk 3-4 times per week"
               id="r2"
             />
           </Label>
@@ -98,7 +98,7 @@ const QuizNo13 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="1-2 times per week"
+              value="I go for walk 1-2 times per week"
               id="r3"
             />
           </Label>
@@ -119,7 +119,7 @@ const QuizNo13 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="More like once a month"
+              value="I go for walk more like once a month"
               id="r4"
             />
           </Label>

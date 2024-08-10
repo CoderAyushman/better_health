@@ -47,7 +47,11 @@ const QuizNo9 = () => {
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base ">
               Minimal rest (less than 5 hours)
             </h1>
-            <RadioGroupItem className="mr-5 " value="minimalrest" id="r1" />
+            <RadioGroupItem
+              className="mr-5 "
+              value="less than 5 hours"
+              id="r1"
+            />
           </Label>
 
           <Label
@@ -78,7 +82,11 @@ const QuizNo9 = () => {
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
               I like to sleep in (more than 8 hours)
             </h1>
-            <RadioGroupItem className="mr-5" value="morethen8hours" id="r3" />
+            <RadioGroupItem
+              className="mr-5"
+              value="more then 8 hours"
+              id="r3"
+            />
           </Label>
         </RadioGroup>
       </div>

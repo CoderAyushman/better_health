@@ -1,5 +1,5 @@
 import React from "react";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
@@ -10,22 +10,22 @@ import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlic
 const QuizNo12 = () => {
   const dispatch = useAppDispatch();
   const onClickAlmostEveryDay = () => {
-    radioValues[12] = " Almost every day";
+    radioValues[12] = "I do workout every day";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClickeSeveralTimesPerWeek = () => {
-    radioValues[12] = "Several times per week";
+    radioValues[12] = "I do workout several times per week";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClickSeveralTimesPerMonth = () => {
-    radioValues[12] = "Several times per month";
+    radioValues[12] = "I do workout several times per month";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClickNever = () => {
-    radioValues[12] = "Never";
+    radioValues[12] = "I dont workout";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
@@ -49,7 +49,7 @@ const QuizNo12 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5 "
-              value=" Almost every day"
+              value="I do workout every day"
               id="r1"
             />
           </Label>
@@ -64,7 +64,7 @@ const QuizNo12 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="Several times per week"
+              value="I do workout several times per week"
               id="r2"
             />
           </Label>
@@ -78,7 +78,7 @@ const QuizNo12 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="Several times per month"
+              value="I do workout several times per month"
               id="r3"
             />
           </Label>
@@ -90,7 +90,7 @@ const QuizNo12 = () => {
             <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
               Never
             </h1>
-            <RadioGroupItem className="mr-5" value="Never" id="r3" />
+            <RadioGroupItem className="mr-5" value="I dont workout" id="r3" />
           </Label>
         </RadioGroup>
       </div>
