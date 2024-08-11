@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { radioValues } from "./RadioValues";
 
 const TakingEmail = () => {
-  const [mail,setMail]=useState<string>(radioValues[33].mail);
+  const [mail, setMail] = useState<string>(radioValues[33].mail);
   const handleOnSubmit = (e: any) => {
     e.preventDefault();
-    radioValues[33]=mail
+    radioValues[33] = mail;
   };
   return (
     <div className="w-full min-h-[100vh] flex justify-center items-center bg-[#6C7988] font-sans">
@@ -19,7 +19,7 @@ const TakingEmail = () => {
             Personalized Weight <br /> Loss Plan
           </span>
         </div>
-        <form onSubmit={(e)=>handleOnSubmit(e)} >
+        <form onSubmit={(e) => handleOnSubmit(e)}>
           <div className="mt-3 ">
             <input
               type="email"
@@ -29,7 +29,7 @@ const TakingEmail = () => {
               placeholder="Enter your email to get your plan"
               className="w-[300px] text-base border-[1px] border-black p-2 rounded-lg"
               required
-              onChange={(e)=>setMail(e.target.value)}
+              onChange={(e) => setMail(e.target.value)}
             />
           </div>
           <div className="flex justify-center items-center  mt-5 opacity-60 mb-5">
@@ -46,6 +46,7 @@ const TakingEmail = () => {
             <button
               className=" bg-customGreen pt-3 pb-3 pl-[110px] pr-[110px] rounded-full text-white font-bold"
               type="submit"
+              onClick={handleOnSubmit}
             >
               CONTINUE
             </button>

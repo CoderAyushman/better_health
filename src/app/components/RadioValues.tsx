@@ -2,7 +2,7 @@
 
 console.log("on reload radiovalue is effect");
 
-export let radioValues:any = [
+export let radioValues: any = [
   "0",
   "1",
   "2",
@@ -58,12 +58,13 @@ export let radioValues:any = [
     isRequireYear: false,
   },
   "32",
-  " "
+  " ",
+  {
+    message: null,
+  },
 ];
-
 
 export function setRadioValues(newValues: any) {
   radioValues = newValues;
   console.log("radio values are set", radioValues);
 }
-
