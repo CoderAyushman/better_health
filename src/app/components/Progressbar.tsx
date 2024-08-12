@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Progress } from "@/components/ui/progress";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { decrease } from "@/lib/features/counter/counterSlice";
-import {radioValues,  setRadioValues } from "./RadioValues";
+import { radioValues, setRadioValues } from "./RadioValues";
 import {
   addDisplayCounter,
   decreaseDisplayCounter,
@@ -15,12 +15,8 @@ import { update } from "@/lib/features/dataSlice";
 
 const Progressbar = () => {
   const [displayCounter, setDisplayCounter] = useState<number>(1);
-  const quizCounter: any = useAppSelector(
-    (state) => state.diplayCounter.items
-  );
- const pageCounter: number = useAppSelector(
-  (state) => state.counter.items
-);
+  const quizCounter: any = useAppSelector((state) => state.diplayCounter.items);
+  const pageCounter: number = useAppSelector((state) => state.counter.items);
   // const [displayQuizCounter, setDisplayQuizCounter] =
   //   useState<any>(quizCounter);
   const dispatch = useAppDispatch();
@@ -30,17 +26,14 @@ const Progressbar = () => {
     dispatch(decreaseDisplayCounter());
   };
   useEffect(() => {
-    
     if (quizCounter != 1) {
-        console.log("quizCounter",quizCounter)
-        localStorage.setItem("displayCounter", JSON.stringify(quizCounter));
-        setDisplayCounter(quizCounter);
-    }
-    else{
+      console.log("quizCounter", quizCounter);
+      localStorage.setItem("displayCounter", JSON.stringify(quizCounter));
+      setDisplayCounter(quizCounter);
+    } else {
       setDisplayCounter(quizCounter);
       // localStorage.setItem('data',JSON.stringify(radioValues))
     }
-   
   }, [quizCounter]);
   // useEffect(() => {
   //   // if (quizCounter == 0) {
@@ -60,30 +53,25 @@ const Progressbar = () => {
   //     setDisplayCounter(1)
   //   }
   // }, [quizCounter]);
-  
 
-    useEffect(() => {
-      const localStore:any = localStorage.getItem("displayCounter");
-      // if(localDataStore && pageCounter!=1){
-        // setRadioValues(JSON.parse(localDataStore))
-      //   console.log("the radiovalues are upadated")
-      // }
-      if (localStore && pageCounter!=1 ) {
-        console.log(localStore)
-        
-        dispatch(addDisplayCounter(parseInt(JSON.parse(localStore))));
-      }
-      else{
-        setDisplayCounter(1);
-      }
-      
-      
-    }, []);
-  
+  useEffect(() => {
+    const localStore: any = localStorage.getItem("displayCounter");
+    // if(localDataStore && pageCounter!=1){
+    // setRadioValues(JSON.parse(localDataStore))
+    //   console.log("the radiovalues are upadated")
+    // }
+    if (localStore && pageCounter != 1) {
+      console.log(localStore);
+
+      dispatch(addDisplayCounter(parseInt(JSON.parse(localStore))));
+    } else {
+      setDisplayCounter(1);
+    }
+  }, []);
 
   return (
     <>
-      <div className="mt-32 flex justify-center items-center">
+      <div className="mt-28 flex justify-center items-center">
         <Progress
           value={displayCounter * 3.125}
           className="w-[463px] h-1 max-[450px]:w-[372px]"

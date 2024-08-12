@@ -1,11 +1,17 @@
+"use client";
 import React, { useState } from "react";
 import { radioValues } from "./RadioValues";
-
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { increse } from "@/lib/features/counter/counterSlice";
 const TakingEmail = () => {
-  const [mail, setMail] = useState<string>(radioValues[33].mail);
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const [mail, setMail] = useState<string>(radioValues[33]);
   const handleOnSubmit = (e: any) => {
     e.preventDefault();
     radioValues[33] = mail;
+    dispatch(increse());
   };
   return (
     <div className="w-full min-h-[100vh] flex justify-center items-center bg-[#6C7988] font-sans">

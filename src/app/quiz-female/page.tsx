@@ -46,7 +46,8 @@ const page = () => {
     quizes[quizCounter] == quizes[34] ||
     quizes[quizCounter] == quizes[36] ||
     quizes[quizCounter] == quizes[37] ||
-    quizes[quizCounter] == quizes[38]
+    quizes[quizCounter] == quizes[38] ||
+    quizes[quizCounter] == quizes[39]
   ) {
     quizCompaireCounter = false;
   }

@@ -6,12 +6,11 @@ import Footer from "../Footer";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 
-
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { update } from "@/lib/features/dataSlice";
 import { radioValues } from "../RadioValues";
 
-console.log("radioValues[1]=",radioValues[1])
+console.log("radioValues[1]=", radioValues[1]);
 const QuizNo1 = () => {
   const dispatch = useAppDispatch();
   // let data = useAppSelector(state=>state.data.items);
@@ -27,7 +26,7 @@ const QuizNo1 = () => {
     dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex-col justify-center items-center ">
+    <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-4xl font-bold tracking-wide mt-7">
           What is your goal?
@@ -39,7 +38,7 @@ const QuizNo1 = () => {
           <Label
             onClick={handleClickOnLoseWeight}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-1"
           >
             <img
               className="w-[104px]"
@@ -53,7 +52,7 @@ const QuizNo1 = () => {
           <Label
             onClick={handleClickOnGainMuscle}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer "
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer "
           >
             <img
               className="w-[104px]"

@@ -62,6 +62,9 @@ export let radioValues: any = [
   {
     message: null,
   },
+  {
+    response: null,
+  },
 ];
 
 export function setRadioValues(newValues: any) {

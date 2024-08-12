@@ -40,6 +40,7 @@ import QuizNo32 from "./quiz-female-component/QuizNo32";
 import Chart from "./quiz-female-component/Chart";
 import PrePlanCreating from "./PrePlanCreating";
 import TakingEmail from "./TakingEmail";
+import Answer from "./Answer";
 
 const quizes = [
   <Introfemale />,
@@ -77,10 +78,11 @@ const quizes = [
   <QuizNo30 />,
   <QuizNo31 />,
   <WellnessProfile />,
-  <QuizNo32/>,
-  <Chart/>,
-  <PrePlanCreating/>,
-  <TakingEmail/>
+  <QuizNo32 />,
+  <Chart />,
+  <PrePlanCreating />,
+  <TakingEmail />,
+  <Answer />,
 ];
 
 export default quizes;

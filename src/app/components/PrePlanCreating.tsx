@@ -18,8 +18,23 @@ import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlic
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "./RadioValues";
 // import { plugin } from "postcss";
+import axios from "axios";
 
 const PrePlanCreating = () => {
+  const getAnswer = async (msg: any) => {
+    axios
+      .post("http://localhost:8000/api/langchain/gemini", {
+        prompt: msg,
+      })
+      .then(async (response) => {
+        // console.log(response.data.response);
+        radioValues[35].response = await response.data.response;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   // message template
   const message = `I'm want to ${radioValues[1]} , my physical build is  ${radioValues[2]} , my body goal is  ${radioValues[3]} , my target zones are (Arms:  ${radioValues[4].one} , Pecs: ${radioValues[4].two} ,Belly: ${radioValues[4].three} , Legs: ${radioValues[4].four} , Back : ${radioValues[4].five}) ,  ${radioValues[5]} ,  Im ${radioValues[6]} in my best shape , ${radioValues[7]} , ${radioValues[8]} , I sleep ${radioValues[9]} , ${radioValues[10]} , ${radioValues[12]} , ${radioValues[13]} , ${radioValues[14]}, I love to do ${radioValues[17]} exercise , ${radioValues[19]} , I prefer ${radioValues[22]} diet , I am ${radioValues[28].ft} feet or ${radioValues[28].cm} cm , My current weight is ${radioValues[29].kg} kg or ${radioValues[29].lbs} lbs , My goal weight is ${radioValues[30].kg} kg or ${radioValues[30].lbs} lbs , I am ${radioValues[31].year} year old. Give me a proper diet , workout and diffrent diet suited healthy dishes list.`;
   const dispatch = useAppDispatch();
@@ -61,7 +76,7 @@ const PrePlanCreating = () => {
       };
     } else {
       radioValues[34].message = message;
-      console.log(message);
+      getAnswer(message);
       setTimeout(() => {
         dispatch(increse());
       }, 400);
