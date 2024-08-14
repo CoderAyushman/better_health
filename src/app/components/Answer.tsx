@@ -1,14 +1,31 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { radioValues } from "../components/RadioValues";
+import "@/app/components/tableSheet.css";
+import foodImg from "./../../../public/healthy-food-img.webp";
 const Output = () => {
   const [markdownText, setMarkdownText] = useState(radioValues[35].response);
 
+  useEffect(() => {
+    setMarkdownText(radioValues[35].response);
+  }, [radioValues[35].response]);
   return (
-    <div className="flex items-center justify-center mt-32 text-xl">
-      <div className="flex-col items-center justify-center">
-        <ReactMarkdown>{markdownText}</ReactMarkdown>
+    <div className="flex items-center justify-center mt-32 ">
+      <div className="flex-col items-center justify-center ml-10 mr-10">
+        <img
+          src="healthy-food-img.webp"
+          alt="healthy food"
+          className="h-[600px] ml-[50vw]  fixed z-0 opacity-30 md:w-[700px] md:ml-[40vw]  "
+        />
+        <div className="z-10 relative">
+          <h1>Here yours ai generated full personal Diet.</h1>
+
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {markdownText}
+          </ReactMarkdown>
+        </div>
       </div>
     </div>
   );

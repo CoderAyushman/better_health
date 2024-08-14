@@ -1,11 +1,9 @@
-"use client";
 import React, { useState } from "react";
 import { radioValues } from "./RadioValues";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { increse } from "@/lib/features/counter/counterSlice";
 const TakingEmail = () => {
-  const router = useRouter();
   const dispatch = useDispatch();
   const [mail, setMail] = useState<string>(radioValues[33]);
   const handleOnSubmit = (e: any) => {
