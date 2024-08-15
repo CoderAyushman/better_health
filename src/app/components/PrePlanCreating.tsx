@@ -48,7 +48,7 @@ const PrePlanCreating = () => {
   , My goal weight is ${radioValues[30].kg} kg or ${radioValues[30].lbs} lbs 
   , I am ${radioValues[31].year} year old. Give me a proper diet 
   , workout ,diffrent diet suited healthy dishes list and also intermittent fasting if needed.
-   Give all things with a react-markdown table format`;
+   Give all things with a markdown table format`;
 
   const dispatch = useAppDispatch();
   const users = [
