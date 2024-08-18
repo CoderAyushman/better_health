@@ -42,9 +42,9 @@ const QuizNo12 = () => {
           <Label
             onClick={onClickAlmostEveryDay}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base ">
+            <h1 className="pr-[140px] md:pr-[175px] pl-5 py-[30px] font-semibold text-base ">
               Almost every day
             </h1>
             <RadioGroupItem
@@ -57,9 +57,9 @@ const QuizNo12 = () => {
           <Label
             onClick={onClickeSeveralTimesPerWeek}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[140px] md:pr-[175px] pl-5 py-[30px] font-semibold text-base">
               Several times per week
             </h1>
             <RadioGroupItem
@@ -71,9 +71,9 @@ const QuizNo12 = () => {
           <Label
             onClick={onClickSeveralTimesPerMonth}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[140px] md:pr-[175px] pl-5 py-[30px] font-semibold text-base">
               Several times per month
             </h1>
             <RadioGroupItem
@@ -85,9 +85,9 @@ const QuizNo12 = () => {
           <Label
             onClick={onClickNever}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[140px] md:pr-[175px] pl-5 py-[30px] font-semibold text-base">
               Never
             </h1>
             <RadioGroupItem className="mr-5" value="I dont workout" id="r3" />

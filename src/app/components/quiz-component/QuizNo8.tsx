@@ -37,14 +37,14 @@ const QuizNo8 = () => {
           <Label
             onClick={onClickSitting}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
               src="imageOfMale/quiz-8th/sitting-img.png"
               alt="sitting-img"
             />
-            <h1 className="pr-[40px] font-semibold text-base ">
+            <h1 className="pr-[40px] md:pr-[40px] font-semibold text-base ">
               I spend most of the day sitting
             </h1>
             <RadioGroupItem
@@ -57,7 +57,7 @@ const QuizNo8 = () => {
           <Label
             onClick={onClickeActive}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -65,7 +65,7 @@ const QuizNo8 = () => {
               alt="active-img"
             />
 
-            <h1 className="pr-[40px] font-semibold text-base">
+            <h1 className="pr-[40px] md:pr-[40px] font-semibold text-base">
               I take active breaks
             </h1>
             <RadioGroupItem
@@ -77,7 +77,7 @@ const QuizNo8 = () => {
           <Label
             onClick={onClickEasyFullActive}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -85,7 +85,7 @@ const QuizNo8 = () => {
               alt="fit-img"
             />
 
-            <h1 className="pr-[40px] font-semibold text-base">
+            <h1 className="pr-[40px] md:pr-[40px] font-semibold text-base">
               I'm on my feet all day long
             </h1>
             <RadioGroupItem

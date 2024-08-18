@@ -45,14 +45,14 @@ const QuizNo3 = () => {
           <Label
             onClick={handleClickOnSlender}
             htmlFor="r1"
-            className="flex justify-between shadow-lg rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-lg rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2 "
           >
             <img
               className="w-[104px]"
               src="imageOfMale/quiz-3rd/afewsmaller-img.png"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[175px] font-semibold text-base ">
+            <h1 className="pr-[125px] md:pr-[175px] font-semibold text-base ">
               A few sizes smaller
             </h1>
             <RadioGroupItem className="mr-5 " value="slender" id="r1" />
@@ -61,7 +61,7 @@ const QuizNo3 = () => {
           <Label
             onClick={handleClickOnAthletic}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2 "
           >
             <img
               className="w-[104px]"
@@ -69,13 +69,15 @@ const QuizNo3 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Athletic</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base   ">
+              Athletic
+            </h1>
             <RadioGroupItem className="mr-5" value="athletic" id="r2" />
           </Label>
           <Label
             onClick={handleClickOnShredded}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -83,13 +85,15 @@ const QuizNo3 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Shredded</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base   ">
+              Shredded
+            </h1>
             <RadioGroupItem className="mr-5" value="shredded" id="r3" />
           </Label>
           <Label
             onClick={handleClickOnSwole}
             htmlFor="r4"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <img
               className="w-[104px]"
@@ -97,7 +101,9 @@ const QuizNo3 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Swole</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base   ">
+              Swole
+            </h1>
             <RadioGroupItem className="mr-5" value="swole" id="r4" />
           </Label>
         </RadioGroup>

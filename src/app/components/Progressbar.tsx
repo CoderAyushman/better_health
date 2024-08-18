@@ -74,10 +74,10 @@ const Progressbar = () => {
       <div className="mt-28 flex justify-center items-center">
         <Progress
           value={displayCounter * 3.125}
-          className="w-[463px] h-1 max-[450px]:w-[372px]"
+          className="max-w-[340px] md:max-w-[450px] h-1 "
         />
       </div>
-      <div className="mt-3  flex justify-center items-center gap-[410px] max-[450px]:gap-[320px]">
+      <div className="mt-3  flex justify-center items-center gap-[410px] max-[450px]:gap-[270px]">
         <button>
           <img
             onClick={handleBackArrowButton}

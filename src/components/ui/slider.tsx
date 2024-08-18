@@ -11,12 +11,12 @@ const Slider = React.forwardRef<
   <SliderPrimitive.Root
     ref={ref}
     className={cn(
-      "relative flex w-full touch-none select-none items-center",
+      "relative flex max-w-[415px] touch-none select-none items-center",
       className
     )}
     {...props}
   >
-    <SliderPrimitive.Track className="relative  h-3 w-full grow overflow-hidden rounded-full bg-custom-gradient">
+    <SliderPrimitive.Track className="relative  h-3 max-w-[415px] grow overflow-hidden rounded-full bg-custom-gradient">
       <SliderPrimitive.Range className="absolute h-full " />
     </SliderPrimitive.Track>
 

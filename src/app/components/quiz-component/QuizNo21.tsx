@@ -5,11 +5,11 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo21 = () => {
-  const quizCounter=useAppSelector(state=>state.diplayCounter.items)
+  const quizCounter = useAppSelector((state) => state.diplayCounter.items);
   const dispatch = useAppDispatch();
   const handleClickOn10to15min = () => {
     radioValues[21] = "10to15min";
@@ -58,21 +58,23 @@ const QuizNo21 = () => {
           <Label
             onClick={handleClickOn10to15min}
             htmlFor="r1"
-            className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
               src="imageOfMale/quiz-21st/low-img.png"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[140px] font-semibold text-base ">10-15 min</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">
+              10-15 min
+            </h1>
             <RadioGroupItem className="mr-5 " value="10to15min" id="r1" />
           </Label>
 
           <Label
             onClick={handleClickOn15to25min}
             htmlFor="r2"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -80,13 +82,15 @@ const QuizNo21 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[140px] font-semibold text-base">15-25 min</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              15-25 min
+            </h1>
             <RadioGroupItem className="mr-5" value="15-25 min" id="r2" />
           </Label>
           <Label
             onClick={handleClickOn25minPlus}
             htmlFor="r3"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -94,13 +98,15 @@ const QuizNo21 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[140px] font-semibold text-base">25+ min</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              25+ min
+            </h1>
             <RadioGroupItem className="mr-5" value="25+ min" id="r3" />
           </Label>
           <Label
             onClick={handleClickOnIDontKnow}
             htmlFor="r4"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -108,7 +114,9 @@ const QuizNo21 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[140px] font-semibold text-base">i don't know</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              i don't know
+            </h1>
             <RadioGroupItem className="mr-5" value="i dont know" id="r4" />
           </Label>
         </RadioGroup>

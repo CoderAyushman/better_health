@@ -12,7 +12,7 @@ const Output = () => {
     setMarkdownText(radioValues[35].response);
   }, [radioValues[35].response]);
   return (
-    <div className="flex items-center justify-center mt-32 ">
+    <main className="flex items-center justify-center mt-32 ">
       <div className="flex-col items-center justify-center ml-10 mr-10">
         <img
           src="healthy-food-img.webp"
@@ -27,7 +27,7 @@ const Output = () => {
           </ReactMarkdown>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

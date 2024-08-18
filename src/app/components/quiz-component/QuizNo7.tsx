@@ -45,14 +45,16 @@ const QuizNo7 = () => {
           <Label
             onClick={handleClickOn9to5}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
               src="imageOfMale/quiz-7th/sun-emoji.png"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[175px] font-semibold text-base ">9 to 5</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">
+              9 to 5
+            </h1>
             <RadioGroupItem
               className="mr-5 "
               value="My work schedule is 9am to 5pm"
@@ -63,7 +65,7 @@ const QuizNo7 = () => {
           <Label
             onClick={handleClickOnNightShift}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -71,7 +73,9 @@ const QuizNo7 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Night shifts</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              Night shifts
+            </h1>
             <RadioGroupItem
               className="mr-5"
               value="My work schedule is nightshift"
@@ -81,7 +85,7 @@ const QuizNo7 = () => {
           <Label
             onClick={handleClickOnFlexibleHours}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -89,7 +93,7 @@ const QuizNo7 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[140px] font-semibold text-base">
+            <h1 className="pr-[120px] md:pr-[140px] font-semibold text-base">
               My hours are flexible
             </h1>
             <RadioGroupItem
@@ -101,7 +105,7 @@ const QuizNo7 = () => {
           <Label
             onClick={handleClickOnFullTime}
             htmlFor="r4"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -109,7 +113,9 @@ const QuizNo7 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">I’m retired</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              I’m retired
+            </h1>
             <RadioGroupItem className="mr-5" value="Im retired" id="r4" />
           </Label>
         </RadioGroup>

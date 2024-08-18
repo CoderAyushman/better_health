@@ -1,26 +1,29 @@
 import { decrease, increse } from "@/lib/features/counter/counterSlice";
-import { decreaseDisplayCounter, increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import {
+  decreaseDisplayCounter,
+  increseDisplayCounter,
+} from "@/lib/features/counter/displayCounterSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import React from "react";
 
 const AboutBody = () => {
   const dispatch = useAppDispatch();
-  const displayCounter=useAppSelector(state=>state.diplayCounter.items)
+  const displayCounter = useAppSelector((state) => state.diplayCounter.items);
   const handleBackArrowButton = () => {
-    if(displayCounter > 27){
-      dispatch(decreaseDisplayCounter())
+    if (displayCounter > 27) {
+      dispatch(decreaseDisplayCounter());
     }
     dispatch(decrease());
   };
   const handleOnclickButton = () => {
-    if(displayCounter != 28){
-      dispatch(increseDisplayCounter())
+    if (displayCounter != 28) {
+      dispatch(increseDisplayCounter());
     }
     dispatch(increse());
   };
   return (
     <div className="flex  mt-32 justify-center items-center ">
-      <div className="mt-3  flex-col justify-center items-center gap-[410px] max-[450px]:gap-[320px]">
+      <div className="mt-3  flex-col justify-center items-center max-gap-[320px] md:gap-[410px]]">
         <button>
           <img
             onClick={handleBackArrowButton}
@@ -33,7 +36,7 @@ const AboutBody = () => {
           We’ve got your back!
         </h1>
         <img
-          className="max-w-[410px]"
+          className="w-[410px]"
           src="about-body-img.png"
           alt="surrounding-img"
           mb-5

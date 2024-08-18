@@ -5,18 +5,16 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo22 = () => {
-
   const dispatch = useAppDispatch();
-  const displayCounter=useAppSelector(state=>state.diplayCounter.items)
+  const displayCounter = useAppSelector((state) => state.diplayCounter.items);
   const handleClickOnTraditionalFood = () => {
     radioValues[22] = "TraditionalFood";
     dispatch(increse());
-    if(displayCounter==22){
-
+    if (displayCounter == 22) {
       dispatch(increseDisplayCounter());
     }
   };
@@ -24,8 +22,7 @@ const QuizNo22 = () => {
     radioValues[22] = "keto food";
 
     dispatch(increse());
-    if(displayCounter==22){
-
+    if (displayCounter == 22) {
       dispatch(increseDisplayCounter());
     }
   };
@@ -33,8 +30,7 @@ const QuizNo22 = () => {
     radioValues[22] = "vegetarian";
 
     dispatch(increse());
-    if(displayCounter==22){
-
+    if (displayCounter == 22) {
       dispatch(increseDisplayCounter());
     }
   };
@@ -42,8 +38,7 @@ const QuizNo22 = () => {
     radioValues[22] = "vegan plantdiet";
 
     dispatch(increse());
-    if(displayCounter==22){
-
+    if (displayCounter == 22) {
       dispatch(increseDisplayCounter());
     }
   };
@@ -51,8 +46,7 @@ const QuizNo22 = () => {
     radioValues[22] = "KetoVegan";
 
     dispatch(increse());
-    if(displayCounter==22){
-
+    if (displayCounter == 22) {
       dispatch(increseDisplayCounter());
     }
   };
@@ -60,8 +54,7 @@ const QuizNo22 = () => {
     radioValues[22] = "Pescatarian";
 
     dispatch(increse());
-    if(displayCounter==22){
-
+    if (displayCounter == 22) {
       dispatch(increseDisplayCounter());
     }
   };
@@ -69,8 +62,7 @@ const QuizNo22 = () => {
     radioValues[22] = "Lactose Free";
 
     dispatch(increse());
-    if(displayCounter==22){
-
+    if (displayCounter == 22) {
       dispatch(increseDisplayCounter());
     }
   };
@@ -78,8 +70,7 @@ const QuizNo22 = () => {
     radioValues[22] = "Gluten Free";
 
     dispatch(increse());
-    if(displayCounter==22){
-
+    if (displayCounter == 22) {
       dispatch(increseDisplayCounter());
     }
   };
@@ -87,8 +78,7 @@ const QuizNo22 = () => {
     radioValues[22] = "Paleo";
 
     dispatch(increse());
-    if(displayCounter==22){
-
+    if (displayCounter == 22) {
       dispatch(increseDisplayCounter());
     }
   };
@@ -96,8 +86,7 @@ const QuizNo22 = () => {
     radioValues[22] = "Mediterranean";
 
     dispatch(increse());
-    if(displayCounter==22){
-
+    if (displayCounter == 22) {
       dispatch(increseDisplayCounter());
     }
   };
@@ -113,7 +102,7 @@ const QuizNo22 = () => {
           <Label
             onClick={handleClickOnTraditionalFood}
             htmlFor="r1"
-            className="flex justify-between mt-[15px] shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -132,7 +121,7 @@ const QuizNo22 = () => {
           <Label
             onClick={handleClickOnKeto}
             htmlFor="r2"
-            className="flex justify-between mt-[15px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -151,7 +140,7 @@ const QuizNo22 = () => {
           <Label
             onClick={handleClickOnVegeterian}
             htmlFor="r3"
-            className="flex justify-between mt-[15px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -170,7 +159,7 @@ const QuizNo22 = () => {
           <Label
             onClick={handleClickOnVegan}
             htmlFor="r4"
-            className="flex justify-between mt-[15px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -191,7 +180,7 @@ const QuizNo22 = () => {
           <Label
             onClick={handleClickOnKetoVegan}
             htmlFor="r4"
-            className="flex justify-between mt-[15px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -210,7 +199,7 @@ const QuizNo22 = () => {
           <Label
             onClick={handleClickOnPescatarian}
             htmlFor="r4"
-            className="flex justify-between mt-[15px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -229,7 +218,7 @@ const QuizNo22 = () => {
           <Label
             onClick={handleClickOnLactoseFree}
             htmlFor="r4"
-            className="flex justify-between mt-[15px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -248,7 +237,7 @@ const QuizNo22 = () => {
           <Label
             onClick={handleClickOnGlutenFree}
             htmlFor="r4"
-            className="flex justify-between mt-[15px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -267,7 +256,7 @@ const QuizNo22 = () => {
           <Label
             onClick={handleClickOnPaleo}
             htmlFor="r4"
-            className="flex justify-between mt-[15px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -284,7 +273,7 @@ const QuizNo22 = () => {
           <Label
             onClick={handleClickOnMediterranean}
             htmlFor="r4"
-            className="flex justify-between mt-[15px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -293,7 +282,9 @@ const QuizNo22 = () => {
             />
 
             <div className="mr-[-42px] ">
-              <h1 className="font-semibold text-base">Mediterranean</h1>
+              <h1 className="pr-[100px] md:pr-[170px] font-semibold text-base">
+                Mediterranean
+              </h1>
               <span className="text-gray-400">
                 I eat plenty of veggies, grains and seafood
               </span>

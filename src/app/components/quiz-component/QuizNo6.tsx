@@ -1,5 +1,5 @@
 import React from "react";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
@@ -47,9 +47,9 @@ const QuizNo6 = () => {
           <Label
             onClick={onClick0to6month}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base ">
+            <h1 className="pr-[140px] md:pr-[175px] pl-5 py-[30px] font-semibold text-base  ">
               0 - 6 months ago
             </h1>
             <RadioGroupItem className="mr-5 " value="0-6month" id="r1" />
@@ -58,9 +58,9 @@ const QuizNo6 = () => {
           <Label
             onClick={onClicke7to12month}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[140px] md:pr-[175px] pl-5 py-[30px] font-semibold text-base ">
               7 - 12 months ago
             </h1>
             <RadioGroupItem className="mr-5" value="7-12month" id="r2" />
@@ -68,9 +68,9 @@ const QuizNo6 = () => {
           <Label
             onClick={onClick1to3year}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[140px] md:pr-[175px] pl-5 py-[30px] font-semibold text-base ">
               1 - 3 years ago
             </h1>
             <RadioGroupItem className="mr-5" value="1-3year" id="r3" />
@@ -78,9 +78,9 @@ const QuizNo6 = () => {
           <Label
             onClick={onClickMoreThen3}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[110px] md:pr-[175px] pl-5 py-[30px] font-semibold text-base ">
               More than 3 years ago
             </h1>
             <RadioGroupItem className="mr-5" value="morethen3" id="r3" />
@@ -88,9 +88,9 @@ const QuizNo6 = () => {
           <Label
             onClick={onClickNever}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[140px] md:pr-[175px] pl-5 py-[30px] font-semibold text-base ">
               Never
             </h1>
             <RadioGroupItem className="mr-5" value="never" id="r3" />

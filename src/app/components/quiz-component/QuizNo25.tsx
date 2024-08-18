@@ -1,11 +1,11 @@
-import React, {useState } from "react";
-import {radioValues} from "../RadioValues";
+import React, { useState } from "react";
+import { radioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo25 = () => {
-  const dispatch=useAppDispatch();
+  const dispatch = useAppDispatch();
 
   const [isOne, setIsOne] = useState<boolean>(false);
   const [isTwo, setIsTwo] = useState<boolean>(false);
@@ -16,10 +16,10 @@ const QuizNo25 = () => {
     radioValues[25] = "1";
     setIsOne(true);
     setIsFour(false);
-    setIsFive(false); 
+    setIsFive(false);
     setIsThree(false);
     setIsTwo(false);
-    dispatch(increse())
+    dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleOnclick2 = () => {
@@ -29,7 +29,7 @@ const QuizNo25 = () => {
     setIsFive(false);
     setIsThree(false);
     setIsOne(false);
-    dispatch(increse())
+    dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleOnclick3 = () => {
@@ -39,7 +39,7 @@ const QuizNo25 = () => {
     setIsFive(false);
     setIsTwo(false);
     setIsOne(false);
-    dispatch(increse())
+    dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleOnclick4 = () => {
@@ -49,7 +49,7 @@ const QuizNo25 = () => {
     setIsThree(false);
     setIsTwo(false);
     setIsOne(false);
-    dispatch(increse())
+    dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleOnclick5 = () => {
@@ -59,14 +59,15 @@ const QuizNo25 = () => {
     setIsThree(false);
     setIsTwo(false);
     setIsOne(false);
-    dispatch(increse())
+    dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   return (
     <div className="flex justify-center items-center mb-5">
       <div className="flex-col">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
-        I’m quick to fall off my plan <br /> whenever I’m around <br /> people who aren’t on the <br /> same journey as me.
+          I’m quick to fall off my plan <br /> whenever I’m around <br /> people
+          who aren’t on the <br /> same journey as me.
         </h1>
         <p className="text-black-300 mt-2">
           {" "}
@@ -75,14 +76,14 @@ const QuizNo25 = () => {
         <div className="flex mt-5">
           <div className="flex-col cursor-pointer">
             <div
-              className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
+              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${
                 radioValues[25] == "1" || isOne
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
               }`}
             >
               <h1
-                className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]"
+                className="text-2xl font-bold  px-[20px] py-[10px]  md:px-[25px] md:py-[15px]"
                 onClick={handleOnclick1}
               >
                 1
@@ -92,14 +93,14 @@ const QuizNo25 = () => {
           </div>
           <div>
             <div
-              className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
+              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${
                 radioValues[25] == "2" || isTwo
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
               }`}
             >
               <h1
-                className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]"
+                className="text-2xl font-bold  px-[20px] py-[10px]  md:px-[25px] md:py-[15px]"
                 onClick={handleOnclick2}
               >
                 2
@@ -108,14 +109,14 @@ const QuizNo25 = () => {
           </div>
           <div>
             <div
-              className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
+              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${
                 radioValues[25] == "3" || isThree
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
               }`}
             >
               <h1
-                className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]"
+                className="text-2xl font-bold  px-[20px] py-[10px]  md:px-[25px] md:py-[15px]"
                 onClick={handleOnclick3}
               >
                 3
@@ -124,14 +125,14 @@ const QuizNo25 = () => {
           </div>
           <div>
             <div
-              className={`max-w-[150px]  mr-7 cursor-pointer rounded-md ${
+              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${
                 radioValues[25] == "4" || isFour
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
               }`}
             >
               <h1
-                className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]"
+                className="text-2xl font-bold  px-[20px] py-[10px]  md:px-[25px] md:py-[15px]"
                 onClick={handleOnclick4}
               >
                 4
@@ -140,14 +141,14 @@ const QuizNo25 = () => {
           </div>
           <div className="flex-col cursor-pointer">
             <div
-              className={`max-w-[150px]  mr-7  rounded-md ${
+              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7  rounded-md ${
                 radioValues[25] == "5" || isFive
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
               }`}
             >
               <h1
-                className="text-2xl font-bold  pr-[25px] pl-[25px] pt-[15px] pb-[15px]"
+                className="text-2xl font-bold  px-[20px] py-[10px]  md:px-[25px] md:py-[15px]"
                 onClick={handleOnclick5}
               >
                 5

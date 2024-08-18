@@ -1,41 +1,88 @@
-table {
-  border-collapse: collapse;
-  width: 100%;
+@media only screen and (max-width: 767px) {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: x-small;
+    font-weight: 700;
+  }
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  th {
+    /* padding-top: 6px;
+    padding-bottom: 6px; */
+    text-align: left;
+    background-color: #f2f2f2;
+  }
+
+  /* Optional: Add spacing between rows */
+  tr {
+    margin-bottom: 10px;
+  }
+
+  /* Optional: Add spacing between columns */
+  td + td {
+    padding-left: 2px;
+  }
+
+  h2 {
+    /* font-size: small; */
+    /* margin-block: 5px; */
+    font-weight: 600;
+  }
+
+  p {
+    margin-block: 5px;
+  }
+
+  li {
+    margin-block: 5px;
+  }
 }
 
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+@media only screen and (min-width: 767px) {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
 
-th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #f2f2f2;
-}
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
 
-/* Optional: Add spacing between rows */
-tr {
-  margin-bottom: 10px;
-}
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+  }
 
-/* Optional: Add spacing between columns */
-td + td {
-  padding-left: 16px;
-}
+  /* Optional: Add spacing between rows */
+  tr {
+    margin-bottom: 10px;
+  }
 
-h2 {
-  font-size: large;
-  margin-block: 10px;
-  font-weight: 600;
-}
+  /* Optional: Add spacing between columns */
+  td + td {
+    padding-left: 16px;
+  }
 
-p {
-  margin-block: 10px;
-}
+  h2 {
+    font-size: large;
+    margin-block: 10px;
+    font-weight: 600;
+  }
 
-li {
-  margin-block: 5px;
+  p {
+    margin-block: 10px;
+  }
+
+  li {
+    margin-block: 5px;
+  }
 }

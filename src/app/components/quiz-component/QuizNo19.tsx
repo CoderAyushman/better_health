@@ -35,14 +35,16 @@ const QuizNo19 = () => {
           <Label
             onClick={handleClickOnGym}
             htmlFor="r1"
-            className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px] mr-7"
               src="imageOfMale/quiz-19th/gym-img.png"
               alt="gym-img"
             />
-            <h1 className="pr-[100px]  font-semibold text-base ">Gym</h1>
+            <h1 className="pr-[155px] md:pr-[175px]  font-semibold text-base ">
+              Gym
+            </h1>
             <RadioGroupItem
               className="mr-5 "
               value="I prefer gym for workout"
@@ -53,7 +55,7 @@ const QuizNo19 = () => {
           <Label
             onClick={handleClickHome}
             htmlFor="r2"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px] mr-7"
@@ -61,7 +63,9 @@ const QuizNo19 = () => {
               alt="hard-img"
             />
 
-            <h1 className="pr-[100px]  font-semibold text-base">Home</h1>
+            <h1 className="pr-[155px] md:pr-[175px]  font-semibold text-base">
+              Home
+            </h1>
             <RadioGroupItem
               className="mr-5"
               value="I prefer home for workout"

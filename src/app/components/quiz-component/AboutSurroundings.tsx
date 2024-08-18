@@ -1,39 +1,33 @@
 import { decrease, increse } from "@/lib/features/counter/counterSlice";
-import { decreaseDisplayCounter, increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import {
+  decreaseDisplayCounter,
+  increseDisplayCounter,
+} from "@/lib/features/counter/displayCounterSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import React from "react";
 
 const AboutSurroundings = () => {
-  const displayCounter=useAppSelector(state=>state.diplayCounter.items)
+  const displayCounter = useAppSelector((state) => state.diplayCounter.items);
   const dispatch = useAppDispatch();
   const handleBackArrowButton = () => {
-   
-    if(displayCounter>21){
-
-      dispatch(decreaseDisplayCounter())
+    if (displayCounter > 21) {
+      dispatch(decreaseDisplayCounter());
     }
-     dispatch(decrease());
-     
-    };
-    const handleOnclickButton = () => {
-      
-      
-      dispatch(increse());
-      if(displayCounter!=22){
-
-        dispatch(increseDisplayCounter())
-      }
-    
-    
-   
+    dispatch(decrease());
+  };
+  const handleOnclickButton = () => {
+    dispatch(increse());
+    if (displayCounter != 22) {
+      dispatch(increseDisplayCounter());
+    }
   };
   return (
     <div className="flex  mt-32 justify-center items-center ">
-      <div className="mt-3  flex-col justify-center items-center gap-[410px] max-[450px]:gap-[320px]">
+      <div className="mt-3  flex-col justify-center items-center max-gap-[320px] md:gap-[410px]">
         <button>
           <img
             onClick={handleBackArrowButton}
-            className="w-[18px]"
+            className="w-[18px] ml-3"
             src="arrow.png"
             alt="arrow png"
           />
@@ -42,7 +36,7 @@ const AboutSurroundings = () => {
           Let’s consider your surroundings
         </h1>
         <img
-          className="max-w-[440px]"
+          className="w-[440px]"
           src="surrounding-img.webp"
           alt="surrounding-img"
           mb-5

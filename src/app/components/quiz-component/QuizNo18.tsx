@@ -5,7 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
@@ -47,18 +47,18 @@ const QuizNo = () => {
           Do you struggle with any of <br /> the following?
         </h1>
       </div>
-      <div className="flex justify-evenly items-center text-center mt-5">
+      <div className="flex justify-evenly items-center text-center mb-3">
         <div>
           <Label
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-3 mt-5"
           >
             <img
               className="w-[104px]"
               src="imageOfMale/quiz-18th/sensetive-back-img.png"
               alt="sensetive-back-img"
             />
-            <h1 className="pr-[175px] font-semibold text-base ">
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">
               Sensitive Back
             </h1>
             <Checkbox
@@ -72,7 +72,7 @@ const QuizNo = () => {
 
           <Label
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
             <img
               className="w-[104px]"
@@ -80,7 +80,7 @@ const QuizNo = () => {
               alt="Sensitive Knees"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
               Sensitive Knees
             </h1>
             <Checkbox
@@ -94,7 +94,7 @@ const QuizNo = () => {
 
           <Label
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
             <img
               className="w-[104px]"
@@ -102,7 +102,9 @@ const QuizNo = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Neither</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              Neither
+            </h1>
             <Checkbox
               className="mr-5"
               value="Neither"

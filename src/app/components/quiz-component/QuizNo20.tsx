@@ -1,5 +1,5 @@
 import React from "react";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
@@ -37,9 +37,9 @@ const QuizNo20 = () => {
           <Label
             onClick={onClick1to2Times}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base ">
+            <h1 className="pr-[170px] md:pr-[190px] pl-5 py-[30px] font-semibold text-base ">
               1-2 times
             </h1>
             <RadioGroupItem className="mr-5 " value="1 to 2 times" id="r1" />
@@ -48,9 +48,9 @@ const QuizNo20 = () => {
           <Label
             onClick={onClick3to4Times}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[170px] md:pr-[190px] pl-5 py-[30px] font-semibold text-base">
               3-4 times
             </h1>
             <RadioGroupItem className="mr-5" value="3 to 4 times" id="r2" />
@@ -58,9 +58,9 @@ const QuizNo20 = () => {
           <Label
             onClick={onClickMoreThen5times}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[170px] md:pr-[190px] pl-5 py-[30px] font-semibold text-base">
               5+ times
             </h1>
             <RadioGroupItem
