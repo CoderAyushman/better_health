@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Slider } from "@/components/ui/slider";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import {
@@ -14,9 +14,9 @@ import {
 
 const WellnessProfile = () => {
   const dispatch = useAppDispatch();
-  const [bmiValue, setBmiValue] = useState<any>();
-  const [bmiDisplay, setBmiDisplay] = useState<any>(false);
-  const [bmiImage, setBmiImage] = useState<any>();
+  const [bmiValue, setBmiValue] = useState < any > ();
+  const [bmiDisplay, setBmiDisplay] = useState < any > (false);
+  const [bmiImage, setBmiImage] = useState < any > ();
   const bmi = radioValues[29].bmi;
 
   const handleOnclickButton = () => {
@@ -45,12 +45,12 @@ const WellnessProfile = () => {
       );
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfMale/wellness-profile/underweight-img.png"
           alt=""
         />
       );
-    } else if (bmi >= 19 && bmi <=25) {
+    } else if (bmi >= 19 && bmi <= 25) {
       setBmiValue(bmi - 2);
       setBmiDisplay(
         <div className="flex justify-center items-center text-left mt-7">
@@ -71,7 +71,7 @@ const WellnessProfile = () => {
       );
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfMale/wellness-profile/normalweight-img.png"
           alt=""
         />
@@ -98,7 +98,7 @@ const WellnessProfile = () => {
       );
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfMale/wellness-profile/overweight-img.png"
           alt=""
         />
@@ -125,7 +125,7 @@ const WellnessProfile = () => {
       );
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfMale/wellness-profile/obeseweight-img.png"
           alt=""
         />
@@ -152,7 +152,7 @@ const WellnessProfile = () => {
       );
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfMale/wellness-profile/obeseweight-img.png"
           alt=""
         />
@@ -161,7 +161,7 @@ const WellnessProfile = () => {
       setBmiValue(0);
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfMale/wellness-profile/underweight-img.png"
           alt=""
         />
@@ -176,7 +176,7 @@ const WellnessProfile = () => {
         <h1 className="text-3xl font-bold text-center">
           Here’s your wellness profile
         </h1>
-        <div className="flex-col max-w-[600px] border border-gray-200 mt-5 rounded-md p-5 shadow-xl">
+        <div className="flex-col max-w-[600px] border border-gray-200 mt-7 rounded-md p-5 shadow-xl">
           <div className="flex justify-between gap-5">
             <h1 className="text-2xl font-bold">Body Mass Index (BMI)</h1>
             <p className="p-1 border border-gray-400 rounded-md  text-gray-400 font-bold mb-4">
@@ -185,8 +185,8 @@ const WellnessProfile = () => {
           </div>
 
           <div className="mt-[75px]">
-            <Slider value={[bmiValue]} max={50} step={1} />
-            <div className="flex justify-between text-gray-400 text-sm font-bold mt-3">
+            <Slider value={[bmiValue]} max={50} step={1} className="max-w-full" />
+            <div className="flex justify-between text-gray-400 text-xs md:text-sm font-bold mt-3">
               <span>UNDERWEIGHT</span>
               <span>NORMAL</span>
               <span>OVERWEIGHT</span>
@@ -208,7 +208,10 @@ const WellnessProfile = () => {
               Metabolism
               Fast, difficult to gain muscle
               */}
+
           {bmiDisplay ? bmiDisplay : <></>}
+
+
         </div>
         <div className="flex justify-center items-center max-w-[600px] border border-gray-200 mt-5 rounded-md p-5 shadow-2xl">
           <div className="flex-col justify-center items-center">
@@ -277,7 +280,7 @@ const WellnessProfile = () => {
             </div>
           </div>
           <div></div>
-          <div>{bmiImage}</div>
+          <div className="max-w-[245px]">{bmiImage}</div>
         </div>
         <div className=" flex justify-center items-center mt-5  mb-5   ">
           <button

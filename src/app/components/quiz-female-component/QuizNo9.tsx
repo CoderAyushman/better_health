@@ -42,9 +42,9 @@ const QuizNo9 = () => {
           <Label
             onClick={onClickMinimalRest}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base ">
+            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base ">
               Minimal rest (less than 5 hours)
             </h1>
             <RadioGroupItem
@@ -57,9 +57,9 @@ const QuizNo9 = () => {
           <Label
             onClick={onClicke5toghours}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base">
               I get some shut-eye (5-6 hours)
             </h1>
             <RadioGroupItem className="mr-5" value="5to6hours" id="r2" />
@@ -67,9 +67,9 @@ const QuizNo9 = () => {
           <Label
             onClick={onClick7to8hours}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base">
               I sleep long and well (7-8 hours)
             </h1>
             <RadioGroupItem className="mr-5" value="7to8hours" id="r3" />
@@ -77,9 +77,9 @@ const QuizNo9 = () => {
           <Label
             onClick={onClickMoreThen8hours}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base">
               I like to sleep in (more than 8 hours)
             </h1>
             <RadioGroupItem

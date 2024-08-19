@@ -5,7 +5,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import Link from "next/link";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
@@ -46,14 +46,14 @@ const QuizNo16 = () => {
           <Label
             onClick={handleClickOnFewerThan12}
             htmlFor="r1"
-            className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px] mr-7"
               src="imageOfMale/quiz-16th/very-low-img.png"
               alt="very-hard-img"
             />
-            <h1 className="pr-[100px]  font-semibold text-base ">
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base ">
               less than 12
             </h1>
             <RadioGroupItem className="mr-5 " value="Fewer than 12" id="r1" />
@@ -62,7 +62,7 @@ const QuizNo16 = () => {
           <Label
             onClick={handleClickOn13to20}
             htmlFor="r2"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px] mr-7"
@@ -70,13 +70,13 @@ const QuizNo16 = () => {
               alt="hard-img"
             />
 
-            <h1 className="pr-[100px]  font-semibold text-base">13-20</h1>
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">13-20</h1>
             <RadioGroupItem className="mr-5" value="13to20" id="r2" />
           </Label>
           <Label
             onClick={handleClickOnMoreThan21}
             htmlFor="r3"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px] mr-7"
@@ -84,7 +84,7 @@ const QuizNo16 = () => {
               alt="normal-img"
             />
 
-            <h1 className="pr-[100px]  font-semibold text-base">
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">
               More than 21
             </h1>
             <RadioGroupItem className="mr-5" value="More than 21" id="r3" />
@@ -92,7 +92,7 @@ const QuizNo16 = () => {
           <Label
             onClick={handleClickDontKnow}
             htmlFor="r4"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px] mr-7"
@@ -101,7 +101,7 @@ const QuizNo16 = () => {
               cursor-pointer
             />
 
-            <h1 className="pr-[100px]  font-semibold text-base">
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">
               I don’t know
             </h1>
             <RadioGroupItem className="mr-5" value="I dont know" id="r4" />

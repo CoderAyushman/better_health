@@ -11,14 +11,14 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 const QuizNo27 = () => {
   // const [counter, setCounter] = useState<number>(0);
-  const [isCheckedForQ1, setIsCheckedForQ1] = useState<boolean>(false);
-  const [isCheckedForQ2, setIsCheckedForQ2] = useState<boolean>(false);
-  const [isCheckedForQ3, setIsCheckedForQ3] = useState<boolean>(false);
-  const [isCheckedForQ4, setIsCheckedForQ4] = useState<boolean>(false);
-  const [isCheckedForQ5, setIsCheckedForQ5] = useState<boolean>(false);
-  const [isCheckedForQ6, setIsCheckedForQ6] = useState<boolean>(false);
-  const [isCheckedForQ7, setIsCheckedForQ7] = useState<boolean>(false);
-  const [isCheckedForQ8, setIsCheckedForQ8] = useState<boolean>(false);
+  const [isCheckedForQ1, setIsCheckedForQ1] = useState < boolean > (false);
+  const [isCheckedForQ2, setIsCheckedForQ2] = useState < boolean > (false);
+  const [isCheckedForQ3, setIsCheckedForQ3] = useState < boolean > (false);
+  const [isCheckedForQ4, setIsCheckedForQ4] = useState < boolean > (false);
+  const [isCheckedForQ5, setIsCheckedForQ5] = useState < boolean > (false);
+  const [isCheckedForQ6, setIsCheckedForQ6] = useState < boolean > (false);
+  const [isCheckedForQ7, setIsCheckedForQ7] = useState < boolean > (false);
+  const [isCheckedForQ8, setIsCheckedForQ8] = useState < boolean > (false);
 
   let count =
     radioValues[27].one ||

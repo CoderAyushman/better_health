@@ -5,31 +5,31 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 const QuizNo27 = () => {
   // const [counter, setCounter] = useState<number>(0);
-  const [isCheckedForQ1, setIsCheckedForQ1] = useState<boolean>(false);
-  const [isCheckedForQ2, setIsCheckedForQ2] = useState<boolean>(false);
-  const [isCheckedForQ3, setIsCheckedForQ3] = useState<boolean>(false);
-  const [isCheckedForQ4, setIsCheckedForQ4] = useState<boolean>(false);
-  const [isCheckedForQ5, setIsCheckedForQ5] = useState<boolean>(false);
-  const [isCheckedForQ6, setIsCheckedForQ6] = useState<boolean>(false);
-  const [isCheckedForQ7, setIsCheckedForQ7] = useState<boolean>(false);
-  const [isCheckedForQ8, setIsCheckedForQ8] = useState<boolean>(false);
-  
+  const [isCheckedForQ1, setIsCheckedForQ1] = useState < boolean > (false);
+  const [isCheckedForQ2, setIsCheckedForQ2] = useState < boolean > (false);
+  const [isCheckedForQ3, setIsCheckedForQ3] = useState < boolean > (false);
+  const [isCheckedForQ4, setIsCheckedForQ4] = useState < boolean > (false);
+  const [isCheckedForQ5, setIsCheckedForQ5] = useState < boolean > (false);
+  const [isCheckedForQ6, setIsCheckedForQ6] = useState < boolean > (false);
+  const [isCheckedForQ7, setIsCheckedForQ7] = useState < boolean > (false);
+  const [isCheckedForQ8, setIsCheckedForQ8] = useState < boolean > (false);
+
   let count =
-  radioValues[27].one ||
-  radioValues[27].two ||
-  radioValues[27].three ||
-  radioValues[27].four ||
-  radioValues[27].five || radioValues[27].six || radioValues[27].seven || radioValues[27].eight;
+    radioValues[27].one ||
+    radioValues[27].two ||
+    radioValues[27].three ||
+    radioValues[27].four ||
+    radioValues[27].five || radioValues[27].six || radioValues[27].seven || radioValues[27].eight;
   const dispatch = useAppDispatch();
   const handleClickOnMarriage = () => {
     setIsCheckedForQ1(!isCheckedForQ1);
-    radioValues[27].one =!isCheckedForQ1;
+    radioValues[27].one = !isCheckedForQ1;
     setIsCheckedForQ8(false);
     radioValues[27].eight = false;
   };
@@ -51,15 +51,15 @@ const QuizNo27 = () => {
     setIsCheckedForQ8(false);
     radioValues[27].eight = false;
   };
-   const handleClickOnStress = () => {
-     setIsCheckedForQ5(!isCheckedForQ5);
-     radioValues[27].five = !isCheckedForQ5;
-     setIsCheckedForQ8(false);
+  const handleClickOnStress = () => {
+    setIsCheckedForQ5(!isCheckedForQ5);
+    radioValues[27].five = !isCheckedForQ5;
+    setIsCheckedForQ8(false);
     radioValues[27].eight = false;
-   };
+  };
   const handleClickOnOld = () => {
     setIsCheckedForQ6(!isCheckedForQ6);
-    radioValues[27].six =!isCheckedForQ6;
+    radioValues[27].six = !isCheckedForQ6;
     setIsCheckedForQ8(false);
     radioValues[27].eight = false;
   };
@@ -75,7 +75,7 @@ const QuizNo27 = () => {
     radioValues[27].eight = !isCheckedForQ8;
 
     setIsCheckedForQ1(false);
-    radioValues[27].one =false;
+    radioValues[27].one = false;
 
     setIsCheckedForQ2(false);
     radioValues[27].two = false;
@@ -87,13 +87,13 @@ const QuizNo27 = () => {
     radioValues[27].four = false;
 
     setIsCheckedForQ5(false);
-     radioValues[27].five = false;
+    radioValues[27].five = false;
 
-     setIsCheckedForQ5(false);
-     radioValues[27].five = false;
+    setIsCheckedForQ5(false);
+    radioValues[27].five = false;
 
-     setIsCheckedForQ6(false);
-    radioValues[27].six =false;
+    setIsCheckedForQ6(false);
+    radioValues[27].six = false;
 
     setIsCheckedForQ7(false);
     radioValues[27].seven = false;
@@ -104,7 +104,7 @@ const QuizNo27 = () => {
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
-        Have any of the following <br /> life events led to weight <br /> gain in the last few years?
+          Have any of the following <br /> life events led to weight <br /> gain in the last few years?
         </h1>
         <p className="text-gray-500 m-3">Choose all that apply</p>
       </div>
@@ -112,7 +112,7 @@ const QuizNo27 = () => {
         <div>
           <Label
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-3 "
           >
             <img
               className="w-[104px]"
@@ -131,7 +131,7 @@ const QuizNo27 = () => {
 
           <Label
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
             <img
               className="w-[104px]"
@@ -151,7 +151,7 @@ const QuizNo27 = () => {
 
           <Label
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
             <img
               className="w-[104px]"
@@ -159,7 +159,7 @@ const QuizNo27 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[140px] font-semibold text-base">Financial struggles</h1>
+            <h1 className="pr-[100px] pl-5 font-semibold text-base">Financial struggles</h1>
             <Checkbox
               className="mr-5"
               value="financial"
@@ -171,16 +171,16 @@ const QuizNo27 = () => {
 
           <Label
             htmlFor="r4"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
             <img
               className="w-[104px]"
               src="imageOfMale/quiz-27th/injuries-img.png"
               alt="gain-muscle-img"
-              
+
             />
 
-            <h1 className="pr-[140px] font-semibold text-base">Injury or disability</h1>
+            <h1 className="pr-[100px] pl-5 font-semibold text-base">Injury or disability</h1>
             <Checkbox
               className="mr-5"
               value="injury"
@@ -192,13 +192,13 @@ const QuizNo27 = () => {
 
           <Label
             htmlFor="r5"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
             <img
               className="w-[104px]"
               src="imageOfMale/quiz-27th/stress-img.png"
               alt="gain-muscle-img"
-              
+
             />
 
             <h1 className="pr-[40px] font-semibold text-base">Stress or mental health issues</h1>
@@ -212,13 +212,13 @@ const QuizNo27 = () => {
           </Label>
           <Label
             htmlFor="r6"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
             <img
               className="w-[104px]"
               src="imageOfFemale/quiz-27th/old-img.webp"
               alt="gain-muscle-img"
-              
+
             />
 
             <h1 className="pr-[40px] font-semibold text-base">Slower metabolism due to aging</h1>
@@ -232,13 +232,13 @@ const QuizNo27 = () => {
           </Label>
           <Label
             htmlFor="r7"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
             <img
               className="w-[104px]"
               src="imageOfMale/quiz-27th/treatment-img.png"
               alt="gain-muscle-img"
-              
+
             />
 
             <h1 className="pr-[40px] font-semibold text-base">Post-treatment complications</h1>
@@ -252,16 +252,16 @@ const QuizNo27 = () => {
           </Label>
           <Label
             htmlFor="r8"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
             <img
               className="w-[104px]"
               src="imageOfMale/quiz-27th/none-img.png"
               alt="gain-muscle-img"
-              
+
             />
 
-            <h1 className="pr-[140px] font-semibold text-base">None of the above</h1>
+            <h1 className="pr-[100px] pl-5 font-semibold text-base">None of the above</h1>
             <Checkbox
               className="mr-5"
               value="none"

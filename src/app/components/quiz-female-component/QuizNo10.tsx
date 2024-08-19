@@ -47,9 +47,9 @@ const QuizNo10 = () => {
           <Label
             onClick={onClickTeaAndCoffee}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base ">
+            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base ">
               I only drink tea or coffee
             </h1>
             <RadioGroupItem
@@ -62,9 +62,9 @@ const QuizNo10 = () => {
           <Label
             onClick={onClickeFewerThan2GlassesOfWater}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base">
               Fewer than 2 glasses of water
             </h1>
             <RadioGroupItem
@@ -76,9 +76,9 @@ const QuizNo10 = () => {
           <Label
             onClick={onClick2to6GlassesOfWater}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base">
               2-6 glasses of water (16-48 oz)
             </h1>
             <RadioGroupItem
@@ -90,9 +90,9 @@ const QuizNo10 = () => {
           <Label
             onClick={onClick7to10GlassesOfWater}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base">
               7-10 glasses of water (56-80 oz)
             </h1>
             <RadioGroupItem
@@ -104,9 +104,9 @@ const QuizNo10 = () => {
           <Label
             onClick={onClickMoreThan10GlassesOfWater}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pl-[40px] pt-[30px] pb-[30px] font-semibold text-base">
+            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base">
               More than 10 glasses of water
             </h1>
             <RadioGroupItem

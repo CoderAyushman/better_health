@@ -7,11 +7,11 @@ import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlic
 const QuizNo24 = () => {
   const dispatch = useAppDispatch();
 
-  const [isOne, setIsOne] = useState<boolean>(false);
-  const [isTwo, setIsTwo] = useState<boolean>(false);
-  const [isThree, setIsThree] = useState<boolean>(false);
-  const [isFour, setIsFour] = useState<boolean>(false);
-  const [isFive, setIsFive] = useState<boolean>(false);
+  const [isOne, setIsOne] = useState < boolean > (false);
+  const [isTwo, setIsTwo] = useState < boolean > (false);
+  const [isThree, setIsThree] = useState < boolean > (false);
+  const [isFour, setIsFour] = useState < boolean > (false);
+  const [isFive, setIsFive] = useState < boolean > (false);
   const handleOnclick1 = () => {
     radioValues[24] = "1";
     setIsOne(true);
@@ -76,11 +76,10 @@ const QuizNo24 = () => {
         <div className="flex mt-5">
           <div className="flex-col cursor-pointer">
             <div
-              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${
-                radioValues[24] == "1" || isOne
+              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${radioValues[24] == "1" || isOne
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
-              }`}
+                }`}
             >
               <h1
                 className="text-2xl font-bold  px-[20px] py-[10px]  md:px-[25px] md:py-[15px]"
@@ -93,11 +92,10 @@ const QuizNo24 = () => {
           </div>
           <div>
             <div
-              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${
-                radioValues[24] == "2" || isTwo
+              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${radioValues[24] == "2" || isTwo
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
-              }`}
+                }`}
             >
               <h1
                 className="text-2xl font-bold  px-[20px] py-[10px]  md:px-[25px] md:py-[15px]"
@@ -109,11 +107,10 @@ const QuizNo24 = () => {
           </div>
           <div>
             <div
-              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${
-                radioValues[24] == "3" || isThree
+              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${radioValues[24] == "3" || isThree
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
-              }`}
+                }`}
             >
               <h1
                 className="text-2xl font-bold  px-[20px] py-[10px]  md:px-[25px] md:py-[15px]"
@@ -125,11 +122,10 @@ const QuizNo24 = () => {
           </div>
           <div>
             <div
-              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${
-                radioValues[24] == "4" || isFour
+              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${radioValues[24] == "4" || isFour
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
-              }`}
+                }`}
             >
               <h1
                 className="text-2xl font-bold  px-[20px] py-[10px]  md:px-[25px] md:py-[15px]"
@@ -141,11 +137,10 @@ const QuizNo24 = () => {
           </div>
           <div className="flex-col cursor-pointer">
             <div
-              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7  rounded-md ${
-                radioValues[24] == "5" || isFive
+              className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7  rounded-md ${radioValues[24] == "5" || isFive
                   ? "bg-customGreen text-white"
                   : "bg-gray-100"
-              }`}
+                }`}
             >
               <h1
                 className="text-2xl font-bold  px-[20px] py-[10px]  md:px-[25px] md:py-[15px]"

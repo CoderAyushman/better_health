@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import { radioValues } from "../components/RadioValues";
 import "@/app/components/tableSheet.css";
 import foodImg from "./../../../public/healthy-food-img.webp";
+import ResetAllDataBtn from "./ResetAllDataBtn";
 const Output = () => {
   const [markdownText, setMarkdownText] = useState(radioValues[35].response);
 
@@ -25,6 +26,7 @@ const Output = () => {
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {markdownText}
           </ReactMarkdown>
+          <ResetAllDataBtn />
         </div>
       </div>
     </main>

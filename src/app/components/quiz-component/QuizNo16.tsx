@@ -53,7 +53,7 @@ const QuizNo16 = () => {
               src="imageOfMale/quiz-16th/very-low-img.png"
               alt="very-hard-img"
             />
-            <h1 className="pr-[100px] md:pr-[140px]  font-semibold text-base ">
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base ">
               less than 12
             </h1>
             <RadioGroupItem className="mr-5 " value="Fewer than 12" id="r1" />
@@ -70,7 +70,7 @@ const QuizNo16 = () => {
               alt="hard-img"
             />
 
-            <h1 className="pr-[100px] md:pr-[140px]  font-semibold text-base">
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">
               13-20
             </h1>
             <RadioGroupItem className="mr-5" value="13to20" id="r2" />
@@ -86,7 +86,7 @@ const QuizNo16 = () => {
               alt="normal-img"
             />
 
-            <h1 className="pr-[100px] md:pr-[140px]  font-semibold text-base">
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">
               More than 21
             </h1>
             <RadioGroupItem className="mr-5" value="More than 21" id="r3" />
@@ -104,7 +104,7 @@ const QuizNo16 = () => {
               mb-2
             />
 
-            <h1 className="pr-[100px] md:pr-[140px]  font-semibold text-base">
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">
               I don’t know
             </h1>
             <RadioGroupItem className="mr-5" value="I dont know" id="r4" />

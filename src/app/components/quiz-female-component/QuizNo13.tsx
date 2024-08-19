@@ -45,14 +45,14 @@ const QuizNo13 = () => {
           <Label
             onClick={handleClickOnAlmostEveryDay}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointe mb-2r"
           >
             <img
               className="w-[104px]"
               src="imageOfMale/quiz-13th/cool-img.png"
               alt="cool-img"
             />
-            <h1 className="pr-[40px] font-semibold text-base ">
+            <h1 className="pr-[40px]  pl-5  font-semibold text-base ">
               Almost every day
             </h1>
             <RadioGroupItem
@@ -65,7 +65,7 @@ const QuizNo13 = () => {
           <Label
             onClick={handleClickOn3to4TimesPerWeek}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -73,7 +73,7 @@ const QuizNo13 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[40px] font-semibold text-base">
+            <h1 className="pr-[40px]  pl-5  font-semibold text-base">
               3-4 times per week
             </h1>
             <RadioGroupItem
@@ -85,7 +85,7 @@ const QuizNo13 = () => {
           <Label
             onClick={handleClickOn1to2TimesPerWeek}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -93,7 +93,7 @@ const QuizNo13 = () => {
               alt="normal-img"
             />
 
-            <h1 className="pr-[40px] font-semibold text-base">
+            <h1 className="pr-[40px]  pl-5  font-semibold text-base">
               1-2 times per week
             </h1>
             <RadioGroupItem
@@ -105,7 +105,7 @@ const QuizNo13 = () => {
           <Label
             onClick={handleClickMoreLikeOnceAMonth}
             htmlFor="r4"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -114,7 +114,7 @@ const QuizNo13 = () => {
               cursor-pointer
             />
 
-            <h1 className="pr-[40px] font-semibold text-base">
+            <h1 className="pr-[40px]  pl-5  font-semibold text-base">
               More like once a month
             </h1>
             <RadioGroupItem

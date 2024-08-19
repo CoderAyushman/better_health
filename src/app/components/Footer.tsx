@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex self-end items-center justify-center mt-5 bg-gray-300">
-      <p>&copy; 2024 Ayushman. Coded with ❤️</p>
+    <div className="text-sm md:text-base text-center fixed md:relative w-full self-end  bg-gray-300 bottom-0 ">
+      <p className="p-0"> &copy; 2024 <span className="font-semibold text-gray-600">Ayushman Mishra</span>. Coded with <span className="text-red-500">❤️</span></p>
     </div>
   );
 };

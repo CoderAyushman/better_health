@@ -5,7 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
@@ -51,18 +51,18 @@ const QuizNo3 = () => {
           zones?
         </h1>
       </div>
-      <div className="flex justify-evenly items-center text-center mt-5">
+      <div className="flex justify-evenly items-center text-center mb-2">
         <div>
           <Label
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2 mt-5"
           >
             <img
               className="w-[104px]"
               src="imageOfFemale/quiz-4th/belly.webp"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[175px] font-semibold text-base ">Belly</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">Belly</h1>
             <Checkbox
               className="mr-5 "
               id="r1"
@@ -74,7 +74,7 @@ const QuizNo3 = () => {
 
           <Label
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -82,7 +82,7 @@ const QuizNo3 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Butt</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">Butt</h1>
             <Checkbox
               className="mr-5"
               value="pecs"
@@ -94,7 +94,7 @@ const QuizNo3 = () => {
 
           <Label
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -102,7 +102,7 @@ const QuizNo3 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Chest</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">Chest</h1>
             <Checkbox
               className="mr-5"
               value="belly"
@@ -114,7 +114,7 @@ const QuizNo3 = () => {
 
           <Label
             htmlFor="r4"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -122,7 +122,7 @@ const QuizNo3 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Legs</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">Legs</h1>
             <Checkbox
               className="mr-5"
               value="legs"
@@ -134,7 +134,7 @@ const QuizNo3 = () => {
 
           {/* <Label
             htmlFor="r5"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <img
               className="w-[104px]"
@@ -142,7 +142,7 @@ const QuizNo3 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[175px] font-semibold text-base">Back</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">Back</h1>
             <Checkbox
               className="mr-5"
               value="back"

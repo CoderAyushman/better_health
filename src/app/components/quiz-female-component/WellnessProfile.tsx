@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Slider } from "@/components/ui/slider";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import {
@@ -14,9 +14,9 @@ import {
 
 const WellnessProfile = () => {
   const dispatch = useAppDispatch();
-  const [bmiValue, setBmiValue] = useState<any>();
-  const [bmiDisplay, setBmiDisplay] = useState<any>(false);
-  const [bmiImage, setBmiImage] = useState<any>();
+  const [bmiValue, setBmiValue] = useState < any > ();
+  const [bmiDisplay, setBmiDisplay] = useState < any > (false);
+  const [bmiImage, setBmiImage] = useState < any > ();
   const bmi = radioValues[29].bmi;
 
   const handleOnclickButton = () => {
@@ -45,12 +45,12 @@ const WellnessProfile = () => {
       );
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfFemale/wellness-profile/under-weight.webp"
           alt=""
         />
       );
-    } else if (bmi >= 19 && bmi <=25) {
+    } else if (bmi >= 19 && bmi <= 25) {
       setBmiValue(bmi - 2);
       setBmiDisplay(
         <div className="flex justify-center items-center text-left mt-7">
@@ -71,7 +71,7 @@ const WellnessProfile = () => {
       );
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfFemale/wellness-profile/normal.webp"
           alt=""
         />
@@ -98,7 +98,7 @@ const WellnessProfile = () => {
       );
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfFemale/wellness-profile/over-weight-female.webp"
           alt=""
         />
@@ -125,7 +125,7 @@ const WellnessProfile = () => {
       );
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfFemale/wellness-profile/obese.webp"
           alt=""
         />
@@ -152,7 +152,7 @@ const WellnessProfile = () => {
       );
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfFemale/wellness-profile/obese.webp"
           alt=""
         />
@@ -161,7 +161,7 @@ const WellnessProfile = () => {
       setBmiValue(0);
       setBmiImage(
         <img
-          className="max-w-[245px]"
+          className="w-[245px]"
           src="imageOfFemale/wellness-profile/under-weight.webp"
           alt=""
         />
@@ -185,8 +185,8 @@ const WellnessProfile = () => {
           </div>
 
           <div className="mt-[75px]">
-            <Slider value={[bmiValue]} max={50} step={1} />
-            <div className="flex justify-between text-gray-400 text-sm font-bold mt-3">
+            <Slider value={[bmiValue]} max={50} step={1} className="max-w-full" />
+            <div className="flex justify-between text-gray-400 text-xs md:text-sm font-bold mt-3">
               <span>UNDERWEIGHT</span>
               <span>NORMAL</span>
               <span>OVERWEIGHT</span>
@@ -277,7 +277,7 @@ const WellnessProfile = () => {
             </div>
           </div>
           <div></div>
-          <div>{bmiImage}</div>
+          <div className="max-w-[245px]">{bmiImage}</div>
         </div>
         <div className=" flex justify-center items-center mt-5  mb-5   ">
           <button

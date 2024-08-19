@@ -14,11 +14,11 @@ const ButtunForQ4: React.FC<MyComponentProps> = ({ num }) => {
     dispatch(increseDisplayCounter());
   };
   return (
-    <div className="text-center bg-white pt-[10px] fixed w-full  bottom-0  ">
+    <div className=" flex-col justify-between text-center bg-white pt-[10px] fixed w-full  bottom-0  ">
       {num ? (
         <button
           onClick={handleClick}
-          className="cursor-pointer bg-customGreen pl-[130px] pr-[130px] pt-[15px] pb-[15px] rounded-full text-white  "
+          className="cursor-pointer bg-customGreen pl-[130px] pr-[130px] pt-[15px] pb-[15px] rounded-full text-white  mb-5"
         >
           <h1>
             <b>NEXT STEP</b>
@@ -32,7 +32,7 @@ const ButtunForQ4: React.FC<MyComponentProps> = ({ num }) => {
         </button>
       )}
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

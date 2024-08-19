@@ -9,7 +9,7 @@ const introfemale = () => {
   const dispatch = useAppDispatch();
   const handleOnclick = () => {
     dispatch(increse());
-    
+
   };
   return (
     <div className="mt-32 flex-col justify-center text-center items-center">
@@ -25,12 +25,16 @@ const introfemale = () => {
       </div>
       <button
         onClick={handleOnclick}
-        
-        className="bg-customGreen rounded-full overflow-visible  text-white pt-5 mt-[-10px] pb-5  pl-28 pr-28 "
+
+        className="bg-customGreen rounded-full overflow-visible  text-white pt-5  pb-5  pl-28 pr-28 "
       >
         <b>CONTINUE</b>
       </button>
-      <Footer />
+
+      <div className="bottom-0">
+
+        <Footer />
+      </div>
     </div>
   );
 };

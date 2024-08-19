@@ -52,9 +52,12 @@ const page = () => {
     quizCompaireCounter = false;
   }
   return (
-    <div>
+    <div className="min-h-[100vh] w-[100vw]  flex-col">
       {quizCompaireCounter ? <Progressbar /> : <></>}
+
+
       {quizes[quizCounter]}
+
     </div>
   );
 };

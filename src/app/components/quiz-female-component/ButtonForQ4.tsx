@@ -14,7 +14,7 @@ const ButtunForQ4: React.FC<MyComponentProps> = ({ num }) => {
     dispatch(increseDisplayCounter());
   };
   return (
-    <div className="text-center bg-white pt-[10px] fixed w-full  bottom-0  ">
+    <div className="text-center bg-white pt-[10px] fixed w-full  bottom-0  mb-5">
       {num ? (
         <button
           onClick={handleClick}
@@ -32,7 +32,7 @@ const ButtunForQ4: React.FC<MyComponentProps> = ({ num }) => {
         </button>
       )}
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
