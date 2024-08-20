@@ -9,9 +9,9 @@ import ResetAllDataBtn from "./ResetAllDataBtn";
 const Output = () => {
   const [markdownText, setMarkdownText] = useState(radioValues[35].response);
 
-  useEffect(() => {
-    setMarkdownText(radioValues[35].response);
-  }, [radioValues[35].response]);
+  // useEffect(() => {
+  //   setMarkdownText(radioValues[35].response);
+  // }, [radioValues[35].response]);
   return (
     <main className="flex items-center justify-center mt-32 ">
       <div className="flex-col items-center justify-center ml-10 mr-10">
