@@ -10,7 +10,7 @@ import { update } from "@/lib/features/dataSlice";
 // import AboutSurroundings from "../components/quiz-component/AboutSurroundings";
 // import { json } from "stream/consumers";
 
-const page = () => {
+const Page = () => {
   const dispatch = useAppDispatch();
   let quizCounter: any = useAppSelector((state) => state.counter.items);
   useEffect(() => {
@@ -59,4 +59,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

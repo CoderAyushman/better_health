@@ -1,16 +1,16 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Progressbar from "../components/Progressbar";
 import quizes from "../components/Quizes";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { add } from "@/lib/features/counter/counterSlice";
 import { radioValues, setRadioValues } from "../components/RadioValues";
-import { update } from "@/lib/features/dataSlice";
+// import { update } from "@/lib/features/dataSlice";
 // import Intromale from "../intromale/page";
 // import AboutSurroundings from "../components/quiz-component/AboutSurroundings";
 // import { json } from "stream/consumers";
 
-const page = () => {
+const Page = () => {
   const dispatch = useAppDispatch();
   let quizCounter: any = useAppSelector((state) => state.counter.items);
   useEffect(() => {
@@ -55,11 +55,9 @@ const page = () => {
     <div className="min-h-[100vh] w-[100vw]  flex-col">
       {quizCompaireCounter ? <Progressbar /> : <></>}
 
-
       {quizes[quizCounter]}
-
     </div>
   );
 };
 
-export default page;
+export default Page;

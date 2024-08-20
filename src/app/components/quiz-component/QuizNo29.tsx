@@ -115,7 +115,7 @@ const QuizNo29 = () => {
               </h2>
             </div>
             <p className="text-gray-400 text-base">
-              There's a lot you could gain by losing a little weight. We&apos;ll use
+              There&apos;s a lot you could gain by losing a little weight. We&apos;ll use
               your BMI to create the weight loss program you need.
             </p>
           </div>

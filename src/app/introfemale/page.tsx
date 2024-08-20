@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 
-const introfemale = () => {
+const Introfemale = () => {
   const dispatch = useAppDispatch();
   const handleOnclick = () => {
     dispatch(increse());
@@ -39,4 +39,4 @@ const introfemale = () => {
   );
 };
 
-export default introfemale;
+export default Introfemale;

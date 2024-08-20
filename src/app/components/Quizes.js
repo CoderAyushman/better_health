@@ -41,6 +41,49 @@ import PrePlanCreating from "./PrePlanCreating";
 import TakingEmail from "./TakingEmail";
 import Answer from "./Answer";
 
+// const quizes = [
+//   <Intromale />,
+//   <QuizNo1 />,
+//   <QuizNo2 />,
+//   <QuizNo3 />,
+//   <QuizNo4 />,
+//   <QuizNo5 />,
+//   <QuizNo6 />,
+//   <QuizNo7 />,
+//   <QuizNo8 />,
+//   <QuizNo9 />,
+//   <QuizNo10 />,
+//   <QuizNo11 />,
+//   <QuizNo12 />,
+//   <QuizNo13 />,
+//   <QuizNo14 />,
+//   <QuizNo15 />,
+//   <QuizNo16 />,
+//   <QuizNo17 />,
+//   <QuizNo18 />,
+//   <QuizNo19 />,
+//   <QuizNo20 />,
+//   <QuizNo21 />,
+//   <AboutSurroundings />,
+//   <QuizNo22 />,
+//   <QuizNo23 />,
+//   <QuizNo24 />,
+//   <QuizNo25 />,
+//   <QuizNo26 />,
+//   <QuizNo27 />,
+//   <AboutBody />,
+//   <QuizNo28 />,
+//   <QuizNo29 />,
+//   <QuizNo30 />,
+//   <QuizNo31 />,
+//   <WellnessProfile />,
+//   <QuizNo32 />,
+//   <Chart />,
+//   <PrePlanCreating />,
+//   <TakingEmail />,
+//   <Answer />,
+// ];
+
 const quizes = [
   <Intromale />,
   <QuizNo1 />,
@@ -82,6 +125,6 @@ const quizes = [
   <PrePlanCreating />,
   <TakingEmail />,
   <Answer />,
-];
+].map((Component, index) => React.cloneElement(Component, { key: index }));
 
 export default quizes;

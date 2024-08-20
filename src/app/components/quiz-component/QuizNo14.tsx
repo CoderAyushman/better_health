@@ -11,18 +11,18 @@ import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlic
 const QuizNo14 = () => {
   const dispatch = useAppDispatch();
   const handleClickOnsoOutOfBreath = () => {
-    radioValues[14] = "I'm so out of breath I can't talk";
+    radioValues[14] = "I&apos;m so out of breath I can&apos;t talk";
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOnoutOfBreathButCanTalk = () => {
-    radioValues[14] = "I'm somewhat out of breath but can talk";
+    radioValues[14] = "I&apos;m somewhat out of breath but can talk";
 
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOnOKAfterOneFlightOfStairs = () => {
-    radioValues[14] = "I'm OK after one flight of stairs";
+    radioValues[14] = "I&apos;m OK after one flight of stairs";
 
     dispatch(increse());
     dispatch(increseDisplayCounter());
@@ -54,11 +54,11 @@ const QuizNo14 = () => {
               alt="very-hard-img"
             />
             <h1 className="pr-[40px] md:pr-[40px]   font-semibold text-base ">
-              I&apos;m so out of breath I can't talk
+              I&apos;m so out of breath I can&apos;t talk
             </h1>
             <RadioGroupItem
               className="mr-5 "
-              value="I'm so out of breath I can't talk"
+              value="I&apos;m so out of breath I can&apos;t talk"
               id="r1"
             />
           </Label>
@@ -80,7 +80,7 @@ const QuizNo14 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="I'm somewhat out of breath but can talk"
+              value="I&apos;m somewhat out of breath but can talk"
               id="r2"
             />
           </Label>
@@ -101,7 +101,7 @@ const QuizNo14 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="I'm OK after one flight of stairs"
+              value="I&apos;m OK after one flight of stairs"
               id="r3"
             />
           </Label>
