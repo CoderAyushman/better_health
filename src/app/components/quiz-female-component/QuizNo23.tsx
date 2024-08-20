@@ -66,8 +66,8 @@ const QuizNo23 = () => {
     <div className="flex justify-center items-center  mb-5">
       <div className="flex-col">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
-          I don’t usually leave my
-          <br /> meal unfinished, even if I’m
+          I don&apos;t usually leave my
+          <br /> meal unfinished, even if I&apos;m
           <br /> full.
         </h1>
         <p className="text-black-300 mt-2">

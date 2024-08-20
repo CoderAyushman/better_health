@@ -66,8 +66,8 @@ const QuizNo25 = () => {
     <div className="flex justify-center items-center mb-5">
       <div className="flex-col">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
-          I’m quick to fall off my plan <br /> whenever I’m around <br /> people
-          who aren’t on the <br /> same journey as me.
+          I&apos;m quick to fall off my plan <br /> whenever I&apos;m around <br /> people
+          who aren&apos;t on the <br /> same journey as me.
         </h1>
         <p className="text-black-300 mt-2">
           {" "}

@@ -54,7 +54,7 @@ const QuizNo14 = () => {
               alt="very-hard-img"
             />
             <h1 className="pr-[40px] md:pr-[40px]   font-semibold text-base ">
-              I'm so out of breath I can't talk
+              I&apos;m so out of breath I can't talk
             </h1>
             <RadioGroupItem
               className="mr-5 "
@@ -76,7 +76,7 @@ const QuizNo14 = () => {
             />
 
             <h1 className="pr-[40px] md:pr-[40px]   font-semibold text-base">
-              I'm somewhat out of breath but can talk
+              I&apos;m somewhat out of breath but can talk
             </h1>
             <RadioGroupItem
               className="mr-5"
@@ -97,7 +97,7 @@ const QuizNo14 = () => {
             />
 
             <h1 className="pr-[40px] md:pr-[40px]   font-semibold text-base">
-              I'm OK after one flight of stairs
+              I&apos;m OK after one flight of stairs
             </h1>
             <RadioGroupItem
               className="mr-5"

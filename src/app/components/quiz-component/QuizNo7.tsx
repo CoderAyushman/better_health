@@ -114,7 +114,7 @@ const QuizNo7 = () => {
             />
 
             <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
-              I’m retired
+              I&apos;m retired
             </h1>
             <RadioGroupItem className="mr-5" value="Im retired" id="r4" />
           </Label>

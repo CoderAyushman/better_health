@@ -266,7 +266,7 @@ const QuizNo22 = () => {
 
             <div>
               <h1 className="pr-[180px] font-semibold text-base">Paleo</h1>
-              <span className="text-gray-400">I don't eat processed foods</span>
+              <span className="text-gray-400">I don&apos;t eat processed foods</span>
             </div>
             <RadioGroupItem className="mr-5" value="Paleo" id="r4" />
           </Label>

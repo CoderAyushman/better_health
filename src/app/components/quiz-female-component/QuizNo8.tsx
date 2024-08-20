@@ -86,7 +86,7 @@ const QuizNo8 = () => {
             />
 
             <h1 className="pr-[40px] md:pr-[40px] font-semibold text-base">
-              I'm on my feet all day long
+              I&apos;m on my feet all day long
             </h1>
             <RadioGroupItem
               className="mr-5"

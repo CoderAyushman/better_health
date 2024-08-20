@@ -108,7 +108,7 @@ const QuizNo21 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[140px] font-semibold text-base">i don't know</h1>
+            <h1 className="pr-[140px] font-semibold text-base">i don&apos;t know</h1>
             <RadioGroupItem className="mr-5" value="i dont know" id="r4" />
           </Label>
         </RadioGroup>

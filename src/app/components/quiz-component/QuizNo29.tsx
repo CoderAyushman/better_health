@@ -2,17 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 
 const QuizNo29 = () => {
   const [isTrue, setIsTrue] = useState(false);
   const [isRequireKG, setIsRequireKG] = useState(true);
   const [isRequireLBS, setIsRequireLBS] = useState(true);
-  const [kg, setIskg] = useState<number>(radioValues[29].kg);
-  const [Lbs, setIsLbs] = useState<number>(radioValues[29].lbs);
-  const [bmi, setBmi] = useState<any>();
-  const [displayBmi, setDisplayBmi] = useState<any>();
+  const [kg, setIskg] = useState < number > (radioValues[29].kg);
+  const [Lbs, setIsLbs] = useState < number > (radioValues[29].lbs);
+  const [bmi, setBmi] = useState < any > ();
+  const [displayBmi, setDisplayBmi] = useState < any > ();
 
   useEffect(() => {
     if (radioValues[29].kg != null) {
@@ -50,8 +50,8 @@ const QuizNo29 = () => {
               </h2>
             </div>
             <p className="text-gray-400 text-base">
-              You have some work ahead of you, but it’s great that you’re taking
-              this first step. We’ll use your BMI to create a program just for
+              You have some work ahead of you, but it&apos;s great that you&apos;re taking
+              this first step. We&apos;ll use your BMI to create a program just for
               you.
             </p>
           </div>
@@ -72,7 +72,7 @@ const QuizNo29 = () => {
               </h2>
             </div>
             <p className="text-gray-400 text-base">
-              You’re starting from a great place! Now we’ll use your BMI to
+              You&apos;re starting from a great place! Now we&apos;ll use your BMI to
               create a program tailored to your needs.
             </p>
           </div>
@@ -93,8 +93,8 @@ const QuizNo29 = () => {
               </h2>
             </div>
             <p className="text-gray-400 text-base">
-              You have some work ahead of you, but it’s great that you’re taking
-              this first step. We’ll use your BMI to create a weight loss
+              You have some work ahead of you, but it&apos;s great that you&apos;re taking
+              this first step. We&apos;ll use your BMI to create a weight loss
               program just for you.
             </p>
           </div>
@@ -115,7 +115,7 @@ const QuizNo29 = () => {
               </h2>
             </div>
             <p className="text-gray-400 text-base">
-              There's a lot you could gain by losing a little weight. We’ll use
+              There's a lot you could gain by losing a little weight. We&apos;ll use
               your BMI to create the weight loss program you need.
             </p>
           </div>

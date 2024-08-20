@@ -33,7 +33,7 @@ const AboutBody = () => {
           />
         </button>
         <h1 className="text-2xl font-bold mt-7 mb-5 text-center">
-          We’ve got your back!
+          We&apos;ve got your back!
         </h1>
         <img
           className="w-[410px]"
@@ -44,7 +44,7 @@ const AboutBody = () => {
         <div className="flex justify-center items-center  max-w-[410px] p-3 bg-gray-100 rounded-lg  mt-5">
           <p className="text-sm text-gray-500">
             Various factors can make it difficult for you to control your
-            impulses. <br /> We’re going to{" "}
+            impulses. <br /> We&apos;re going to{" "}
             <span className="text-customGreen">figure out why</span> this
             happens and how we can change things for the better.
           </p>

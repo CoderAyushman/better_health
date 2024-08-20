@@ -174,7 +174,7 @@ const WellnessProfile = () => {
     <div className="flex justify-center items-center mt-32 w-full mb-10">
       <div className="flex-col justify-center items-center">
         <h1 className="text-3xl font-bold text-center">
-          Here’s your wellness profile
+          Here&apos;s your wellness profile
         </h1>
         <div className="flex-col max-w-[600px] border border-gray-200 mt-7 rounded-md p-5 shadow-xl">
           <div className="flex justify-between gap-5">

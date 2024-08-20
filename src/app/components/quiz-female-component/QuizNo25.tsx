@@ -66,8 +66,8 @@ const QuizNo25 = () => {
     <div className="flex justify-center items-center mb-5">
       <div className="flex-col">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
-          I’m quick to fall off my plan <br /> whenever I’m around <br /> people
-          who aren’t on the <br /> same journey as me.
+          I&apos;m quick to fall off my plan <br /> whenever I&apos;m around <br /> people
+          who aren&apos;t on the <br /> same journey as me.
         </h1>
         <p className="text-black-300 mt-2">
           {" "}
@@ -77,8 +77,8 @@ const QuizNo25 = () => {
           <div className="flex-col cursor-pointer">
             <div
               className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${radioValues[25] == "1" || isOne
-                  ? "bg-customGreen text-white"
-                  : "bg-gray-100"
+                ? "bg-customGreen text-white"
+                : "bg-gray-100"
                 }`}
             >
               <h1
@@ -93,8 +93,8 @@ const QuizNo25 = () => {
           <div>
             <div
               className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${radioValues[25] == "2" || isTwo
-                  ? "bg-customGreen text-white"
-                  : "bg-gray-100"
+                ? "bg-customGreen text-white"
+                : "bg-gray-100"
                 }`}
             >
               <h1
@@ -108,8 +108,8 @@ const QuizNo25 = () => {
           <div>
             <div
               className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${radioValues[25] == "3" || isThree
-                  ? "bg-customGreen text-white"
-                  : "bg-gray-100"
+                ? "bg-customGreen text-white"
+                : "bg-gray-100"
                 }`}
             >
               <h1
@@ -123,8 +123,8 @@ const QuizNo25 = () => {
           <div>
             <div
               className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7 cursor-pointer rounded-md ${radioValues[25] == "4" || isFour
-                  ? "bg-customGreen text-white"
-                  : "bg-gray-100"
+                ? "bg-customGreen text-white"
+                : "bg-gray-100"
                 }`}
             >
               <h1
@@ -138,8 +138,8 @@ const QuizNo25 = () => {
           <div className="flex-col cursor-pointer">
             <div
               className={`max-w-[100px]  md:max-w-[150px] mr-2  md:mr-7  rounded-md ${radioValues[25] == "5" || isFive
-                  ? "bg-customGreen text-white"
-                  : "bg-gray-100"
+                ? "bg-customGreen text-white"
+                : "bg-gray-100"
                 }`}
             >
               <h1

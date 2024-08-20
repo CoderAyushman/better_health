@@ -115,7 +115,7 @@ const QuizNo21 = () => {
             />
 
             <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
-              i don't know
+              i don&apos;t know
             </h1>
             <RadioGroupItem className="mr-5" value="i dont know" id="r4" />
           </Label>
