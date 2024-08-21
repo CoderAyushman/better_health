@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { increse } from "@/lib/features/counter/counterSlice";
 const TakingEmail = () => {
   const dispatch = useDispatch();
-  const [mail, setMail] = useState<string>(radioValues[33]);
+  const [mail, setMail] = useState < string > (radioValues[33]);
   const handleOnSubmit = (e: any) => {
     e.preventDefault();
     radioValues[33] = mail;
@@ -23,7 +23,7 @@ const TakingEmail = () => {
             Personalized Weight <br /> Loss Plan
           </span>
         </div>
-        <form onSubmit={(e) => handleOnSubmit(e)}>
+        <form >
           <div className="mt-3 ">
             <input
               type="email"
@@ -50,7 +50,7 @@ const TakingEmail = () => {
             <button
               className=" bg-customGreen pt-3 pb-3 pl-[110px] pr-[110px] rounded-full text-white font-bold"
               type="submit"
-              onClick={handleOnSubmit}
+              onClick={(e) => handleOnSubmit(e)}
             >
               CONTINUE
             </button>

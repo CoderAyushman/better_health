@@ -22,19 +22,19 @@ import axios from "axios";
 // import { getAnswer } from "@/utils/getAnswer";
 
 const PrePlanCreating = () => {
-  const getAnswer = async (msg: any) => {
-    axios
-      .post("http://localhost:8000/api/langchain/gemini", {
-        prompt: msg,
-      })
-      .then(async (response) => {
-        console.log(response.data.response);
-        radioValues[35].response = await response.data.response;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // const getAnswer = async (msg: any) => {
+  //   axios
+  //     .post("http://localhost:8000/api/langchain/gemini", {
+  //       prompt: msg,
+  //     })
+  //     .then(async (response) => {
+  //       console.log(response.data.response);
+  //       radioValues[35].response = await response.data.response;
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   // message template
   const message = `I'm want to ${radioValues[1]} , my physical build is  ${radioValues[2]} 
@@ -96,7 +96,7 @@ const PrePlanCreating = () => {
 
   useEffect(() => {
     radioValues[34].message = message;
-    getAnswer(message);
+    // getAnswer(message);
   }, []);
   return (
     <div className="flex-col justify-center items-center mt-32">

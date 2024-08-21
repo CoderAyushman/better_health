@@ -1,17 +1,41 @@
 "use client";
+import {
+  GoogleGenerativeAI,
+  HarmCategory,
+  HarmBlockThreshold,
+} from "@google/generative-ai";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { radioValues } from "../components/RadioValues";
 import "@/app/components/tableSheet.css";
-import foodImg from "./../../../public/healthy-food-img.webp";
 import ResetAllDataBtn from "./ResetAllDataBtn";
-const Output = () => {
-  const [markdownText, setMarkdownText] = useState(radioValues[35].response);
 
-  // useEffect(() => {
-  //   setMarkdownText(radioValues[35].response);
-  // }, [radioValues[35].response]);
+const Output = () => {
+  const [markdownText, setMarkdownText] = useState < any > ("null");
+  const MODEL_NAME = "gemini-1.0-pro";
+  const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY as string;
+
+  console.log(API_KEY, MODEL_NAME)
+  //query from gemini
+  const runChat = async () => {
+    const genAI = new GoogleGenerativeAI(API_KEY);
+    const model = genAI.getGenerativeModel({ model: MODEL_NAME });
+
+    const result = await model.generateContent(radioValues[34].message);
+    const response = result.response.text();
+    console.log(typeof radioValues[34].message);
+    console.log(response);
+    setMarkdownText(response);
+  }
+  useEffect(() => {
+    runChat();
+  }, []);
+  useEffect(() => {
+    console.log(typeof markdownText);
+  }, [markdownText]);
   return (
     <main className="flex items-center justify-center mt-32 ">
       <div className="flex-col items-center justify-center ml-10 mr-10">
@@ -23,9 +47,10 @@ const Output = () => {
         <div className="z-10 relative">
           <h1>Here yours ai generated full personal Diet.</h1>
 
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {markdownText == "null" ? <Skeleton count={50} height={50} /> : <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {markdownText}
-          </ReactMarkdown>
+          </ReactMarkdown>}
+
           <ResetAllDataBtn />
         </div>
       </div>
@@ -34,4 +59,4 @@ const Output = () => {
 };
 
 export default Output;
-// I'm want to loseweight , my physical build is  medium build , my body goal is  slender , my target zones are (Arms:  true , Pecs: false ,Belly: false , Legs: false , Back : false) ,  I gain weight easily but find it hard to lose ,  Im 1-3year in my best shape , My work schedule is 9am to 5pm , I spend most of the day sitting , I sleep less than 5 hours , I drink fewer than 2 glasses of water , I do workout several times per week , I go for walk 3-4 times per week , I'm so out of breath I can't talk, I love to do Burpees exercise , I prefer home for workout , I prefer KetoVegan diet , I am 5 feet or 152 cm , My current weight is 74 kg or 163 lbs , My goal weight is 52 kg or 115 lbs , I am 21 year old. Give me a proper diet , workout and diffrent diet suited healthy dishes list.
+
