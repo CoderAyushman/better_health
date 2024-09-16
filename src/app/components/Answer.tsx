@@ -14,32 +14,33 @@ import "@/app/components/tableSheet.css";
 import ResetAllDataBtn from "./ResetAllDataBtn";
 
 const Output = () => {
-  const [markdownText, setMarkdownText] = useState<any>(
-    radioValues[35].response
-  );
+  const [markdownText, setMarkdownText] = useState<any>(null);
   const MODEL_NAME = "gemini-1.0-pro";
   const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY as string;
 
   // console.log(API_KEY, MODEL_NAME)
   //query from gemini
   useEffect(() => {
+    const localStoreResponse = localStorage.getItem("ai-response");
+    // console.log("localstore response", localStoreResponse);
     const runChat = async () => {
       const genAI = new GoogleGenerativeAI(API_KEY);
       const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
       const result = await model.generateContent(radioValues[34].message);
       const response = result.response.text();
+      localStorage.setItem("ai-response", response);
       // console.log(typeof radioValues[34].message);
       // console.log(response);
       setMarkdownText(response);
-      radioValues[35].response = response;
     };
-    if (markdownText === null) {
+    if (!localStoreResponse) {
       runChat();
     } else {
-      setMarkdownText(radioValues[35].response);
+      setMarkdownText(localStoreResponse);
     }
   }, []);
+
   return (
     <main className="flex items-center justify-center mt-32 ">
       <div className="flex-col items-center justify-center ml-10 mr-10">
