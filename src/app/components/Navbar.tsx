@@ -22,7 +22,7 @@ const Navbar = () => {
           <img className="w-[150px] md:w-[200px]" src="better-health.png" />
           <Sheet>
             <SheetTrigger>
-              <img className="" src="menu-png.png" alt="menu img" />
+              <img className="w-[25px]" src="menu-png.png" alt="menu img" />
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
