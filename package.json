@@ -40,6 +40,7 @@
     "react-redux": "^9.1.2",
     "react-router": "^6.25.1",
     "react-router-dom": "^6.25.1",
+    "react-to-pdf": "^1.0.1",
     "recharts": "^2.12.7",
     "rehype": "^13.0.1",
     "rehype-parse": "^9.0.0",
