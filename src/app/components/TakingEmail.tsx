@@ -1,15 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { radioValues } from "./RadioValues";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { increse } from "@/lib/features/counter/counterSlice";
 const TakingEmail = () => {
   const dispatch = useDispatch();
-  const [mail, setMail] = useState < string > (radioValues[33]);
+  const [mail, setMail] = useState<string>(radioValues[33]);
+  const [isValid, setIsValid] = useState(false);
+
+  useEffect(() => {
+    setIsValid(validateEmail(mail));
+  }, [mail]);
+
   const handleOnSubmit = (e: any) => {
     e.preventDefault();
     radioValues[33] = mail;
+
     dispatch(increse());
+  };
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
   return (
     <div className="w-full min-h-[100vh] flex justify-center items-center bg-[#6C7988] font-sans">
@@ -23,7 +35,7 @@ const TakingEmail = () => {
             Personalized Weight <br /> Loss Plan
           </span>
         </div>
-        <form >
+        <form>
           <div className="mt-3 ">
             <input
               type="email"
@@ -47,13 +59,19 @@ const TakingEmail = () => {
             </div>
           </div>
           <div className="flex justify-center items-center mt-5  mb-10 text-center">
-            <button
-              className=" bg-customGreen pt-3 pb-3 pl-[110px] pr-[110px] rounded-full text-white font-bold"
-              type="submit"
-              onClick={(e) => handleOnSubmit(e)}
-            >
-              CONTINUE
-            </button>
+            {isValid ? (
+              <button
+                className=" bg-customGreen pt-3 pb-3 pl-[110px] pr-[110px] rounded-full text-white font-bold"
+                type="submit"
+                onClick={(e) => handleOnSubmit(e)}
+              >
+                CONTINUE
+              </button>
+            ) : (
+              <button className=" bg-gray-400 pt-3 pb-3 pl-[110px] pr-[110px] rounded-full text-gray-500 font-bold cursor-not-allowed">
+                CONTINUE
+              </button>
+            )}
           </div>
         </form>
       </div>

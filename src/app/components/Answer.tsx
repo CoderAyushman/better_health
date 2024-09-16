@@ -4,8 +4,8 @@ import {
   HarmCategory,
   HarmBlockThreshold,
 } from "@google/generative-ai";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -14,7 +14,9 @@ import "@/app/components/tableSheet.css";
 import ResetAllDataBtn from "./ResetAllDataBtn";
 
 const Output = () => {
-  const [markdownText, setMarkdownText] = useState < any > (radioValues[35].response);
+  const [markdownText, setMarkdownText] = useState<any>(
+    radioValues[35].response
+  );
   const MODEL_NAME = "gemini-1.0-pro";
   const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY as string;
 
@@ -31,12 +33,10 @@ const Output = () => {
       // console.log(response);
       setMarkdownText(response);
       radioValues[35].response = response;
-    }
+    };
     if (markdownText === null) {
-
       runChat();
-    }
-    else {
+    } else {
       setMarkdownText(radioValues[35].response);
     }
   }, []);
@@ -51,9 +51,13 @@ const Output = () => {
         <div className="z-10 relative">
           <h1>Here yours ai generated full personal Diet.</h1>
 
-          {markdownText === null ? <Skeleton count={50} height={50} /> : <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {markdownText}
-          </ReactMarkdown>}
+          {markdownText === null ? (
+            <Skeleton count={50} height={50} />
+          ) : (
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {markdownText}
+            </ReactMarkdown>
+          )}
 
           <ResetAllDataBtn />
         </div>
@@ -63,4 +67,3 @@ const Output = () => {
 };
 
 export default Output;
-

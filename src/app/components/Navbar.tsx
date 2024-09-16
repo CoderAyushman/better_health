@@ -19,10 +19,10 @@ const Navbar = () => {
         <></>
       ) : (
         <div className="flex justify-between items-center backdrop-blur-sm fixed top-0 w-full pl-7 pr-7 h-20 z-20">
-          <img className="w-32" src="better-me.webp" />
+          <img className="w-[150px] md:w-[200px]" src="better-health.png" />
           <Sheet>
             <SheetTrigger>
-              <img className="w-10" src="menu-img.webp" alt="menu img" />
+              <img className="" src="menu-png.png" alt="menu img" />
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
