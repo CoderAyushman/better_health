@@ -23,7 +23,7 @@ const ResetAllDataBtn = () => {
     <div className="flex justify-center items-center">
       <Dialog>
         <DialogTrigger>
-          <button className="flex w-[30px] md:w-[50px] text-sm  md:text-base bg-customGreen rounded-md overflow-visible  text-white p-2 mb-5  ">
+          <button className="flex w-[50px] md:w-[50px] text-sm  md:text-base bg-customGreen rounded-md overflow-visible  text-white p-2 mb-5  ">
             <img src="reset.png" alt="reset" />
             {/* <img src="reset-buttons.png" alt="reset button" className='ml-3 max-w-[30px]' /> */}
           </button>

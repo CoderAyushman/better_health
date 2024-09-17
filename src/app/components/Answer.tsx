@@ -94,7 +94,7 @@ const Output = () => {
           <div className="flex items-center justify-start gap-2">
             <button
               onClick={() => generatePDF(getTargetElement, options)}
-              className="w-[30px] md:w-[50px] bg-customGreen rounded-md overflow-visible  text-white py-2 mb-5   px-2"
+              className="w-[50px]  bg-customGreen rounded-md overflow-visible  text-white py-2 mb-5   px-2"
             >
               <img src="download.png" />
             </button>
