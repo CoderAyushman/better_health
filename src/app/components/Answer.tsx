@@ -13,8 +13,10 @@ import { radioValues } from "../components/RadioValues";
 import "@/app/components/tableSheet.css";
 import ResetAllDataBtn from "./ResetAllDataBtn";
 import generatePDF, { Resolution, Margin } from "react-to-pdf";
+import { useToast } from "@/components/hooks/use-toast";
 
 const Output = () => {
+  const { toast } = useToast();
   const options: any = {
     resolution: Resolution.HIGH,
     filename: "better-health-diet-plan.pdf",
@@ -93,7 +95,12 @@ const Output = () => {
           </div>
           <div className="flex items-center justify-start gap-2">
             <button
-              onClick={() => generatePDF(getTargetElement, options)}
+              onClick={() => {
+                toast({
+                  description: "Downloading...",
+                });
+                generatePDF(getTargetElement, options);
+              }}
               className="w-[50px]  bg-customGreen rounded-md overflow-visible  text-white py-2 mb-5   px-2"
             >
               <img src="download.png" />
