@@ -20,7 +20,7 @@ const Output = () => {
     filename: "better-health-diet-plan.pdf",
     page: {
       margin: Margin.SMALL,
-      format: "letter",
+      format: "junior-legal",
     },
     canvas: {
       qualityRatio: 1,
@@ -67,7 +67,7 @@ const Output = () => {
         <img
           src="healthy-food-img.webp"
           alt="healthy food"
-          className="h-[600px] ml-[50vw]  fixed z-0 opacity-30 md:w-[700px] md:ml-[40vw]  "
+          className="h-[600px] ml-[50vw]  fixed z-0 opacity-30 md:w-[700px] md:ml-[40vw]"
         />
         <div className="z-10 relative">
           <div ref={getTargetElement} className="">
