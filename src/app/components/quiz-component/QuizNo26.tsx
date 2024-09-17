@@ -63,7 +63,7 @@ const QuizNo26 = () => {
     dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex justify-center items-center mb-5">
+    <div className="flex justify-center items-center mb-5 p-7 md:p-0">
       <div className="flex-col">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
           I manage to keep up a <br /> healthy routine for a few <br /> weeks

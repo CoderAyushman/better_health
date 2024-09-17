@@ -63,7 +63,7 @@ const QuizNo25 = () => {
     dispatch(increseDisplayCounter());
   };
   return (
-    <div className="flex justify-center items-center mb-5">
+    <div className="flex justify-center items-center mb-5 p-7 md:p-0">
       <div className="flex-col">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
           I&apos;m quick to fall off my plan <br /> whenever I&apos;m around <br /> people
