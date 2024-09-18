@@ -16,6 +16,7 @@ import generatePDF, { Resolution, Margin } from "react-to-pdf";
 import { useToast } from "@/components/hooks/use-toast";
 
 const Output = () => {
+  const [regenerate, setRegenerate] = useState<boolean>(false);
   const { toast } = useToast();
   const options: any = {
     resolution: Resolution.HIGH,
@@ -56,12 +57,12 @@ const Output = () => {
 
       setMarkdownText(response);
     };
-    if (!localStoreResponse) {
+    if (!localStoreResponse || regenerate) {
       runChat();
     } else {
       setMarkdownText(localStoreResponse);
     }
-  }, []);
+  }, [, regenerate]);
 
   return (
     <main className="flex items-center justify-center mt-32 ">
@@ -93,19 +94,43 @@ const Output = () => {
               />
             </div>
           </div>
-          <div className="flex items-center justify-start gap-2">
-            <button
-              onClick={() => {
-                toast({
-                  description: "Downloading...",
-                });
-                generatePDF(getTargetElement, options);
-              }}
-              className="w-[50px]  bg-customGreen rounded-md overflow-visible  text-white py-2 mb-5   px-2"
-            >
-              <img src="download.png" />
-            </button>
-            <ResetAllDataBtn />
+          <div className="flex items-center justify-start ">
+            <div className="flex-col mb-5 mr-4">
+              <button
+                onClick={() => {
+                  toast({
+                    description: "Downloading...",
+                  });
+                  generatePDF(getTargetElement, options);
+                }}
+                className="w-[50px]  bg-customGreen rounded-md overflow-visible  text-white py-2    px-2"
+              >
+                <img src="download.png" />
+              </button>
+              <h6 className="text-xs text-gray-500 font-bold text-center">
+                Download
+              </h6>
+            </div>
+            <div className="flex-col mb-5 mr-3">
+              <button
+                onClick={() => {
+                  setRegenerate(true);
+                  setMarkdownText(null);
+                }}
+                className="w-[50px]  bg-customGreen rounded-md overflow-visible  text-white py-2    px-2"
+              >
+                <img src="refresh-png.png" />
+              </button>
+              <h6 className="text-xs text-gray-500 font-bold  text-center">
+                Regenerate
+              </h6>
+            </div>
+            <div className="flex-col mb-5  ">
+              <ResetAllDataBtn />
+              <h6 className="text-xs text-gray-500 font-bold text-center">
+                Reset
+              </h6>
+            </div>
           </div>
         </div>
       </div>
