@@ -12,13 +12,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import useEmblaCarousel from "embla-carousel-react";
 import { useAppDispatch } from "@/lib/hooks";
-import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "./RadioValues";
 // import { plugin } from "postcss";
-import axios from "axios";
 // import { getAnswer } from "@/utils/getAnswer";
 
 const PrePlanCreating = () => {

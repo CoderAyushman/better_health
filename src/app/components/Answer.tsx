@@ -1,9 +1,5 @@
 "use client";
-import {
-  GoogleGenerativeAI,
-  HarmCategory,
-  HarmBlockThreshold,
-} from "@google/generative-ai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import React, { useEffect, useRef, useState } from "react";
@@ -23,8 +19,6 @@ import {
   LinkedinIcon,
   WhatsappShareButton,
   WhatsappIcon,
-  PinterestShareButton,
-  PinterestIcon,
   TelegramShareButton,
   TelegramIcon,
   RedditShareButton,
@@ -65,7 +59,6 @@ import {
 
 const Output = () => {
   const [regenerate, setRegenerate] = useState<boolean>(false);
-  const [copied, setCopied] = useState(false);
   const { toast } = useToast();
   const options: any = {
     resolution: Resolution.HIGH,

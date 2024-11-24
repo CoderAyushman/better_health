@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Footer from "../components/Footer";
-import Link from "next/link";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 
@@ -24,7 +23,6 @@ const Intromale = () => {
       </div>
       <button
         onClick={handleOnclick}
-
         className="bg-customGreen rounded-full overflow-visible  text-white pt-5 md:mt-[-10px] pb-5  pl-28 pr-28 "
       >
         <b>CONTINUE</b>
