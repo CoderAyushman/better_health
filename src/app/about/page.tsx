@@ -18,9 +18,9 @@ const AboutMe = () => {
             <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">About me</dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                I'm a passionate student with a love for coding and creating
-                useful projects. My goal is to make a positive impact through
-                technology.
+                I&apos;m a passionate student with a love for coding and
+                creating useful projects. My goal is to make a positive impact
+                through technology.
               </dd>
             </div>
             <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -28,10 +28,11 @@ const AboutMe = () => {
                 Coding Journey
               </dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                My love for coding started when I built my first "Hello, World!"
-                program. Since then, I've been on an exciting journey of
-                learning new languages, frameworks, and best practices. I'm
-                particularly interested in web development and machine learning.
+                My love for coding started when I built my first &quot;Hello,
+                World!&quot; program. Since then, I&apos;ve been on an exciting
+                journey of learning new languages, frameworks, and best
+                practices. I&apos;m particularly interested in web development
+                and machine learning.
               </dd>
             </div>
             <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
