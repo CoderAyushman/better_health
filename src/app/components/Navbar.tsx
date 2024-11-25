@@ -22,8 +22,11 @@ const Navbar = () => {
             alt="image nav"
             width={500}
             height={500}
-            className="w-[150px] md:w-[200px]"
+            className="w-[150px] md:w-[200px] cursor-pointer"
             src="/better-health.png"
+            onClick={() => {
+              router.push("/");
+            }}
           />
           <Sheet open={isSheetOpen}>
             <SheetTrigger>
@@ -59,6 +62,17 @@ const Navbar = () => {
                   </h1>
                 </div>
 
+                <div className="text-center text-2xl cursor-pointer px-full block">
+                  <h1
+                    className="text-center text-2xl cursor-pointer motion-preset-slide-left-lg"
+                    onClick={() => {
+                      router.push("/about");
+                      setisSheetOpen(false);
+                    }}
+                  >
+                    ABOUT ME
+                  </h1>
+                </div>
                 <div className="text-center text-2xl cursor-pointer px-full block">
                   <Share />
                 </div>

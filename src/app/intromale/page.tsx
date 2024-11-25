@@ -16,7 +16,7 @@ const Intromale = () => {
           150 million people
         </span>
         <br />
-        <b className="text-2xl">have chosen BetterMe</b>
+        <b className="text-2xl">have chosen BetterHealth</b>
       </p>
       <div className="flex justify-center items-center ">
         <img className="w-96 " src="male-intro-img.png" alt="intro image" />
