@@ -3,7 +3,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-
+import { CldImage } from "next-cloudinary";
 const Introfemale = () => {
   const dispatch = useAppDispatch();
   const handleOnclick = () => {
@@ -19,7 +19,13 @@ const Introfemale = () => {
         <b className="text-2xl ">have chosen BetterHealth</b>
       </p>
       <div className="flex justify-center items-center ">
-        <img className="w-96 " src="women-intro.webp" alt="intro image" />
+        <CldImage
+          width="500"
+          height="500"
+          className="w-96 "
+          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/qufnl6yxmhhsfun6czyx"
+          alt="intro image"
+        />
       </div>
       <button
         onClick={handleOnclick}

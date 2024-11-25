@@ -7,6 +7,7 @@ import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo3 = () => {
   const dispatch = useAppDispatch();
@@ -47,9 +48,11 @@ const QuizNo3 = () => {
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-3rd/thin.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-3rd/fs8rfgjalmlhipzflrec"
               alt="lose-weight-img"
             />
             <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">
@@ -63,13 +66,17 @@ const QuizNo3 = () => {
             htmlFor="r2"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-3rd/toned.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-3rd/fugv1o3eggh9d4jcftlm"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">Toned</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              Toned
+            </h1>
             <RadioGroupItem className="mr-5" value="athletic" id="r2" />
           </Label>
           <Label
@@ -77,13 +84,17 @@ const QuizNo3 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-3rd/curvy.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-3rd/tudusyophuorofu8pqgb"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">Curvy</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              Curvy
+            </h1>
             <RadioGroupItem className="mr-5" value="shredded" id="r3" />
           </Label>
           <Label
@@ -91,14 +102,17 @@ const QuizNo3 = () => {
             htmlFor="r4"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-3rd/few-size.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-3rd/p88rhycg2vg3g1bss2zb"
               alt="gain-muscle-img"
-
             />
 
-            <h1 className="pr-[60px] font-semibold text-base">Just a few size smaller</h1>
+            <h1 className="pr-[60px] font-semibold text-base">
+              Just a few size smaller
+            </h1>
             <RadioGroupItem className="mr-5" value="swole" id="r4" />
           </Label>
         </RadioGroup>

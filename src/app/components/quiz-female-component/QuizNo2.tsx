@@ -7,6 +7,7 @@ import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo2 = () => {
   const dispatch = useAppDispatch();
@@ -45,12 +46,16 @@ const QuizNo2 = () => {
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-2nd/slim.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-2nd/ovr9ovkv1gkbmunsfcra"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">Slim</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">
+              Slim
+            </h1>
             <RadioGroupItem className="mr-5 " value="slender" id="r1" />
           </Label>
 
@@ -59,13 +64,17 @@ const QuizNo2 = () => {
             htmlFor="r2"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-2nd/mid-sized.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-2nd/hdzvyckotactsknepchh"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[110px] md:pr-[175px] font-semibold text-base">Mid-sized</h1>
+            <h1 className="pr-[110px] md:pr-[175px] font-semibold text-base">
+              Mid-sized
+            </h1>
             <RadioGroupItem className="mr-5" value="medium build" id="r2" />
           </Label>
           <Label
@@ -73,13 +82,17 @@ const QuizNo2 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-2nd/havier.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-2nd/hwksknghj3jsbhvygee9"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[110px] font-semibold text-base">On a heavier side</h1>
+            <h1 className="pr-[110px] font-semibold text-base">
+              On a heavier side
+            </h1>
             <RadioGroupItem className="mr-5" value="stocky" id="r3" />
           </Label>
           <Label
@@ -87,13 +100,17 @@ const QuizNo2 = () => {
             htmlFor="r4"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-2nd/over-weight.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-2nd/cvtqin6jwmsavsehm15e"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">Overweight</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              Overweight
+            </h1>
             <RadioGroupItem className="mr-5" value="obese" id="r4" />
           </Label>
         </RadioGroup>

@@ -9,6 +9,7 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { update } from "@/lib/features/dataSlice";
 import { radioValues } from "../RadioValues";
+import { CldImage } from "next-cloudinary";
 
 console.log("radioValues[1]=", radioValues[1]);
 const QuizNo1 = () => {
@@ -45,12 +46,16 @@ const QuizNo1 = () => {
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2 "
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-1st/weight-loss-female.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-1st/ohulo1j3ufcaxuhc1cw5"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[155px] md:pr-[175px] pl-5 font-semibold text-base ">Lose Weight</h1>
+            <h1 className="pr-[155px] md:pr-[175px] pl-5 font-semibold text-base ">
+              Lose Weight
+            </h1>
             <RadioGroupItem className="mr-5 " value="loseweight" id="r1" />
           </Label>
 
@@ -59,9 +64,11 @@ const QuizNo1 = () => {
             htmlFor="r2"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2  "
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-1st/weight-gain-female.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-1st/ojzjmo41qbrmhzoemwjl"
               alt="gain-muscle-img"
             />
 
@@ -75,10 +82,12 @@ const QuizNo1 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2  "
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-1st/after-pregnency.webp"
-              alt="gain-muscle-img"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-1st/pebimsvezyymszkb8qde"
+              alt="recover-img"
             />
 
             <h1 className="pr-[40px] font-semibold text-base">

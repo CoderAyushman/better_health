@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { CldImage } from "next-cloudinary";
 const First = () => {
   const onClickHandleMale = () => {
     console.log("clicked male");
@@ -27,17 +28,21 @@ const First = () => {
 
         <div className="md:flex  gap-4 w-[100%] self-center justify-center mb-10 items-center ">
           <Link href="/quiz">
-            <img
-              className="sm:w-[300px]   lg:w-[440px]  h-full  lg:hover:transition transform duration-500 hover:scale-90 hover:opacity-75 cursor-pointer "
-              src="male_img.png"
+            <CldImage
+              width={500}
+              height={500}
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/l81buhv4nmiilj1x5bjr"
               alt="male_img"
+              className="sm:w-[300px]   lg:w-[440px]  h-full  lg:hover:transition transform duration-500 hover:scale-90 hover:opacity-75 cursor-pointer "
               onClick={onClickHandleMale}
             />
           </Link>
           <Link href="/quiz-female">
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="sm:w-[300px]  lg:w-[440px] h-full  lg:hover:transition transform duration-500 hover:scale-90 hover:opacity-75   cursor-pointer"
-              src="female_img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/hnhmlvzcii8w5qhorhmi"
               alt="female_img"
               onClick={onClickHandleFemale}
             />

@@ -8,6 +8,7 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo3 = () => {
   // const [counter, setCounter] = useState<number>(0);
@@ -57,12 +58,16 @@ const QuizNo3 = () => {
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2 mt-5"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-4th/belly.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-4th/b3r3p0xtlmzfpyw9liyq"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">Belly</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">
+              Belly
+            </h1>
             <Checkbox
               className="mr-5 "
               id="r1"
@@ -76,13 +81,17 @@ const QuizNo3 = () => {
             htmlFor="r2"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-4th/back.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-4th/hot8kw4ftvxexxrfm2mu"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">Butt</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              Butt
+            </h1>
             <Checkbox
               className="mr-5"
               value="pecs"
@@ -96,13 +105,17 @@ const QuizNo3 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-4th/chest.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-4th/qj7xlrw0og8yymt3x3sx"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">Chest</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              Chest
+            </h1>
             <Checkbox
               className="mr-5"
               value="belly"
@@ -116,13 +129,17 @@ const QuizNo3 = () => {
             htmlFor="r4"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-4th/legs.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-4th/wnyuyugavpmohmr6kpm8"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">Legs</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              Legs
+            </h1>
             <Checkbox
               className="mr-5"
               value="legs"
@@ -136,7 +153,9 @@ const QuizNo3 = () => {
             htmlFor="r5"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+             <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
               src="imageOfFemale/quiz-4th/back-img.png"
               alt="gain-muscle-img"
