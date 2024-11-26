@@ -7,6 +7,7 @@ import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo7 = () => {
   const dispatch = useAppDispatch();
@@ -45,11 +46,13 @@ const QuizNo7 = () => {
           <Label
             onClick={handleClickOn9to5}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-7th/sun-emoji.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-7th/eghkwug7j61wkcmvdahq"
               alt="lose-weight-img"
             />
             <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">
@@ -65,11 +68,13 @@ const QuizNo7 = () => {
           <Label
             onClick={handleClickOnNightShift}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-7th/night-emoji.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-7th/xu5wxfjizuo6aovnw8dl"
               alt="gain-muscle-img"
             />
 
@@ -87,9 +92,11 @@ const QuizNo7 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-7th/flexible-emoji.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-7th/nt1ww8wc6mrtstquq6g6"
               alt="gain-muscle-img"
             />
 
@@ -107,9 +114,11 @@ const QuizNo7 = () => {
             htmlFor="r4"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-7th/retired-emoji.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-7th/na8xgat9b6lmawq1ywa9"
               alt="gain-muscle-img"
             />
 

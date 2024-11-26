@@ -2,11 +2,11 @@
 import React from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo14 = () => {
   const dispatch = useAppDispatch();
@@ -48,9 +48,11 @@ const QuizNo14 = () => {
             htmlFor="r1"
             className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfMale/quiz-14th/very-hard-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-14th/izhkwkamwoxyqrnntabi"
               alt="very-hard-img"
             />
             <h1 className="pr-[40px] md:pr-[40px]   font-semibold text-base ">
@@ -58,7 +60,7 @@ const QuizNo14 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5 "
-              value="I&apos;m so out of breath I can&apos;t talk"
+              value="I'm so out of breath I can't talk"
               id="r1"
             />
           </Label>
@@ -69,9 +71,11 @@ const QuizNo14 = () => {
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
             mb-2
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfMale/quiz-14th/hard-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-14th/svzclk0qb3vxowxdtnlk"
               alt="hard-img"
             />
 
@@ -80,7 +84,7 @@ const QuizNo14 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="I&apos;m somewhat out of breath but can talk"
+              value="I'm somewhat out of breath but can talk"
               id="r2"
             />
           </Label>
@@ -90,9 +94,11 @@ const QuizNo14 = () => {
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
             mb-2
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfMale/quiz-14th/ok-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-14th/ytzdq6r8t8ckafu8qn1a"
               alt="normal-img"
             />
 
@@ -101,7 +107,7 @@ const QuizNo14 = () => {
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="I&apos;m OK after one flight of stairs"
+              value="I'm OK after one flight of stairs"
               id="r3"
             />
           </Label>
@@ -111,9 +117,11 @@ const QuizNo14 = () => {
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
             mb-2
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfMale/quiz-14th/rocket-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-14th/rerbbz6sbe03laap8zfy"
               alt="like-img"
               cursor-pointer
             />

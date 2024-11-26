@@ -2,12 +2,10 @@
 import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
-import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo = () => {
   // const [counter, setCounter] = useState<number>(0);
@@ -18,7 +16,6 @@ const QuizNo = () => {
   let count =
     radioValues[18].one || radioValues[18].two || radioValues[18].three;
 
-  const dispatch = useAppDispatch();
   const handleClickOnSensitiveBack = () => {
     setIsCheckedForQ1(!isCheckedForQ1);
     radioValues[18].one = !isCheckedForQ1;
@@ -53,9 +50,11 @@ const QuizNo = () => {
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-18th/sensetive-back.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-18th/gqms777sm4cb5na2bp06"
               alt="sensetive-back-img"
             />
             <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">
@@ -74,9 +73,11 @@ const QuizNo = () => {
             htmlFor="r2"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-18th/sensetive-knees.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-18th/boaw5iclk2smnr7wtdbw"
               alt="Sensitive Knees"
             />
 
@@ -96,13 +97,17 @@ const QuizNo = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-18th/none.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-18th/b74klewhlhstdf3eef5y"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">Neither</h1>
+            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
+              Neither
+            </h1>
             <Checkbox
               className="mr-5"
               value="Neither"

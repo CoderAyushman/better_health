@@ -4,8 +4,8 @@ import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Footer from "../Footer";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo5 = () => {
   const dispatch = useAppDispatch();
@@ -39,12 +39,14 @@ const QuizNo5 = () => {
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-5th/upper-eyes-emoji.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-5th/uajivt3gkwbfp7mv284a"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[40px] md:pr-[40px] font-semibold text-base ">
+            <h1 className="pr-[40px] font-semibold text-base ">
               I have trouble gaining muscle or body fat
             </h1>
             <RadioGroupItem
@@ -59,13 +61,15 @@ const QuizNo5 = () => {
             htmlFor="r2"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-5th/biceps-emoji.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-5th/a1a5hfm1ydtyjtch4fsm"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[40px] md:pr-[40px] font-semibold text-base">
+            <h1 className="pr-[40px] font-semibold text-base">
               I gain and lose weight without effort
             </h1>
             <RadioGroupItem
@@ -79,13 +83,15 @@ const QuizNo5 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-5th/fear-emoji.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-5th/fhskdkf1toh0i4m38cvd"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[40px] md:pr-[40px] font-semibold text-base">
+            <h1 className="pr-[40px] font-semibold text-base">
               I gain weight easily but find it hard to lose
             </h1>
             <RadioGroupItem

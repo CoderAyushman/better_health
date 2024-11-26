@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Footer from "../Footer";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo8 = () => {
   const dispatch = useAppDispatch();
@@ -39,9 +40,11 @@ const QuizNo8 = () => {
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-8th/sitting.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-8th/zw2ljfj89ft0zupwtf7p"
               alt="sitting-img"
             />
             <h1 className="pr-[40px] md:pr-[40px] font-semibold text-base ">
@@ -59,9 +62,11 @@ const QuizNo8 = () => {
             htmlFor="r2"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-8th/active-breaks.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-8th/xvihogndgzudyhu7hc9p"
               alt="active-img"
             />
 
@@ -79,9 +84,11 @@ const QuizNo8 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-8th/day-feet.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-8th/dmkttw6d4yjdtotvexpq"
               alt="fit-img"
             />
 

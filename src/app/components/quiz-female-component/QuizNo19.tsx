@@ -2,12 +2,11 @@
 import React from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
-import Link from "next/link";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo19 = () => {
   const dispatch = useAppDispatch();
@@ -37,12 +36,16 @@ const QuizNo19 = () => {
             htmlFor="r1"
             className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfMale/quiz-19th/gym-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-19th/puxr7uit86djarhj6bv6"
               alt="gym-img"
             />
-            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base ">Gym</h1>
+            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base ">
+              Gym
+            </h1>
             <RadioGroupItem
               className="mr-5 "
               value="I prefer gym for workout"
@@ -55,13 +58,17 @@ const QuizNo19 = () => {
             htmlFor="r2"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfMale/quiz-19th/home-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-19th/dbaghwvdn0vndfpox85p"
               alt="hard-img"
             />
 
-            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base">Home</h1>
+            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base">
+              Home
+            </h1>
             <RadioGroupItem
               className="mr-5"
               value="I prefer home for workout"

@@ -2,12 +2,11 @@
 import React from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
-import Link from "next/link";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo17 = () => {
   const dispatch = useAppDispatch();
@@ -48,12 +47,16 @@ const QuizNo17 = () => {
             htmlFor="r1"
             className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfFemale/quiz-17th/squats.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-17th/omvw7cyxtnhibysoxjyx"
               alt="squats-img"
             />
-            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base ">Squats</h1>
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base ">
+              Squats
+            </h1>
             <RadioGroupItem className="mr-5 " value="squats" id="r1" />
           </Label>
 
@@ -62,13 +65,17 @@ const QuizNo17 = () => {
             htmlFor="r2"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfFemale/quiz-17th/lunges.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-17th/l1tbetbjqcpvdpovc0jl"
               alt="hard-img"
             />
 
-            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">Lunges</h1>
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">
+              Lunges
+            </h1>
             <RadioGroupItem className="mr-5" value="lunges" id="r2" />
           </Label>
           <Label
@@ -76,13 +83,17 @@ const QuizNo17 = () => {
             htmlFor="r3"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfFemale/quiz-17th/plank.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-17th/jams2pjh6pegeo4ubt1k"
               alt="normal-img"
             />
 
-            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">Plank</h1>
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">
+              Plank
+            </h1>
             <RadioGroupItem className="mr-5" value="plank" id="r3" />
           </Label>
           <Label
@@ -90,14 +101,18 @@ const QuizNo17 = () => {
             htmlFor="r4"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfFemale/quiz-17th/burpees.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-17th/rydorxwnwyxho1jdro1e"
               alt="like-img"
               cursor-pointer
             />
 
-            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">Burpees</h1>
+            <h1 className="pr-[110px] md:pr-[140px] pl-5   font-semibold text-base">
+              Burpees
+            </h1>
             <RadioGroupItem className="mr-5" value="Burpees" id="r4" />
           </Label>
         </RadioGroup>

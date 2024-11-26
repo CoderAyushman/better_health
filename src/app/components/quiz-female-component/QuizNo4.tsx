@@ -2,12 +2,9 @@
 import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
-import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { CldImage } from "next-cloudinary";
 
 const QuizNo3 = () => {
