@@ -7,6 +7,7 @@ import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo2 = () => {
   const dispatch = useAppDispatch();
@@ -45,9 +46,11 @@ const QuizNo2 = () => {
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-2nd/slender-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-2nd/px2bwrs9kvln8j2wked6"
               alt="lose-weight-img"
             />
             <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">
@@ -61,9 +64,11 @@ const QuizNo2 = () => {
             htmlFor="r2"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-2nd/medium-build-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-2nd/ney4b1sztoflhak5rynp"
               alt="gain-muscle-img"
             />
 
@@ -77,9 +82,11 @@ const QuizNo2 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-2nd/stocky-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-2nd/h5xra6njbig5ghvkffur"
               alt="gain-muscle-img"
             />
 
@@ -93,9 +100,11 @@ const QuizNo2 = () => {
             htmlFor="r4"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-2nd/obase-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-2nd/ys7jeskwdk4cn7yhlhkd"
               alt="gain-muscle-img"
             />
 

@@ -4,6 +4,7 @@ import {
   increseDisplayCounter,
 } from "@/lib/features/counter/displayCounterSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { CldImage } from "next-cloudinary";
 import React from "react";
 
 const AboutSurroundings = () => {
@@ -33,11 +34,13 @@ const AboutSurroundings = () => {
           />
         </button>
         <h1 className="text-2xl font-bold mt-7 mb-5 text-center">
-          Let’s consider your surroundings
+          Let&apos;s consider your surroundings
         </h1>
-        <img
+        <CldImage
+          width={500}
+          height={500}
           className="w-[440px]"
-          src="surrounding-img.webp"
+          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/hajaxvjgfomi0zn4gm2y"
           alt="surrounding-img"
           mb-5
         />

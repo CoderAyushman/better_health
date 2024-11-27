@@ -9,6 +9,7 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { update } from "@/lib/features/dataSlice";
 import { radioValues } from "../RadioValues";
+import { CldImage } from "next-cloudinary";
 
 console.log("radioValues[1]=", radioValues[1]);
 const QuizNo1 = () => {
@@ -40,9 +41,11 @@ const QuizNo1 = () => {
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-1"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-1st/lose-weight-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-1st/m0duuyahfkcqyrrzo7iw"
               alt="lose-weight-img"
             />
             <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base pl-5 ">
@@ -56,9 +59,11 @@ const QuizNo1 = () => {
             htmlFor="r2"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer "
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-1st/gain-muscle-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-1st/bmqop0auqjy4feys82b5"
               alt="gain-muscle-img"
             />
 

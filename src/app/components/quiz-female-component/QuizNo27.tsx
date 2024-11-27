@@ -2,30 +2,31 @@
 import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
-import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo27 = () => {
   // const [counter, setCounter] = useState<number>(0);
-  const [isCheckedForQ1, setIsCheckedForQ1] = useState < boolean > (false);
-  const [isCheckedForQ2, setIsCheckedForQ2] = useState < boolean > (false);
-  const [isCheckedForQ3, setIsCheckedForQ3] = useState < boolean > (false);
-  const [isCheckedForQ4, setIsCheckedForQ4] = useState < boolean > (false);
-  const [isCheckedForQ5, setIsCheckedForQ5] = useState < boolean > (false);
-  const [isCheckedForQ6, setIsCheckedForQ6] = useState < boolean > (false);
-  const [isCheckedForQ7, setIsCheckedForQ7] = useState < boolean > (false);
-  const [isCheckedForQ8, setIsCheckedForQ8] = useState < boolean > (false);
+  const [isCheckedForQ1, setIsCheckedForQ1] = useState<boolean>(false);
+  const [isCheckedForQ2, setIsCheckedForQ2] = useState<boolean>(false);
+  const [isCheckedForQ3, setIsCheckedForQ3] = useState<boolean>(false);
+  const [isCheckedForQ4, setIsCheckedForQ4] = useState<boolean>(false);
+  const [isCheckedForQ5, setIsCheckedForQ5] = useState<boolean>(false);
+  const [isCheckedForQ6, setIsCheckedForQ6] = useState<boolean>(false);
+  const [isCheckedForQ7, setIsCheckedForQ7] = useState<boolean>(false);
+  const [isCheckedForQ8, setIsCheckedForQ8] = useState<boolean>(false);
 
   let count =
     radioValues[27].one ||
     radioValues[27].two ||
     radioValues[27].three ||
     radioValues[27].four ||
-    radioValues[27].five || radioValues[27].six || radioValues[27].seven || radioValues[27].eight;
+    radioValues[27].five ||
+    radioValues[27].six ||
+    radioValues[27].seven ||
+    radioValues[27].eight;
   const dispatch = useAppDispatch();
   const handleClickOnMarriage = () => {
     setIsCheckedForQ1(!isCheckedForQ1);
@@ -70,7 +71,7 @@ const QuizNo27 = () => {
     radioValues[27].eight = false;
   };
   const handleClickOnNone = () => {
-    console.log(!isCheckedForQ8)
+    console.log(!isCheckedForQ8);
     setIsCheckedForQ8(!isCheckedForQ8);
     radioValues[27].eight = !isCheckedForQ8;
 
@@ -97,29 +98,32 @@ const QuizNo27 = () => {
 
     setIsCheckedForQ7(false);
     radioValues[27].seven = false;
-
-
   };
   return (
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
         <h1 className="text-3xl font-bold tracking-wide mt-7">
-          Have any of the following <br /> life events led to weight <br /> gain in the last few years?
+          Have any of the following <br /> life events led to weight <br /> gain
+          in the last few years?
         </h1>
         <p className="text-gray-500 m-3">Choose all that apply</p>
       </div>
-      <div className="flex justify-evenly items-center text-center mt-5">
+      <div className="flex justify-evenly items-center text-center mb-3">
         <div>
           <Label
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-3 "
+            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-27th/marriage.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-27th/ccebrvhsw924iaswnuul"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[100px] font-semibold text-base ">Marriage or relationship</h1>
+            <h1 className="pr-[100px] font-semibold text-base ">
+              Marriage or relationship
+            </h1>
             <Checkbox
               className="mr-5 "
               id="r1"
@@ -133,13 +137,17 @@ const QuizNo27 = () => {
             htmlFor="r2"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/busy-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/r3olquolemwi3j3jzsgh"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[100px] font-semibold text-base">Busy work or family life</h1>
+            <h1 className="pr-[100px] font-semibold text-base">
+              Busy work or family life
+            </h1>
             <Checkbox
               className="mr-5"
               value="busy"
@@ -153,13 +161,17 @@ const QuizNo27 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/financial-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/olopbzimnnzqmaolbe8p"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[100px] pl-5 font-semibold text-base">Financial struggles</h1>
+            <h1 className="pr-[140px] font-semibold text-base">
+              Financial struggles
+            </h1>
             <Checkbox
               className="mr-5"
               value="financial"
@@ -173,14 +185,17 @@ const QuizNo27 = () => {
             htmlFor="r4"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/injuries-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/cctqcdxhvfszlhpo98pg"
               alt="gain-muscle-img"
-
             />
 
-            <h1 className="pr-[100px] pl-5 font-semibold text-base">Injury or disability</h1>
+            <h1 className="pr-[140px] font-semibold text-base">
+              Injury or disability
+            </h1>
             <Checkbox
               className="mr-5"
               value="injury"
@@ -194,14 +209,17 @@ const QuizNo27 = () => {
             htmlFor="r5"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/stress-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/pw3h9armkhkih1pvypw8"
               alt="gain-muscle-img"
-
             />
 
-            <h1 className="pr-[40px] font-semibold text-base">Stress or mental health issues</h1>
+            <h1 className="pr-[40px] font-semibold text-base">
+              Stress or mental health issues
+            </h1>
             <Checkbox
               className="mr-5"
               value="stress"
@@ -214,14 +232,17 @@ const QuizNo27 = () => {
             htmlFor="r6"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfFemale/quiz-27th/old-img.webp"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-27th/lr2mvgo7dphbd6sqdjbr"
               alt="gain-muscle-img"
-
             />
 
-            <h1 className="pr-[40px] font-semibold text-base">Slower metabolism due to aging</h1>
+            <h1 className="pr-[40px] font-semibold text-base">
+              Slower metabolism due to aging
+            </h1>
             <Checkbox
               className="mr-5"
               value="old"
@@ -234,14 +255,17 @@ const QuizNo27 = () => {
             htmlFor="r7"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/treatment-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/izqegxpgvyntckpwx0ex"
               alt="gain-muscle-img"
-
             />
 
-            <h1 className="pr-[40px] font-semibold text-base">Post-treatment complications</h1>
+            <h1 className="pr-[40px] font-semibold text-base">
+              Post-treatment complications
+            </h1>
             <Checkbox
               className="mr-5"
               value="treatment"
@@ -254,14 +278,17 @@ const QuizNo27 = () => {
             htmlFor="r8"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/none-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/pul2dftepmmpiqidg1pd"
               alt="gain-muscle-img"
-
             />
 
-            <h1 className="pr-[100px] pl-5 font-semibold text-base">None of the above</h1>
+            <h1 className="pr-[140px] font-semibold text-base">
+              None of the above
+            </h1>
             <Checkbox
               className="mr-5"
               value="none"

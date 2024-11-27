@@ -8,6 +8,7 @@ import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import Link from "next/link";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo17 = () => {
   const dispatch = useAppDispatch();
@@ -48,9 +49,11 @@ const QuizNo17 = () => {
             htmlFor="r1"
             className="flex justify-between  shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfMale/quiz-17th/squats-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-17th/mtova6lg8qyg0s4ybmx3"
               alt="squats-img"
             />
             <h1 className="pr-[100px] md:pr-[175px]  font-semibold text-base ">
@@ -64,9 +67,11 @@ const QuizNo17 = () => {
             htmlFor="r2"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfMale/quiz-17th/lunges-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-17th/o8vlijtp2unhzq3qxvfi"
               alt="hard-img"
             />
 
@@ -80,9 +85,11 @@ const QuizNo17 = () => {
             htmlFor="r3"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfMale/quiz-17th/planks-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-17th/jgk5uu37dgxselm0rrpy"
               alt="normal-img"
             />
 
@@ -96,9 +103,11 @@ const QuizNo17 = () => {
             htmlFor="r4"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px] mr-7"
-              src="imageOfMale/quiz-17th/burpees-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-17th/erxtudnneadmowuaydzn"
               alt="like-img"
               cursor-pointer
               mb-2

@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo28 = () => {
   const [isTrue, setIsTrue] = useState(false);
@@ -12,11 +13,11 @@ const QuizNo28 = () => {
   const [ft, setFt] = useState<number>(radioValues[28].ft);
   const [cm, setCm] = useState<number>(radioValues[28].cm);
 
-  useEffect(()=>{
-  if(radioValues[28].ft!=null){
-    setIsRequireFT(false);
-  }
-  },[]);
+  useEffect(() => {
+    if (radioValues[28].ft != null) {
+      setIsRequireFT(false);
+    }
+  }, []);
   const dispatch = useAppDispatch();
   const handleClick = () => {
     dispatch(increse());
@@ -31,11 +32,10 @@ const QuizNo28 = () => {
   const handleOnChangeCM = (event: any) => {
     const CM = event.target.value;
     if (CM >= 90 && CM <= 243) {
-
-      radioValues[28].cm=CM;
-      radioValues[28].ft=parseFloat((CM * 0.0328084).toFixed(1));
-      console.log(radioValues[28].cm)
-      console.log(radioValues[28].ft)
+      radioValues[28].cm = CM;
+      radioValues[28].ft = parseFloat((CM * 0.0328084).toFixed(1));
+      console.log(radioValues[28].cm);
+      console.log(radioValues[28].ft);
       setFt(parseFloat((CM * 0.0328084).toFixed(1)));
       setCm(radioValues[28].cm);
       setIsRequireCM(false);
@@ -46,8 +46,8 @@ const QuizNo28 = () => {
   const handleOnChangeFT = (event: any) => {
     const FT = event.target.value;
     if (FT >= 3 && FT <= 7.11) {
-      radioValues[28].ft=FT;
-      radioValues[28].cm=Math.round(FT * 30.48);
+      radioValues[28].ft = FT;
+      radioValues[28].cm = Math.round(FT * 30.48);
       setCm(Math.round(FT * 30.48));
       setFt(radioValues[28].ft);
       setIsRequireFT(false);
@@ -172,8 +172,10 @@ const QuizNo28 = () => {
           <div className="flex justify-center items-center text-left mt-4">
             <div className="flex-col max-w-[335px] pb-2 pl-5 pr-5 pt-2 rounded-md border border-gray-200">
               <div className="flex justify-start items-center">
-                <img
-                  src="calculating-bmi-img.png"
+                <CldImage
+                  width={500}
+                  height={500}
+                  src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/yk32llqwl6rd8xx1exb2"
                   alt="bmi"
                   className="max-w-[50px] p-2 pl-0"
                 />

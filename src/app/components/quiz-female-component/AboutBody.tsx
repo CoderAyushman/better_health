@@ -4,6 +4,7 @@ import {
   increseDisplayCounter,
 } from "@/lib/features/counter/displayCounterSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { CldImage } from "next-cloudinary";
 import React from "react";
 
 const AboutBody = () => {
@@ -35,9 +36,11 @@ const AboutBody = () => {
         <h1 className="text-2xl font-bold mt-7 mb-5 text-center">
           We&apos;ve got your back!
         </h1>
-        <img
+        <CldImage
+          width={500}
+          height={500}
           className="w-[410px]"
-          src="about-body-img.png"
+          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/b9nuezn8tw18xvd2gk5j"
           alt="surrounding-img"
           mb-5
         />

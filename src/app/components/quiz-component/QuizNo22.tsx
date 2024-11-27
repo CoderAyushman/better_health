@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo22 = () => {
   const dispatch = useAppDispatch();
@@ -104,9 +105,11 @@ const QuizNo22 = () => {
             htmlFor="r1"
             className="flex justify-between  shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-22nd/traditional-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-22nd/frpubyld7yzayfr5up6l"
               alt="lose-weight-img"
             />
             <div>
@@ -123,9 +126,11 @@ const QuizNo22 = () => {
             htmlFor="r2"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-22nd/keto-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-22nd/joqbeslw5q5lxcqw0udy"
               alt="gain-muscle-img"
             />
 
@@ -142,9 +147,11 @@ const QuizNo22 = () => {
             htmlFor="r3"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-22nd/vegeterian-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-22nd/bzmgaceqwccb1v8ixxut"
               alt="gain-muscle-img"
             />
 
@@ -161,9 +168,11 @@ const QuizNo22 = () => {
             htmlFor="r4"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-22nd/vegan-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-22nd/blncx9eres1za40d7a0i"
               alt="gain-muscle-img"
             />
 
@@ -182,9 +191,11 @@ const QuizNo22 = () => {
             htmlFor="r4"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-22nd/keto-vegan-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-22nd/jdusicyms1s2tdmfrky9"
               alt="gain-muscle-img"
             />
 
@@ -201,9 +212,11 @@ const QuizNo22 = () => {
             htmlFor="r4"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-22nd/pescatarian-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-22nd/aitvodnndoerxae5qtd3"
               alt="gain-muscle-img"
             />
 
@@ -220,9 +233,11 @@ const QuizNo22 = () => {
             htmlFor="r4"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-22nd/lactose-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-22nd/q9qpzkmppd7zubgnjinj"
               alt="gain-muscle-img"
             />
 
@@ -239,9 +254,11 @@ const QuizNo22 = () => {
             htmlFor="r4"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-22nd/gluten-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-22nd/k5o2gesuvvzj1i24ovi3"
               alt="gain-muscle-img"
             />
 
@@ -258,15 +275,19 @@ const QuizNo22 = () => {
             htmlFor="r4"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-22nd/paleo-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-22nd/qtsa6zemea5puenxlsrk"
               alt="gain-muscle-img"
             />
 
             <div>
               <h1 className="pr-[180px] font-semibold text-base">Paleo</h1>
-              <span className="text-gray-400">I don&apos;t eat processed foods</span>
+              <span className="text-gray-400">
+                I don&apos;t eat processed foods
+              </span>
             </div>
             <RadioGroupItem className="mr-5" value="Paleo" id="r4" />
           </Label>
@@ -275,9 +296,11 @@ const QuizNo22 = () => {
             htmlFor="r4"
             className="flex justify-between  shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-22nd/mediterranean.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-22nd/nwmv5ppygblcxp4x1p8k"
               alt="gain-muscle-img"
             />
 

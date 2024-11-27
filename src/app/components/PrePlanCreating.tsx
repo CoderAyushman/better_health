@@ -15,6 +15,7 @@ import {
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "./RadioValues";
+import { CldImage } from "next-cloudinary";
 // import { plugin } from "postcss";
 // import { getAnswer } from "@/utils/getAnswer";
 
@@ -143,28 +144,38 @@ const PrePlanCreating = () => {
                   <Card>
                     <CardContent className="flex-col  max-w-[300px] min-h-[200px] items-center justify-center ">
                       <div className="flex gap-1 justify-start items-center mt-5">
-                        <img
-                          src="white-star-img.jpg"
+                        <CldImage
+                          width={500}
+                          height={500}
+                          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/abg1ninhal11sf2pgyv9"
                           alt="white-star-img"
                           className="w-[20px]"
                         />
-                        <img
-                          src="white-star-img.jpg"
+                        <CldImage
+                          width={500}
+                          height={500}
+                          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/abg1ninhal11sf2pgyv9"
                           alt="white-star-img"
                           className="w-[20px]"
                         />
-                        <img
-                          src="white-star-img.jpg"
+                        <CldImage
+                          width={500}
+                          height={500}
+                          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/abg1ninhal11sf2pgyv9"
                           alt="white-star-img"
                           className="w-[20px]"
                         />
-                        <img
-                          src="white-star-img.jpg"
+                        <CldImage
+                          width={500}
+                          height={500}
+                          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/abg1ninhal11sf2pgyv9"
                           alt="white-star-img"
                           className="w-[20px]"
                         />
-                        <img
-                          src="white-star-img.jpg"
+                        <CldImage
+                          width={500}
+                          height={500}
+                          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/abg1ninhal11sf2pgyv9"
                           alt="white-star-img"
                           className="w-[20px]"
                         />

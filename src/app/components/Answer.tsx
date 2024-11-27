@@ -56,6 +56,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { CldImage } from "next-cloudinary";
 
 const Output = () => {
   const [regenerate, setRegenerate] = useState<boolean>(false);
@@ -109,8 +110,10 @@ const Output = () => {
   return (
     <main className="flex items-center justify-center mt-32 ">
       <div className="flex-col items-center justify-center ml-10 mr-10">
-        <img
-          src="healthy-food-img.webp"
+        <CldImage
+          width={500}
+          height={500}
+          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/jvwytpeowbr6r9b5m44b"
           alt="healthy food"
           className="h-[600px] ml-[50vw]  fixed z-0 opacity-30 md:w-[700px] md:ml-[40vw]"
         />
@@ -129,8 +132,10 @@ const Output = () => {
               <h1 className="text-md md:text-xl  font-sans text-[#D2B37C] font-bold">
                 {new Date().toUTCString()}
               </h1>
-              <img
-                src="better-health-seal.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/z36rlknkgaw8xwuy0n7q"
                 alt="better-heath-seal"
                 className="w-[120px] md:w-[200px]"
               />
@@ -147,7 +152,12 @@ const Output = () => {
                 }}
                 className="w-[50px]  bg-customGreen rounded-md overflow-visible  text-white py-2    px-2"
               >
-                <img src="download.png" />
+                <CldImage
+                  height={500}
+                  width={500}
+                  src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/kqd1jkwjddvp3y4sylci"
+                  alt="download"
+                />
               </button>
               <h6 className="text-xs text-gray-500 font-bold text-center">
                 Download
@@ -161,7 +171,12 @@ const Output = () => {
                 }}
                 className="w-[50px]  bg-customGreen rounded-md overflow-visible  text-white py-2    px-2"
               >
-                <img src="refresh-png.png" />
+                <CldImage
+                  height={500}
+                  width={500}
+                  src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/uf85p57oprnlhel83nss"
+                  alt="refresh"
+                />
               </button>
               <h6 className="text-xs text-gray-500 font-bold  text-center">
                 Regenerate
@@ -177,7 +192,12 @@ const Output = () => {
               <AlertDialog>
                 <AlertDialogTrigger>
                   <div className="w-[50px]  bg-customGreen rounded-md overflow-visible  text-white py-2    px-2">
-                    <img src="share.png" alt="share-img" />
+                    <CldImage
+                      height={500}
+                      width={500}
+                      src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/so0sjubtu90jpfu3x0fs"
+                      alt="share-img"
+                    />
                   </div>
                   <h6 className="text-xs text-gray-500 font-bold text-center">
                     Share

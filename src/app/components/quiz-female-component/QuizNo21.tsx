@@ -7,9 +7,10 @@ import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo21 = () => {
-  const quizCounter = useAppSelector(state => state.diplayCounter.items)
+  const quizCounter = useAppSelector((state) => state.diplayCounter.items);
   const dispatch = useAppDispatch();
   const handleClickOn10to15min = () => {
     radioValues[21] = "10to15min";
@@ -60,9 +61,11 @@ const QuizNo21 = () => {
             htmlFor="r1"
             className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-21st/low-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-21st/thbvhkcfacyst9rnn6uj"
               alt="lose-weight-img"
             />
             <h1 className="pr-[140px] font-semibold text-base ">10-15 min</h1>
@@ -74,9 +77,11 @@ const QuizNo21 = () => {
             htmlFor="r2"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-21st/its-ok-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-21st/kpp2rqhhkndlocf6hkha"
               alt="gain-muscle-img"
             />
 
@@ -88,9 +93,11 @@ const QuizNo21 = () => {
             htmlFor="r3"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-21st/fire-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-21st/sbi1ytmqnt9hlvn4ilhc"
               alt="gain-muscle-img"
             />
 
@@ -102,13 +109,17 @@ const QuizNo21 = () => {
             htmlFor="r4"
             className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-21st/confuse-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-21st/lbu6au93lhptve7ra97u"
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[140px] font-semibold text-base">i don&apos;t know</h1>
+            <h1 className="pr-[140px] font-semibold text-base">
+              i don&apos;t know
+            </h1>
             <RadioGroupItem className="mr-5" value="i dont know" id="r4" />
           </Label>
         </RadioGroup>

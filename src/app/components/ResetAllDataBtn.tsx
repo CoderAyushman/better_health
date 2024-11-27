@@ -9,9 +9,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useRouter } from "next/navigation";
+import { CldImage } from "next-cloudinary";
 const ResetAllDataBtn = () => {
-  const router = useRouter();
   const handleOnclick = () => {
     // localStorage.removeItem('counter');
     // localStorage.removeItem('data');
@@ -24,8 +23,12 @@ const ResetAllDataBtn = () => {
       <Dialog>
         <DialogTrigger>
           <button className="flex w-[50px] md:w-[50px] text-sm  md:text-base bg-customGreen rounded-md overflow-visible  text-white p-2   ">
-            <img src="reset.png" alt="reset" />
-            {/* <img src="reset-buttons.png" alt="reset button" className='ml-3 max-w-[30px]' /> */}
+            <CldImage
+              width={500}
+              height={500}
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/bezdxfpssclbinxivmuk"
+              alt="reset"
+            />
           </button>
         </DialogTrigger>
         <DialogContent>

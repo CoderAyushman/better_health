@@ -2,23 +2,21 @@
 import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
-import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo27 = () => {
   // const [counter, setCounter] = useState<number>(0);
-  const [isCheckedForQ1, setIsCheckedForQ1] = useState < boolean > (false);
-  const [isCheckedForQ2, setIsCheckedForQ2] = useState < boolean > (false);
-  const [isCheckedForQ3, setIsCheckedForQ3] = useState < boolean > (false);
-  const [isCheckedForQ4, setIsCheckedForQ4] = useState < boolean > (false);
-  const [isCheckedForQ5, setIsCheckedForQ5] = useState < boolean > (false);
-  const [isCheckedForQ6, setIsCheckedForQ6] = useState < boolean > (false);
-  const [isCheckedForQ7, setIsCheckedForQ7] = useState < boolean > (false);
-  const [isCheckedForQ8, setIsCheckedForQ8] = useState < boolean > (false);
+  const [isCheckedForQ1, setIsCheckedForQ1] = useState<boolean>(false);
+  const [isCheckedForQ2, setIsCheckedForQ2] = useState<boolean>(false);
+  const [isCheckedForQ3, setIsCheckedForQ3] = useState<boolean>(false);
+  const [isCheckedForQ4, setIsCheckedForQ4] = useState<boolean>(false);
+  const [isCheckedForQ5, setIsCheckedForQ5] = useState<boolean>(false);
+  const [isCheckedForQ6, setIsCheckedForQ6] = useState<boolean>(false);
+  const [isCheckedForQ7, setIsCheckedForQ7] = useState<boolean>(false);
+  const [isCheckedForQ8, setIsCheckedForQ8] = useState<boolean>(false);
 
   let count =
     radioValues[27].one ||
@@ -115,9 +113,11 @@ const QuizNo27 = () => {
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/marriage-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/svhzu2agucjqv5i8etdv"
               alt="lose-weight-img"
             />
             <h1 className="pr-[100px] font-semibold text-base ">
@@ -136,9 +136,11 @@ const QuizNo27 = () => {
             htmlFor="r2"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/busy-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/r3olquolemwi3j3jzsgh"
               alt="gain-muscle-img"
             />
 
@@ -158,9 +160,11 @@ const QuizNo27 = () => {
             htmlFor="r3"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/financial-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/olopbzimnnzqmaolbe8p"
               alt="gain-muscle-img"
             />
 
@@ -180,9 +184,11 @@ const QuizNo27 = () => {
             htmlFor="r4"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/injuries-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/cctqcdxhvfszlhpo98pg"
               alt="gain-muscle-img"
             />
 
@@ -202,9 +208,11 @@ const QuizNo27 = () => {
             htmlFor="r5"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/stress-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/pw3h9armkhkih1pvypw8"
               alt="gain-muscle-img"
             />
 
@@ -223,9 +231,11 @@ const QuizNo27 = () => {
             htmlFor="r6"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/old-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/mc9u5yhprk5vq19j6iik"
               alt="gain-muscle-img"
             />
 
@@ -244,9 +254,11 @@ const QuizNo27 = () => {
             htmlFor="r7"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/treatment-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/izqegxpgvyntckpwx0ex"
               alt="gain-muscle-img"
             />
 
@@ -265,9 +277,11 @@ const QuizNo27 = () => {
             htmlFor="r8"
             className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-3"
           >
-            <img
+            <CldImage
+              width={500}
+              height={500}
               className="w-[104px]"
-              src="imageOfMale/quiz-27th/none-img.png"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-27th/pul2dftepmmpiqidg1pd"
               alt="gain-muscle-img"
             />
 

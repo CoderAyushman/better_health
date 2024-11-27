@@ -11,12 +11,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { CldImage } from "next-cloudinary";
 
 const WellnessProfile = () => {
   const dispatch = useAppDispatch();
-  const [bmiValue, setBmiValue] = useState < any > ();
-  const [bmiDisplay, setBmiDisplay] = useState < any > (false);
-  const [bmiImage, setBmiImage] = useState < any > ();
+  const [bmiValue, setBmiValue] = useState<any>();
+  const [bmiDisplay, setBmiDisplay] = useState<any>(false);
+  const [bmiImage, setBmiImage] = useState<any>();
   const bmi = radioValues[29].bmi;
 
   const handleOnclickButton = () => {
@@ -30,8 +31,10 @@ const WellnessProfile = () => {
         <div className="flex justify-center items-center text-left mt-7">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  bg-[#FFE5E2]">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/wellness-profile/danger-obese-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/wellness-profile/rdxpyudinmneu34zykqa"
                 alt="benefits"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -44,9 +47,11 @@ const WellnessProfile = () => {
         </div>
       );
       setBmiImage(
-        <img
+        <CldImage
+          width={500}
+          height={500}
           className="w-[245px]"
-          src="imageOfFemale/wellness-profile/under-weight.webp"
+          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/wellness-profile/sddspbgfs45fmpa1xgxo"
           alt=""
         />
       );
@@ -56,8 +61,10 @@ const WellnessProfile = () => {
         <div className="flex justify-center items-center text-left mt-7">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  bg-[#E0F6ED]">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/wellness-profile/normal-icon.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/wellness-profile/q3fgbto2f4lrmohlsg9o"
                 alt="benefits"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -70,9 +77,11 @@ const WellnessProfile = () => {
         </div>
       );
       setBmiImage(
-        <img
+        <CldImage
+          width={500}
+          height={500}
           className="w-[245px]"
-          src="imageOfFemale/wellness-profile/normal.webp"
+          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/wellness-profile/hvbds7hgj0uk0dvmxtmr"
           alt=""
         />
       );
@@ -82,8 +91,10 @@ const WellnessProfile = () => {
         <div className="flex justify-center items-center text-left mt-7">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  bg-[#FEF4E4]">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/wellness-profile/over-weight-icon.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/wellness-profile/zrk9jsgof51r7t8km0dd"
                 alt="benefits"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -97,9 +108,11 @@ const WellnessProfile = () => {
         </div>
       );
       setBmiImage(
-        <img
+        <CldImage
+          width={500}
+          height={500}
           className="w-[245px]"
-          src="imageOfFemale/wellness-profile/over-weight-female.webp"
+          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/wellness-profile/zgk6aow3ez9bg5o3t9jv"
           alt=""
         />
       );
@@ -109,8 +122,10 @@ const WellnessProfile = () => {
         <div className="flex justify-center items-center text-left mt-7">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  bg-[#FFE5E2]">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/wellness-profile/danger-obese-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/wellness-profile/rdxpyudinmneu34zykqa"
                 alt="benefits"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -124,9 +139,11 @@ const WellnessProfile = () => {
         </div>
       );
       setBmiImage(
-        <img
+        <CldImage
+          width={500}
+          height={500}
           className="w-[245px]"
-          src="imageOfFemale/wellness-profile/obese.webp"
+          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/wellness-profile/s8csd1rrjqm3mgh0uexd"
           alt=""
         />
       );
@@ -136,8 +153,10 @@ const WellnessProfile = () => {
         <div className="flex justify-center items-center text-left mt-7">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  bg-[#FFE5E2]">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/wellness-profile/danger-obese-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/wellness-profile/rdxpyudinmneu34zykqa"
                 alt="benefits"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -151,18 +170,22 @@ const WellnessProfile = () => {
         </div>
       );
       setBmiImage(
-        <img
+        <CldImage
+          width={500}
+          height={500}
           className="w-[245px]"
-          src="imageOfFemale/wellness-profile/obese.webp"
+          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/wellness-profile/s8csd1rrjqm3mgh0uexd"
           alt=""
         />
       );
     } else if (bmi <= 9) {
       setBmiValue(0);
       setBmiImage(
-        <img
+        <CldImage
+          width={500}
+          height={500}
           className="w-[245px]"
-          src="imageOfFemale/wellness-profile/under-weight.webp"
+          src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/wellness-profile/sddspbgfs45fmpa1xgxo"
           alt=""
         />
       );
@@ -185,7 +208,12 @@ const WellnessProfile = () => {
           </div>
 
           <div className="mt-[75px]">
-            <Slider value={[bmiValue]} max={50} step={1} className="max-w-full" />
+            <Slider
+              value={[bmiValue]}
+              max={50}
+              step={1}
+              className="max-w-full"
+            />
             <div className="flex justify-between text-gray-400 text-xs md:text-sm font-bold mt-3">
               <span>UNDERWEIGHT</span>
               <span>NORMAL</span>
@@ -213,9 +241,11 @@ const WellnessProfile = () => {
         <div className="flex justify-center items-center max-w-[600px] border border-gray-200 mt-5 rounded-md p-5 shadow-2xl">
           <div className="flex-col justify-center items-center">
             <div className="flex justify-start items-center">
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="max-w-[50px] p-2 pl-0"
-                src="imageOfMale/wellness-profile/bodytype-icon.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/wellness-profile/s5a3esqjp05jlgvmczcx"
                 alt=""
               />
               <div>
@@ -241,9 +271,11 @@ const WellnessProfile = () => {
               </div>
             </div>
             <div className="flex justify-start items-center">
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="max-w-[50px] p-2 pl-0"
-                src="imageOfMale/wellness-profile/lifestyle-icon.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/wellness-profile/m5fwqhw8kmhjxaruteut"
                 alt=""
               />
               <div>
@@ -252,9 +284,11 @@ const WellnessProfile = () => {
               </div>
             </div>
             <div className="flex justify-start items-center">
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="max-w-[50px] p-2 pl-0"
-                src="imageOfMale/wellness-profile/fitnesslevel-icon.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/wellness-profile/zfi4djmmg52rarzhzmks"
                 alt=""
               />
               <div>
@@ -263,9 +297,11 @@ const WellnessProfile = () => {
               </div>
             </div>
             <div className="flex justify-start items-center ">
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="max-w-[50px] p-2 pl-0"
-                src="imageOfMale/wellness-profile/metabolism-icon.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/wellness-profile/xxa3v98a4vraz1i8zbgv"
                 alt=""
               />
               <div>

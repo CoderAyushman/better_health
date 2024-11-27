@@ -11,78 +11,68 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { RadioGroup } from "@radix-ui/react-radio-group";
 import { RadioGroupItem } from "@/components/ui/radio-group";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo32 = () => {
   // const [counter, setCounter] = useState<number>(0);
 
   const dispatch = useAppDispatch();
   const handleClickOnMarriage = () => {
-    radioValues[32] = "Vacation"
+    radioValues[32] = "Vacation";
     dispatch(increse());
     dispatch(increseDisplayCounter());
-
   };
   const handleClickOnBusyWork = () => {
-    radioValues[32] = "Competition"
+    radioValues[32] = "Competition";
     dispatch(increse());
     dispatch(increseDisplayCounter());
-
   };
   const handleClickOnFinancialStruggles = () => {
-    radioValues[32] = "Important date"
+    radioValues[32] = "Important date";
     dispatch(increse());
     dispatch(increseDisplayCounter());
-
   };
   const handleClickOnInjury = () => {
-    radioValues[32] = "Outdoor adventure"
+    radioValues[32] = "Outdoor adventure";
     dispatch(increse());
     dispatch(increseDisplayCounter());
-
   };
   const handleClickOnStress = () => {
-    radioValues[32] = "Birthday"
+    radioValues[32] = "Birthday";
     dispatch(increse());
     dispatch(increseDisplayCounter());
-
   };
   const handleClickOnOld = () => {
-    radioValues[32] = "holiday"
+    radioValues[32] = "holiday";
     dispatch(increse());
     dispatch(increseDisplayCounter());
-
   };
   const handleClickOnTreatment = () => {
-    radioValues[32] = "reuniun"
+    radioValues[32] = "reuniun";
     dispatch(increse());
     dispatch(increseDisplayCounter());
-
   };
 
   const handleClickOnFamily = () => {
-    radioValues[32] = "family"
+    radioValues[32] = "family";
     dispatch(increse());
     dispatch(increseDisplayCounter());
-
   };
   const handleClickOnWedding = () => {
-    radioValues[32] = "wedding"
+    radioValues[32] = "wedding";
     dispatch(increse());
     dispatch(increseDisplayCounter());
-
   };
   const handleClickOnOther = () => {
-    radioValues[32] = "other"
+    radioValues[32] = "other";
     dispatch(increse());
     dispatch(increseDisplayCounter());
-
   };
 
   const handleClickOnNone = () => {
-    radioValues[32] = "none"
+    radioValues[32] = "none";
     dispatch(increse());
     dispatch(increseDisplayCounter());
-
   };
   return (
     <div className="flex-col justify-center items-center mb-5">
@@ -90,7 +80,10 @@ const QuizNo32 = () => {
         <h1 className="text-3xl font-bold tracking-wide mt-7">
           Do you have any <br /> important event coming <br /> up?
         </h1>
-        <p className="text-gray-500 m-3">Having something to look forward to can be a great <br /> motivator for reaching your goal</p>
+        <p className="text-gray-500 m-3">
+          Having something to look forward to can be a great <br /> motivator
+          for reaching your goal
+        </p>
       </div>
       <div className="flex justify-evenly items-center text-center mt-5">
         <div>
@@ -100,17 +93,17 @@ const QuizNo32 = () => {
               htmlFor="r1"
               className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
             >
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="w-[104px]"
-                src="imageOfMale/quiz-32nd/vacation-img.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-32nd/dyc4stppg62x3h7fame7"
                 alt="lose-weight-img"
               />
-              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base ">Vacation</h1>
-              <RadioGroupItem
-                className="mr-5 "
-                id="r1"
-                value="Vacation"
-              />
+              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base ">
+                Vacation
+              </h1>
+              <RadioGroupItem className="mr-5 " id="r1" value="Vacation" />
             </Label>
 
             <Label
@@ -118,18 +111,18 @@ const QuizNo32 = () => {
               onClick={handleClickOnBusyWork}
               className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
             >
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="w-[104px]"
-                src="imageOfMale/quiz-32nd/competition-img.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-32nd/tz5cickcotrjivrynaq6"
                 alt="gain-muscle-img"
               />
 
-              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">Competition</h1>
-              <RadioGroupItem
-                className="mr-5"
-                value="Competition"
-                id="r2"
-              />
+              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">
+                Competition
+              </h1>
+              <RadioGroupItem className="mr-5" value="Competition" id="r2" />
             </Label>
 
             <Label
@@ -137,18 +130,18 @@ const QuizNo32 = () => {
               onClick={handleClickOnFinancialStruggles}
               className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
             >
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="w-[104px]"
-                src="imageOfMale/quiz-32nd/important-img.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-32nd/nxq0ts1dlyb6jfyjkgmt"
                 alt="gain-muscle-img"
               />
 
-              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">Important date</h1>
-              <RadioGroupItem
-                className="mr-5"
-                value="Important date"
-                id="r3"
-              />
+              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">
+                Important date
+              </h1>
+              <RadioGroupItem className="mr-5" value="Important date" id="r3" />
             </Label>
 
             <Label
@@ -156,14 +149,17 @@ const QuizNo32 = () => {
               className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
               onClick={handleClickOnInjury}
             >
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="w-[104px]"
-                src="imageOfMale/quiz-32nd/adventures-img.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-32nd/hcdf6qvdzu4fxaqh3drs"
                 alt="gain-muscle-img"
-
               />
 
-              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">Outdoor adventure</h1>
+              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">
+                Outdoor adventure
+              </h1>
               <RadioGroupItem
                 className="mr-5"
                 value="Outdoor adventure"
@@ -176,142 +172,130 @@ const QuizNo32 = () => {
               className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
               onClick={handleClickOnStress}
             >
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="w-[104px]"
-                src="imageOfMale/quiz-32nd/birthday-img.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-32nd/ends1rjzqhewkeejfizn"
                 alt="gain-muscle-img"
-
               />
 
-              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">Birthday</h1>
-              <RadioGroupItem
-                className="mr-5"
-                value="Birthday"
-                id="r5"
-              />
+              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">
+                Birthday
+              </h1>
+              <RadioGroupItem className="mr-5" value="Birthday" id="r5" />
             </Label>
             <Label
               htmlFor="r6"
               className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
               onClick={handleClickOnOld}
             >
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="w-[104px]"
-                src="imageOfMale/quiz-32nd/holiday-img.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-32nd/mr9wysi8lvmua2ovgurq"
                 alt="gain-muscle-img"
-
               />
 
-              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">Holiday</h1>
-              <RadioGroupItem
-                className="mr-5"
-                value="holiday"
-                id="r6"
-              />
+              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">
+                Holiday
+              </h1>
+              <RadioGroupItem className="mr-5" value="holiday" id="r6" />
             </Label>
             <Label
               htmlFor="r7"
               className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
               onClick={handleClickOnTreatment}
             >
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="w-[104px]"
-                src="imageOfMale/quiz-32nd/reunion-img.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-32nd/ywzh1vaqo4srprhwbllx"
                 alt="gain-muscle-img"
-
               />
 
-              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">Reuniun</h1>
-              <RadioGroupItem
-                className="mr-5"
-                value="reuniun"
-                id="r7"
-              />
+              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">
+                Reuniun
+              </h1>
+              <RadioGroupItem className="mr-5" value="reuniun" id="r7" />
             </Label>
             <Label
               htmlFor="r8"
               className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
               onClick={handleClickOnFamily}
             >
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="w-[104px]"
-                src="imageOfMale/quiz-32nd/family-img.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-32nd/ie0bqms0klzq3vs9m30g"
                 alt="gain-muscle-img"
-
               />
 
-              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">Family Occasion</h1>
-              <RadioGroupItem
-                className="mr-5"
-                value="family"
-                id="r8"
-              />
+              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">
+                Family Occasion
+              </h1>
+              <RadioGroupItem className="mr-5" value="family" id="r8" />
             </Label>
             <Label
               htmlFor="r9"
               className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
               onClick={handleClickOnWedding}
             >
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="w-[104px]"
-                src="imageOfMale/quiz-32nd/wedding-img.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-32nd/w4izx4a7lqvpkpere518"
                 alt="gain-muscle-img"
-
               />
 
-              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">Wedding</h1>
-              <RadioGroupItem
-                className="mr-5"
-                value="wedding"
-                id="r9"
-              />
+              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">
+                Wedding
+              </h1>
+              <RadioGroupItem className="mr-5" value="wedding" id="r9" />
             </Label>
             <Label
               htmlFor="r10"
               className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
               onClick={handleClickOnOther}
             >
-              <img
+              <CldImage
+                width={500}
+                height={500}
                 className="w-[104px]"
-                src="imageOfMale/quiz-32nd/other-img.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-32nd/j0ujhuj8ddwnwh5x6x9j"
                 alt="gain-muscle-img"
-
               />
 
-              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">Other</h1>
-              <RadioGroupItem
-                className="mr-5"
-                value="other"
-                id="r10"
-              />
+              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">
+                Other
+              </h1>
+              <RadioGroupItem className="mr-5" value="other" id="r10" />
             </Label>
             <Label
               htmlFor="r11"
               className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mt-5"
               onClick={handleClickOnNone}
             >
-              <img
-                className="w-[104px]"
-                src="imageOfMale/quiz-32nd/nospecial-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                className="w-[104px] h-[104px] "
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-32nd/izfrnywixxpu8b91fb6w"
                 alt="gain-muscle-img"
-
               />
 
-              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">No special events any time soon</h1>
-              <RadioGroupItem
-                className="mr-5"
-                value="none"
-                id="r11"
-
-              />
+              <h1 className="pr-[100px] md:pr-[175px] font-semibold text-base">
+                No special events any time soon
+              </h1>
+              <RadioGroupItem className="mr-5" value="none" id="r11" />
             </Label>
           </RadioGroup>
         </div>
       </div>
-
-
-
-
     </div>
   );
 };

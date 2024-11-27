@@ -7,6 +7,7 @@ import Share from "./Share";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Cross2Icon } from "@radix-ui/react-icons";
+import { CldImage } from "next-cloudinary";
 const Navbar = () => {
   const quizCounter = useAppSelector((state) => state.counter.items);
   const [isSheetOpen, setisSheetOpen] = useState<boolean>(false);
@@ -18,23 +19,23 @@ const Navbar = () => {
         <></>
       ) : (
         <div className="flex justify-between items-center  fixed top-0 w-full pl-7 pr-7 h-20 z-20 bg-transparent ">
-          <Image
+          <CldImage
             alt="image nav"
             width={500}
             height={500}
             className="w-[150px] md:w-[200px] cursor-pointer"
-            src="/better-health.png"
+            src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/ibveohogch1lvt6qbfdz"
             onClick={() => {
               router.push("/");
             }}
           />
           <Sheet open={isSheetOpen}>
             <SheetTrigger>
-              <Image
+              <CldImage
                 width={500}
                 height={500}
                 className="w-[25px]"
-                src="/menu-png.png"
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/cpq7wofzygt7tbvzxhij"
                 alt="menu img"
                 onClick={() => setisSheetOpen(true)}
               />

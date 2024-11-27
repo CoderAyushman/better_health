@@ -3,6 +3,7 @@ import { radioValues } from "./RadioValues";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { increse } from "@/lib/features/counter/counterSlice";
+import { LockIcon } from "lucide-react";
 const TakingEmail = () => {
   const dispatch = useDispatch();
   const [mail, setMail] = useState<string>(radioValues[33]);
@@ -49,11 +50,13 @@ const TakingEmail = () => {
             />
           </div>
           <div className="flex justify-center items-center  mt-5 opacity-60 mb-5">
-            <div className="flex justify-center items-center max-w-[300px] text-start gap-1 ">
-              <img src="lock-gray-img.png" alt="" className="w-[20px] mb-5 " />
+            <div className="flex justify-center items-center max-w-[300px] text-start gap-3 ">
+              <h1 className="w-[20px]  ">
+                <LockIcon className="text-gray-600" />
+              </h1>
               <p className="text-xs font-sans text-gray-600">
                 We respect your privacy and are committed to protecting your
-                personal data. We’ll email you a copy of your results for
+                personal data. We&apos;ll email you a copy of your results for
                 convenient access.
               </p>
             </div>

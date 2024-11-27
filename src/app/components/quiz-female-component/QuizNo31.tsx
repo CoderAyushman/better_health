@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo31 = () => {
-  const [isRequireYear, setIsRequireYear] = useState(radioValues[31].isRequireYear);
+  const [isRequireYear, setIsRequireYear] = useState(
+    radioValues[31].isRequireYear
+  );
   const [year, setIsyear] = useState<number>(radioValues[31].year);
 
   const dispatch = useAppDispatch();
@@ -19,19 +22,19 @@ const QuizNo31 = () => {
   const handleOnChangeYear = (event: any) => {
     const e = event.target.value;
     if (e == null) {
-      radioValues[31].isRequireYear=false
+      radioValues[31].isRequireYear = false;
       setIsRequireYear(false);
     } else if (e >= 16 && e <= 99) {
       try {
         radioValues[31].year = e;
         setIsyear(e);
-        radioValues[31].isRequireYear=true
+        radioValues[31].isRequireYear = true;
         setIsRequireYear(true);
       } catch (error) {
         console.error(error);
       }
     } else {
-      radioValues[31].isRequireYear=false
+      radioValues[31].isRequireYear = false;
       setIsRequireYear(false);
     }
   };
@@ -74,8 +77,10 @@ const QuizNo31 = () => {
                 <div className="flex justify-center items-center text-left mt-4">
                   <div className="flex-col max-w-[350px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-green-300">
                     <div className="flex justify-start items-center">
-                      <img
-                        src="imageOfMale/quiz-31st/hand-q31-img.png"
+                      <CldImage
+                        width={500}
+                        height={500}
+                        src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-31st/njwbtxrkutkmpivi73ym"
                         alt="benefits"
                         className="max-w-[50px] p-2 pl-0"
                       />

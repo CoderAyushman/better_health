@@ -11,6 +11,7 @@ import {
 import quizes from "./Quizes";
 import { elements } from "chart.js";
 import { update } from "@/lib/features/dataSlice";
+import { CldImage } from "next-cloudinary";
 // var dubQuizCounter=quizCounter;
 
 const Progressbar = () => {
@@ -79,10 +80,12 @@ const Progressbar = () => {
       </div>
       <div className="mt-3  flex justify-center items-center gap-[410px] max-[450px]:gap-[270px]">
         <button>
-          <img
+          <CldImage
+            width={500}
+            height={500}
             onClick={handleBackArrowButton}
             className="w-[18px] "
-            src="arrow.png"
+            src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/k0euitymbhpdglasmx9z"
             alt="arrow png"
           />
         </button>

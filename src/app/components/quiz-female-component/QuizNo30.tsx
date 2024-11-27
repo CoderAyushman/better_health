@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import {radioValues} from "../RadioValues";
+import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo30 = () => {
   const [isTrue, setIsTrue] = useState(false);
@@ -41,8 +42,10 @@ const QuizNo30 = () => {
         <div className="flex justify-center items-center text-left mt-4">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md border-2 border-red-300">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/quiz-30th/alert-q30-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-30th/u4khcvjrnsarghgdw3zg"
                 alt="benefits"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -72,13 +75,15 @@ const QuizNo30 = () => {
         <div className="flex justify-center items-center text-left mt-4">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-green-300">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/quiz-30th/aim-q30-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-30th/n9ybr8afvsycrq7ynfp1"
                 alt="benefits"
                 className="max-w-[50px] p-2 pl-0"
               />
               <h2 className="font-semibold">
-                IT’S WORTH IT: lose {benefits}% of your <br /> weight
+                IT&apos;S WORTH IT: lose {benefits}% of your <br /> weight
               </h2>
             </div>
             <p className="text-gray-400 text-base">
@@ -95,8 +100,10 @@ const QuizNo30 = () => {
         <div className="flex justify-center items-center text-left mt-4">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-green-300">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/quiz-30th/aim-q30-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-30th/n9ybr8afvsycrq7ynfp1"
                 alt="benefits"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -117,8 +124,10 @@ const QuizNo30 = () => {
         <div className="flex justify-center items-center text-left mt-4">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-green-300">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/quiz-30th/aim-q30-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-30th/n9ybr8afvsycrq7ynfp1"
                 alt="benefits"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -139,8 +148,10 @@ const QuizNo30 = () => {
         <div className="flex justify-center items-center text-left mt-4">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-green-300">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/quiz-30th/aim-q30-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-30th/n9ybr8afvsycrq7ynfp1"
                 alt="benefits"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -161,8 +172,10 @@ const QuizNo30 = () => {
         <div className="flex justify-center items-center text-left mt-4">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-green-300">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/quiz-30th/aim-q30-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-30th/n9ybr8afvsycrq7ynfp1"
                 alt="benefits"
                 className="max-w-[50px] p-2 pl-0"
               />

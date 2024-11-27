@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
-import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { radioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo29 = () => {
   const [isTrue, setIsTrue] = useState(false);
   const [isRequireKG, setIsRequireKG] = useState(true);
   const [isRequireLBS, setIsRequireLBS] = useState(true);
-  const [kg, setIskg] = useState < number > (radioValues[29].kg);
-  const [Lbs, setIsLbs] = useState < number > (radioValues[29].lbs);
-  const [bmi, setBmi] = useState < any > ();
-  const [displayBmi, setDisplayBmi] = useState < any > ();
+  const [kg, setIskg] = useState<number>(radioValues[29].kg);
+  const [Lbs, setIsLbs] = useState<number>(radioValues[29].lbs);
+  const [bmi, setBmi] = useState<any>();
+  const [displayBmi, setDisplayBmi] = useState<any>();
 
   useEffect(() => {
     if (radioValues[29].kg != null) {
@@ -40,8 +41,10 @@ const QuizNo29 = () => {
         <div className="flex justify-center items-center text-left mt-4">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md border-2 border-sky-300">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/quiz-28th/under-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-28th/ygbtgcjddmwcm3utrih7"
                 alt="bmi"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -50,9 +53,9 @@ const QuizNo29 = () => {
               </h2>
             </div>
             <p className="text-gray-400 text-base">
-              You have some work ahead of you, but it&apos;s great that you&apos;re taking
-              this first step. We&apos;ll use your BMI to create a program just for
-              you.
+              You have some work ahead of you, but it&apos;s great that
+              you&apos;re taking this first step. We&apos;ll use your BMI to
+              create a program just for you.
             </p>
           </div>
         </div>
@@ -62,8 +65,10 @@ const QuizNo29 = () => {
         <div className="flex justify-center items-center text-left mt-4">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-green-300">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/quiz-28th/normal-weight-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-28th/j3neckqlf4tzrg0kxfdw"
                 alt="bmi"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -72,8 +77,8 @@ const QuizNo29 = () => {
               </h2>
             </div>
             <p className="text-gray-400 text-base">
-              You&apos;re starting from a great place! Now we&apos;ll use your BMI to
-              create a program tailored to your needs.
+              You&apos;re starting from a great place! Now we&apos;ll use your
+              BMI to create a program tailored to your needs.
             </p>
           </div>
         </div>
@@ -83,8 +88,10 @@ const QuizNo29 = () => {
         <div className="flex justify-center items-center text-left mt-4">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-yellow-300">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/quiz-28th/over-weight-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-28th/ln32wsdzwtqnafs6fptj"
                 alt="bmi"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -93,9 +100,9 @@ const QuizNo29 = () => {
               </h2>
             </div>
             <p className="text-gray-400 text-base">
-              You have some work ahead of you, but it&apos;s great that you&apos;re taking
-              this first step. We&apos;ll use your BMI to create a weight loss
-              program just for you.
+              You have some work ahead of you, but it&apos;s great that
+              you&apos;re taking this first step. We&apos;ll use your BMI to
+              create a weight loss program just for you.
             </p>
           </div>
         </div>
@@ -105,8 +112,10 @@ const QuizNo29 = () => {
         <div className="flex justify-center items-center text-left mt-4">
           <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-red-300">
             <div className="flex justify-start items-center">
-              <img
-                src="imageOfMale/quiz-28th/obese-img.png"
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-28th/xyqxwenoo1dvz39l0if0"
                 alt="bmi"
                 className="max-w-[50px] p-2 pl-0"
               />
@@ -115,8 +124,9 @@ const QuizNo29 = () => {
               </h2>
             </div>
             <p className="text-gray-400 text-base">
-              There&apos;s a lot you could gain by losing a little weight. We&apos;ll use
-              your BMI to create the weight loss program you need.
+              There&apos;s a lot you could gain by losing a little weight.
+              We&apos;ll use your BMI to create the weight loss program you
+              need.
             </p>
           </div>
         </div>
