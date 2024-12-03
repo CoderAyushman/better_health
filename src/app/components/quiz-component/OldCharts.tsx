@@ -5,11 +5,14 @@ import { useDispatch } from "react-redux";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { useAppSelector } from "@/lib/hooks";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
-import {radioValues} from "../RadioValues";
+import { useRadioValues } from "../RadioValues";
 const Chart: React.FC = () => {
+  const { radioValues } = useRadioValues();
+
+
   const dispatch = useDispatch();
   const displayCounter = useAppSelector((state) => state.diplayCounter.items);
-  const [date,setDate] = useState<string>()
+  const [date, setDate] = useState<string>()
   const handleOnclickButton = () => {
     if (displayCounter != 33) {
       dispatch(increseDisplayCounter());
@@ -24,22 +27,22 @@ const Chart: React.FC = () => {
     currentDate.setMonth(currentDate.getMonth() + 6);
 
     // Format the date
-    let options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric', year: 'numeric' };    
+    let options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric', year: 'numeric' };
     let formattedDate = currentDate.toLocaleDateString("en-US", options);
     setDate(formattedDate);
   }, []);
   return (
     <div className="flex justify-center items-center mt-32">
       <div className="flex-col justify-center items-center">
-        <h1 className="text-3xl text-center font-bold mb-3">
-          The last plan you’ll ever need <br /> to get in shape
+        <h1 className="text-3xl text-center font-bold mb-3  max-w-[340px] md:max-w-[450px] mx-auto">
+          The last plan you’ll ever need to get in shape
         </h1>
         <h3 className="text-center text-gray-400 font-semibold">
           We predict you’ll be
         </h3>
         <h1 className="text-xl font-bold text-center text-customGreen mb-3">
-          {radioValues[30].kg ? radioValues[30].kg : 60} kg or{" "}
-          {radioValues[30].lbs ? radioValues[30].lbs : 130} lbs by *{date}
+          {radioValues[16].kg ? radioValues[16].kg : 60} kg or{" "}
+          {radioValues[16].lbs ? radioValues[16].lbs : 130} lbs by *{date}
         </h1>
         <div className="max-w-[530px]">
           <LineChart />

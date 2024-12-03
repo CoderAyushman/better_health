@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Slider } from "@/components/ui/slider";
-import { radioValues } from "../RadioValues";
+import { useRadioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import {
@@ -14,11 +14,12 @@ import {
 import { CldImage } from "next-cloudinary";
 
 const WellnessProfile = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
   const dispatch = useAppDispatch();
   const [bmiValue, setBmiValue] = useState<any>();
   const [bmiDisplay, setBmiDisplay] = useState<any>(false);
   const [bmiImage, setBmiImage] = useState<any>();
-  const bmi = radioValues[29].bmi;
+  const bmi = radioValues[15].bmi;
 
   const handleOnclickButton = () => {
     dispatch(increse());

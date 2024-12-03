@@ -5,7 +5,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import React, { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { radioValues } from "../components/RadioValues";
+import { useRadioValues } from "../components/RadioValues";
 import "@/app/components/tableSheet.css";
 import ResetAllDataBtn from "./ResetAllDataBtn";
 import generatePDF, { Resolution, Margin } from "react-to-pdf";
@@ -59,6 +59,7 @@ import {
 import { CldImage } from "next-cloudinary";
 
 const Output = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
   const [regenerate, setRegenerate] = useState<boolean>(false);
   const { toast } = useToast();
   const options: any = {
@@ -95,7 +96,7 @@ const Output = () => {
     const runChat = async () => {
       const genAI = new GoogleGenerativeAI(API_KEY);
       const model = genAI.getGenerativeModel({ model: MODEL_NAME });
-      const result = await model.generateContent(radioValues[34].message);
+      const result = await model.generateContent(radioValues[20].message);
       const response = result.response.text();
       localStorage.setItem("ai-response", response);
       setMarkdownText(response);

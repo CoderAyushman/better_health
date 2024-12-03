@@ -1,7 +1,7 @@
 import { decrease, increse } from "@/lib/features/counter/counterSlice";
 import {
-  decreaseDisplayCounter,
-  increseDisplayCounter,
+  addDisplayCounter,
+
 } from "@/lib/features/counter/displayCounterSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { CldImage } from "next-cloudinary";
@@ -11,16 +11,13 @@ const AboutSurroundings = () => {
   const displayCounter = useAppSelector((state) => state.diplayCounter.items);
   const dispatch = useAppDispatch();
   const handleBackArrowButton = () => {
-    if (displayCounter > 21) {
-      dispatch(decreaseDisplayCounter());
-    }
+    dispatch(addDisplayCounter(10));
     dispatch(decrease());
   };
   const handleOnclickButton = () => {
     dispatch(increse());
-    if (displayCounter != 22) {
-      dispatch(increseDisplayCounter());
-    }
+    dispatch(addDisplayCounter(11));
+
   };
   return (
     <div className="flex  mt-32 justify-center items-center ">

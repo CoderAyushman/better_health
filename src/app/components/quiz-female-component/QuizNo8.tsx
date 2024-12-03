@@ -19,7 +19,7 @@ const QuizNo8 = () => {
   };
   const dispatch = useAppDispatch();
   const handleClickOnFewerThan12 = () => {
-    handleUpdate(16, "Fewer than 12");
+    handleUpdate(8, "Fewer than 12");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
@@ -41,7 +41,7 @@ const QuizNo8 = () => {
   return (
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
-        <h1 className="text-4xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
+        <h1 className="text-4xl mx-auto font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
           How many push-ups could you do?
         </h1>
       </div>

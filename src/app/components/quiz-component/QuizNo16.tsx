@@ -11,8 +11,8 @@ const QuizNo16 = () => {
   const [isTrue, setIsTrue] = useState(false);
   const [isRequireKG, setIsRequireKG] = useState(true);
   const [isRequireLBS, setIsRequireLBS] = useState(true);
-  const [kg, setIskg] = useState<number>(radioValues[30].kg);
-  const [Lbs, setIsLbs] = useState<number>(radioValues[30].lbs);
+  const [kg, setIskg] = useState<number>(radioValues[16].kg);
+  const [Lbs, setIsLbs] = useState<number>(radioValues[16].lbs);
   const [benefits, setBenifits] = useState<any>();
   const [displayBenifits, setDisplayBenifits] = useState<any>();
 
@@ -207,11 +207,15 @@ const QuizNo16 = () => {
     setIsTrue(true);
   };
   const handleOnChangeKG = (event: any) => {
-    const e = event.target.value;
+    const e: number = event.target.value;
     if (e >= 25 && e <= 300) {
       try {
-        radioValues[30].kg = e;
-        radioValues[30].lbs = Math.round(e * 2.20462);
+        setRadioValues((prev) => {
+          const newRadioValues = [...prev];
+          newRadioValues[16].lbs = Math.round(e * 2.20462);
+          newRadioValues[16].kg = e;
+          return newRadioValues;
+        });
         setIsLbs(Math.round(e * 2.20462));
         setIskg(e);
         setIsRequireKG(false);
@@ -226,8 +230,12 @@ const QuizNo16 = () => {
     const LBS = ft.target.value;
 
     if (LBS >= 55 && LBS <= 662) {
-      radioValues[30].kg = LBS;
-      radioValues[30].lbs = Math.round(LBS / 2.20462);
+      setRadioValues((prev) => {
+        const newRadioValues = [...prev];
+        newRadioValues[16].lbs = LBS;
+        newRadioValues[16].kg = Math.round(LBS / 2.20462);
+        return newRadioValues;
+      })
       setIskg(Math.round(LBS / 2.20462));
       setIsLbs(LBS);
       setIsRequireLBS(false);
@@ -238,8 +246,8 @@ const QuizNo16 = () => {
   return (
     <>
       <div className="flex-col justify-center items-center text-center mb-5">
-        <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-full">
-          What is your goal <br /> weight?
+        <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px] mx-auto">
+          What is your goal weight?
         </h1>
         <div className="flex  justify-center items-center ">
           <div className="mt-10 border-[2px] border-customGreen rounded-full overflow-hidden">

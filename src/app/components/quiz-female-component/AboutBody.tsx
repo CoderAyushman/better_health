@@ -1,5 +1,6 @@
 import { decrease, increse } from "@/lib/features/counter/counterSlice";
 import {
+  addDisplayCounter,
   decreaseDisplayCounter,
   increseDisplayCounter,
 } from "@/lib/features/counter/displayCounterSlice";
@@ -11,15 +12,11 @@ const AboutBody = () => {
   const dispatch = useAppDispatch();
   const displayCounter = useAppSelector((state) => state.diplayCounter.items);
   const handleBackArrowButton = () => {
-    if (displayCounter > 27) {
-      dispatch(decreaseDisplayCounter());
-    }
+    dispatch(addDisplayCounter(13));
     dispatch(decrease());
   };
   const handleOnclickButton = () => {
-    if (displayCounter != 28) {
-      dispatch(increseDisplayCounter());
-    }
+    dispatch(addDisplayCounter(14));
     dispatch(increse());
   };
   return (

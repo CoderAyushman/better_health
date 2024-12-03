@@ -192,7 +192,7 @@ const QuizNo15 = () => {
   return (
     <>
       <div className="flex-col justify-center items-center text-center mb-5">
-        <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
+        <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px] mx-auto">
           What is your current weight?
         </h1>
         <div className="flex  justify-center items-center ">

@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import { radioValues } from "../RadioValues";
+import { useRadioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { CldImage } from "next-cloudinary";
 
-const QuizNo31 = () => {
+const QuizNo17 = () => {
+  const { radioValues, setRadioValues } = useRadioValues()
   const [isRequireYear, setIsRequireYear] = useState(
-    radioValues[31].isRequireYear
+    radioValues[17].isRequireYear
   );
-  const [year, setIsyear] = useState<number>(radioValues[31].year);
+  const [year, setIsyear] = useState<number>(radioValues[17].year);
 
   const dispatch = useAppDispatch();
 
@@ -22,19 +23,31 @@ const QuizNo31 = () => {
   const handleOnChangeYear = (event: any) => {
     const e = event.target.value;
     if (e == null) {
-      radioValues[31].isRequireYear = false;
+      setRadioValues((prev) => {
+        const newRadioValues = [...prev];
+        newRadioValues[17].isRequireYear = false;
+        return newRadioValues;
+      })
       setIsRequireYear(false);
     } else if (e >= 16 && e <= 99) {
       try {
-        radioValues[31].year = e;
+        setRadioValues((prev) => {
+          const newRadioValues = [...prev];
+          newRadioValues[17].year = e;
+          newRadioValues[17].isRequireYear = true;
+          return newRadioValues;
+        })
         setIsyear(e);
-        radioValues[31].isRequireYear = true;
         setIsRequireYear(true);
       } catch (error) {
         console.error(error);
       }
     } else {
-      radioValues[31].isRequireYear = false;
+      setRadioValues((prev) => {
+        const newRadioValues = [...prev];
+        newRadioValues[17].isRequireYear = false;
+        return newRadioValues;
+      })
       setIsRequireYear(false);
     }
   };
@@ -42,7 +55,7 @@ const QuizNo31 = () => {
   return (
     <>
       <div className="flex-col justify-center items-center text-center mb-5">
-        <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-full">
+        <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px] mx-auto">
           What is your age?
         </h1>
 
@@ -121,4 +134,4 @@ const QuizNo31 = () => {
   );
 };
 
-export default QuizNo31;
+export default QuizNo17;

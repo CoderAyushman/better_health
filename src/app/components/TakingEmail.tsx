@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { radioValues } from "./RadioValues";
-import { useRouter } from "next/navigation";
+import { useRadioValues } from "./RadioValues";
 import { useDispatch } from "react-redux";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { LockIcon } from "lucide-react";
 const TakingEmail = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
   const dispatch = useDispatch();
-  const [mail, setMail] = useState<string>(radioValues[33]);
+  const [mail, setMail] = useState<string>(radioValues[19]);
   const [isValid, setIsValid] = useState(false);
 
   useEffect(() => {
@@ -15,8 +15,11 @@ const TakingEmail = () => {
 
   const handleOnSubmit = (e: any) => {
     e.preventDefault();
-    radioValues[33] = mail;
-
+    setRadioValues((prev) => {
+      const newRadioValues = [...prev];
+      newRadioValues[19] = mail;
+      return newRadioValues
+    })
     dispatch(increse());
   };
 
@@ -30,10 +33,10 @@ const TakingEmail = () => {
         <div className="font-bold text-2xl mt-10">
           <span>
             {" "}
-            Enter your email to get <br /> your
+            Enter your email to get your
           </span>{" "}
           <span className="text-customGreen">
-            Personalized Weight <br /> Loss Plan
+            Personalized Weight Loss Plan
           </span>
         </div>
         <form>
@@ -42,7 +45,7 @@ const TakingEmail = () => {
               type="email"
               name="email"
               id=""
-              defaultValue={radioValues[33]}
+              defaultValue={radioValues[19]}
               placeholder="Enter your email to get your plan"
               className="w-[300px] text-base border-[1px] border-black p-2 rounded-lg"
               required

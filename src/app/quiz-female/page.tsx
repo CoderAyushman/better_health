@@ -4,13 +4,10 @@ import Progressbar from "../components/Progressbar";
 import quizes from "../components/QuizesFemale";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { add } from "@/lib/features/counter/counterSlice";
-import { radioValues, setRadioValues } from "../components/RadioValues";
-import { update } from "@/lib/features/dataSlice";
-// import Intromale from "../intromale/page";
-// import AboutSurroundings from "../components/quiz-component/AboutSurroundings";
-// import { json } from "stream/consumers";
+import { useRadioValues } from "../components/RadioValues";
 
 const Page = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
   const dispatch = useAppDispatch();
   let quizCounter: any = useAppSelector((state) => state.counter.items);
   useEffect(() => {

@@ -41,7 +41,7 @@ const QuizNo7 = () => {
   return (
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
-        <h1 className="text-4xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
+        <h1 className="text-4xl font-bold mx-auto tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
           How many{" "}
           <a
             href="https://en.wikipedia.org/wiki/Squat_(exercise)#:~:text=A%20squat%20is%20a%20strength,joint%20plantarflexes%20when%20standing%20up."

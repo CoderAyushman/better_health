@@ -4,13 +4,10 @@ import Progressbar from "../components/Progressbar";
 import quizes from "../components/Quizes";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { add } from "@/lib/features/counter/counterSlice";
-import { radioValues, setRadioValues } from "../components/RadioValues";
-// import { update } from "@/lib/features/dataSlice";
-// import Intromale from "../intromale/page";
-// import AboutSurroundings from "../components/quiz-component/AboutSurroundings";
-// import { json } from "stream/consumers";
+import { useRadioValues } from '@/app/components/RadioValues';
 
 const Page = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
   const dispatch = useAppDispatch();
   let quizCounter: any = useAppSelector((state) => state.counter.items);
   useEffect(() => {
@@ -41,13 +38,13 @@ const Page = () => {
   if (quizCounter == 0) {
     quizCompaireCounter = false;
   } else if (
+    quizes[quizCounter] == quizes[11] ||
+    quizes[quizCounter] == quizes[15] ||
+    quizes[quizCounter] == quizes[21] ||
     quizes[quizCounter] == quizes[22] ||
-    quizes[quizCounter] == quizes[29] ||
-    quizes[quizCounter] == quizes[34] ||
-    quizes[quizCounter] == quizes[36] ||
-    quizes[quizCounter] == quizes[37] ||
-    quizes[quizCounter] == quizes[38] ||
-    quizes[quizCounter] == quizes[39]
+    quizes[quizCounter] == quizes[23] ||
+    quizes[quizCounter] == quizes[24] ||
+    quizes[quizCounter] == quizes[25]
   ) {
     quizCompaireCounter = false;
   }

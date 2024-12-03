@@ -1,7 +1,6 @@
 import { decrease, increse } from "@/lib/features/counter/counterSlice";
 import {
-  decreaseDisplayCounter,
-  increseDisplayCounter,
+  addDisplayCounter,
 } from "@/lib/features/counter/displayCounterSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { CldImage } from "next-cloudinary";
@@ -11,15 +10,11 @@ const AboutBody = () => {
   const dispatch = useAppDispatch();
   const displayCounter = useAppSelector((state) => state.diplayCounter.items);
   const handleBackArrowButton = () => {
-    if (displayCounter > 27) {
-      dispatch(decreaseDisplayCounter());
-    }
+    dispatch(addDisplayCounter(13));
     dispatch(decrease());
   };
   const handleOnclickButton = () => {
-    if (displayCounter != 28) {
-      dispatch(increseDisplayCounter());
-    }
+    dispatch(addDisplayCounter(14));
     dispatch(increse());
   };
   return (

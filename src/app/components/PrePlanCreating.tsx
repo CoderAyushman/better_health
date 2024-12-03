@@ -14,12 +14,14 @@ import {
 } from "@/components/ui/carousel";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import { radioValues } from "./RadioValues";
+import { useRadioValues } from "./RadioValues";
 import { CldImage } from "next-cloudinary";
 // import { plugin } from "postcss";
 // import { getAnswer } from "@/utils/getAnswer";
 
 const PrePlanCreating = () => {
+  const { radioValues } = useRadioValues();
+
   // const getAnswer = async (msg: any) => {
   //   axios
   //     .post("http://localhost:8000/api/langchain/gemini", {
@@ -35,19 +37,18 @@ const PrePlanCreating = () => {
   // };
 
   // message template
-  const message = `I'm want to ${radioValues[1]} , my physical build is  ${radioValues[2]} 
-  , my body goal is  ${radioValues[3]} , my target zones are (Arms:  ${radioValues[4].one} 
-  , Pecs: ${radioValues[4].two} ,Belly: ${radioValues[4].three} , Legs: ${radioValues[4].four} 
-  , Back : ${radioValues[4].five}) ,  ${radioValues[5]} ,  Im ${radioValues[6]} in my best shape 
-  , ${radioValues[7]} , ${radioValues[8]} , I sleep ${radioValues[9]} , ${radioValues[10]} 
-  , ${radioValues[12]} , ${radioValues[13]} , ${radioValues[14]}, I love to do ${radioValues[17]} exercise 
-  , ${radioValues[19]} , I prefer ${radioValues[22]} diet , I am ${radioValues[28].ft} feet or ${radioValues[28].cm} cm 
-  , My current weight is ${radioValues[29].kg} kg or ${radioValues[29].lbs} lbs 
-  , My goal weight is ${radioValues[30].kg} kg or ${radioValues[30].lbs} lbs 
-  , I am ${radioValues[31].year} year old. Give me a proper diet 
-  , workout ,diffrent diet suited healthy dishes list and also intermittent fasting if needed ,give a detailed plan.
-   Give all things with a markdown table format`;
-
+  // const message = `I'm want to ${radioValues[1]} , my physical build is  ${radioValues[2]} 
+  // , my body goal is  ${radioValues[3]} , my target zones are (Arms:  ${radioValues[4].one} 
+  // , Pecs: ${radioValues[4].two} ,Belly: ${radioValues[4].three} , Legs: ${radioValues[4].four} 
+  // , Back : ${radioValues[4].five}) ,  ${radioValues[5]} , ${radioValues[7]} , ${radioValues[8]} , I sleep ${radioValues[9]} , ${radioValues[10]} 
+  // , ${radioValues[12]} , ${radioValues[13]} , ${radioValues[14]}, I love to do ${radioValues[17]} exercise 
+  // , ${radioValues[19]} , I prefer ${radioValues[22]} diet , I am ${radioValues[28].ft} feet or ${radioValues[28].cm} cm 
+  // , My current weight is ${radioValues[29].kg} kg or ${radioValues[29].lbs} lbs 
+  // , My goal weight is ${radioValues[30].kg} kg or ${radioValues[30].lbs} lbs 
+  // , I am ${radioValues[31].year} year old. Give me a proper diet 
+  // , workout ,diffrent diet suited healthy dishes list and also intermittent fasting if needed ,give a detailed plan.
+  //  Give all things with a markdown table format`;
+  const message = `Create a comprehensive diet and workout plan tailored to my needs. I want to ${radioValues[1]}, and my physical build is ${radioValues[2]} with a body goal of ${radioValues[3]}. My target zones are: Arms (${radioValues[4].one}), Pecs (${radioValues[4].two}), Belly (${radioValues[4].three}), Legs (${radioValues[4].four}), and Back (${radioValues[4].five}). My activity level is ${radioValues[5]}, and my dietary habits include ${radioValues[6]}. I sleep ${radioValues[11]} hours a day and usually drink ${radioValues[12]}. In terms of fitness stats, I can do ${radioValues[7] !== "I don’t know" ? radioValues[7] : "0"} squats and ${radioValues[8] !== "I don’t know" ? radioValues[8] : "0"} push-ups. I love to do ${radioValues[9]} exercises and prefer a ${radioValues[13]} diet. My height is ${radioValues[14].ft} feet or ${radioValues[14].cm} cm, and my current weight is ${radioValues[15].kg} kg or ${radioValues[15].lbs} lbs, with a goal weight of ${radioValues[16].kg} kg or ${radioValues[16].lbs} lbs. I am ${radioValues[17].year} years old. Please provide a proper diet and workout plan, including a list of healthy ${radioValues[18]}'s dishes, different diet options, and intermittent fasting guidance if needed. Format all the details using markdown tables for clarity.`
   const dispatch = useAppDispatch();
   const users = [
     {
@@ -93,7 +94,7 @@ const PrePlanCreating = () => {
   }, [counter]);
 
   useEffect(() => {
-    radioValues[34].message = message;
+    radioValues[20].message = message;
     // getAnswer(message);
   }, []);
   return (

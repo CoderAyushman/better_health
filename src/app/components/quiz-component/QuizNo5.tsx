@@ -37,7 +37,7 @@ const QuizNo5 = () => {
   return (
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
-        <h1 className="text-4xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
+        <h1 className="text-4xl font-bold mx-auto tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
           How does your weight typically change?
         </h1>
       </div>

@@ -6,24 +6,25 @@ import QuizNo3 from "./quiz-female-component/QuizNo3";
 import QuizNo4 from "./quiz-female-component/QuizNo4";
 import QuizNo5 from "./quiz-female-component/QuizNo5";
 import QuizNo7 from "./quiz-female-component/QuizNo6";
-import QuizNo9 from "./quiz-female-component/QuizNo9";
-import QuizNo10 from "./quiz-female-component/QuizNo10";
+import QuizNo9 from "./quiz-female-component/QuizNo11";
+import QuizNo10 from "./quiz-female-component/QuizNo12";
 import QuizNo15 from "./quiz-female-component/QuizNo7";
-import QuizNo16 from "./quiz-female-component/QuizNo16";
-import QuizNo17 from "./quiz-female-component/QuizNo17";
-import QuizNo19 from "./quiz-female-component/QuizNo19";
-import QuizNo22 from "./quiz-female-component/QuizNo22";
+import QuizNo16 from "./quiz-female-component/QuizNo8";
+import QuizNo17 from "./quiz-female-component/QuizNo9";
+import QuizNo19 from "./quiz-female-component/QuizNo10";
+import QuizNo22 from "./quiz-female-component/QuizNo13";
 import AboutSurroundings from "./quiz-female-component/AboutSurroundings";
-import QuizNo28 from "./quiz-female-component/QuizNo28";
-import QuizNo29 from "./quiz-female-component/QuizNo29";
-import QuizNo30 from "./quiz-female-component/QuizNo30";
+import QuizNo28 from "./quiz-female-component/QuizNo14";
+import QuizNo29 from "./quiz-female-component/QuizNo15";
+import QuizNo30 from "./quiz-female-component/QuizNo16";
 import AboutBody from "./quiz-female-component/AboutBody";
-import QuizNo31 from "./quiz-female-component/QuizNo31";
+import QuizNo31 from "./quiz-female-component/QuizNo17";
 import WellnessProfile from "./quiz-female-component/WellnessProfile";
 import Chart from "./quiz-female-component/Chart";
 import PrePlanCreating from "./PrePlanCreating";
 import TakingEmail from "./TakingEmail";
 import Answer from "./Answer";
+import QuizNo18 from "./quiz-female-component/QuizNo18";
 
 const quizes = [
   <Introfemale key="intromale" />,
@@ -46,6 +47,7 @@ const quizes = [
   <QuizNo29 key="quiz29" />,
   <QuizNo30 key="quiz30" />,
   <QuizNo31 key="quiz31" />,
+  <QuizNo18 key="quiz18" />,
   <WellnessProfile key="wellnessProfile" />,
   <Chart key="chart" />,
   <PrePlanCreating key="prePlanCreating" />,
