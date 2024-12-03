@@ -1,33 +1,36 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Footer from "../Footer";
-import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
-import { update } from "@/lib/features/dataSlice";
-import { radioValues } from "../RadioValues";
+import { useRadioValues } from "../RadioValues";
 import { CldImage } from "next-cloudinary";
 
-console.log("radioValues[1]=", radioValues[1]);
 const QuizNo1 = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
+  const handleUpdate = (index: number, value: any) => {
+    setRadioValues(prevValues => {
+      const newValues = [...prevValues];
+      newValues[index] = value;
+      return newValues;
+    });
+  };
   const dispatch = useAppDispatch();
   // let data = useAppSelector(state=>state.data.items);
   const handleClickOnLoseWeight = () => {
-    radioValues[1] = "loseweight";
-
+    handleUpdate(1, "loseweight");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOnGainMuscle = () => {
-    radioValues[1] = "gainmuscle";
+    handleUpdate(1, "gainmuscle");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOnPreg = () => {
-    radioValues[1] = "recover after having a baby";
+    handleUpdate(1, "recover after having a baby");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
@@ -49,7 +52,7 @@ const QuizNo1 = () => {
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-1st/ohulo1j3ufcaxuhc1cw5"
               alt="lose-weight-img"
             />
@@ -62,30 +65,30 @@ const QuizNo1 = () => {
           <Label
             onClick={handleClickOnGainMuscle}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2  "
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2  "
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-1st/ojzjmo41qbrmhzoemwjl"
               alt="gain-muscle-img"
             />
 
             <h1 className="pr-[100px] md:pr-[175px] pl-5 font-semibold text-base">
-              Get a bikini body
+              Gain Muscle
             </h1>
             <RadioGroupItem className="mr-5" value="gainmuscle" id="r2" />
           </Label>
           <Label
             onClick={handleClickOnPreg}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2  "
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2  "
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-1st/pebimsvezyymszkb8qde"
               alt="recover-img"
             />

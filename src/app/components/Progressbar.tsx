@@ -3,14 +3,10 @@ import React, { useEffect, useState } from "react";
 import { Progress } from "@/components/ui/progress";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { decrease } from "@/lib/features/counter/counterSlice";
-import { radioValues, setRadioValues } from "./RadioValues";
 import {
   addDisplayCounter,
   decreaseDisplayCounter,
 } from "@/lib/features/counter/displayCounterSlice";
-import quizes from "./Quizes";
-import { elements } from "chart.js";
-import { update } from "@/lib/features/dataSlice";
 import { CldImage } from "next-cloudinary";
 // var dubQuizCounter=quizCounter;
 
@@ -75,7 +71,7 @@ const Progressbar = () => {
       <div className="mt-28 flex justify-center items-center">
         <Progress
           value={displayCounter * 3.125}
-          className="max-w-[340px] md:max-w-[450px] h-1 "
+          className="max-w-[340px] md:max-w-[450px] h-3 md:h-4 "
         />
       </div>
       <div className="mt-3  flex justify-center items-center gap-[410px] max-[450px]:gap-[270px]">

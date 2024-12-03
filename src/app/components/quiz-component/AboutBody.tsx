@@ -24,12 +24,14 @@ const AboutBody = () => {
   };
   return (
     <div className="flex  mt-32 justify-center items-center ">
-      <div className="mt-3  flex-col justify-center items-center max-gap-[320px] md:gap-[410px]]">
+      <div className="mt-3  flex-col justify-center items-center max-gap-[320px] md:gap-[410px] max-w-[340px] md:max-w-[450px]">
         <button>
-          <img
+          <CldImage
+            width={500}
+            height={500}
             onClick={handleBackArrowButton}
-            className="w-[18px]"
-            src="arrow.png"
+            className="w-[18px] "
+            src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/k0euitymbhpdglasmx9z"
             alt="arrow png"
           />
         </button>

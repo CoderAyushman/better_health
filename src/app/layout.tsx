@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import StoreProvider from "./StoreProvider";
 import { Toaster } from "@/components/ui/toaster";
+import { RadioValuesProvider } from "./components/RadioValues";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,11 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={inter.className}>
-        <StoreProvider>
-          <Navbar />
-          {children}
-        </StoreProvider>
-        <Toaster />
+        <RadioValuesProvider>
+
+          <StoreProvider>
+            <Navbar />
+            {children}
+          </StoreProvider>
+          <Toaster />
+        </RadioValuesProvider>
       </body>
     </html>
   );

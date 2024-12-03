@@ -24,12 +24,14 @@ const AboutBody = () => {
   };
   return (
     <div className="flex  mt-32 justify-center items-center ">
-      <div className="mt-3  flex-col justify-center items-center max-gap-[320px] md:gap-[410px]]">
+      <div className="mt-3  flex-col justify-center items-center max-gap-[320px] md:gap-[410px] max-w-[340px] md:max-w-[450px]">
         <button>
-          <img
+          <CldImage
+            width={500}
+            height={500}
             onClick={handleBackArrowButton}
-            className="w-[18px]"
-            src="arrow.png"
+            className="w-[18px] "
+            src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/k0euitymbhpdglasmx9z"
             alt="arrow png"
           />
         </button>
@@ -42,7 +44,6 @@ const AboutBody = () => {
           className="w-[410px]"
           src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/b9nuezn8tw18xvd2gk5j"
           alt="surrounding-img"
-          mb-5
         />
         <div className="flex justify-center items-center  max-w-[410px] p-3 bg-gray-100 rounded-lg  mt-5">
           <p className="text-sm text-gray-500">

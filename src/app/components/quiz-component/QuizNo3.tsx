@@ -2,34 +2,41 @@
 import React from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import { radioValues } from "../RadioValues";
+import { useRadioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { CldImage } from "next-cloudinary";
 
 const QuizNo3 = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
+  const handleUpdate = (index: number, value: any) => {
+    setRadioValues(prevValues => {
+      const newValues = [...prevValues];
+      newValues[index] = value;
+      return newValues;
+    });
+  };
   const dispatch = useAppDispatch();
   const handleClickOnSlender = () => {
-    radioValues[3] = "slender";
+    handleUpdate(3, "slender");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOnAthletic = () => {
-    radioValues[3] = "athletic";
+    handleUpdate(3, "athletic");
 
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOnShredded = () => {
-    radioValues[3] = "shredded";
+    handleUpdate(3, "shredded");
 
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const handleClickOnSwole = () => {
-    radioValues[3] = "swole";
+    handleUpdate(3, "swole");
 
     dispatch(increse());
     dispatch(increseDisplayCounter());
@@ -37,7 +44,7 @@ const QuizNo3 = () => {
   return (
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
-        <h1 className="text-4xl font-bold tracking-wide mt-7">
+        <h1 className="text-4xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
           What is your body goal?
         </h1>
       </div>
@@ -51,7 +58,7 @@ const QuizNo3 = () => {
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-3rd/toovznk8epeec36snxfg"
               alt="lose-weight-img"
             />
@@ -64,12 +71,12 @@ const QuizNo3 = () => {
           <Label
             onClick={handleClickOnAthletic}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2 "
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2 "
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-3rd/kvyxuccgyvwd27tjai5u"
               alt="gain-muscle-img"
             />
@@ -82,12 +89,12 @@ const QuizNo3 = () => {
           <Label
             onClick={handleClickOnShredded}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-3rd/vnshsocvp8q5aqnmrcp5"
               alt="gain-muscle-img"
             />
@@ -100,12 +107,12 @@ const QuizNo3 = () => {
           <Label
             onClick={handleClickOnSwole}
             htmlFor="r4"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-3rd/khsa6dloezceqxetonfl"
               alt="gain-muscle-img"
             />

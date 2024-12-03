@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useAppDispatch } from "@/lib/hooks";
-import { radioValues } from "../RadioValues";
+import { useRadioValues } from "../RadioValues";
 import ButtonForQ4 from "./ButtonForQ4";
 import { CldImage } from "next-cloudinary";
 
 const QuizNo3 = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
   // const [counter, setCounter] = useState<number>(0);
   const [isCheckedForQ1, setIsCheckedForQ1] = useState(false);
   const [isCheckedForQ2, setIsCheckedForQ2] = useState(false);
@@ -23,30 +24,49 @@ const QuizNo3 = () => {
   const dispatch = useAppDispatch();
   const handleClickOnArms = () => {
     setIsCheckedForQ1(!isCheckedForQ1);
-    radioValues[4].one = !isCheckedForQ1;
+    setRadioValues(prevValues => {
+      const newValues = [...prevValues];
+      newValues[4].one = !isCheckedForQ1;
+      return newValues;
+    });
   };
   const handleClickOnPecs = () => {
     setIsCheckedForQ2(!isCheckedForQ2);
-    radioValues[4].two = !isCheckedForQ2;
+    setRadioValues(prevValues => {
+      const newValues = [...prevValues];
+      newValues[4].two = !isCheckedForQ2;
+      return newValues;
+    })
   };
   const handleClickOnBelly = () => {
     setIsCheckedForQ3(!isCheckedForQ3);
-    radioValues[4].three = !isCheckedForQ3;
+    setRadioValues(prevValues => {
+      const newValues = [...prevValues];
+      newValues[4].three = !isCheckedForQ3;
+      return newValues;
+    })
   };
   const handleClickOnLegs = () => {
     setIsCheckedForQ4(!isCheckedForQ4);
-    radioValues[4].four = !isCheckedForQ4;
+    setRadioValues(prevValues => {
+      const newValues = [...prevValues];
+      newValues[4].four = !isCheckedForQ4;
+      return newValues;
+    })
   };
   const handleClickOnBack = () => {
     setIsCheckedForQ5(!isCheckedForQ5);
-    radioValues[4].five = isCheckedForQ5;
+    setRadioValues(prevValues => {
+      const newValues = [...prevValues];
+      newValues[4].five = !isCheckedForQ5;
+      return newValues;
+    })
   };
   return (
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
-        <h1 className="text-4xl font-bold tracking-wide mt-7">
-          What are your target <br />
-          zones?
+        <h1 className="text-4xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
+          What are your target zones?
         </h1>
       </div>
       <div className="flex justify-evenly items-center text-center mb-2">
@@ -58,7 +78,7 @@ const QuizNo3 = () => {
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-4th/b3r3p0xtlmzfpyw9liyq"
               alt="lose-weight-img"
             />
@@ -76,12 +96,12 @@ const QuizNo3 = () => {
 
           <Label
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-4th/hot8kw4ftvxexxrfm2mu"
               alt="gain-muscle-img"
             />
@@ -100,12 +120,12 @@ const QuizNo3 = () => {
 
           <Label
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-4th/qj7xlrw0og8yymt3x3sx"
               alt="gain-muscle-img"
             />
@@ -124,12 +144,12 @@ const QuizNo3 = () => {
 
           <Label
             htmlFor="r4"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-4th/wnyuyugavpmohmr6kpm8"
               alt="gain-muscle-img"
             />
@@ -148,12 +168,12 @@ const QuizNo3 = () => {
 
           {/* <Label
             htmlFor="r5"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
              <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="imageOfFemale/quiz-4th/back-img.png"
               alt="gain-muscle-img"
             />

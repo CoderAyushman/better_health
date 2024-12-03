@@ -1,5 +1,5 @@
 import React from "react";
-import { radioValues } from "../RadioValues";
+import { useRadioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
@@ -8,19 +8,28 @@ import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlic
 import { CldImage } from "next-cloudinary";
 
 const QuizNo5 = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
+  const handleUpdate = (index: number, value: any) => {
+    setRadioValues(prevValues => {
+      const newValues = [...prevValues];
+      newValues[index] = value;
+      return newValues;
+    });
+  };
   const dispatch = useAppDispatch();
   const onClickHardGain = () => {
-    radioValues[5] = "I have trouble gaining muscle or body fat";
+    handleUpdate(5, "I have trouble gaining muscle or body fat");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClickeEasyLoss = () => {
-    radioValues[5] = "I gain and lose weight without effort";
+    handleUpdate(5, "I gain and lose weight without effort");
+
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   const onClickEasyGainHardLoss = () => {
-    radioValues[5] = "I gain weight easily but find it hard to lose";
+    handleUpdate(5, "I gain weight easily but find it hard to lose");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
@@ -28,8 +37,8 @@ const QuizNo5 = () => {
   return (
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
-        <h1 className="text-4xl font-bold tracking-wide mt-7">
-          How does your weight <br /> typically change?
+        <h1 className="text-4xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
+          How does your weight typically change?
         </h1>
       </div>
       <div className="flex justify-evenly items-center  mt-5">
@@ -42,7 +51,7 @@ const QuizNo5 = () => {
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-5th/uajivt3gkwbfp7mv284a"
               alt="lose-weight-img"
             />
@@ -59,12 +68,12 @@ const QuizNo5 = () => {
           <Label
             onClick={onClickeEasyLoss}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-5th/a1a5hfm1ydtyjtch4fsm"
               alt="gain-muscle-img"
             />
@@ -81,12 +90,12 @@ const QuizNo5 = () => {
           <Label
             onClick={onClickEasyGainHardLoss}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
+              className="w-[104px] h-[104px]"
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-5th/fhskdkf1toh0i4m38cvd"
               alt="gain-muscle-img"
             />

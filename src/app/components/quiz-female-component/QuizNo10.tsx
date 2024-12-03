@@ -1,36 +1,30 @@
+"use client";
 import React from "react";
-import { radioValues } from "../RadioValues";
-import { useAppDispatch } from "@/lib/hooks";
-import { increse } from "@/lib/features/counter/counterSlice";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Footer from "../Footer";
+import { useAppDispatch } from "@/lib/hooks";
+import { increse } from "@/lib/features/counter/counterSlice";
+import { useRadioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
+import { CldImage } from "next-cloudinary";
 
 const QuizNo10 = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
+  const handleUpdate = (index: number, value: any) => {
+    setRadioValues(prevValues => {
+      const newValues = [...prevValues];
+      newValues[index] = value;
+      return newValues;
+    });
+  };
   const dispatch = useAppDispatch();
-  const onClickTeaAndCoffee = () => {
-    radioValues[10] = "I drink only coffee or tea ";
+  const handleClickOnGym = () => {
+    handleUpdate(10, "I prefer gym for workout");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
-  const onClickeFewerThan2GlassesOfWater = () => {
-    radioValues[10] = "I drink fewer than 2 glasses of water";
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
-  };
-  const onClick2to6GlassesOfWater = () => {
-    radioValues[10] = "I drink 2-6 glasses of water (16-48 oz)";
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
-  };
-  const onClick7to10GlassesOfWater = () => {
-    radioValues[10] = "I drink 7-10 glasses of water";
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
-  };
-  const onClickMoreThan10GlassesOfWater = () => {
-    radioValues[10] = "I drink more than 10 glasses of water";
+  const handleClickHome = () => {
+    handleUpdate(10, "I prefer home for workout");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
@@ -38,81 +32,54 @@ const QuizNo10 = () => {
   return (
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
-        <h1 className="text-4xl font-bold tracking-wide mt-7">
-          How much water do you <br /> drink throughout the day?
+        <h1 className="text-4xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
+          Select your preferred place for working out
         </h1>
       </div>
       <div className="flex justify-evenly items-center  mt-5">
         <RadioGroup defaultValue={radioValues[10]}>
           <Label
-            onClick={onClickTeaAndCoffee}
+            onClick={handleClickOnGym}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base ">
-              I only drink tea or coffee
+            <CldImage
+              width={500}
+              height={500}
+              className="w-[104px] h-[104px] mr-7"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-19th/puxr7uit86djarhj6bv6"
+              alt="gym-img"
+            />
+            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base ">
+              Gym
             </h1>
             <RadioGroupItem
               className="mr-5 "
-              value="I drink only coffee or tea"
+              value="I prefer gym for workout"
               id="r1"
             />
           </Label>
 
           <Label
-            onClick={onClickeFewerThan2GlassesOfWater}
+            onClick={handleClickHome}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between mt-[10px] shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base">
-              Fewer than 2 glasses of water
+            <CldImage
+              width={500}
+              height={500}
+              className="w-[104px] h-[104px] mr-7"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-19th/dbaghwvdn0vndfpox85p"
+              alt="hard-img"
+            />
+
+            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base">
+              Home
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="I drink fewer than 2 glasses of water"
+              value="I prefer home for workout"
               id="r2"
-            />
-          </Label>
-          <Label
-            onClick={onClick2to6GlassesOfWater}
-            htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
-          >
-            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base">
-              2-6 glasses of water (16-48 oz)
-            </h1>
-            <RadioGroupItem
-              className="mr-5"
-              value="I drink 2-6 glasses of water (16-48 oz)"
-              id="r3"
-            />
-          </Label>
-          <Label
-            onClick={onClick7to10GlassesOfWater}
-            htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
-          >
-            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base">
-              7-10 glasses of water (56-80 oz)
-            </h1>
-            <RadioGroupItem
-              className="mr-5"
-              value="I drink 7-10 glasses of water"
-              id="r3"
-            />
-          </Label>
-          <Label
-            onClick={onClickMoreThan10GlassesOfWater}
-            htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
-          >
-            <h1 className="pr-[40px]  pl-5 py-[30px] font-semibold text-base">
-              More than 10 glasses of water
-            </h1>
-            <RadioGroupItem
-              className="mr-5"
-              value="I drink more than 10 glasses of water"
-              id="r3"
             />
           </Label>
         </RadioGroup>

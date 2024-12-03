@@ -1,128 +1,98 @@
-"use client";
 import React from "react";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Footer from "../Footer";
+import { useRadioValues } from "../RadioValues";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import { radioValues } from "../RadioValues";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
-import { CldImage } from "next-cloudinary";
 
 const QuizNo11 = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
+  const handleUpdate = (index: number, value: any) => {
+    setRadioValues(prevValues => {
+      const newValues = [...prevValues];
+      newValues[index] = value;
+      return newValues;
+    });
+  };
   const dispatch = useAppDispatch();
-  const handleClickOnHighAndSteady = () => {
-    radioValues[11] = "HighAndSteady";
+  const onClickMinimalRest = () => {
+    handleUpdate(11, "less than 5 hours");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
-  const handleClickOnDraggingBeforeMeals = () => {
-    radioValues[11] = "Dragging before meals";
+  const onClicke5toghours = () => {
+    handleUpdate(11, "5to6hours");
+    dispatch(increse());
+    dispatch(increseDisplayCounter());
+  };
+  const onClick7to8hours = () => {
+    handleUpdate(11, "7to8hours");
+    dispatch(increse());
+    dispatch(increseDisplayCounter());
+  };
+  const onClickMoreThen8hours = () => {
+    handleUpdate(11, "more then 8 hours");
+    dispatch(increse());
+    dispatch(increseDisplayCounter());
+  };
 
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
-  };
-  const handleClickOnPostLunchSlump = () => {
-    radioValues[11] = "Post lunch slump";
-
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
-  };
-  const handleClickOnIFeelTired = () => {
-    radioValues[11] = "Low, I feel tired throughout the day";
-
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
-  };
   return (
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
-        <h1 className="text-4xl font-bold tracking-wide mt-7">
-          How are your energy <br /> levels during the day?
+        <h1 className="text-4xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
+          How much sleep do you usually get?
         </h1>
       </div>
       <div className="flex justify-evenly items-center  mt-5">
         <RadioGroup defaultValue={radioValues[11]}>
           <Label
-            onClick={handleClickOnHighAndSteady}
+            onClick={onClickMinimalRest}
             htmlFor="r1"
             className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <CldImage
-              width={500}
-              height={500}
-              className="w-[104px]"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-11th/upvjkki7baixgsct0p0r"
-              alt="lose-weight-img"
-            />
-            <h1 className="pr-[110px] md:pr-[140px] pl-5 font-semibold text-base ">
-              High and steady
+            <h1 className="pr-[40px] md:pr-[140px] pl-5 py-[30px] font-semibold text-base ">
+              Minimal rest (less than 5 hours)
             </h1>
-            <RadioGroupItem className="mr-5 " value="HighAndSteady" id="r1" />
+            <RadioGroupItem
+              className="mr-5 "
+              value="less than 5 hours"
+              id="r1"
+            />
           </Label>
 
           <Label
-            onClick={handleClickOnDraggingBeforeMeals}
+            onClick={onClicke5toghours}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <CldImage
-              width={500}
-              height={500}
-              className="w-[104px]"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-11th/subl9uthlrq3rae08ejn"
-              alt="gain-muscle-img"
-            />
-
-            <h1 className="pr-[110px] md:pr-[140px] pl-5 font-semibold text-base">
-              Dragging before meals
+            <h1 className="pr-[40px] md:pr-[140px] pl-5 py-[30px] font-semibold text-base">
+              I get some shut-eye (5-6 hours)
             </h1>
-            <RadioGroupItem
-              className="mr-5"
-              value="Dragging before meals"
-              id="r2"
-            />
+            <RadioGroupItem className="mr-5" value="5to6hours" id="r2" />
           </Label>
           <Label
-            onClick={handleClickOnPostLunchSlump}
+            onClick={onClick7to8hours}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <CldImage
-              width={500}
-              height={500}
-              className="w-[104px]"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-11th/klg19rmzyiltpeaq1sem"
-              alt="gain-muscle-img"
-            />
-
-            <h1 className="pr-[110px] md:pr-[140px] pl-5 font-semibold text-base">
-              Post lunch slump
+            <h1 className="pr-[40px] md:pr-[140px] pl-5 py-[30px] font-semibold text-base">
+              I sleep long and well (7-8 hours)
             </h1>
-            <RadioGroupItem className="mr-5" value="Post lunch slump" id="r3" />
+            <RadioGroupItem className="mr-5" value="7to8hours" id="r3" />
           </Label>
           <Label
-            onClick={handleClickOnIFeelTired}
-            htmlFor="r4"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            onClick={onClickMoreThen8hours}
+            htmlFor="r3"
+            className="flex justify-between shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
-            <CldImage
-              width={500}
-              height={500}
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-11th/f2obdasi2xsucpds9dlo"
-              className="w-[104px]"
-              alt="gain-muscle-img"
-              cursor-pointer
-              mb-2
-            />
-
-            <h1 className="pr-[40px] md:pr-[40px] pl-5 font-semibold text-base">
-              Low, I feel tired throughout the day
+            <h1 className="pr-[40px] md:pr-[140px] pl-5 py-[30px] font-semibold text-base">
+              I like to sleep in (more than 8 hours)
             </h1>
             <RadioGroupItem
               className="mr-5"
-              value="Low, I feel tired throughout the day"
-              id="r4"
+              value="more then 8 hours"
+              id="r3"
             />
           </Label>
         </RadioGroup>

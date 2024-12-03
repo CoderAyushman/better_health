@@ -1,8 +1,8 @@
-"use client";
+'use client'
 
-console.log("on reload radiovalue is effect");
+import React, { createContext, useContext, useState } from 'react';
 
-export let radioValues: any = [
+const initialRadioValues = [
   "0",
   "1",
   "2",
@@ -17,48 +17,25 @@ export let radioValues: any = [
   "11",
   "12",
   "13",
-  "14",
-  "15",
-  "16",
-  "17",
-  { one: false, two: false, three: false },
-  "19",
-  "20",
-  "21",
-  "22",
-  "23",
-  "24",
-  "25",
-  "26",
   {
-    one: false,
-    two: false,
-    three: false,
-    four: false,
-    five: false,
-    six: false,
-    seven: false,
-    eight: false,
-  },
-  {
-    ft: null,
+    ft: null,//14
     cm: null,
   },
   {
-    kg: null,
+    kg: null,//15
     lbs: null,
     bmi: null,
   },
   {
     kg: null,
-    lbs: null,
+    lbs: null,//16
   },
   {
-    year: null,
+    year: null,//17
     isRequireYear: false,
   },
-  "32",
-  " ",
+  " ",//country//18
+  " ",//email
   {
     message: null,
   },
@@ -67,7 +44,28 @@ export let radioValues: any = [
   },
 ];
 
-export function setRadioValues(newValues: any) {
-  radioValues = newValues;
-  console.log("radio values are set", radioValues);
-}
+type RadioValuesContextType = {
+  radioValues: any[];
+  setRadioValues: React.Dispatch<React.SetStateAction<any[]>>;
+};
+
+const RadioValuesContext = createContext<RadioValuesContextType | undefined>(undefined);
+
+export const RadioValuesProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [radioValues, setRadioValues] = useState(initialRadioValues);
+
+  return (
+    <RadioValuesContext.Provider value={{ radioValues, setRadioValues }}>
+      {children}
+    </RadioValuesContext.Provider>
+  );
+};
+
+export const useRadioValues = () => {
+  const context = useContext(RadioValuesContext);
+  if (context === undefined) {
+    throw new Error('useRadioValues must be used within a RadioValuesProvider');
+  }
+  return context;
+};
+

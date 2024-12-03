@@ -1,144 +1,215 @@
-"use client";
-import React from "react";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import React, { useEffect, useState } from "react";
+import { Input } from "@/components/ui/input";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import { radioValues } from "../RadioValues";
+import { useRadioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { CldImage } from "next-cloudinary";
 
 const QuizNo14 = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
+  const [isTrue, setIsTrue] = useState(false);
+  const [isRequireCM, setIsRequireCM] = useState(true);
+  const [isRequireFT, setIsRequireFT] = useState(true);
+  const [ft, setFt] = useState<number>(radioValues[14].ft);
+  const [cm, setCm] = useState<number>(radioValues[14].cm);
+
+  useEffect(() => {
+    if (radioValues[14].ft != null) {
+      setIsRequireFT(false);
+    }
+  }, []);
   const dispatch = useAppDispatch();
-  const handleClickOnsoOutOfBreath = () => {
-    radioValues[14] = "I&apos;m so out of breath I can&apos;t talk";
+  const handleClick = () => {
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
-  const handleClickOnoutOfBreathButCanTalk = () => {
-    radioValues[14] = "I&apos;m somewhat out of breath but can talk";
-
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
+  const handleCM = () => {
+    setIsTrue(false);
   };
-  const handleClickOnOKAfterOneFlightOfStairs = () => {
-    radioValues[14] = "I&apos;m OK after one flight of stairs";
-
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
+  const handleFT = () => {
+    setIsTrue(true);
   };
-  const handleClickEasilyWalkUp = () => {
-    radioValues[14] = "I can easily walk up a few flights of stairs";
-
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
+  const handleOnChangeCM = (event: any) => {
+    const CM = event.target.value;
+    if (CM >= 90 && CM <= 243) {
+      setRadioValues(prevValues => {
+        const newValues = [...prevValues];
+        newValues[14].cm = CM;
+        newValues[14].ft = parseFloat((CM * 0.0328084).toFixed(1));
+        return newValues;
+      });
+      console.log(radioValues[14].cm);
+      console.log(radioValues[14].ft);
+      setFt(parseFloat((CM * 0.0328084).toFixed(1)));
+      setCm(radioValues[14].cm);
+      setIsRequireCM(false);
+    } else {
+      setIsRequireCM(true);
+    }
+  };
+  const handleOnChangeFT = (event: any) => {
+    const FT = event.target.value;
+    if (FT >= 3 && FT <= 7.11) {
+      setRadioValues(prevValues => {
+        const newValues = [...prevValues];
+        newValues[14].ft = FT;
+        newValues[14].cm = Math.round(FT * 30.48);
+        return newValues;
+      });
+      setCm(Math.round(FT * 30.48));
+      setFt(radioValues[14].ft);
+      setIsRequireFT(false);
+    } else {
+      setIsRequireFT(true);
+    }
   };
   return (
-    <div className="flex-col justify-center items-center mb-5">
-      <div className="flex-col justify-center items-center text-center ">
-        <h1 className="text-4xl font-bold tracking-wide mt-7">
-          Are you out of breath after <br /> walking up a flight of <br />{" "}
-          stairs?
+    <>
+      <div className="flex-col justify-center items-center text-center mb-5">
+        <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
+          What is your height?
         </h1>
+        <div className="flex  justify-center items-center ">
+          <div className="mt-10 border-[2px] border-customGreen rounded-full overflow-hidden">
+            {isTrue ? (
+              <button
+                onClick={handleFT}
+                className="pl-[25px] pr-[25px] text-center font-bold text-white bg-customGreen"
+              >
+                FT
+              </button>
+            ) : (
+              <button
+                onClick={handleFT}
+                className="pl-[25px] pr-[25px] text-center font-bold text-customGreen"
+              >
+                FT
+              </button>
+            )}
+            {isTrue == false ? (
+              <button
+                onClick={handleCM}
+                className="pl-[25px] pr-[25px] text-center font-bold text-white bg-customGreen"
+              >
+                CM
+              </button>
+            ) : (
+              <button
+                onClick={handleCM}
+                className="pl-[25px] pr-[25px] text-center font-bold text-customGreen"
+              >
+                CM
+              </button>
+            )}
+          </div>
+        </div>
+        <div className="flex  justify-center items-center mt-7 gap-3">
+          {isTrue == false ? (
+            <div className="flex-col">
+              <div className="flex items-center">
+                <div className="max-w-[200px] overflow-hidden mt-5  font-bold">
+                  <Input
+                    className="w-[230px] text-center text-5xl"
+                    type="number"
+                    id="cm"
+                    max={243}
+                    min={90}
+                    maxLength={3}
+                    minLength={1}
+                    autoFocus
+                    defaultValue={cm}
+                    onChange={(e) => {
+                      handleOnChangeCM(e);
+                    }}
+                  />
+                </div>
+                <h1 className="font-bold text-2xl ">cm</h1>
+              </div>
+              {isRequireCM ? (
+                <p className="text-xs mt-2">
+                  Please, enter a value from <b>90 cm</b> to <b>243 cm</b>
+                </p>
+              ) : (
+                <></>
+              )}
+            </div>
+          ) : (
+            <div className="flex-col">
+              <div className="flex items-center">
+                <div className="max-w-[200px] overflow-hidden   font-bold">
+                  <div>
+                    <Input
+                      className="w-[230px] text-5xl "
+                      type="number"
+                      id="ft"
+                      max={7.11}
+                      min={3}
+                      maxLength={4}
+                      autoFocus
+                      defaultValue={ft}
+                      onChange={(e) => {
+                        handleOnChangeFT(e);
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <h1 className="font-bold text-2xl ">ft</h1>
+              </div>
+              {isRequireFT ? (
+                <p className="text-xs mt-2">
+                  Please, enter a value from <b> 3 ft</b> to <b>7 ft 11 in</b>
+                </p>
+              ) : (
+                <></>
+              )}
+            </div>
+          )}
+        </div>
+        {!isRequireCM || !isRequireFT ? (
+          <div className="flex justify-center items-center text-left mt-4">
+            <div className="flex-col max-w-[335px] pb-2 pl-5 pr-5 pt-2 rounded-md border border-gray-200">
+              <div className="flex justify-start items-center">
+                <CldImage
+                  width={500}
+                  height={500}
+                  src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/yk32llqwl6rd8xx1exb2"
+                  alt="bmi"
+                  className="max-w-[50px] p-2 pl-0"
+                />
+                <h2 className="font-semibold">Calculating your BMI</h2>
+              </div>
+              <p className="text-gray-400 text-base">
+                Body mass index (BMI) is a metric of body fat percentage
+                commonly used to estimate risk levels of potential health
+                problems.
+              </p>
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
+        <div className="mb-5 mt-5">
+          {!isRequireCM || !isRequireFT ? (
+            <button
+              onClick={handleClick}
+              className="cursor-pointer bg-customGreen pl-[130px] pr-[130px] pt-[15px] pb-[15px] rounded-full text-white  "
+            >
+              <h1>
+                <b>NEXT STEP</b>
+              </h1>
+            </button>
+          ) : (
+            <button className="cursor-not-allowed  bg-gray-200 pl-[130px] pr-[130px] pt-[15px] pb-[15px] rounded-full text-gray-500  ">
+              <h1>
+                <b>NEXT STEP</b>
+              </h1>
+            </button>
+          )}
+        </div>
       </div>
-      <div className="flex justify-evenly items-center  mt-5">
-        <RadioGroup defaultValue={radioValues[14]}>
-          <Label
-            onClick={handleClickOnsoOutOfBreath}
-            htmlFor="r1"
-            className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
-          >
-            <CldImage
-              width={500}
-              height={500}
-              className="w-[104px] mr-7"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-14th/izhkwkamwoxyqrnntabi"
-              alt="very-hard-img"
-            />
-            <h1 className="pr-[40px] md:pr-[40px]   font-semibold text-base ">
-              I&apos;m so out of breath I can&apos;t talk
-            </h1>
-            <RadioGroupItem
-              className="mr-5 "
-              value="I'm so out of breath I can't talk"
-              id="r1"
-            />
-          </Label>
-
-          <Label
-            onClick={handleClickOnoutOfBreathButCanTalk}
-            htmlFor="r2"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
-            mb-2
-          >
-            <CldImage
-              width={500}
-              height={500}
-              className="w-[104px] mr-7"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-14th/svzclk0qb3vxowxdtnlk"
-              alt="hard-img"
-            />
-
-            <h1 className="pr-[40px] md:pr-[40px]   font-semibold text-base">
-              I&apos;m somewhat out of breath but can talk
-            </h1>
-            <RadioGroupItem
-              className="mr-5"
-              value="I'm somewhat out of breath but can talk"
-              id="r2"
-            />
-          </Label>
-          <Label
-            onClick={handleClickOnOKAfterOneFlightOfStairs}
-            htmlFor="r3"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
-            mb-2
-          >
-            <CldImage
-              width={500}
-              height={500}
-              className="w-[104px] mr-7"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-14th/ytzdq6r8t8ckafu8qn1a"
-              alt="normal-img"
-            />
-
-            <h1 className="pr-[40px] md:pr-[40px]   font-semibold text-base">
-              I&apos;m OK after one flight of stairs
-            </h1>
-            <RadioGroupItem
-              className="mr-5"
-              value="I'm OK after one flight of stairs"
-              id="r3"
-            />
-          </Label>
-          <Label
-            onClick={handleClickEasilyWalkUp}
-            htmlFor="r4"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer"
-            mb-2
-          >
-            <CldImage
-              width={500}
-              height={500}
-              className="w-[104px] mr-7"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-14th/rerbbz6sbe03laap8zfy"
-              alt="like-img"
-              cursor-pointer
-            />
-
-            <h1 className="pr-[40px] md:pr-[40px]   font-semibold text-base">
-              I can easily walk up a few flights of stairs
-            </h1>
-            <RadioGroupItem
-              className="mr-5"
-              value="I can easily walk up a few flights of stairs"
-              id="r4"
-            />
-          </Label>
-        </RadioGroup>
-      </div>
-      {/* <Footer /> */}
-    </div>
+    </>
   );
 };
 

@@ -2,130 +2,130 @@
 import React from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Footer from "../Footer";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import { radioValues } from "../RadioValues";
+import { useRadioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { CldImage } from "next-cloudinary";
 
 const QuizNo7 = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
+  const handleUpdate = (index: number, value: any) => {
+    setRadioValues(prevValues => {
+      const newValues = [...prevValues];
+      newValues[index] = value;
+      return newValues;
+    });
+  };
   const dispatch = useAppDispatch();
-  const handleClickOn9to5 = () => {
-    radioValues[7] = "My work schedule is 9am to 5pm";
+  const handleClickOnFewerThan20 = () => {
+    handleUpdate(7, "Fewer than 20");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
-  const handleClickOnNightShift = () => {
-    radioValues[7] = "My work schedule is nightshift";
-
+  const handleClickOn20to35 = () => {
+    handleUpdate(7, "20to35");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
-  const handleClickOnFlexibleHours = () => {
-    radioValues[7] = "Im having flexiblehours for works";
-
+  const handleClickOnMoreThan35 = () => {
+    handleUpdate(7, "More than 35");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
-  const handleClickOnFullTime = () => {
-    radioValues[7] = "Im retired";
-
+  const handleClickDontKnow = () => {
+    handleUpdate(7, "I don’t know");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
   return (
     <div className="flex-col justify-center items-center mb-5">
       <div className="flex-col justify-center items-center text-center ">
-        <h1 className="text-4xl font-bold tracking-wide mt-7">
-          What is your work <br /> schedule like?
+        <h1 className="text-4xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
+          How many{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Squat_(exercise)#:~:text=A%20squat%20is%20a%20strength,joint%20plantarflexes%20when%20standing%20up."
+            target="_blank"
+          >
+            squats
+          </a>{" "}
+          can you do?
         </h1>
       </div>
       <div className="flex justify-evenly items-center  mt-5">
         <RadioGroup defaultValue={radioValues[7]}>
           <Label
-            onClick={handleClickOn9to5}
+            onClick={handleClickOnFewerThan20}
             htmlFor="r1"
-            className="flex justify-between shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-7th/eghkwug7j61wkcmvdahq"
-              alt="lose-weight-img"
+              className="w-[104px] h-[104px] mr-7"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-15th/fomvb29xcnuqugceqler"
+              alt="very-hard-img"
             />
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">
-              9 to 5
+            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base ">
+              Fewer than 20
             </h1>
-            <RadioGroupItem
-              className="mr-5 "
-              value="My work schedule is 9am to 5pm"
-              id="r1"
-            />
+            <RadioGroupItem className="mr-5 " value="Fewer than 20" id="r1" />
           </Label>
 
           <Label
-            onClick={handleClickOnNightShift}
+            onClick={handleClickOn20to35}
             htmlFor="r2"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between mt-[10px] shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-7th/xu5wxfjizuo6aovnw8dl"
-              alt="gain-muscle-img"
+              className="w-[104px] h-[104px] mr-7"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-15th/uqzvnpvubjuuaz6pv34x"
+              alt="hard-img"
             />
 
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
-              Night shifts
+            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base">
+              20-35
             </h1>
-            <RadioGroupItem
-              className="mr-5"
-              value="My work schedule is nightshift"
-              id="r2"
-            />
+            <RadioGroupItem className="mr-5" value="20to35" id="r2" />
           </Label>
           <Label
-            onClick={handleClickOnFlexibleHours}
+            onClick={handleClickOnMoreThan35}
             htmlFor="r3"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between mt-[10px] shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-7th/nt1ww8wc6mrtstquq6g6"
-              alt="gain-muscle-img"
+              className="w-[104px] h-[104px] mr-7"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-15th/dkx4ax3ordyukknq4ial"
+              alt="normal-img"
             />
 
-            <h1 className="pr-[120px] md:pr-[140px] font-semibold text-base">
-              My hours are flexible
+            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base">
+              More than 35
             </h1>
-            <RadioGroupItem
-              className="mr-5"
-              value="Im having flexiblehours for works"
-              id="r3"
-            />
+            <RadioGroupItem className="mr-5" value="More than 35" id="r3" />
           </Label>
           <Label
-            onClick={handleClickOnFullTime}
+            onClick={handleClickDontKnow}
             htmlFor="r4"
-            className="flex justify-between shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
+            className="flex justify-between mt-[10px] shadow-md rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
           >
             <CldImage
               width={500}
               height={500}
-              className="w-[104px]"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-7th/na8xgat9b6lmawq1ywa9"
-              alt="gain-muscle-img"
+              className="w-[104px] h-[104px] mr-7"
+              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-15th/vix6k9yafffgaluypcxe"
+              alt="like-img"
+              cursor-pointer
             />
 
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base">
-              I&apos;m retired
+            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base">
+              I don&apos;t know
             </h1>
-            <RadioGroupItem className="mr-5" value="Im retired" id="r4" />
+            <RadioGroupItem className="mr-5" value="I don’t know" id="r4" />
           </Label>
         </RadioGroup>
       </div>

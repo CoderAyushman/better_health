@@ -1,133 +1,319 @@
-"use client";
-import React from "react";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Footer from "../Footer";
+import React, { useEffect, useState } from "react";
+import { Input } from "@/components/ui/input";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
-import { radioValues } from "../RadioValues";
-import Link from "next/link";
+import { useRadioValues } from "../RadioValues";
 import { increseDisplayCounter } from "@/lib/features/counter/displayCounterSlice";
 import { CldImage } from "next-cloudinary";
 
 const QuizNo15 = () => {
+  const { radioValues, setRadioValues } = useRadioValues();
+  const [isTrue, setIsTrue] = useState(false);
+  const [isRequireKG, setIsRequireKG] = useState(true);
+  const [isRequireLBS, setIsRequireLBS] = useState(true);
+  const [kg, setIskg] = useState<number>(radioValues[15].kg);
+  const [Lbs, setIsLbs] = useState<number>(radioValues[15].lbs);
+  const [bmi, setBmi] = useState<any>();
+  const [displayBmi, setDisplayBmi] = useState<any>();
+
+  useEffect(() => {
+    if (radioValues[15].kg != null) {
+      setIsRequireKG(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (kg != null) {
+      setBmi(Math.round(kg / Math.pow(radioValues[14].cm / 100, 2)));
+      radioValues[15].bmi = Math.round(
+        kg / Math.pow(radioValues[14].cm / 100, 2)
+      );
+      setRadioValues(prevValues => {
+        const newValues = [...prevValues];
+        newValues[15].bmi = Math.round(
+          kg / Math.pow(radioValues[14].cm / 100, 2)
+        );
+        return newValues;
+      });
+    } else {
+      setBmi(Math.round(Lbs / 2.20462 / Math.pow(radioValues[14].cm / 100, 2)));
+      radioValues[15].bmi = Math.round(
+        Lbs / 2.20462 / Math.pow(radioValues[14].cm / 100, 2)
+      );
+      setRadioValues(prevValues => {
+        const newValues = [...prevValues];
+        newValues[15].bmi = Math.round(
+          Lbs / 2.20462 / Math.pow(radioValues[14].cm / 100, 2)
+        );
+        return newValues;
+      });
+    }
+  }, [kg, Lbs]);
+
+  useEffect(() => {
+    if (bmi <= 18) {
+      setDisplayBmi(
+        <div className="flex justify-center items-center text-left mt-4">
+          <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md border-2 border-sky-300">
+            <div className="flex justify-start items-center">
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-28th/ygbtgcjddmwcm3utrih7"
+                alt="bmi"
+                className="max-w-[50px] p-2 pl-0"
+              />
+              <h2 className="font-semibold">
+                Your BMI is {bmi} which is considered underweight
+              </h2>
+            </div>
+            <p className="text-gray-400 text-base">
+              You have some work ahead of you, but it&apos;s great that
+              you&apos;re taking this first step. We&apos;ll use your BMI to
+              create a program just for you.
+            </p>
+          </div>
+        </div>
+      );
+    } else if (bmi >= 19 && bmi <= 25) {
+      setDisplayBmi(
+        <div className="flex justify-center items-center text-left mt-4">
+          <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-green-300">
+            <div className="flex justify-start items-center">
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-28th/j3neckqlf4tzrg0kxfdw"
+                alt="bmi"
+                className="max-w-[50px] p-2 pl-0"
+              />
+              <h2 className="font-semibold">
+                Your BMI is {bmi} which is considered normal
+              </h2>
+            </div>
+            <p className="text-gray-400 text-base">
+              You&apos;re starting from a great place! Now we&apos;ll use your
+              BMI to create a program tailored to your needs.
+            </p>
+          </div>
+        </div>
+      );
+    } else if (bmi >= 26 && bmi <= 30) {
+      setDisplayBmi(
+        <div className="flex justify-center items-center text-left mt-4">
+          <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-yellow-300">
+            <div className="flex justify-start items-center">
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-28th/ln32wsdzwtqnafs6fptj"
+                alt="bmi"
+                className="max-w-[50px] p-2 pl-0"
+              />
+              <h2 className="font-semibold">
+                Your BMI is {bmi} which is considered overweight
+              </h2>
+            </div>
+            <p className="text-gray-400 text-base">
+              You have some work ahead of you, but it&apos;s great that
+              you&apos;re taking this first step. We&apos;ll use your BMI to
+              create a weight loss program just for you.
+            </p>
+          </div>
+        </div>
+      );
+    } else {
+      setDisplayBmi(
+        <div className="flex justify-center items-center text-left mt-4">
+          <div className="flex-col max-w-[400px] pb-2 pl-5 pr-5 pt-2 rounded-md  border-2 border-red-300">
+            <div className="flex justify-start items-center">
+              <CldImage
+                width={500}
+                height={500}
+                src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-28th/xyqxwenoo1dvz39l0if0"
+                alt="bmi"
+                className="max-w-[50px] p-2 pl-0"
+              />
+              <h2 className="font-semibold">
+                Your BMI is {bmi} which is considered obese
+              </h2>
+            </div>
+            <p className="text-gray-400 text-base">
+              There&apos;s a lot you could gain by losing a little weight.
+              We&apos;ll use your BMI to create the weight loss program you
+              need.
+            </p>
+          </div>
+        </div>
+      );
+    }
+  }, [bmi]);
   const dispatch = useAppDispatch();
-  const handleClickOnFewerThan20 = () => {
-    radioValues[15] = "Fewer than 20";
+
+  const handleClick = () => {
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
-  const handleClickOn20to35 = () => {
-    radioValues[15] = "20to35";
-
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
+  const handleKG = () => {
+    setIsTrue(false);
   };
-  const handleClickOnMoreThan35 = () => {
-    radioValues[15] = "More than 35";
-
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
+  const handleLBS = () => {
+    setIsTrue(true);
   };
-  const handleClickDontKnow = () => {
-    radioValues[15] = "I don’t know";
+  const handleOnChangeKG = (event: any) => {
+    const e = event.target.value;
+    if (e >= 25 && e <= 300) {
+      try {
+        radioValues[15].kg = e;
+        radioValues[15].lbs = Math.round(e * 2.20462);
+        setIsLbs(Math.round(e * 2.20462));
+        setIskg(e);
+        setIsRequireKG(false);
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      setIsRequireKG(true);
+    }
+  };
+  const handleOnChangeLBS = (ft: any) => {
+    const LBS = ft.target.value;
 
-    dispatch(increse());
-    dispatch(increseDisplayCounter());
+    if (LBS >= 55 && LBS <= 662) {
+      radioValues[15].kg = LBS;
+      radioValues[15].lbs = Math.round(LBS / 2.20462);
+      setIskg(Math.round(LBS / 2.20462));
+      setIsLbs(LBS);
+      setIsRequireLBS(false);
+    } else {
+      setIsRequireLBS(true);
+    }
   };
   return (
-    <div className="flex-col justify-center items-center mb-5">
-      <div className="flex-col justify-center items-center text-center ">
-        <h1 className="text-4xl font-bold tracking-wide mt-7">
-          How many{" "}
-          <a
-            href="https://en.wikipedia.org/wiki/Squat_(exercise)#:~:text=A%20squat%20is%20a%20strength,joint%20plantarflexes%20when%20standing%20up."
-            target="_blank"
-          >
-            squats
-          </a>{" "}
-          can you <br /> do?
+    <>
+      <div className="flex-col justify-center items-center text-center mb-5">
+        <h1 className="text-3xl font-bold tracking-wide mt-7 max-w-[340px] md:max-w-[450px]">
+          What is your current weight?
         </h1>
+        <div className="flex  justify-center items-center ">
+          <div className="mt-10 border-[2px] border-customGreen rounded-full overflow-hidden">
+            {isTrue ? (
+              <button
+                onClick={handleLBS}
+                className="pl-[25px] pr-[25px] text-center font-bold text-white bg-customGreen"
+              >
+                LBS
+              </button>
+            ) : (
+              <button
+                onClick={handleLBS}
+                className="pl-[25px] pr-[25px] text-center font-bold text-customGreen"
+              >
+                LBS
+              </button>
+            )}
+            {isTrue == false ? (
+              <button
+                onClick={handleKG}
+                className="pl-[25px] pr-[25px] text-center font-bold text-white bg-customGreen"
+              >
+                KG
+              </button>
+            ) : (
+              <button
+                onClick={handleKG}
+                className="pl-[25px] pr-[25px] text-center font-bold text-customGreen"
+              >
+                KG
+              </button>
+            )}
+          </div>
+        </div>
+        <div className="flex  justify-center items-center mt-7 gap-3">
+          {isTrue == false ? (
+            <div className="flex-col">
+              <div className="flex items-center">
+                <div className="max-w-[200px] overflow-hidden mt-5  font-bold">
+                  <Input
+                    className="w-[230px] text-center text-5xl"
+                    type="number"
+                    id="cm"
+                    max={300}
+                    min={25}
+                    maxLength={3}
+                    minLength={1}
+                    autoFocus
+                    onChange={(e) => {
+                      handleOnChangeKG(e);
+                    }}
+                    defaultValue={kg}
+                  />
+                </div>
+                <h1 className="font-bold text-2xl ">kg</h1>
+              </div>
+              {isRequireKG ? (
+                <p className="text-xs mt-2">
+                  Please, enter a value from <b>25 kg</b> to <b>300 kg</b>
+                </p>
+              ) : (
+                <></>
+              )}
+            </div>
+          ) : (
+            <div className="flex-col">
+              <div className="flex items-center">
+                <div className="max-w-[200px] overflow-hidden mt-5  font-bold">
+                  {/* this div help to make diffrent input field */}
+                  <div>
+                    <Input
+                      className="w-[230px] text-5xl text-center p-0"
+                      type="number"
+                      id="ft"
+                      max={662}
+                      min={55}
+                      maxLength={1}
+                      autoFocus
+                      onChange={(e) => {
+                        handleOnChangeLBS(e);
+                      }}
+                      defaultValue={Lbs}
+                    />
+                  </div>
+                </div>
+
+                <h1 className="font-bold text-2xl ">lbs</h1>
+              </div>
+              {isRequireLBS ? (
+                <p className="text-xs mt-2">
+                  Please, enter a value from <b>55 lbs</b> to <b>662 lbs</b>
+                </p>
+              ) : (
+                <></>
+              )}
+            </div>
+          )}
+        </div>
+        {!isRequireKG || !isRequireLBS ? <>{displayBmi}</> : <></>}
+        <div className="mb-5 mt-5">
+          {!isRequireKG || !isRequireLBS ? (
+            <button
+              onClick={handleClick}
+              className="cursor-pointer bg-customGreen pl-[130px] pr-[130px] pt-[15px] pb-[15px] rounded-full text-white  "
+            >
+              <h1>
+                <b>NEXT STEP</b>
+              </h1>
+            </button>
+          ) : (
+            <button className="cursor-not-allowed  bg-gray-200 pl-[130px] pr-[130px] pt-[15px] pb-[15px] rounded-full text-gray-500  ">
+              <h1>
+                <b>NEXT STEP</b>
+              </h1>
+            </button>
+          )}
+        </div>
       </div>
-      <div className="flex justify-evenly items-center  mt-5">
-        <RadioGroup defaultValue={radioValues[15]}>
-          <Label
-            onClick={handleClickOnFewerThan20}
-            htmlFor="r1"
-            className="flex justify-between mt-[10px] shadow-md rounded-xl border border-gray-200 items-center max-w-[460px]  transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
-          >
-            <CldImage
-              width={500}
-              height={500}
-              className="w-[104px] mr-7"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-15th/fomvb29xcnuqugceqler"
-              alt="very-hard-img"
-            />
-            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base ">
-              Fewer than 20
-            </h1>
-            <RadioGroupItem className="mr-5 " value="Fewer than 20" id="r1" />
-          </Label>
-
-          <Label
-            onClick={handleClickOn20to35}
-            htmlFor="r2"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
-          >
-            <CldImage
-              width={500}
-              height={500}
-              className="w-[104px] mr-7"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-15th/uqzvnpvubjuuaz6pv34x"
-              alt="hard-img"
-            />
-
-            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base">
-              20-35
-            </h1>
-            <RadioGroupItem className="mr-5" value="20to35" id="r2" />
-          </Label>
-          <Label
-            onClick={handleClickOnMoreThan35}
-            htmlFor="r3"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
-          >
-            <CldImage
-              width={500}
-              height={500}
-              className="w-[104px] mr-7"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-15th/dkx4ax3ordyukknq4ial"
-              alt="normal-img"
-            />
-
-            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base">
-              More than 35
-            </h1>
-            <RadioGroupItem className="mr-5" value="More than 35" id="r3" />
-          </Label>
-          <Label
-            onClick={handleClickDontKnow}
-            htmlFor="r4"
-            className="flex justify-between mt-[10px] shadow-xl rounded-xl border  border-gray-200 items-center max-w-[460px] transform duration-500 hover:scale-[96%] cursor-pointer mb-2"
-          >
-            <CldImage
-              width={500}
-              height={500}
-              className="w-[104px] mr-7"
-              src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfMale/quiz-15th/vix6k9yafffgaluypcxe"
-              alt="like-img"
-              cursor-pointer
-            />
-
-            <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base">
-              I don&apos;t know
-            </h1>
-            <RadioGroupItem className="mr-5" value="I don’t know" id="r4" />
-          </Label>
-        </RadioGroup>
-      </div>
-      {/* <Footer /> */}
-    </div>
+    </>
   );
 };
 
