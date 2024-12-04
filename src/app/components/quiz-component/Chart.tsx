@@ -74,7 +74,7 @@ const Chart: React.FC = () => {
   return (
     <div className="flex justify-center items-center mt-32">
       <div className="flex-col justify-center items-center">
-        <h1 className="text-3xl text-center font-bold mb-3  max-w-[340px] md:max-w-[450px] ">
+        <h1 className="text-3xl text-center font-bold mb-3  max-w-[340px] md:max-w-[450px] mx-auto">
           The last plan you’ll ever need to get in shape
         </h1>
         <h3 className="text-center text-gray-400 font-semibold">

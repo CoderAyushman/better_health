@@ -104,7 +104,7 @@ const QuizNo6 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[120px] md:pr-[140px] font-semibold text-base">
+            <h1 className="pr-[80px] md:pr-[140px] font-semibold text-base">
               My hours are flexible
             </h1>
             <RadioGroupItem

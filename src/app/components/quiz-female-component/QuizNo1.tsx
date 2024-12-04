@@ -56,7 +56,7 @@ const QuizNo1 = () => {
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-1st/ohulo1j3ufcaxuhc1cw5"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[155px] md:pr-[175px] pl-5 font-semibold text-base ">
+            <h1 className="pr-[130px] md:pr-[175px] pl-5 font-semibold text-base ">
               Lose Weight
             </h1>
             <RadioGroupItem className="mr-5 " value="loseweight" id="r1" />
@@ -75,7 +75,7 @@ const QuizNo1 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[100px] md:pr-[175px] pl-5 font-semibold text-base">
+            <h1 className="pr-[130px] md:pr-[175px] pl-5 font-semibold text-base">
               Gain Muscle
             </h1>
             <RadioGroupItem className="mr-5" value="gainmuscle" id="r2" />
@@ -93,7 +93,7 @@ const QuizNo1 = () => {
               alt="recover-img"
             />
 
-            <h1 className="pr-[40px] font-semibold text-base">
+            <h1 className="pr-[20px] font-semibold text-base">
               Recover after having a baby
             </h1>
             <RadioGroupItem

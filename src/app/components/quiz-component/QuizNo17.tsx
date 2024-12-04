@@ -61,7 +61,7 @@ const QuizNo17 = () => {
 
         <div className="flex  justify-center items-center mt-7 gap-3">
           <div className="flex-col">
-            <div className="flex items-center">
+            <div className="flex items-center  justify-center">
               <div className="max-w-[200px] overflow-hidden mt-5  font-bold">
                 <Input
                   className="w-[230px] text-center text-5xl"

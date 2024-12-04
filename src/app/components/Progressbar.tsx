@@ -70,7 +70,7 @@ const Progressbar = () => {
     <>
       <div className="mt-28 flex justify-center items-center">
         <Progress
-          value={displayCounter * 3.125}
+          value={displayCounter * 5.263}
           className="max-w-[340px] md:max-w-[450px] h-3 md:h-4 "
         />
       </div>
@@ -87,7 +87,7 @@ const Progressbar = () => {
         </button>
         <span>
           <b className="text-customGreen">{displayCounter}</b>
-          <b>/32</b>
+          <b>/19</b>
         </span>
       </div>
     </>

@@ -8,7 +8,7 @@ import { CldImage } from "next-cloudinary";
 
 const QuizNo16 = () => {
   const { radioValues, setRadioValues } = useRadioValues()
-  const [isTrue, setIsTrue] = useState(false);
+  const [isTrue, setIsTrue] = useState(true);
   const [isRequireKG, setIsRequireKG] = useState(true);
   const [isRequireLBS, setIsRequireLBS] = useState(true);
   const [kg, setIskg] = useState<number>(radioValues[16].kg);

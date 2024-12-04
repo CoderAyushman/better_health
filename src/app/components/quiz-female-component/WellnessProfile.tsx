@@ -14,11 +14,17 @@ import {
 import { CldImage } from "next-cloudinary";
 
 const WellnessProfile = () => {
+
   const { radioValues, setRadioValues } = useRadioValues();
   const dispatch = useAppDispatch();
   const [bmiValue, setBmiValue] = useState<any>();
   const [bmiDisplay, setBmiDisplay] = useState<any>(false);
   const [bmiImage, setBmiImage] = useState<any>();
+  const [bodyType, setBodyType] = useState<string>("");
+  const [lifeStyle, setLifeStyle] = useState<string>("");
+  const [fitnessLevel, setFitnessLevel] = useState<string>("");
+  const [metabolism, setMetabolism] = useState<string>("");
+  const [explain, setExplain] = useState<string>("");
   const bmi = radioValues[15].bmi;
 
   const handleOnclickButton = () => {
@@ -27,6 +33,11 @@ const WellnessProfile = () => {
 
   useEffect(() => {
     if (bmi <= 18 && bmi >= 10) {
+      setBodyType("Ectomorph")
+      setLifeStyle("Sedentary")
+      setFitnessLevel("Beginner")
+      setMetabolism("Low")
+      setExplain("A person is called Ectomorph if they weigh less than what is healthy for their height.They may look very thin and have less body fat or muscle than needed.")
       setBmiValue(bmi - 10);
       setBmiDisplay(
         <div className="flex justify-center items-center text-left mt-7">
@@ -57,6 +68,11 @@ const WellnessProfile = () => {
         />
       );
     } else if (bmi >= 19 && bmi <= 25) {
+      setBodyType("Mesomorph")
+      setLifeStyle("Sedentary")
+      setFitnessLevel("Average")
+      setMetabolism("Advanced")
+      setExplain("A person is called Mesomorph if their weight is within a healthy range for their height.They may look healthy, have a healthy body fat percentage, and have a healthy body composition.")
       setBmiValue(bmi - 2);
       setBmiDisplay(
         <div className="flex justify-center items-center text-left mt-7">
@@ -87,6 +103,11 @@ const WellnessProfile = () => {
         />
       );
     } else if (bmi >= 26 && bmi <= 30) {
+      setBodyType("Endomorph")
+      setLifeStyle("Sedentary")
+      setFitnessLevel("Intermediate")
+      setMetabolism("Slower")
+      setExplain("A person is called Endomorph if they weigh more than what is healthy for their height.They are not very heavy but may need to watch their weight to stay healthy.")
       setBmiValue(bmi + 5);
       setBmiDisplay(
         <div className="flex justify-center items-center text-left mt-7">
@@ -118,6 +139,11 @@ const WellnessProfile = () => {
         />
       );
     } else if (bmi >= 31 && bmi <= 40) {
+      setBodyType("Endomorph")
+      setLifeStyle("Sedentary")
+      setFitnessLevel("Low")
+      setMetabolism("Slower")
+      setExplain("A person is called Endomorph if they weigh more than what is healthy for their height.Obese people are much heavier than what is healthy for their height.")
       setBmiValue(bmi + 10);
       setBmiDisplay(
         <div className="flex justify-center items-center text-left mt-7">
@@ -149,6 +175,11 @@ const WellnessProfile = () => {
         />
       );
     } else if (bmi >= 40) {
+      setBodyType("Endomorph")
+      setLifeStyle("Sedentary")
+      setFitnessLevel("Low")
+      setMetabolism("Slower")
+      setExplain("A person is called Endomorph if they weigh more than what is healthy for their height.Obese people are much heavier than what is healthy for their height.")
       setBmiValue(50);
       setBmiDisplay(
         <div className="flex justify-center items-center text-left mt-7">
@@ -180,6 +211,11 @@ const WellnessProfile = () => {
         />
       );
     } else if (bmi <= 9) {
+      setBodyType("Ectomorph")
+      setLifeStyle("Sedentary")
+      setFitnessLevel("Beginner")
+      setMetabolism("Low")
+      setExplain("A person is called Ectomorph if they weigh less than what is healthy for their height.They may look very thin and have less body fat or muscle than needed.")
       setBmiValue(0);
       setBmiImage(
         <CldImage
@@ -196,8 +232,8 @@ const WellnessProfile = () => {
   }, [bmi]);
   return (
     <div className="flex justify-center items-center mt-32 w-full mb-10">
-      <div className="flex-col justify-center items-center">
-        <h1 className="text-3xl font-bold text-center">
+      <div className="flex-col justify-center items-center ">
+        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[450px] mx-auto">
           Here&apos;s your wellness profile
         </h1>
         <div className="flex-col max-w-[600px] border border-gray-200 mt-5 rounded-md p-5 shadow-xl">
@@ -223,20 +259,6 @@ const WellnessProfile = () => {
             </div>
           </div>
 
-          {/* overweight */}
-          {/* Body Type
-              Ectomorph
-              Slender, less fat percentage and muscle mass
-
-              Lifestyle
-              Sedentary
-
-              Fitness level
-              Advanced
-
-              Metabolism
-              Fast, difficult to gain muscle
-              */}
           {bmiDisplay ? bmiDisplay : <></>}
         </div>
         <div className="flex justify-center items-center max-w-[600px] border border-gray-200 mt-5 rounded-md p-5 shadow-2xl">
@@ -252,7 +274,7 @@ const WellnessProfile = () => {
               <div>
                 <h1 className="font-semibold text-gray-500">Body type</h1>
                 <span className="flex font-bold justify-center items-center">
-                  Ectomorph{" "}
+                  {bodyType}{" "}
                   <Dialog>
                     <DialogTrigger>
                       <button className="h-4 w-4 text-center text-xs ml-1 bg-gray-400 text-white rounded-full ">
@@ -261,9 +283,9 @@ const WellnessProfile = () => {
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[425px]">
                       <DialogHeader>
-                        <DialogTitle>Ectomorph</DialogTitle>
+                        <DialogTitle>{bodyType}</DialogTitle>
                         <DialogDescription>
-                          Slender, less fat percentage and muscle mass
+                          {explain}
                         </DialogDescription>
                       </DialogHeader>
                     </DialogContent>
@@ -281,7 +303,7 @@ const WellnessProfile = () => {
               />
               <div>
                 <h1 className="font-semibold text-gray-500">Lifestyle</h1>
-                <span className="font-bold ">Sedentary</span>
+                <span className="font-bold ">{lifeStyle}</span>
               </div>
             </div>
             <div className="flex justify-start items-center">
@@ -294,7 +316,7 @@ const WellnessProfile = () => {
               />
               <div>
                 <h1 className="font-semibold text-gray-500">Fitness level</h1>
-                <span className="font-bold ">Advanced</span>
+                <span className="font-bold ">{fitnessLevel}</span>
               </div>
             </div>
             <div className="flex justify-start items-center ">
@@ -308,7 +330,7 @@ const WellnessProfile = () => {
               <div>
                 <h1 className="font-semibold text-gray-500">Metabolism</h1>
                 <span className="font-bold ">
-                  Fast, difficult to <br /> gain muscle
+                  {metabolism}
                 </span>
               </div>
             </div>

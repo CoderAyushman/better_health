@@ -24,6 +24,7 @@ const First = () => {
           <div className="mb-7">
             <b>1 MINUTE</b> QUIZ
           </div>
+          <p className="text-gray-400 text-xl font-bold md:hidden">CLICK ANY</p>
         </div>
 
         <div className="md:flex  gap-4 w-[100%] self-center justify-center mb-10 items-center ">

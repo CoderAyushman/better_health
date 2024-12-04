@@ -9,9 +9,9 @@ import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 const QuizNo18 = () => {
   const { radioValues, setRadioValues } = useRadioValues()
-  const [searchQuery, setSearchQuery] = useState<string>(radioValues[18])
+  const [searchQuery, setSearchQuery] = useState<string>('')
   const [filteredCountries, setFilteredCountries] = useState<typeof countries>([])
-
+  const [isClicked, setIsClicked] = useState<boolean>(false)
   const debounce = (func: (...args: any[]) => void, delay: number) => {
     let timeoutId: NodeJS.Timeout
     return (...args: any[]) => {
@@ -19,10 +19,15 @@ const QuizNo18 = () => {
       timeoutId = setTimeout(() => func(...args), delay)
     }
   }
-
+  useEffect(() => {
+    if (radioValues[18] != " ") {
+      setIsClicked(true)
+      setSearchQuery(radioValues[18])
+    }
+  }, [])
   const filterCountries = useCallback(
     debounce((query: string) => {
-      if (query.trim() === " ") {
+      if (query.trim() === "") {
         setFilteredCountries([])
       } else {
         const filtered = countries
@@ -46,10 +51,12 @@ const QuizNo18 = () => {
   const handleClick = () => {
     dispatch(increse());
     dispatch(increseDisplayCounter());
+    setRadioValues((prev) => {
+      const newRadioValues = [...prev];
+      newRadioValues[18] = searchQuery;
+      return newRadioValues;
+    });
   };
-
-
-
   return (
     <>
       <div className="flex-col justify-center items-center text-center mb-5">
@@ -67,18 +74,19 @@ const QuizNo18 = () => {
                   placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
+                  defaultValue={radioValues[18]}
                   aria-label="Search for a country"
                 />
               </div>
               <h1 className="font-bold text-2xl ">country</h1>
             </div>
 
-            {searchQuery.trim() !== " " && (
+            {searchQuery.trim() !== "" && (
               <>
                 <ScrollArea className="h-[300px] w-full rounded-md border p-4">
                   <ul className="space-y-2">
                     {filteredCountries.map((country) => (
-                      <li key={country.id} className="p-2 hover:bg-gray-100 rounded">
+                      <li key={country.id} className="p-2 hover:bg-gray-100 rounded cursor-pointer" onClick={() => { setSearchQuery(country.country), setIsClicked(true) }}>
                         {country.country}
                       </li>
                     ))}
@@ -89,7 +97,7 @@ const QuizNo18 = () => {
                 </p>
               </>
             )}
-            {searchQuery.trim() === " " && (
+            {searchQuery.trim() === "" && (
               <p className="mt-2 text-sm text-gray-500" aria-live="polite">
                 Enter a search query to see results
               </p>
@@ -97,7 +105,7 @@ const QuizNo18 = () => {
           </div>
         </div>
         <div className="mb-5 mt-5">
-          {searchQuery != "" ? (
+          {isClicked ? (
             <button
               onClick={handleClick}
               className="cursor-pointer bg-customGreen pl-[130px] pr-[130px] pt-[15px] pb-[15px] rounded-full text-white  "

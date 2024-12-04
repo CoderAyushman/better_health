@@ -137,7 +137,7 @@ const QuizNo14 = () => {
           ) : (
             <div className="flex-col">
               <div className="flex items-center">
-                <div className="max-w-[200px] overflow-hidden   font-bold">
+                <div className="max-w-[200px] overflow-hidden mt-5   font-bold">
                   <div>
                     <Input
                       className="w-[230px] text-5xl "

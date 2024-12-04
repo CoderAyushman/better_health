@@ -59,7 +59,7 @@ const QuizNo2 = () => {
               src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/imageOfFemale/quiz-2nd/ovr9ovkv1gkbmunsfcra"
               alt="lose-weight-img"
             />
-            <h1 className="pr-[155px] md:pr-[175px] font-semibold text-base ">
+            <h1 className="pr-[165px] md:pr-[175px] font-semibold text-base ">
               Slim
             </h1>
             <RadioGroupItem className="mr-5 " value="slender" id="r1" />
@@ -78,7 +78,7 @@ const QuizNo2 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[110px] md:pr-[175px] font-semibold text-base">
+            <h1 className="pr-[130px] md:pr-[175px] font-semibold text-base">
               Mid-sized
             </h1>
             <RadioGroupItem className="mr-5" value="medium build" id="r2" />
@@ -96,7 +96,7 @@ const QuizNo2 = () => {
               alt="gain-muscle-img"
             />
 
-            <h1 className="pr-[110px] font-semibold text-base">
+            <h1 className="pr-[100px] font-semibold text-base">
               On a heavier side
             </h1>
             <RadioGroupItem className="mr-5" value="stocky" id="r3" />

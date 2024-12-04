@@ -9,8 +9,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useAppDispatch } from "@/lib/hooks";
 import { increse } from "@/lib/features/counter/counterSlice";
@@ -21,21 +19,6 @@ import { CldImage } from "next-cloudinary";
 
 const PrePlanCreating = () => {
   const { radioValues } = useRadioValues();
-
-  // const getAnswer = async (msg: any) => {
-  //   axios
-  //     .post("http://localhost:8000/api/langchain/gemini", {
-  //       prompt: msg,
-  //     })
-  //     .then(async (response) => {
-  //       console.log(response.data.response);
-  //       radioValues[35].response = await response.data.response;
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
   // message template
   // const message = `I'm want to ${radioValues[1]} , my physical build is  ${radioValues[2]} 
   // , my body goal is  ${radioValues[3]} , my target zones are (Arms:  ${radioValues[4].one} 
@@ -95,7 +78,6 @@ const PrePlanCreating = () => {
 
   useEffect(() => {
     radioValues[20].message = message;
-    // getAnswer(message);
   }, []);
   return (
     <div className="flex-col justify-center items-center mt-32">
@@ -200,8 +182,6 @@ const PrePlanCreating = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
       </div>
     </div>
