@@ -2,10 +2,8 @@
 import React, { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useAppSelector } from "@/lib/hooks";
-
 import Share from "./Share";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { CldImage } from "next-cloudinary";
 const Navbar = () => {
@@ -65,7 +63,7 @@ const Navbar = () => {
 
                 <div className="text-center text-2xl cursor-pointer px-full block">
                   <h1
-                    className="text-center text-2xl cursor-pointer motion-preset-slide-left-lg"
+                    className="text-center text-2xl cursor-pointer "
                     onClick={() => {
                       router.push("/about");
                       setisSheetOpen(false);
@@ -74,7 +72,7 @@ const Navbar = () => {
                     ABOUT ME
                   </h1>
                 </div>
-                <div className="text-center text-2xl cursor-pointer px-full block">
+                <div className="text-center text-2xl cursor-pointer px-full block motion-preset-slide-left-lg">
                   <Share />
                 </div>
               </div>

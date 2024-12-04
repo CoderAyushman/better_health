@@ -34,7 +34,7 @@ const QuizNo7 = () => {
     dispatch(increseDisplayCounter());
   };
   const handleClickDontKnow = () => {
-    handleUpdate(7, "I don’t know");
+    handleUpdate(7, "I dont know");
     dispatch(increse());
     dispatch(increseDisplayCounter());
   };
@@ -125,7 +125,7 @@ const QuizNo7 = () => {
             <h1 className="pr-[110px] md:pr-[140px] pl-5  font-semibold text-base">
               I don&apos;t know
             </h1>
-            <RadioGroupItem className="mr-5" value="I don’t know" id="r4" />
+            <RadioGroupItem className="mr-5" value="I dont know" id="r4" />
           </Label>
         </RadioGroup>
       </div>

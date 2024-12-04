@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 const AboutMe = () => {
@@ -31,8 +31,7 @@ const AboutMe = () => {
                 My love for coding started when I built my first &quot;Hello,
                 World!&quot; program. Since then, I&apos;ve been on an exciting
                 journey of learning new languages, frameworks, and best
-                practices. I&apos;m particularly interested in web development
-                and machine learning.
+                practices. I&apos;m particularly interested in web and app development.
               </dd>
             </div>
             <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
