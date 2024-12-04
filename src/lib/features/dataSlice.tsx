@@ -1,4 +1,3 @@
-import {radioValues} from '@/app/components/RadioValues';
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
@@ -8,7 +7,7 @@ export interface dataState {
 }
 
 let initialState: dataState = {
-    items: radioValues
+    items: []
    
 };
 
