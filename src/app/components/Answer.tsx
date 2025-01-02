@@ -57,6 +57,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { CldImage } from "next-cloudinary";
+import {jsPDF} from "jspdf";
 
 const Output = () => {
   const { radioValues, setRadioValues } = useRadioValues();
@@ -108,6 +109,14 @@ const Output = () => {
     }
   }, [, regenerate]);
 
+  const downloadPdf = () => { 
+    const doc = new jsPDF("portrait", "pt", "a4");
+    const content=getTargetElement.current; 
+    doc.html(content,{
+            callback: function (doc) {
+                doc.save('sample.pdf');
+            },width:700,windowWidth:1200,x:10,y:10})
+  }
   return (
     <main className="flex items-center justify-center mt-32 ">
       <div className="flex-col items-center justify-center ml-10 mr-10">
@@ -119,7 +128,7 @@ const Output = () => {
           className="h-[600px] ml-[50vw]  fixed z-0 opacity-30 md:w-[700px] md:ml-[40vw]"
         />
         <div className="z-10 relative">
-          <div ref={getTargetElement} className="">
+          <div ref={getTargetElement} id="htmlContent">
             <h1>Here yours ai generated full personal Diet.</h1>
 
             {markdownText === null ? (
@@ -142,6 +151,7 @@ const Output = () => {
               />
             </div>
           </div>
+          <div id="editor"></div>
           <div className="flex items-center justify-start ">
             <div className="flex-col mb-5 mr-4">
               <button
@@ -149,7 +159,7 @@ const Output = () => {
                   toast({
                     description: "Downloading...",
                   });
-                  generatePDF(getTargetElement, options);
+                  downloadPdf();
                 }}
                 className="w-[50px]  bg-customGreen rounded-md overflow-visible  text-white py-2    px-2"
               >
