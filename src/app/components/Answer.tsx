@@ -101,7 +101,7 @@ const Output = () => {
     doc.html(content,{
             callback: function (doc) {
                 doc.save('sample.pdf');
-            },width:700,windowWidth:1200,x:10,y:100}) 
+            },width:600 ,windowWidth:800,x:10,y:100}) 
     // doc.save("better-health-diet-plan.pdf");     
   }
   return (
@@ -116,17 +116,17 @@ const Output = () => {
         />
         <div className="z-10 relative">
           <div ref={getTargetElement} id="htmlContent">
-            <div ref={markdownRef}>
-            <h1 className="text-xl md:text-2xl mb-3 font-semibold ">Here yours ai generated full personal Diet -</h1>
+           <div ref={markdownRef} >
+             <h1 className="text-xl md:text-2xl mb-3 font-semibold ">Here yours ai generated full personal Diet -</h1>
 
-            {markdownText === null ? (
-              <Skeleton count={50} height={50} />
-            ) : (
-              <ReactMarkdown remarkPlugins={[remarkGfm]} >
-                {markdownText}
-              </ReactMarkdown>
-            )}
-              </div>
+             {markdownText === null ? (
+               <Skeleton count={50} height={50} />
+             ) : (
+               <ReactMarkdown remarkPlugins={[remarkGfm]} >
+                 {markdownText}
+               </ReactMarkdown>
+             )}
+           </div>
             <div className="flex justify-between items-center">
               <h1 className="text-md md:text-xl  font-sans text-[#D2B37C] font-bold">
                 {new Date().toUTCString()}

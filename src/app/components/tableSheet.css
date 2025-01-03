@@ -1,9 +1,9 @@
 @media only screen and (max-width: 767px) {
   table {
     border-collapse: collapse;
-    width: 100%;
-    font-size: x-small;
-    font-weight: 700;
+    width: 80%;
+    font-size:15px;
+    font-weight:700;
   }
   th,
   td {
@@ -46,7 +46,7 @@
 @media only screen and (min-width: 767px) {
   table {
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
   }
 
   th,
