@@ -8,7 +8,6 @@ import remarkGfm from "remark-gfm";
 import { useRadioValues } from "../components/RadioValues";
 import "@/app/components/tableSheet.css";
 import ResetAllDataBtn from "./ResetAllDataBtn";
-import generatePDF, { Resolution, Margin } from "react-to-pdf";
 import { useToast } from "@/components/hooks/use-toast";
 import {
   FacebookShareButton,
@@ -48,7 +47,6 @@ import {
 import {
   AlertDialog,
   AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
@@ -60,30 +58,13 @@ import { CldImage } from "next-cloudinary";
 import {jsPDF} from "jspdf";
 
 const Output = () => {
-  const { radioValues, setRadioValues } = useRadioValues();
+  const { radioValues} = useRadioValues();
   const [regenerate, setRegenerate] = useState<boolean>(false);
   const { toast } = useToast();
-  const options: any = {
-    resolution: Resolution.HIGH,
-    filename: "better-health-diet-plan.pdf",
-    page: {
-      margin: Margin.SMALL,
-      format: "junior-legal",
-    },
-    canvas: {
-      qualityRatio: 1,
-    },
-    overrides: {
-      pdf: {
-        compress: true,
-      },
-      canvas: {
-        useCORS: true,
-      },
-    },
-  };
 
   const getTargetElement = useRef<any>();
+  const getImageRef = useRef<any>();
+  const markdownRef = useRef<any>();
   const [markdownText, setMarkdownText] = useState<any>(null);
   const MODEL_NAME = "gemini-1.0-pro";
   const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY as string;
@@ -111,11 +92,17 @@ const Output = () => {
 
   const downloadPdf = () => { 
     const doc = new jsPDF("portrait", "pt", "a4");
-    const content=getTargetElement.current; 
+    const content=markdownRef.current; 
+    doc.setTextColor('#D2B37C');
+    doc.setFontSize(15);
+    doc.setFont("arial", "bold");
+    doc.text(new Date().toUTCString(), 10, 62);
+    doc.addImage(getImageRef.current, "JPEG", 450,0,120,120);
     doc.html(content,{
             callback: function (doc) {
                 doc.save('sample.pdf');
-            },width:700,windowWidth:1200,x:10,y:10})
+            },width:700,windowWidth:1200,x:10,y:100}) 
+    // doc.save("better-health-diet-plan.pdf");     
   }
   return (
     <main className="flex items-center justify-center mt-32 ">
@@ -129,20 +116,23 @@ const Output = () => {
         />
         <div className="z-10 relative">
           <div ref={getTargetElement} id="htmlContent">
-            <h1>Here yours ai generated full personal Diet.</h1>
+            <div ref={markdownRef}>
+            <h1 className="text-xl md:text-2xl mb-3 font-semibold ">Here yours ai generated full personal Diet -</h1>
 
             {markdownText === null ? (
               <Skeleton count={50} height={50} />
             ) : (
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} >
                 {markdownText}
               </ReactMarkdown>
             )}
+              </div>
             <div className="flex justify-between items-center">
               <h1 className="text-md md:text-xl  font-sans text-[#D2B37C] font-bold">
                 {new Date().toUTCString()}
               </h1>
               <CldImage
+                ref={getImageRef}
                 width={500}
                 height={500}
                 src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/z36rlknkgaw8xwuy0n7q"
@@ -209,6 +199,7 @@ const Output = () => {
                       src="https://res.cloudinary.com/dedwnkpv4/image/upload/f_auto,q_auto/v1/better-health/so0sjubtu90jpfu3x0fs"
                       alt="share-img"
                     />
+
                   </div>
                   <h6 className="text-xs text-gray-500 font-bold text-center">
                     Share
