@@ -66,7 +66,7 @@ const Output = () => {
   const getImageRef = useRef<any>();
   const markdownRef = useRef<any>();
   const [markdownText, setMarkdownText] = useState<any>(null);
-  const MODEL_NAME = "gemini-1.0-pro";
+  const MODEL_NAME = "gemini-2.0-flash-exp";
   const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY as string;
   const url = "https://better-health-chi.vercel.app/";
   const title =
